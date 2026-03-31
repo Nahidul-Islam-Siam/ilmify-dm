@@ -1,5 +1,6 @@
 "use client";
 
+import BrandMarquee from "@/app/(common)/components/pages/Home/Marquee";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, ShieldCheck } from "lucide-react";
 import Image from "next/image";
@@ -45,7 +46,7 @@ export default function HomeShowcase() {
                     key={badge.label}
                     className={cn(
                       "flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold",
-                      badge.className,
+                      badge.className
                     )}
                   >
                     {badge.label}
@@ -57,7 +58,7 @@ export default function HomeShowcase() {
             <div className="relative z-10 mx-auto mt-14 max-w-[1180px]">
               <div className="relative inline-block">
                 <h1 className="text-7xl font-extrabold uppercase">
-                  Creative Intelligence 
+                  Creative Intelligence
                   <br />
                   In Every Pixel
                 </h1>
@@ -101,6 +102,8 @@ export default function HomeShowcase() {
           <p className="relative z-10 mt-40 text-center text-xs font-bold uppercase tracking-[0.06em] text-white/85 md:mt-44">
             Trusted By Industry Leaders & Fast-Growing Startups
           </p>
+
+          <BrandMarquee />
         </div>
       </section>
     </main>
