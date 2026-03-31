@@ -36,7 +36,6 @@ export default function RootLayout({
         />
 
         {/* Google Maps JavaScript API (with places + places_plus libraries) */}
-        
       </head>
       <body
         suppressHydrationWarning={true}
