@@ -34,7 +34,7 @@ export default function HomeShowcase() {
             />
 
             <div className="relative z-10 mx-auto flex w-fit items-center gap-3 rounded-2xl border border-white/10 bg-[#101010] px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f4ff00] text-black">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-400 ">
                 <ShieldCheck size={18} />
               </span>
               <p className="text-sm font-semibold text-white md:text-[15px]">
@@ -63,13 +63,13 @@ export default function HomeShowcase() {
                   In Every Pixel
                 </h1>
 
-                <span className="absolute right-[1px] top-[8px] rotate-[7deg] rounded-xl bg-[#f4ff00] px-3 py-2 text-xs font-black uppercase tracking-[0.08em] text-black shadow-[0_8px_25px_rgba(244,255,0,0.22)] md:right-[-100px] md:top-[14px] md:px-4">
+                <span className="absolute right-[1px] top-[8px] rotate-[7deg] rounded-xl bg-emerald-400 px-3 py-2 text-xs font-black uppercase tracking-[0.08em] text-black shadow-[0_8px_25px_rgba(244,255,0,0.22)] md:right-[-100px] md:top-[14px] md:px-4">
                   No Code
                 </span>
               </div>
 
               <p className="mx-auto mt-8 max-w-[680px] text-lg font-semibold text-[#ece8e3] md:text-[18px]">
-                We Craft <span className="text-[#f4ff00]">Stunning</span>{" "}
+                We Craft <span className="text-emerald-400">Stunning</span>{" "}
                 Designs For Businesses Worldwide.
               </p>
 
