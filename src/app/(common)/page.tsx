@@ -3,6 +3,8 @@ import Showcase from "./components/pages/Home/Showcase";
 import WorkVideo from "./components/pages/Home/WorkVideo";
 import Services from "./components/pages/Home/Services";
 import Process from "./components/pages/Home/Process";
+import AiAction from "./components/pages/Home/AiAction";
+import FaqSection from "./components/pages/Home/FaqSection";
 
 export default function CommonHomePage() {
   return (
@@ -12,6 +14,8 @@ export default function CommonHomePage() {
       <Services />
       <Showcase />
       <Process />
+      <AiAction />
+      <FaqSection />
     </>
   );
 }
