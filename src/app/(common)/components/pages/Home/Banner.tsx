@@ -7,10 +7,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 const toolBadges = [
-  { link: "/assets/hero/Email-Marketing.png", className: "bg-[#1f1f1f] text-[#f24e1e]" },
-  { link: "/assets/hero/Google-Ads.png", className: "bg-[#2b2b2b] text-[#ffb800]" },
   { link: "/assets/hero/Meta.png", className: "bg-[#2f2041] text-[#ff61f6]" },
-  { link: "/assets/hero/SEO.png", className: "bg-[#25395f] text-[#42a5ff]" }
+  { link: "/assets/hero/SEO.png", className: "bg-[#25395f] text-[#42a5ff]" },
+  {
+    link: "/assets/hero/Google-Ads.png",
+    className: "bg-[#2b2b2b] text-[#ffb800]",
+  },
+  {
+    link: "/assets/hero/Email-Marketing.png",
+    className: "bg-[#1f1f1f] text-[#f24e1e]",
+  },
+
   // { link: "/assets/hero/", className: "bg-[#22365a] text-[#4987ff]" },
   // { link: "/assets/hero/", className: "bg-[#2d2d2d] text-[#d7d7d7]" },
 ];
@@ -36,10 +43,16 @@ export default function HomeShowcase() {
             <div className="relative z-10 md:mx-auto w-2/5 md:w-fit flex flex-col md:flex-row justify-center gap-3 rounded-2xl border border-white/10 bg-[#101010] px-3 py-2 shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
               <div className="flex items-center gap-3">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full  ">
-                  <Image src="/assets/hero/Trusted-by.png" width={25} height={30} alt="trusted"/>
+                  <Image
+                    src="/assets/hero/Trusted-by.png"
+                    width={25}
+                    height={30}
+                    alt="trusted"
+                  />
                 </span>
                 <p className="text-sm w-3/4 md:w-fit font-semibold text-white md:text-[15px]">
-                  Trusted by startups to craft $100M+ designs with
+                  Helping startups and brands scale to $10M+ in revenue with
+                  data-backed marketing
                 </p>
               </div>
               <div className="relative items-center gap-1.5 flex">
@@ -51,7 +64,12 @@ export default function HomeShowcase() {
                       badge.className,
                     )}
                   >
-                    <Image src={badge.link} alt="badge" width={35} height={30}/>
+                    <Image
+                      src={badge.link}
+                      alt="badge"
+                      width={35}
+                      height={30}
+                    />
                   </span>
                 ))}
               </div>
@@ -83,12 +101,12 @@ export default function HomeShowcase() {
                   href="#work"
                   className="inline-flex h-[52px] min-w-[156px] items-center justify-center gap-2 rounded-full border border-white bg-transparent px-8 text-[15px] font-semibold text-white transition hover:bg-white hover:text-black"
                 >
-                Get Free Audit
+                  Get Free Audit
                   <ArrowUpRight size={16} />
                 </Link>
               </div>
             </div>
-{/* 
+            {/* 
             <Image
               src="/assets/hero/hero-star.png"
               alt="Decorative star"
