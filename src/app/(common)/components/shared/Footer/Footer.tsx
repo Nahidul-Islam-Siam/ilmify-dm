@@ -97,7 +97,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col gap-5  pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="text-sm text-white/48">
+          <p className="text-xs text-white/48">
             &copy; Ilmify Studio. All Rights Reserved.
           </p>
           <div className="flex flex-wrap items-center gap-3">

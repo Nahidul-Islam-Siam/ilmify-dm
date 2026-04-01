@@ -55,12 +55,12 @@ export default function HomeShowcase() {
                   data-backed marketing
                 </p>
               </div>
-              <div className="relative items-center gap-1.5 flex">
+              <div className="relative flex items-center gap-1.5">
                 {toolBadges.map((badge) => (
                   <span
                     key={badge.link}
                     className={cn(
-                      "flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold",
+                      "group flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:shadow-[0_0_22px_rgba(82,244,71,0.28)]",
                       badge.className,
                     )}
                   >
@@ -69,6 +69,7 @@ export default function HomeShowcase() {
                       alt="badge"
                       width={35}
                       height={30}
+                      className="transition-transform duration-300 group-hover:scale-110"
                     />
                   </span>
                 ))}

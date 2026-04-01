@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const showcaseItems = [
   {
@@ -46,13 +47,18 @@ export default function Showcase() {
             Our Creative Showcase
           </h2>
           <p className="mx-auto mt-4 max-w-[620px] text-[15px] leading-7 text-white/78 md:text-base">
-            We have become experts in creating top-notch digital products. We design beautifully and develop excellently. And we care deeply about what we do.
+            We have become experts in creating top-notch digital products. We
+            design beautifully and develop excellently. And we care deeply about
+            what we do.
           </p>
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-x-7 gap-y-12 md:grid-cols-2 md:gap-y-16">
           {showcaseItems.map((item, itemIndex) => (
-            <article key={item.brand} className={itemIndex % 2 === 1 ? "group md:mt-16" : "group"}>
+            <article
+              key={item.brand}
+              className={itemIndex % 2 === 1 ? "group md:mt-16" : "group"}
+            >
               <Link href="#contact" className="block">
                 <div className="overflow-hidden rounded-[24px] bg-[#111111]">
                   <Image
@@ -72,6 +78,34 @@ export default function Showcase() {
               </Link>
             </article>
           ))}
+        </div>
+
+        <div className="mt-20 rounded-[34px] border border-dashed border-gray-800 px-6 py-14 text-center md:px-10 md:py-10">
+          <h3 className="text-[2rem] font-semibold tracking-[-0.04em] text-white md:text-xl">
+            Your project here
+          </h3>
+          <p className="mx-auto  max-w-[680px] text-sm leading-8 text-white/88 md:text-md">
+            The proof is in our work. Check out{" "}
+            <span className="font-semibold text-[#52F447] underline underline-offset-4">
+              our case studies
+            </span>{" "}
+            to learn how our product development services can transform your
+            business.
+          </p>
+
+          <div className="mt-5 flex justify-center">
+            <Link href="#contact" className="group [perspective:1000px]">
+              <span className="relative block h-[56px] w-[280px] [transform-style:preserve-3d] transition-transform duration-500 group-hover:[transform:rotateX(90deg)]">
+                <span className="absolute inset-0 flex items-center justify-center gap-3 rounded-full bg-[#52F447] px-8 text-[16px] font-semibold text-black [backface-visibility:hidden]">
+                  Book a discovery call
+                  <ArrowUpRight size={18} strokeWidth={2.4} />
+                </span>
+                <span className="absolute inset-0 flex items-center justify-center rounded-full border border-[#52F447] bg-transparent px-8 text-[16px] font-semibold text-[#52F447] [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(28px)]">
+                  Let&apos;s talk
+                </span>
+              </span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
