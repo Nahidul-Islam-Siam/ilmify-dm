@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "ZeeFrames - UI UX Design Agency",
+  title: "ilmify - Digital Marketing Agency",
 };
 
 export default function RootLayout({
