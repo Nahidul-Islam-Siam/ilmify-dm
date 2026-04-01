@@ -70,22 +70,14 @@ export default function Process() {
   const [railHeight, setRailHeight] = useState(0);
 
   useEffect(() => {
-    const progressTo = gsap.quickTo(progressFillRef.current, "height", {
-      duration: 0.75,
-      ease: "power3.out",
-    });
-    const cardTo = gsap.quickTo(visualCardRef.current, "y", {
-      duration: 0.95,
-      ease: "power3.out",
-    });
-
     const syncScrollState = () => {
       const timeline = timelineRef.current;
+      const progressFill = progressFillRef.current;
       const rail = visualRailRef.current;
       const card = visualCardRef.current;
       const steps = stepRefs.current.filter(Boolean) as HTMLDivElement[];
 
-      if (!timeline || steps.length === 0) return;
+      if (!timeline || !progressFill || steps.length === 0) return;
 
       const viewportCenter = window.innerHeight * 0.44;
       const timelineRect = timeline.getBoundingClientRect();
@@ -110,7 +102,7 @@ export default function Process() {
       const firstCenter = Math.max(0, centers[0] - timelineRect.top);
       const lastCenter = Math.max(firstCenter, centers[centers.length - 1] - timelineRect.top);
       const targetCenter = Math.max(firstCenter, Math.min(centers[nextActive] - timelineRect.top, lastCenter));
-      progressTo(targetCenter);
+      progressFill.style.height = `${targetCenter}px`;
 
       if (rail) {
         setRailHeight(timeline.offsetHeight);
@@ -127,9 +119,14 @@ export default function Process() {
           ),
         );
 
-        cardTo(targetTop);
-      } else {
-        cardTo(0);
+        gsap.to(card, {
+          y: targetTop,
+          duration: 0.28,
+          ease: "power1.out",
+          overwrite: true,
+        });
+      } else if (card) {
+        gsap.set(card, { y: 0 });
       }
     };
 
@@ -170,7 +167,7 @@ export default function Process() {
           autoAlpha: 0,
           x: -24,
           scale: 0.985,
-          duration: 0.42,
+          duration: 0.35,
           ease: "power2.out",
           overwrite: true,
         },
@@ -185,14 +182,14 @@ export default function Process() {
           autoAlpha: 1,
           x: 0,
           scale: 1,
-          duration: 0.68,
-          ease: "power3.out",
+          duration: 0.45,
+          ease: "power2.out",
           overwrite: true,
         },
       );
     }
 
-    const timeout = window.setTimeout(() => setPreviousStep(null), 460);
+    const timeout = window.setTimeout(() => setPreviousStep(null), 380);
     previousStepRef.current = activeStep;
 
     return () => window.clearTimeout(timeout);
@@ -200,7 +197,7 @@ export default function Process() {
 
   return (
     <section className="bg-[#0b0b0b] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <div className="mx-auto max-w-[1280px]">
+      <div className="mx-auto max-w-[1400px]">
         <div className="mx-auto max-w-[760px] text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#52F447] sm:text-[12px]">
             Our Process, Your Advantage
@@ -217,11 +214,10 @@ export default function Process() {
 
         <div className="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-[minmax(0,1.04fr)_minmax(360px,0.78fr)] lg:items-start lg:gap-16 xl:gap-20">
           <div ref={timelineRef} className="relative">
-            <div className="absolute left-[43px] top-0 hidden h-full w-[6px] -translate-x-1/2 rounded-full bg-white/6 shadow-[0_0_0_1px_rgba(255,255,255,0.03)] md:block" />
-            <div className="absolute left-[43px] top-0 hidden h-full w-[14px] -translate-x-1/2 rounded-full bg-[#52F447]/8 blur-md md:block" />
+            <div className="absolute left-[43px] top-0 hidden h-full w-[2px] -translate-x-1/2 rounded-full bg-white/12 md:block" />
             <div
               ref={progressFillRef}
-              className="absolute left-[43px] top-0 hidden h-0 w-[4px] -translate-x-1/2 rounded-full bg-[#52F447] shadow-[0_0_18px_rgba(82,244,71,0.65)] md:block"
+              className="absolute left-[43px] top-0 hidden h-0 w-[4px] -translate-x-1/2 rounded-full bg-[#52F447] md:block"
             />
 
             <div className="space-y-8 sm:space-y-10 lg:space-y-12">
@@ -234,20 +230,20 @@ export default function Process() {
                     ref={(node) => {
                       stepRefs.current[index] = node;
                     }}
-                    className="relative rounded-[22px] border border-white/7 bg-white/[0.015] p-5 pl-16 transition-colors duration-500 sm:p-7 sm:pl-20 md:border-0 md:bg-transparent md:p-0 md:pl-[92px]"
+                    className="relative rounded-[22px] border border-white/7 bg-white/[0.015] p-5 pl-16 transition-colors duration-300 sm:p-7 sm:pl-20 md:border-0 md:bg-transparent md:p-0 md:pl-[92px]"
                   >
-                    <span className="absolute -left-3 top-4 w-8 text-left text-[1.5rem] font-semibold leading-none tracking-[-0.04em] text-white md:top-1 md:text-[2rem]">
+                    <span className="absolute -left-2 top-4 w-8 text-left text-[1.5rem] font-semibold leading-none tracking-[-0.04em] text-white md:top-1 md:text-[2rem]">
                       {step.number}
                     </span>
 
                     <div className="md:min-h-[230px] lg:min-h-[250px]">
-                      <h3 className={`text-[1.55rem] font-semibold tracking-[-0.04em] transition-colors duration-500 sm:text-[1.85rem] ${isActive ? "text-white" : "text-white/88"}`}>
+                      <h3 className={`text-[1.55rem] font-semibold tracking-[-0.04em] transition-colors duration-300 sm:text-[1.85rem] ${isActive ? "text-white" : "text-white/88"}`}>
                         {step.title}
                       </h3>
-                      <p className={`mt-1 text-[1.15rem] tracking-[-0.03em] transition-colors duration-500 sm:text-[1.45rem] ${isActive ? "text-white/68" : "text-white/55"}`}>
+                      <p className={`mt-1 text-[1.15rem] tracking-[-0.03em] transition-colors duration-300 sm:text-[1.45rem] ${isActive ? "text-white/68" : "text-white/55"}`}>
                         {step.subtitle}
                       </p>
-                      <p className={`mt-5 max-w-[560px] text-[15px] leading-7 transition-colors duration-500 sm:text-[16px] sm:leading-8 ${isActive ? "text-white/92" : "text-white/62"}`}>
+                      <p className={`mt-5 max-w-[560px] text-[15px] leading-7 transition-colors duration-300 sm:text-[16px] sm:leading-8 ${isActive ? "text-white/92" : "text-white/62"}`}>
                         {step.body}
                       </p>
                     </div>
@@ -288,7 +284,7 @@ export default function Process() {
             </div>
           </div>
 
-          <div className="hidden">
+          <div className="lg:hidden">
             <div className="relative mx-auto aspect-[0.98] w-full max-w-[540px] overflow-hidden rounded-[22px] border border-white/8 bg-[#111111] shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:rounded-[28px]">
               <Image
                 src={processSteps[activeStep].image}
