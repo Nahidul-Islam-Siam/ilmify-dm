@@ -6,6 +6,7 @@ import Process from "./components/pages/Home/Process";
 import AiAction from "./components/pages/Home/AiAction";
 import FaqSection from "./components/pages/Home/FaqSection";
 import InsightsSection from "./components/pages/Home/InsightsSection";
+import ContactSection from "./components/pages/Home/ContactSection";
 
 export default function CommonHomePage() {
   return (
@@ -16,8 +17,10 @@ export default function CommonHomePage() {
       <Showcase />
       <Process />
       <AiAction />
-      <FaqSection /> 
+      <FaqSection />
       <InsightsSection />
+      <ContactSection />
     </>
   );
 }
+ 
