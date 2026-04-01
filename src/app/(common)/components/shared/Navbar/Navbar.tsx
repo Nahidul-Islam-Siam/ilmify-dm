@@ -1,6 +1,4 @@
 "use client";
-
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -12,7 +10,6 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import {
-
   Code2,
   FileSearch2,
   Gauge,
@@ -161,10 +158,12 @@ function BrandMark() {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeServiceCategory, setActiveServiceCategory] = useState("ui-ux-design");
+  const [activeServiceCategory, setActiveServiceCategory] =
+    useState("ui-ux-design");
+  const [hoveredServiceTitle, setHoveredServiceTitle] = useState<string | null>(null);
 
   const visibleServiceItems = serviceItems.filter(
-    (item) => item.category === activeServiceCategory
+    (item) => item.category === activeServiceCategory,
   );
 
   useEffect(() => {
@@ -179,7 +178,7 @@ export default function Navbar() {
       <div
         className={cn(
           "border-b border-white/5 bg-[#111111] transition-all duration-300",
-          scrolled ? "shadow-[0_10px_40px_rgba(0,0,0,0.28)]" : ""
+          scrolled ? "shadow-[0_10px_40px_rgba(0,0,0,0.28)]" : "",
         )}
       >
         <div className="mx-auto flex h-20 max-w-[1460px] items-center justify-between px-5 md:px-8">
@@ -194,9 +193,9 @@ export default function Navbar() {
                       href={item.href}
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "relative h-10 rounded-none border-none bg-transparent px-4 text-[15px] font-medium text-white shadow-none hover:bg-transparent hover:text-[#f4ff00] focus:bg-transparent focus:text-[#f4ff00]",
+                        "relative h-10 rounded-none border-none bg-transparent px-4 text-[15px] font-medium text-white shadow-none hover:bg-transparent hover:text-[#52F447] focus:bg-transparent focus:text-[#52F447]",
                         item.active &&
-                          "text-[#f4ff00] after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-9 after:-translate-x-1/2 after:bg-[#f4ff00]"
+                          "text-[#52F447] after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-9 after:-translate-x-1/2 after:bg-[#52F447]",
                       )}
                     >
                       {item.label}
@@ -222,15 +221,20 @@ export default function Navbar() {
                             type="button"
                             onMouseEnter={() => setActiveServiceCategory(category.id)}
                             onFocus={() => setActiveServiceCategory(category.id)}
-                            className={cn(
-                              "flex w-full items-center gap-3 rounded-[14px] px-5 py-4 text-left text-[15px] font-semibold transition",
-                              active
-                                ? "bg-[#1b1f05] text-white"
-                                : "text-white"
-                            )}
+                            className="flex w-full items-center gap-3 rounded-[14px] px-5 py-4 text-left text-[15px] font-semibold transition"
+                            style={{
+                              backgroundColor: active ? "#52F447" : "transparent",
+                              color: active ? "#0d0d0d" : "#ffffff",
+                            }}
                           >
-                            <Icon size={18} className="shrink-0 text-white/85" />
-                            <span>{category.label}</span>
+                            <Icon
+                              size={18}
+                              className="shrink-0"
+                              style={{ color: active ? "#0d0d0d" : "#ffffff" }}
+                            />
+                            <span style={{ color: active ? "#0d0d0d" : "#ffffff" }}>
+                              {category.label}
+                            </span>
                           </button>
                         );
                       })}
@@ -239,18 +243,37 @@ export default function Navbar() {
                     <div className="grid grid-cols-2 gap-4">
                       {visibleServiceItems.map((item) => {
                         const Icon = item.icon;
+                        const isHovered = hoveredServiceTitle === item.title;
 
                         return (
                           <Link
                             key={item.title}
                             href={item.href}
-                            className="rounded-[18px] bg-[#0d0d0d] px-5 py-5 transition hover:bg-[#15180a]"
+                            onMouseEnter={() => setHoveredServiceTitle(item.title)}
+                            onMouseLeave={() => setHoveredServiceTitle(null)}
+                            className="rounded-[18px] px-5 py-5 transition"
+                            style={{
+                              backgroundColor: isHovered ? "#52F447" : "#0d0d0d",
+                              color: isHovered ? "#0d0d0d" : "#ffffff",
+                            }}
                           >
                             <div className="flex items-start gap-4">
-                              <Icon size={20} className="mt-1 shrink-0 text-white/85" />
+                              <Icon
+                                size={20}
+                                className="mt-1 shrink-0"
+                                style={{ color: isHovered ? "#0d0d0d" : "#ffffff" }}
+                              />
                               <div>
-                                <p className="text-[15px] font-semibold text-white">{item.title}</p>
-                                <p className="mt-2 max-w-[360px] text-[15px] leading-8 text-white">
+                                <p
+                                  className="text-[15px] font-semibold"
+                                  style={{ color: isHovered ? "#0d0d0d" : "#ffffff" }}
+                                >
+                                  {item.title}
+                                </p>
+                                <p
+                                  className="mt-2 max-w-[360px] text-[15px] leading-8"
+                                  style={{ color: isHovered ? "#0d0d0d" : "#ffffff" }}
+                                >
                                   {item.body}
                                 </p>
                               </div>
@@ -268,7 +291,7 @@ export default function Navbar() {
           <div className="hidden lg:flex">
             <Link
               href="#contact"
-              className="group inline-flex h-[50px] min-w-[182px] items-center justify-center rounded-full border border-[#f4ff00] bg-[#f4ff00] px-8 text-[15px] font-semibold text-black transition hover:bg-transparent hover:text-[#f4ff00]"
+              className="group inline-flex h-[50px] min-w-[182px] items-center justify-center rounded-full border border-[#52F447] bg-[#52F447] px-8 text-[15px] font-semibold text-black transition hover:bg-transparent hover:text-[#52F447]"
             >
               <span className="group-hover:hidden">Work with us</span>
               <span className="hidden group-hover:inline">Lets Talk</span>
@@ -293,8 +316,8 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   className={cn(
-                    "text-sm font-medium text-white transition hover:text-[#f4ff00]",
-                    item.active && "text-[#f4ff00]"
+                    "text-sm font-medium text-white transition hover:text-[#52F447]",
+                    item.active && "text-[#52F447]",
                   )}
                   onClick={() => setOpen(false)}
                 >
@@ -302,11 +325,18 @@ export default function Navbar() {
                 </Link>
               ))}
               <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-white/42">Services</p>
+                <p className="text-xs uppercase tracking-[0.18em] text-white/42">
+                  Services
+                </p>
                 <div className="mt-3 flex flex-col gap-3">
                   {serviceCategories.map((category) => (
-                    <div key={category.id} className="rounded-xl border border-white/8 p-3">
-                      <p className="text-sm font-semibold text-white">{category.label}</p>
+                    <div
+                      key={category.id}
+                      className="rounded-xl border border-white/8 p-3"
+                    >
+                      <p className="text-sm font-semibold text-white">
+                        {category.label}
+                      </p>
                       <div className="mt-3 flex flex-col gap-2">
                         {serviceItems
                           .filter((item) => item.category === category.id)
@@ -314,7 +344,7 @@ export default function Navbar() {
                             <Link
                               key={item.title}
                               href={item.href}
-                              className="text-sm font-medium text-white/78 transition hover:text-[#f4ff00]"
+                              className="text-sm font-medium text-white/78 transition hover:text-[#52F447]"
                               onClick={() => setOpen(false)}
                             >
                               {item.title}
@@ -328,7 +358,7 @@ export default function Navbar() {
               <div className="mt-3 flex flex-col gap-3">
                 <Link
                   href="#contact"
-                  className="rounded-full border border-[#f4ff00] bg-[#f4ff00] px-4 py-3 text-center text-sm font-semibold text-black transition hover:bg-transparent hover:text-[#f4ff00]"
+                  className="rounded-full border border-[#52F447] bg-[#52F447] px-4 py-3 text-center text-sm font-semibold text-black transition hover:bg-transparent hover:text-[#52F447]"
                   onClick={() => setOpen(false)}
                 >
                   Lets Talk
