@@ -100,7 +100,7 @@ export default function Showcase() {
                   Book a discovery call
                   <ArrowUpRight size={18} strokeWidth={2.4} />
                 </span>
-                <span className="absolute inset-0 flex items-center justify-center rounded-full border border-[#52F447] bg-transparent px-8 text-[16px] font-semibold text-[#52F447] [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(28px)]">
+                <span className="absolute inset-0 flex items-center justify-center rounded-full border border-[] bg-transparent px-8 text-[16px] font-semibold text-[#52F447] [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(28px)]">
                   Let&apos;s talk
                 </span>
               </span>
