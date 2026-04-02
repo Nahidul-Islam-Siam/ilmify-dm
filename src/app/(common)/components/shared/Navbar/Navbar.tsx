@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -24,13 +25,13 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const navItems = [
-  { href: "#home", label: "Home", active: true },
-  { href: "#about", label: "About" },
-  { href: "#work", label: "Work" },
-  { href: "#insights", label: "Insights" },
+  { href: "/", label: "Home", match: ["/"] },
+  { href: "/about", label: "About", match: ["/about"] },
+  { href: "/work", label: "Work", match: ["/work"] },
+  { href: "/insights", label: "Insights", match: ["/insights"] },
 ];
 
 const serviceCategories = [
@@ -156,6 +157,7 @@ function BrandMark() {
 }
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeServiceCategory, setActiveServiceCategory] =
@@ -164,6 +166,15 @@ export default function Navbar() {
 
   const visibleServiceItems = serviceItems.filter(
     (item) => item.category === activeServiceCategory,
+  );
+
+  const navLinks = useMemo(
+    () =>
+      navItems.map((item) => ({
+        ...item,
+        active: item.match.includes(pathname),
+      })),
+    [pathname],
   );
 
   useEffect(() => {
@@ -186,7 +197,7 @@ export default function Navbar() {
 
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="gap-1">
-              {navItems.map((item) => (
+              {navLinks.map((item) => (
                 <NavigationMenuItem key={item.label}>
                   <NavigationMenuLink asChild>
                     <Link
@@ -311,7 +322,7 @@ export default function Navbar() {
         {open ? (
           <div className="border-t border-white/8 bg-[#111111] px-5 pb-5 pt-3 lg:hidden">
             <nav className="flex flex-col gap-3">
-              {navItems.map((item) => (
+              {navLinks.map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
