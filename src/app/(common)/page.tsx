@@ -24,4 +24,3 @@ export default function CommonHomePage() {
   );
 }
  
-// asd;fasd;fkasdkf;ask
