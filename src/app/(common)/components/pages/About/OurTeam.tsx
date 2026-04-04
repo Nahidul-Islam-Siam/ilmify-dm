@@ -2,26 +2,24 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { Linkedin, Mail } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const teamMembers = [
-  { name: "Abdullah", role: "UI/UX Designer", image: "/assets/our-team/about-abdullah.png", linkedin: "#", email: "#", experience: "5+ years", projects: "40+" },
-  { name: "Ali", role: "Frontend Developer", image: "/assets/our-team/about-ali.png", linkedin: "#", email: "#", experience: "4+ years", projects: "35+" },
-  { name: "Babar", role: "Director", image: "/assets/our-team/about-babar.png", linkedin: "#", email: "#", experience: "12+ years", projects: "120+" },
-  { name: "Bilal", role: "Senior Developer", image: "/assets/our-team/about-bilal.png", linkedin: "#", email: "#", experience: "6+ years", projects: "55+" },
-  { name: "Gohar", role: "Product Designer", image: "/assets/our-team/about-gohar.png", linkedin: "#", email: "#", experience: "7+ years", projects: "60+" },
-  { name: "Maryam", role: "UX Researcher", image: "/assets/our-team/about-maryam.png", linkedin: "#", email: "#", experience: "4+ years", projects: "30+" },
-  { name: "Mubashir", role: "Design Lead", image: "/assets/our-team/about-mubashir.png", linkedin: "#", email: "#", experience: "8+ years", projects: "75+" },
-  { name: "Mustafa", role: "Creative Director", image: "/assets/our-team/about-mustafa.png", linkedin: "#", email: "#", experience: "10+ years", projects: "95+" },
-  { name: "Nashra", role: "Brand Designer", image: "/assets/our-team/about-nashra.png", linkedin: "#", email: "#", experience: "3+ years", projects: "25+" },
-  { name: "Nasir", role: "Backend Developer", image: "/assets/our-team/about-nasir.png", linkedin: "#", email: "#", experience: "5+ years", projects: "42+" },
-  { name: "Umar", role: "UI UX Design Lead", image: "/assets/our-team/about-umar.png", linkedin: "#", email: "#", experience: "9+ years", projects: "85+" },
-  { name: "Yousaf", role: "Motion Designer", image: "/assets/our-team/about-yousaf.png", linkedin: "#", email: "#", experience: "4+ years", projects: "32+" },
+  { name: "Abdullah", role: "UI/UX Designer", image: "/assets/our-team/about-abdullah.png",  experience: "5+ years", projects: "40+" },
+  { name: "Ali", role: "Frontend Developer", image: "/assets/our-team/about-ali.png",  experience: "4+ years", projects: "35+" },
+  { name: "Babar", role: "Director", image: "/assets/our-team/about-babar.png",  experience: "12+ years", projects: "120+" },
+  { name: "Bilal", role: "Senior Developer", image: "/assets/our-team/about-bilal.png",  experience: "6+ years", projects: "55+" },
+  { name: "Gohar", role: "Product Designer", image: "/assets/our-team/about-gohar.png",  experience: "7+ years", projects: "60+" },
+  { name: "Maryam", role: "UX Researcher", image: "/assets/our-team/about-maryam.png",  experience: "4+ years", projects: "30+" },
+  { name: "Mubashir", role: "Design Lead", image: "/assets/our-team/about-mubashir.png",  experience: "8+ years", projects: "75+" },
+  { name: "Mustafa", role: "Creative Director", image: "/assets/our-team/about-mustafa.png",  experience: "10+ years", projects: "95+" },
+  { name: "Nashra", role: "Brand Designer", image: "/assets/our-team/about-nashra.png",  experience: "3+ years", projects: "25+" },
+  { name: "Nasir", role: "Backend Developer", image: "/assets/our-team/about-nasir.png",  experience: "5+ years", projects: "42+" },
+  { name: "Umar", role: "UI UX Design Lead", image: "/assets/our-team/about-umar.png",  experience: "9+ years", projects: "85+" },
+  { name: "Yousaf", role: "Motion Designer", image: "/assets/our-team/about-yousaf.png",  experience: "4+ years", projects: "32+" },
 ];
 
 const leaders = teamMembers.filter((member) => ["Babar", "Mustafa", "Umar"].includes(member.name));
@@ -225,7 +223,7 @@ export default function OurTeamSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                    <div className="absolute bottom-4 left-0 right-0 flex translate-y-2 justify-center gap-3 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                    {/* <div className="absolute bottom-4 left-0 right-0 flex translate-y-2 justify-center gap-3 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                       <Link
                         href={member.linkedin}
                         className="flex h-8 w-8 items-center justify-center rounded-full bg-[#52F447]/20 backdrop-blur-sm transition-all duration-300 hover:bg-[#52F447]"
@@ -238,7 +236,7 @@ export default function OurTeamSection() {
                       >
                         <Mail size={14} className="text-white" />
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
 
                   <div className="p-4 text-center">
