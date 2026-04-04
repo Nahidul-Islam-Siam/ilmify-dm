@@ -185,7 +185,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
+    <header className="fixed  inset-x-0 top-0 z-50">
       <div
         className={cn(
           "border-b border-white/5 bg-[#111111] transition-all duration-300",
