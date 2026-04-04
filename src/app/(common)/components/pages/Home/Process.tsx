@@ -68,6 +68,19 @@ export default function Process() {
   const [activeStep, setActiveStep] = useState(0);
   const [previousStep, setPreviousStep] = useState<number | null>(null);
   const [railHeight, setRailHeight] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Check if desktop on mount and resize
+  useEffect(() => {
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    
+    checkDesktop();
+    window.addEventListener("resize", checkDesktop);
+    
+    return () => window.removeEventListener("resize", checkDesktop);
+  }, []);
 
   useEffect(() => {
     const syncScrollState = () => {
@@ -108,7 +121,7 @@ export default function Process() {
         setRailHeight(timeline.offsetHeight);
       }
 
-      if (rail && card && window.innerWidth >= 1024) {
+      if (rail && card && isDesktop) {
         const activeNode = steps[nextActive];
         const maxTop = Math.max(rail.offsetHeight - card.offsetHeight, 0);
         const targetTop = Math.max(
@@ -149,7 +162,7 @@ export default function Process() {
       window.removeEventListener("resize", syncScrollState);
       window.removeEventListener("scroll", onScroll);
     };
-  }, []);
+  }, [isDesktop]);
 
   useEffect(() => {
     if (previousStepRef.current === activeStep) {
@@ -159,7 +172,7 @@ export default function Process() {
 
     setPreviousStep(previousStepRef.current);
 
-    if (previousImageRef.current) {
+    if (previousImageRef.current && isDesktop) {
       gsap.fromTo(
         previousImageRef.current,
         { autoAlpha: 1, x: 0, scale: 1 },
@@ -174,7 +187,7 @@ export default function Process() {
       );
     }
 
-    if (currentImageRef.current) {
+    if (currentImageRef.current && isDesktop) {
       gsap.fromTo(
         currentImageRef.current,
         { autoAlpha: 0, x: 26, scale: 0.985 },
@@ -193,34 +206,40 @@ export default function Process() {
     previousStepRef.current = activeStep;
 
     return () => window.clearTimeout(timeout);
-  }, [activeStep]);
+  }, [activeStep, isDesktop]);
 
   return (
-    <section className="bg-[#0b0b0b] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section className="bg-[#0b0b0b] px-4 py-12 text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:py-24">
       <div className="mx-auto max-w-[1400px]">
-        <div className="mx-auto max-w-[760px] text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#52F447] sm:text-[12px]">
+        {/* Header Section - Responsive */}
+        <div className="mx-auto max-w-[90%] sm:max-w-[85%] md:max-w-[760px] text-center">
+          <p className="text-[10px] sm:text-[11px] md:text-[12px] font-bold uppercase tracking-[0.14em] sm:tracking-[0.16em] text-[#52F447]">
             Our Process, Your Advantage
           </p>
-          <h2 className="mt-4 text-[2rem] font-semibold tracking-[-0.05em] text-white sm:text-[2.65rem] md:text-[3.5rem]">
+          <h2 className="mt-3 sm:mt-4 text-[1.75rem] sm:text-[2rem] md:text-[2.65rem] lg:text-[3rem] xl:text-[3.5rem] font-semibold tracking-[-0.04em] sm:tracking-[-0.05em] text-white leading-tight">
             From Idea To Execution
           </h2>
-          <p className="mx-auto mt-4 max-w-[720px] text-[15px] leading-7 text-white/78 sm:text-base sm:leading-8">
+          <p className="mx-auto mt-3 sm:mt-4 max-w-[90%] sm:max-w-[720px] text-[13px] sm:text-[14px] md:text-[15px] leading-6 sm:leading-7 text-white/78">
             We have become experts in creating top-notch digital products. We
             design beautifully and develop excellently. And we care deeply about
             what we do.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-[minmax(0,1.04fr)_minmax(360px,0.78fr)] lg:items-start lg:gap-16 xl:gap-20">
+        {/* Main Content - Responsive Grid */}
+        <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-16 grid gap-6 sm:gap-8 lg:gap-10 xl:gap-16 lg:grid-cols-[minmax(0,1.04fr)_minmax(300px,0.78fr)] lg:items-start">
+          
+          {/* Left Column - Timeline */}
           <div ref={timelineRef} className="relative">
-            <div className="absolute left-[43px] top-0 hidden h-full w-[2px] -translate-x-1/2 rounded-full bg-white/12 md:block" />
+            {/* Vertical Line - Positioned to the right of numbers */}
+            <div className="absolute left-[60px] sm:left-[70px] md:left-[80px] lg:left-[88px] top-0 hidden md:block h-full w-[2px] -translate-x-1/2 rounded-full bg-white/12" />
             <div
               ref={progressFillRef}
-              className="absolute left-[43px] top-0 hidden h-0 w-[4px] -translate-x-1/2 rounded-full bg-[#52F447] md:block"
+              className="absolute left-[60px] sm:left-[70px] md:left-[80px] lg:left-[88px] top-0 hidden md:block h-0 w-[3px] lg:w-[4px] -translate-x-1/2 rounded-full bg-[#52F447]"
             />
 
-            <div className="space-y-8 sm:space-y-10 lg:space-y-12">
+            {/* Steps Container */}
+            <div className="space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12">
               {processSteps.map((step, index) => {
                 const isActive = index === activeStep;
 
@@ -230,20 +249,51 @@ export default function Process() {
                     ref={(node) => {
                       stepRefs.current[index] = node;
                     }}
-                    className="relative rounded-[22px] border border-white/7 bg-white/[0.015] p-5 pl-16 transition-colors duration-300 sm:p-7 sm:pl-20 md:border-0 md:bg-transparent md:p-0 md:pl-[92px]"
+                    className={`
+                      relative rounded-[18px] sm:rounded-[20px] md:rounded-[22px] 
+                      transition-all duration-300
+                      ${isActive ? 'border border-white/10 bg-white/[0.02]' : 'border border-white/5 bg-transparent'}
+                      p-4 pl-14 sm:p-5 sm:pl-16 md:p-6 md:pl-20 lg:p-7 lg:pl-24
+                      md:border-0 md:bg-transparent
+                    `}
                   >
-                    <span className="absolute -left-2 top-4 w-8 text-left text-[1.5rem] font-semibold leading-none tracking-[-0.04em] text-white md:top-1 md:text-[2rem]">
+                    {/* Step Number - Now with more right padding to accommodate line */}
+                    <span className={`
+                      absolute left-2 sm:left-3 md:left-4 top-3 sm:top-4 md:top-5
+                      text-[1.25rem] sm:text-[1.35rem] md:text-[1.5rem] lg:text-[1.75rem] xl:text-[2rem]
+                      font-semibold leading-none tracking-[-0.04em]
+                      transition-colors duration-300
+                      ${isActive ? 'text-[#52F447]' : 'text-white/60'}
+                    `}>
                       {step.number}
                     </span>
 
-                    <div className="md:min-h-[230px] lg:min-h-[250px]">
-                      <h3 className={`text-[1.55rem] font-semibold tracking-[-0.04em] transition-colors duration-300 sm:text-[1.85rem] ${isActive ? "text-white" : "text-white/88"}`}>
+                    <div className="min-h-[180px] sm:min-h-[200px] md:min-h-[220px] lg:min-h-[250px]">
+                      <h3 className={`
+                        text-[1.25rem] sm:text-[1.35rem] md:text-[1.55rem] lg:text-[1.75rem] xl:text-[1.85rem]
+                        font-semibold tracking-[-0.03em] sm:tracking-[-0.04em]
+                        transition-colors duration-300
+                        ${isActive ? "text-white" : "text-white/80"}
+                      `}>
                         {step.title}
                       </h3>
-                      <p className={`mt-1 text-[1.15rem] tracking-[-0.03em] transition-colors duration-300 sm:text-[1.45rem] ${isActive ? "text-white/68" : "text-white/55"}`}>
+                      <p className={`
+                        mt-0.5 sm:mt-1
+                        text-[0.95rem] sm:text-[1rem] md:text-[1.05rem] lg:text-[1.15rem] xl:text-[1.25rem]
+                        tracking-[-0.02em] sm:tracking-[-0.03em]
+                        transition-colors duration-300
+                        ${isActive ? "text-white/70" : "text-white/50"}
+                      `}>
                         {step.subtitle}
                       </p>
-                      <p className={`mt-5 max-w-[560px] text-[15px] leading-7 transition-colors duration-300 sm:text-[16px] sm:leading-8 ${isActive ? "text-white/92" : "text-white/62"}`}>
+                      <p className={`
+                        mt-3 sm:mt-4 md:mt-5
+                        max-w-[90%] sm:max-w-[95%] md:max-w-[560px]
+                        text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]
+                        leading-6 sm:leading-7
+                        transition-colors duration-300
+                        ${isActive ? "text-white/90" : "text-white/60"}
+                      `}>
                         {step.body}
                       </p>
                     </div>
@@ -253,49 +303,57 @@ export default function Process() {
             </div>
           </div>
 
-          <div ref={visualRailRef} className="relative hidden lg:block" style={{ height: railHeight || undefined }}>
-            <div ref={visualCardRef} className="absolute left-0 top-20 w-full will-change-transform">
-              <div className="relative mx-auto aspect-[0.98] w-full max-w-[540px] overflow-hidden rounded-[28px] border border-white/8 bg-[#111111] shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
-                {previousStep !== null && previousStep !== activeStep ? (
-                  <div ref={previousImageRef} className="absolute inset-0">
+          {/* Right Column - Image (Desktop Only with animation) */}
+          {isDesktop && (
+            <div ref={visualRailRef} className="relative hidden lg:block" style={{ height: railHeight || undefined }}>
+              <div ref={visualCardRef} className="absolute left-0 top-20 w-full will-change-transform">
+                <div className="relative mx-auto aspect-[0.98] w-full max-w-[480px] xl:max-w-[540px] overflow-hidden rounded-[24px] lg:rounded-[26px] xl:rounded-[28px] border border-white/8 bg-[#111111] shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
+                  {previousStep !== null && previousStep !== activeStep ? (
+                    <div ref={previousImageRef} className="absolute inset-0">
+                      <Image
+                        src={processSteps[previousStep].image}
+                        alt={processSteps[previousStep].title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 42vw"
+                        className="object-cover"
+                        priority={false}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/5" />
+                    </div>
+                  ) : null}
+
+                  <div ref={currentImageRef} className="absolute inset-0 ">
                     <Image
-                      src={processSteps[previousStep].image}
-                      alt={processSteps[previousStep].title}
+                      src={processSteps[activeStep].image}
+                      alt={processSteps[activeStep].title}
                       fill
-                      sizes="42vw"
+                      sizes="(max-width: 1024px) 100vw, 42vw"
                       className="object-cover"
+                      priority={activeStep < 2}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/5" />
                   </div>
-                ) : null}
-
-                <div ref={currentImageRef} className="absolute inset-0">
-                  <Image
-                    src={processSteps[activeStep].image}
-                    alt={processSteps[activeStep].title}
-                    fill
-                    sizes="42vw"
-                    className="object-cover"
-                    priority={activeStep < 2}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/5" />
                 </div>
               </div>
             </div>
-          </div>
+          )}
 
-          <div className="lg:hidden">
-            <div className="relative mx-auto aspect-[0.98] w-full max-w-[540px] overflow-hidden rounded-[22px] border border-white/8 bg-[#111111] shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:rounded-[28px]">
-              <Image
-                src={processSteps[activeStep].image}
-                alt={processSteps[activeStep].title}
-                fill
-                sizes="100vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/5" />
+          {/* Mobile/Tablet Image - Always visible on smaller screens */}
+          {/* {!isDesktop && (
+            <div className="mt-6 sm:mt-8 lg:hidden">
+              <div className="relative mx-auto aspect-[0.98] w-full max-w-[400px] sm:max-w-[480px] md:max-w-[540px] overflow-hidden rounded-[20px] sm:rounded-[24px] md:rounded-[28px] border border-white/8 bg-[#111111] shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
+                <Image
+                  src={processSteps[activeStep].image}
+                  alt={processSteps[activeStep].title}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                  priority={activeStep < 2}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-black/5" />
+              </div>
             </div>
-          </div>
+          )} */}
         </div>
       </div>
     </section>

@@ -113,16 +113,16 @@ function ServiceCard({
       gsap.killTweensOf(textRef.current);
       gsap.fromTo(
         textRef.current,
-        { x: "-28px", opacity: 0.5 },
+        { x: "-15px", opacity: 0.5 },
         { x: "0px", opacity: 1, duration: 0.45, ease: "power3.out" },
       );
     }
 
-    if (imageRef.current) {
+    if (imageRef.current && window.innerWidth >= 1024) {
       gsap.killTweensOf(imageRef.current);
       gsap.fromTo(
         imageRef.current,
-        { x: "-60px", opacity: 0 },
+        { x: "-40px", opacity: 0 },
         { x: "0px", opacity: 1, duration: 0.8, ease: "power3.out" },
       );
     }
@@ -139,10 +139,10 @@ function ServiceCard({
       });
     }
 
-    if (imageRef.current) {
+    if (imageRef.current && window.innerWidth >= 1024) {
       gsap.killTweensOf(imageRef.current);
       gsap.to(imageRef.current, {
-        x: "-60px",
+        x: "-40px",
         opacity: 0,
         duration: 0.5,
         ease: "power3.in",
@@ -154,51 +154,63 @@ function ServiceCard({
     <div
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
-      className={`group relative flex cursor-pointer items-center overflow-hidden border-[#252525]  ${border}`}
-      style={{ padding: "44px 40px", minHeight: "160px" }}
+      className={`group relative flex cursor-pointer items-center overflow-hidden border-[#252525] ${border} ${
+        border.includes('border-r') ? 'border-r-0 lg:border-r' : ''
+      } ${
+        border.includes('border-b') ? 'border-b-0 lg:border-b' : ''
+      }`}
+      style={{ 
+        padding: "24px 20px",
+        minHeight: "120px"
+      }}
     >
-      <div className="absolute left-0 top-0 z-20 h-0 w-[3px] bg-[#52F447] transition-all duration-[420ms] ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:h-full" />
+      <div className="absolute left-0 top-0 z-20 h-0 w-[2px] lg:w-[3px] bg-[#52F447] transition-all duration-[420ms] ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:h-full" />
 
+      {/* Cube Graphic - Hidden on mobile/tablet, visible on desktop */}
       <div
         ref={imageRef}
-        className="absolute z-10 pointer-events-none opacity-0"
+        className="absolute z-10 pointer-events-none opacity-0 hidden xl:block"
         style={{
           right: "108px",
           top: "50%",
-          transform: "translateY(-50%) translateX(-60px)",
+          transform: "translateY(-50%) translateX(-40px)",
           willChange: "transform, opacity",
         }}
       >
         <CubeGraphic />
       </div>
 
-      <div ref={textRef} className="relative z-10 will-change-transform">
+      <div ref={textRef} className="relative z-10 will-change-transform flex-1 pr-12 lg:pr-24">
         <p
-          className="mb-2 text-[10px] font-bold uppercase text-[#555] transition-colors duration-300 group-hover:text-[#52F447]"
-          style={{ letterSpacing: "0.18em", fontFamily: "Barlow, sans-serif" }}
+          className="mb-1 lg:mb-2 text-[9px] lg:text-[10px] font-bold uppercase text-[#555] transition-colors duration-300 group-hover:text-[#52F447]"
+          style={{ letterSpacing: "0.15em", fontFamily: "Barlow, sans-serif" }}
         >
           {tag}
         </p>
         <h3
-          className="leading-none text-white"
+          className="leading-tight text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[38px]"
           style={{
             fontFamily: "'Bebas Neue', sans-serif",
-            fontSize: "38px",
-            letterSpacing: "0.03em",
+            letterSpacing: "0.02em",
           }}
         >
           {name}
         </h3>
       </div>
 
+      {/* Arrow Button - Consistent sizing across all devices */}
       <div
-        className={`absolute z-20 flex h-[46px] w-[46px] items-center justify-center rounded-full border transition-all duration-300 group-hover:rotate-45 group-hover:!bg-[#52F447] group-hover:!border-[#52F447]  border-[#333] bg-[#1c1c1c]
-        `}
-        style={{ right: "36px", top: "50%", transform: "translateY(-50%)" }}
+        className={`absolute z-20 flex items-center justify-center rounded-full border transition-all duration-300 group-hover:rotate-45 group-hover:!bg-[#52F447] group-hover:!border-[#52F447] border-[#333] bg-[#1c1c1c]`}
+        style={{ 
+          right: "16px", 
+          top: "50%", 
+          transform: "translateY(-50%)",
+          width: "36px",
+          height: "36px"
+        }}
       >
         <ArrowIcon
-          className={`transition-colors duration-300 group-hover:stroke-[#0d0d0d] stroke-[#666]
-          `}
+          className={`transition-colors duration-300 group-hover:stroke-[#0d0d0d] stroke-[#666] w-3.5 h-3.5`}
         />
       </div>
     </div>
@@ -207,30 +219,30 @@ function ServiceCard({
 
 export default function Services() {
   return (
-    <section className="w-full bg-[#0d0d0d] px-10 py-20">
+    <section className="w-full bg-[#0d0d0d] px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-[1400px]">
-        <div className="mb-16 text-center">
+        <div className="mb-8 sm:mb-12 lg:mb-16 text-center px-2 sm:px-4">
           <p
-            className="mb-4 text-[15px] font-bold uppercase text-[#52F447]"
+            className="mb-2 sm:mb-3 lg:mb-4 text-[11px] sm:text-[13px] lg:text-[15px] font-bold uppercase text-[#52F447]"
             style={{
-              letterSpacing: "0.22em",
+              letterSpacing: "0.18em",
               fontFamily: "Barlow, sans-serif",
             }}
           >
             We Are Great At
           </p>
-          <h2 className="mb-3 text-white text-4xl font-bold">
+          <h2 className="mb-2 sm:mb-3 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold px-2">
             UI UX Design and Product Experience Services
           </h2>
           <p
-            className="text-sm text-gray-500"
-            style={{ letterSpacing: "0.1em" }}
+            className="text-[10px] sm:text-xs lg:text-sm text-gray-500"
+            style={{ letterSpacing: "0.08em" }}
           >
             Designs with Exceptional User Experiences
           </p>
         </div>
 
-        <div className="grid grid-cols-2 border-t border-[#252525]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-[#252525]">
           {services.map((service) => (
             <ServiceCard key={service.name} {...service} />
           ))}

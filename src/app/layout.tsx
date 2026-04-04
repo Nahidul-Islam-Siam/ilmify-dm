@@ -3,6 +3,7 @@ import ScrollToTopButton from "@/components/ui/ScrollToTopButton/ScrollToTopButt
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
+// @ts-expect-error CSS side-effect import requires a declaration file
 import "./globals.css";
 
 const inter = Inter({
@@ -30,7 +31,7 @@ export default function RootLayout({
         className={`${inter.variable} antialiased !bg-white`}
       >
         <>
-          <div className="min-h-screen grid grid-rows-[auto_1fr_auto] max-w-[100vw] overflow-hidden">
+          <div className="">
             {/* <GoogleTranslateClient/> */}
             {children}
           </div>
