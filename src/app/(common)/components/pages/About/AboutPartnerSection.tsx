@@ -123,7 +123,7 @@ export default function AboutPartnerSection() {
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-[#0b0b0b]/38 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#0b0b0b]/38 to-transparent" />
         </div>
       </div>
 
@@ -135,25 +135,11 @@ export default function AboutPartnerSection() {
           >
             <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-start lg:gap-12 xl:grid-cols-[470px_minmax(0,1fr)] xl:gap-16">
               <div className="relative">
-                <div
-                  ref={frameRef}
-                  className="pointer-events-none absolute left-8 top-0 hidden h-[280px] w-[280px] border border-[#52F447] md:block lg:h-[370px] lg:w-[370px]"
-                />
-                <div
-                  ref={svgRef}
-                  className="pointer-events-none absolute left-[62%] top-2 hidden h-20 w-20 -translate-x-1/2 text-[#52F447] md:block lg:h-24 lg:w-24"
-                >
-                  <svg viewBox="0 0 100 100" fill="none" className="h-full w-full">
-                    <path
-                      d="M50 2C53 26 65 38 98 50C65 62 53 74 50 98C47 74 35 62 2 50C35 38 47 26 50 2Z"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    />
-                  </svg>
-                </div>
-                <div className="relative mt-16 overflow-hidden rounded-[22px] md:mt-44">
+              
+             
+                <div className="relative overflow-hidden rounded-[22px] md:mt-30">
                   <Image
-                    src="/assets/about/about-group-image.png"
+                    src="/assets/about/about-banner.png"
                     alt="Team collaboration"
                     width={760}
                     height={860}
