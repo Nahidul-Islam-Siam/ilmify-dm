@@ -8,58 +8,125 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const CULTURE_IMAGES = [
+  {
+    src: "/assets/our-culture/about-member-1.png",
+    alt: "Team member 1",
+    name: "Sarah Johnson",
+    role: "Lead UX Designer",
+  },
+  {
+    src: "/assets/our-culture/about-member-2.png",
+    alt: "Team member 2",
+    name: "Michael Chen",
+    role: "UI Developer",
+  },
+  {
+    src: "/assets/our-culture/about-member-3.png",
+    alt: "Team member 3",
+    name: "Emma Rodriguez",
+    role: "Brand Strategist",
+  },
+  {
+    src: "/assets/our-culture/about-member-4.png",
+    alt: "Team member 4",
+    name: "David Kim",
+    role: "No-Code Expert",
+  },
+  {
+    src: "/assets/our-culture/about-member-5.png",
+    alt: "Team member 5",
+    name: "Lisa Thompson",
+    role: "Project Manager",
+  },
+] as const;
+
+const AUTO_PLAY_INTERVAL_MS = 4000;
+const SLIDE_ANIMATION_MS = 500;
+
 export default function OurCultureSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const animationTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isAnimatingRef = useRef(false);
+  const nextSlideRef = useRef<() => void>(() => {});
 
-  const cultureImages = [
-    { src: "/assets/our-culture/about-member-1.png", alt: "Team member 1", name: "Sarah Johnson", role: "Lead UX Designer" },
-    { src: "/assets/our-culture/about-member-2.png", alt: "Team member 2", name: "Michael Chen", role: "UI Developer" },
-    { src: "/assets/our-culture/about-member-3.png", alt: "Team member 3", name: "Emma Rodriguez", role: "Brand Strategist" },
-    { src: "/assets/our-culture/about-member-4.png", alt: "Team member 4", name: "David Kim", role: "No-Code Expert" },
-    { src: "/assets/our-culture/about-member-5.png", alt: "Team member 5", name: "Lisa Thompson", role: "Project Manager" },
-  ];
+  const setAnimatingState = (value: boolean) => {
+    isAnimatingRef.current = value;
+  };
+
+  const runSlideTransition = (updateIndex: (prev: number) => number) => {
+    if (isAnimatingRef.current) return;
+
+    setAnimatingState(true);
+    setCurrentIndex(updateIndex);
+
+    if (animationTimeoutRef.current) {
+      clearTimeout(animationTimeoutRef.current);
+    }
+
+    animationTimeoutRef.current = setTimeout(() => {
+      setAnimatingState(false);
+      animationTimeoutRef.current = null;
+    }, SLIDE_ANIMATION_MS);
+  };
 
   const nextSlide = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev + 1) % cultureImages.length);
-    setTimeout(() => setIsAnimating(false), 500);
+    runSlideTransition((prev) => (prev + 1) % CULTURE_IMAGES.length);
   };
 
   const prevSlide = () => {
-    if (isAnimating) return;
-    setIsAnimating(true);
-    setCurrentIndex((prev) => (prev - 1 + cultureImages.length) % cultureImages.length);
-    setTimeout(() => setIsAnimating(false), 500);
+    runSlideTransition(
+      (prev) => (prev - 1 + CULTURE_IMAGES.length) % CULTURE_IMAGES.length,
+    );
+  };
+
+  const goToSlide = (index: number) => {
+    runSlideTransition(() => index);
   };
 
   const toggleAutoPlay = () => {
-    setIsAutoPlaying(!isAutoPlaying);
+    setIsAutoPlaying((prev) => !prev);
   };
 
+  nextSlideRef.current = nextSlide;
+
   useEffect(() => {
-    if (isAutoPlaying) {
-      autoPlayRef.current = setInterval(() => {
-        nextSlide();
-      }, 4000);
-    } else {
+    if (!isAutoPlaying) {
       if (autoPlayRef.current) {
         clearInterval(autoPlayRef.current);
+        autoPlayRef.current = null;
       }
+      return;
     }
+
+    autoPlayRef.current = setInterval(() => {
+      nextSlideRef.current();
+    }, AUTO_PLAY_INTERVAL_MS);
 
     return () => {
       if (autoPlayRef.current) {
         clearInterval(autoPlayRef.current);
+        autoPlayRef.current = null;
       }
     };
-  }, [isAutoPlaying, currentIndex]);
+  }, [isAutoPlaying]);
+
+  useEffect(() => {
+    return () => {
+      if (autoPlayRef.current) {
+        clearInterval(autoPlayRef.current);
+      }
+
+      if (animationTimeoutRef.current) {
+        clearTimeout(animationTimeoutRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -173,9 +240,9 @@ export default function OurCultureSection() {
             <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-[#1a1a1a] to-[#0b0b0b] p-2">
               {/* Main Carousel */}
               <div className="relative aspect-[4/5] w-full rounded-xl overflow-hidden">
-                {cultureImages.map((image, index) => (
+                {CULTURE_IMAGES.map((image, index) => (
                   <div
-                    key={index}
+                    key={image.src}
                     className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                       index === currentIndex
                         ? "opacity-100 translate-x-0"
@@ -226,16 +293,10 @@ export default function OurCultureSection() {
 
               {/* Dots Indicator */}
               <div className="flex justify-center gap-2 mt-4">
-                {cultureImages.map((_, index) => (
+                {CULTURE_IMAGES.map((image, index) => (
                   <button
-                    key={index}
-                    onClick={() => {
-                      if (!isAnimating) {
-                        setIsAnimating(true);
-                        setCurrentIndex(index);
-                        setTimeout(() => setIsAnimating(false), 500);
-                      }
-                    }}
+                    key={image.src}
+                    onClick={() => goToSlide(index)}
                     className={`transition-all duration-300 ${
                       index === currentIndex
                         ? "w-8 h-1.5 bg-[#52F447] rounded-full"
@@ -248,16 +309,10 @@ export default function OurCultureSection() {
 
             {/* Thumbnail Navigation */}
             <div className="flex justify-center gap-2 mt-4 overflow-x-auto pb-2 px-4 scrollbar-thin">
-              {cultureImages.map((image, index) => (
+              {CULTURE_IMAGES.map((image, index) => (
                 <button
-                  key={index}
-                  onClick={() => {
-                    if (!isAnimating) {
-                      setIsAnimating(true);
-                      setCurrentIndex(index);
-                      setTimeout(() => setIsAnimating(false), 500);
-                    }
-                  }}
+                  key={image.src}
+                  onClick={() => goToSlide(index)}
                   className={`relative w-14 h-14 rounded-lg overflow-hidden transition-all duration-300 flex-shrink-0 ${
                     index === currentIndex
                       ? "ring-2 ring-[#52F447] scale-105"

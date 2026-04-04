@@ -164,7 +164,13 @@ function ServiceCard({
         minHeight: "120px"
       }}
     >
-      <div className="absolute left-0 top-0 z-20 h-0 w-[2px] lg:w-[3px] bg-[#52F447] transition-all duration-[420ms] ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:h-full" />
+      <div
+        className="absolute left-0 top-0 z-20 h-0 w-[2px] lg:w-[3px] bg-[#52F447] transition-all group-hover:h-full"
+        style={{
+          transitionDuration: "420ms",
+          transitionTimingFunction: "cubic-bezier(0.65, 0, 0.35, 1)",
+        }}
+      />
 
       {/* Cube Graphic - Hidden on mobile/tablet, visible on desktop */}
       <div

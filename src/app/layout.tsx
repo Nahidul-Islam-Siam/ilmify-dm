@@ -3,7 +3,6 @@ import ScrollToTopButton from "@/components/ui/ScrollToTopButton/ScrollToTopButt
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
-// @ts-expect-error CSS side-effect import requires a declaration file
 import "./globals.css";
 
 const inter = Inter({
