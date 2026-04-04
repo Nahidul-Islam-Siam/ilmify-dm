@@ -145,7 +145,7 @@ function BrandMark() {
   return (
     <Link href="/" className="flex items-center">
       <Image
-        src="/assets/logo/logo.png"
+        src="/assets/logo/logo.svg"
         alt="ZeeFrames logo"
         priority
         height={200}

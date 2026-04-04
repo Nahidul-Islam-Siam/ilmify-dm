@@ -1,10 +1,11 @@
 import Footer from "@/app/(common)/components/shared/Footer/Footer";
 import Navbar from "@/app/(common)/components/shared/Navbar/Navbar";
+import type { ReactNode } from "react";
 
 export default function CommonLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <>

@@ -2,8 +2,8 @@ import ScrollToTopButton from "@/components/ui/ScrollToTopButton/ScrollToTopButt
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import type { ReactNode } from "react";
 import { Toaster } from "sonner";
-// @ts-expect-error CSS side-effect import requires a declaration file
 import "./globals.css";
 
 const inter = Inter({
@@ -21,11 +21,10 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
-      <head></head>
       <body
         suppressHydrationWarning={true}
         className={`${inter.variable} antialiased !bg-white`}
