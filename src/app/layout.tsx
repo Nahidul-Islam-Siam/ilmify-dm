@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import { Toaster } from "sonner";
 import "./globals.css";
+import MouseGlow from "./hooks/useMouseGlow";
 
 const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
@@ -34,6 +35,7 @@ export default function RootLayout({
             {/* <GoogleTranslateClient/> */}
             {children}
           </div>
+           <MouseGlow />  
           <ScrollToTopButton />
           <Toaster richColors position="top-right" />
         </>

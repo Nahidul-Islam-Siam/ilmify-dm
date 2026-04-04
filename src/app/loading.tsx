@@ -7,7 +7,9 @@ import React from "react";
 const Loading = () => {
   return (
     <div className="flex items-center justify-center h-screen">
-      <Spin size="large" tip="Loading..." />
+      <Spin size="large" tip="Loading...">
+        <div className="h-12 w-24" />
+      </Spin>
     </div>
   );
 };
