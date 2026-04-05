@@ -3,11 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const companyLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#work", label: "Work" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/work", label: "Work" },
   { href: "#contact", label: "Contact" },
-  { href: "#insights", label: "Insights" },
+  { href: "/insights", label: "Insights" },
 ];
 
 const serviceLinks = [
@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="max-w-[420px]">
             <Image
               src="/assets/logo/Logo.svg"
-              alt="ZeeFrames logo"
+              alt="Ilmify Studio Logo"
               priority
               height={200}
               width={200}

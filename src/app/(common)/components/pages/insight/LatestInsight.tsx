@@ -82,7 +82,7 @@ export default function LatestInsight() {
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#52F447]">
               Latest Insights
             </p>
-            <h2 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Our Recent Articles
             </h2>
           </div>
@@ -128,17 +128,17 @@ export default function LatestInsight() {
                   sizes="(max-width: 767px) 86vw, 390px"
                   className="object-cover transition duration-500 group-hover:scale-[1.04]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
                 <span className="absolute left-4 top-4 text-[34px] font-semibold tracking-tight text-white/90">
                   ZeeFrames
-                </span>
+                </span> */}
               </div>
 
-              <div className="space-y-3 px-5 py-5 sm:px-6 sm:py-6">
-                <h3 className="line-clamp-2 text-[2rem] font-semibold leading-[1.12] tracking-tight text-white">
+              <div className="space-y-3 px-5 py-3 sm:px-4 ">
+                <h3 className="line-clamp-2 text-[1rem] font-semibold leading-[1.60] tracking-tight text-white">
                   {item.title}
                 </h3>
-                <p className="line-clamp-2 text-[1.05rem] leading-8 text-white/70">
+                <p className="line-clamp-2 text-[0.8rem] leading-6 text-white/70">
                   {item.excerpt}
                 </p>
                 <p className="pt-1 text-sm font-medium text-white/75">

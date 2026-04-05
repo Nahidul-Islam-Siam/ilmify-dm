@@ -23,7 +23,7 @@ export default async function InsightDetails({ params }: InsightDetailsProps) {
     .slice(0, 2);
 
   return (
-    <section className="bg-[#0b0b0b] px-4 pb-16 pt-28 text-white sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pb-24">
+    <section className="bg-[#0b0b0b] px-4 pb-16 pt-28 text-white sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pb-24">
       <div className="mx-auto max-w-[1400px]">
         <Link
           href="/insights"
@@ -50,7 +50,7 @@ export default async function InsightDetails({ params }: InsightDetailsProps) {
               <p className="text-sm font-medium text-[#52F447]">
                 {insight.meta}
               </p>
-              <h1 className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+              <h1 className=" font-semibold leading-tight tracking-tight text-white sm:text-xl lg:text-3xl">
                 {insight.title}
               </h1>
               <p className="max-w-3xl text-base leading-8 text-white/75 sm:text-lg">
@@ -94,7 +94,7 @@ export default async function InsightDetails({ params }: InsightDetailsProps) {
                         <p className="text-[11px] font-semibold text-[#52F447]">
                           {item.meta}
                         </p>
-                        <h3 className="text-sm font-semibold leading-6 text-white">
+                        <h3 className="text-xs font-semibold leading-5 text-white">
                           {item.title}
                         </h3>
                         <span className="inline-flex items-center gap-1 text-xs font-medium text-[#52F447]">
