@@ -1,30 +1,7 @@
 ﻿import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-const insightItems = [
-  {
-    title: "Top 11 UX Mistakes to Avoid on High-Converting Landing Pages",
-    excerpt:
-      "Learn how to fix the interface patterns that quietly reduce trust, clarity, and conversion momentum across your product funnel.",
-    meta: "7 min read | 2026-02-05",
-    image: "/assets/idea/home-process-1.png",
-  },
-  {
-    title: "Remote User Research Frameworks for Faster Product Decisions",
-    excerpt:
-      "Discover practical ways to gather better user feedback, validate flows earlier, and turn research into design direction your team can act on.",
-    meta: "6 min read | 2026-01-16",
-    image: "/assets/idea/home-process-2.png",
-  },
-  {
-    title: "Improving Website Conversion with a UX-Led Growth Approach",
-    excerpt:
-      "Explore how structure, messaging hierarchy, and interaction design can improve performance without making the experience feel forced.",
-    meta: "8 min read | 2025-11-18",
-    image: "/assets/showcase/portfolio-3.png",
-  },
-];
+import { insightItems } from "@/app/data/insight/Insight";
 
 export default function InsightsSection() {
   return (
@@ -59,7 +36,7 @@ export default function InsightsSection() {
               key={item.title}
               className="group overflow-hidden rounded-[22px] border border-white/10 bg-[#141414] transition duration-300 hover:border-[#52F447]/30 hover:bg-[#171717]"
             >
-              <Link href="#contact" className="block">
+              <Link href={`/insights/${item.slug}`} className="block">
                 <div className="relative aspect-[1.28] overflow-hidden">
                   <Image
                     src={item.image}

@@ -1,0 +1,154 @@
+"use client";
+
+import { insightItems } from "@/app/data/insight/Insight";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+
+export default function LatestInsight() {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [canPrev, setCanPrev] = useState(false);
+  const [canNext, setCanNext] = useState(true);
+
+  const updateControls = () => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const maxScrollLeft = track.scrollWidth - track.clientWidth;
+    const cards = Array.from(
+      track.querySelectorAll<HTMLElement>("[data-latest-card]"),
+    );
+    if (!cards.length) return;
+
+    const currentScroll = track.scrollLeft;
+    let nearestIndex = 0;
+    let nearestDistance = Number.POSITIVE_INFINITY;
+
+    cards.forEach((card, index) => {
+      const distance = Math.abs(card.offsetLeft - currentScroll);
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearestIndex = index;
+      }
+    });
+
+    setActiveIndex(nearestIndex);
+    setCanPrev(track.scrollLeft > 8);
+    setCanNext(track.scrollLeft < maxScrollLeft - 8);
+  };
+
+  useEffect(() => {
+    updateControls();
+    const track = trackRef.current;
+    if (!track) return;
+
+    const onScroll = () => updateControls();
+    track.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", updateControls);
+
+    return () => {
+      track.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", updateControls);
+    };
+  }, []);
+
+  const scrollCards = (direction: "next" | "prev") => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const cards = Array.from(
+      track.querySelectorAll<HTMLElement>("[data-latest-card]"),
+    );
+    if (!cards.length) return;
+
+    const nextIndex =
+      direction === "next"
+        ? Math.min(activeIndex + 1, cards.length - 1)
+        : Math.max(activeIndex - 1, 0);
+
+    track.scrollTo({
+      left: cards[nextIndex].offsetLeft,
+      behavior: "smooth",
+    });
+  };
+
+  return (
+    <section className="bg-[#0b0b0b] px-4 pb-16 pt-8 text-white sm:px-6 sm:pb-20 lg:px-8 lg:pb-24">
+      <div className="mx-auto max-w-[1400px]">
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-4 sm:mb-10">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#52F447]">
+              Latest Insights
+            </p>
+            <h2 className="mt-3 text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+              Our Recent Articles
+            </h2>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button
+              type="button"
+              onClick={() => scrollCards("prev")}
+              disabled={!canPrev}
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#52F447] bg-[#52F447] text-black transition hover:brightness-95 disabled:cursor-not-allowed disabled:border-white/20 disabled:bg-white/10 disabled:text-white/30"
+              aria-label="Previous insights"
+            >
+              <ArrowLeft size={18} />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollCards("next")}
+              disabled={!canNext}
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#52F447] bg-[#52F447] text-black transition hover:brightness-95 disabled:cursor-not-allowed disabled:border-white/20 disabled:bg-white/10 disabled:text-white/30"
+              aria-label="Next insights"
+            >
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        </div>
+
+        <div
+          ref={trackRef}
+          className="flex snap-x snap-mandatory gap-6 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {insightItems.map((item) => (
+            <Link
+              key={item.slug}
+              href={`/insights/${item.slug}`}
+              data-latest-card
+              className="group w-[86vw] max-w-[390px] shrink-0 snap-start overflow-hidden rounded-[22px] border border-white/14 bg-[#1a1a1a] transition duration-300 hover:border-[#52F447]/45"
+            >
+              <div className="relative aspect-[1.12] overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 767px) 86vw, 390px"
+                  className="object-cover transition duration-500 group-hover:scale-[1.04]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
+                <span className="absolute left-4 top-4 text-[34px] font-semibold tracking-tight text-white/90">
+                  ZeeFrames
+                </span>
+              </div>
+
+              <div className="space-y-3 px-5 py-5 sm:px-6 sm:py-6">
+                <h3 className="line-clamp-2 text-[2rem] font-semibold leading-[1.12] tracking-tight text-white">
+                  {item.title}
+                </h3>
+                <p className="line-clamp-2 text-[1.05rem] leading-8 text-white/70">
+                  {item.excerpt}
+                </p>
+                <p className="pt-1 text-sm font-medium text-white/75">
+                  {item.meta}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -362,7 +362,7 @@ export default function Navbar() {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="w-[1100px] rounded-2xl border border-white/10 bg-[#0D0D0D] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] backdrop-blur-sm overflow-hidden mt-10">
+                  <div className="w-[1100px] rounded-2xl border border-white/10 bg-[#0D0D0D] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] backdrop-blur-sm overflow-hidden mt-12">
                     {/* Category Tabs */}
                     <div className="flex border-b border-white/10 bg-white/5">
                       {(Object.keys(serviceStructure) as ServiceCategoryKey[]).map((key) => {
