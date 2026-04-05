@@ -1,11 +1,9 @@
 import ScrollToTopButton from "@/components/ui/ScrollToTopButton/ScrollToTopButton";
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import { Toaster } from "sonner";
-import "./globals.css";
-import MouseGlow from "./hooks/useMouseGlow";
+import "./globals.css"; // Make sure this file exists
 
 const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
@@ -17,6 +15,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "ilmify - Digital Marketing Agency",
+  description: "Digital Marketing Agency",
 };
 
 export default function RootLayout({
@@ -28,17 +27,11 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning={true}
-        className={`${inter.variable} antialiased !bg-white`}
+        className={`${inter.variable} antialiased bg-white`}
       >
-        <>
-          <div className="">
-            {/* <GoogleTranslateClient/> */}
-            {children}
-          </div>
-           <MouseGlow />  
-          <ScrollToTopButton />
-          <Toaster richColors position="top-right" />
-        </>
+        {children}
+        <ScrollToTopButton />
+        <Toaster richColors position="top-right" />
       </body>
     </html>
   );
