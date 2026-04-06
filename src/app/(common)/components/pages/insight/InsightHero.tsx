@@ -57,7 +57,7 @@ export default function InsightsHero() {
           <span className="block text-white text-[clamp(32px,8vw,96px)]">
             Stay Updated With
           </span>
-          <span className="block text-[#52F447] text-[clamp(32px,8vw,96px)]">
+          <span className="block text-purple-800 text-[clamp(32px,8vw,96px)]">
             Our insights
           </span>
         </h1>
@@ -66,8 +66,6 @@ export default function InsightsHero() {
         <p className="mt-5 sm:mt-6 text-[clamp(13px,1.8vw,17px)] text-white/70 font-normal leading-relaxed max-w-[480px] mx-auto">
           Read our thoughts and insights on UI UX design
         </p>
-
-     
       </div>
     </section>
   );

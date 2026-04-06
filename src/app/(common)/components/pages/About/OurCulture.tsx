@@ -51,7 +51,9 @@ export default function OurCultureSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const animationTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const animationTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
   const isAnimatingRef = useRef(false);
   const nextSlideRef = useRef<() => void>(() => {});
 
@@ -173,7 +175,6 @@ export default function OurCultureSection() {
           },
         },
       );
-
     }, section);
 
     return () => ctx.revert();
@@ -186,8 +187,8 @@ export default function OurCultureSection() {
     >
       {/* Animated background */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#52F447]/5 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#52F447]/5 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-800/5 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-800/5 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
@@ -196,9 +197,9 @@ export default function OurCultureSection() {
           <div ref={contentRef} className="space-y-8">
             <div>
               <div className="inline-block mb-4">
-                <div className="w-12 h-0.5 bg-[#52F447]" />
+                <div className="w-12 h-0.5 bg-purple-800" />
               </div>
-              <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#52F447]">
+              <h2 className="text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-purple-800">
                 OUR CULTURE
               </h2>
               <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold leading-[1.2] mt-4 text-white">
@@ -209,9 +210,9 @@ export default function OurCultureSection() {
                 No-Code
               </h3>
             </div>
-            
+
             <div className="bg-white/5 rounded-2xl p-6 border border-white/10">
-              <Quote className="w-8 h-8 text-[#52F447] mb-4" />
+              <Quote className="w-8 h-8 text-purple-800 mb-4" />
               <p className="text-base sm:text-lg leading-relaxed text-gray-300">
                 We Believe In Clear Communication, Proactive Problem Solving,
                 And Full Transparency.
@@ -221,15 +222,15 @@ export default function OurCultureSection() {
             {/* Stats or values */}
             <div className="grid grid-cols-3 gap-4 pt-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#52F447]">100%</div>
+                <div className="text-2xl font-bold text-purple-800">100%</div>
                 <div className="text-xs text-gray-400">Transparency</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#52F447]">24/7</div>
+                <div className="text-2xl font-bold text-purple-800">24/7</div>
                 <div className="text-xs text-gray-400">Support</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-[#52F447]">50+</div>
+                <div className="text-2xl font-bold text-purple-800">50+</div>
                 <div className="text-xs text-gray-400">Experts</div>
               </div>
             </div>
@@ -271,13 +272,13 @@ export default function OurCultureSection() {
                 {/* Navigation Buttons */}
                 <button
                   onClick={prevSlide}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#52F447] hover:text-black transition-all duration-300 z-20"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white hover:bg-purple-800 hover:text-black transition-all duration-300 z-20"
                 >
                   <ChevronLeft size={20} />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#52F447] hover:text-black transition-all duration-300 z-20"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white hover:bg-purple-800 hover:text-black transition-all duration-300 z-20"
                 >
                   <ChevronRight size={20} />
                 </button>
@@ -285,7 +286,7 @@ export default function OurCultureSection() {
                 {/* Auto-play Toggle */}
                 <button
                   onClick={toggleAutoPlay}
-                  className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white hover:bg-[#52F447] hover:text-black transition-all duration-300 z-20"
+                  className="absolute top-4 right-4 w-8 h-8 rounded-full bg-black/60 backdrop-blur-sm flex items-center justify-center text-white hover:bg-purple-800 hover:text-black transition-all duration-300 z-20"
                 >
                   {isAutoPlaying ? <Pause size={14} /> : <Play size={14} />}
                 </button>
@@ -299,7 +300,7 @@ export default function OurCultureSection() {
                     onClick={() => goToSlide(index)}
                     className={`transition-all duration-300 ${
                       index === currentIndex
-                        ? "w-8 h-1.5 bg-[#52F447] rounded-full"
+                        ? "w-8 h-1.5 bg-purple-800 rounded-full"
                         : "w-1.5 h-1.5 bg-white/40 rounded-full hover:bg-white/60"
                     }`}
                   />
@@ -315,7 +316,7 @@ export default function OurCultureSection() {
                   onClick={() => goToSlide(index)}
                   className={`relative w-14 h-14 rounded-lg overflow-hidden transition-all duration-300 flex-shrink-0 ${
                     index === currentIndex
-                      ? "ring-2 ring-[#52F447] scale-105"
+                      ? "ring-2 ring-purple-800 scale-105"
                       : "opacity-60 hover:opacity-100"
                   }`}
                 >

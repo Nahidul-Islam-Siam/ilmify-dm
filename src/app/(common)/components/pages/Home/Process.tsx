@@ -9,48 +9,42 @@ const processSteps = [
     number: "01",
     title: "Discovery",
     subtitle: "Research & Domain Analysis",
-    body:
-      "Don't ignore the crucial step of research and development in the UX design process. Discover and solve user problems to launch a successful product. Gather data on the target audience and analyze customer feedback for a stronger experience.",
+    body: "Don't ignore the crucial step of research and development in the UX design process. Discover and solve user problems to launch a successful product. Gather data on the target audience and analyze customer feedback for a stronger experience.",
     image: "/assets/idea/home-process-1.png",
   },
   {
     number: "02",
     title: "Flows",
     subtitle: "User Journey Map Sitemap",
-    body:
-      "Create successful user flows for your product by mapping journeys and interactions. Define product ideas and goals, align them to user needs, and test them with real users for optimization.",
+    body: "Create successful user flows for your product by mapping journeys and interactions. Define product ideas and goals, align them to user needs, and test them with real users for optimization.",
     image: "/assets/idea/home-process-2.png",
   },
   {
     number: "03",
     title: "Wireframes",
     subtitle: "Low - Fidelity Design",
-    body:
-      "Define the content and functionality of your product with wireframes. Brainstorm multiple ideas, get feedback, and refine the structure for a more natural and intuitive interface.",
+    body: "Define the content and functionality of your product with wireframes. Brainstorm multiple ideas, get feedback, and refine the structure for a more natural and intuitive interface.",
     image: "/assets/idea/home-process-mob-3.png",
   },
   {
     number: "04",
     title: "Mockups",
     subtitle: "High - Fidelity Design",
-    body:
-      "Visualize your product's appearance with polished mockups. Detailed screens are reviewed by stakeholders and then validated with users for improved design decisions.",
+    body: "Visualize your product's appearance with polished mockups. Detailed screens are reviewed by stakeholders and then validated with users for improved design decisions.",
     image: "/assets/idea/home-process-mob-4.png",
   },
   {
     number: "05",
     title: "Prototyping",
     subtitle: "Interaction Design",
-    body:
-      "UX designers create clickable prototypes to assess product functionality, gather user feedback, and collaborate with the development team before implementation.",
+    body: "UX designers create clickable prototypes to assess product functionality, gather user feedback, and collaborate with the development team before implementation.",
     image: "/assets/idea/home-process-mob-5.png",
   },
   {
     number: "06",
     title: "Testing",
     subtitle: "Usability Testing",
-    body:
-      "Improve product usability by testing with real users. Define goals and scenarios, recruit the right audience, analyze results, and make changes for an optimal experience.",
+    body: "Improve product usability by testing with real users. Define goals and scenarios, recruit the right audience, analyze results, and make changes for an optimal experience.",
     image: "/assets/idea/home-process-mob-6.png",
   },
 ];
@@ -75,10 +69,10 @@ export default function Process() {
     const checkDesktop = () => {
       setIsDesktop(window.innerWidth >= 1024);
     };
-    
+
     checkDesktop();
     window.addEventListener("resize", checkDesktop);
-    
+
     return () => window.removeEventListener("resize", checkDesktop);
   }, []);
 
@@ -113,8 +107,14 @@ export default function Process() {
       setActiveStep((prev) => (prev === nextActive ? prev : nextActive));
 
       const firstCenter = Math.max(0, centers[0] - timelineRect.top);
-      const lastCenter = Math.max(firstCenter, centers[centers.length - 1] - timelineRect.top);
-      const targetCenter = Math.max(firstCenter, Math.min(centers[nextActive] - timelineRect.top, lastCenter));
+      const lastCenter = Math.max(
+        firstCenter,
+        centers[centers.length - 1] - timelineRect.top,
+      );
+      const targetCenter = Math.max(
+        firstCenter,
+        Math.min(centers[nextActive] - timelineRect.top, lastCenter),
+      );
       progressFill.style.height = `${targetCenter}px`;
 
       if (rail) {
@@ -127,7 +127,9 @@ export default function Process() {
         const targetTop = Math.max(
           0,
           Math.min(
-            activeNode.offsetTop + activeNode.offsetHeight * 0.5 - card.offsetHeight * 0.5,
+            activeNode.offsetTop +
+              activeNode.offsetHeight * 0.5 -
+              card.offsetHeight * 0.5,
             maxTop,
           ),
         );
@@ -213,7 +215,7 @@ export default function Process() {
       <div className="mx-auto max-w-[1400px]">
         {/* Header Section - Responsive */}
         <div className="mx-auto max-w-[90%] sm:max-w-[85%] md:max-w-[760px] text-center">
-          <p className="text-[10px] sm:text-[11px] md:text-[12px] font-bold uppercase tracking-[0.14em] sm:tracking-[0.16em] text-[#52F447]">
+          <p className="text-[10px] sm:text-[11px] md:text-[12px] font-bold uppercase tracking-[0.14em] sm:tracking-[0.16em] text-purple-800">
             Our Process, Your Advantage
           </p>
           <h2 className="mt-3 sm:mt-4 text-[1.75rem] sm:text-[2rem] md:text-[2.65rem] lg:text-[3rem] xl:text-[3.5rem] font-semibold tracking-[-0.04em] sm:tracking-[-0.05em] text-white leading-tight">
@@ -228,14 +230,13 @@ export default function Process() {
 
         {/* Main Content - Responsive Grid */}
         <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-16 grid gap-6 sm:gap-8 lg:gap-10 xl:gap-16 lg:grid-cols-[minmax(0,1.04fr)_minmax(300px,0.78fr)] lg:items-start">
-          
           {/* Left Column - Timeline */}
           <div ref={timelineRef} className="relative">
             {/* Vertical Line - Positioned to the right of numbers */}
             <div className="absolute left-[60px] sm:left-[70px] md:left-[80px] lg:left-[88px] top-0 hidden md:block h-full w-[2px] -translate-x-1/2 rounded-full bg-white/12" />
             <div
               ref={progressFillRef}
-              className="absolute left-[60px] sm:left-[70px] md:left-[80px] lg:left-[88px] top-0 hidden md:block h-0 w-[3px] lg:w-[4px] -translate-x-1/2 rounded-full bg-[#52F447]"
+              className="absolute left-[60px] sm:left-[70px] md:left-[80px] lg:left-[88px] top-0 hidden md:block h-0 w-[3px] lg:w-[4px] -translate-x-1/2 rounded-full bg-purple-800"
             />
 
             {/* Steps Container */}
@@ -252,48 +253,56 @@ export default function Process() {
                     className={`
                       relative rounded-[18px] sm:rounded-[20px] md:rounded-[22px] 
                       transition-all duration-300
-                      ${isActive ? 'border border-white/10 bg-white/[0.02]' : 'border border-white/5 bg-transparent'}
+                      ${isActive ? "border border-white/10 bg-white/[0.02]" : "border border-white/5 bg-transparent"}
                       p-4 pl-14 sm:p-5 sm:pl-16 md:p-6 md:pl-20 lg:p-7 lg:pl-24
                       md:border-0 md:bg-transparent
                     `}
                   >
                     {/* Step Number - Now with more right padding to accommodate line */}
-                    <span className={`
+                    <span
+                      className={`
                       absolute left-2 sm:left-3 md:left-4 top-3 sm:top-4 md:top-5
                       text-[1.25rem] sm:text-[1.35rem] md:text-[1.5rem] lg:text-[1.75rem] xl:text-[2rem]
                       font-semibold leading-none tracking-[-0.04em]
                       transition-colors duration-300
-                      ${isActive ? 'text-[#52F447]' : 'text-white/60'}
-                    `}>
+                      ${isActive ? "text-purple-800" : "text-white/60"}
+                    `}
+                    >
                       {step.number}
                     </span>
 
                     <div className="min-h-[180px] sm:min-h-[200px] md:min-h-[220px] lg:min-h-[250px]">
-                      <h3 className={`
+                      <h3
+                        className={`
                         text-[1.25rem] sm:text-[1.35rem] md:text-[1.55rem] lg:text-[1.75rem] xl:text-[1.85rem]
                         font-semibold tracking-[-0.03em] sm:tracking-[-0.04em]
                         transition-colors duration-300
                         ${isActive ? "text-white" : "text-white/80"}
-                      `}>
+                      `}
+                      >
                         {step.title}
                       </h3>
-                      <p className={`
+                      <p
+                        className={`
                         mt-0.5 sm:mt-1
                         text-[0.95rem] sm:text-[1rem] md:text-[1.05rem] lg:text-[1.15rem] xl:text-[1.25rem]
                         tracking-[-0.02em] sm:tracking-[-0.03em]
                         transition-colors duration-300
                         ${isActive ? "text-white/70" : "text-white/50"}
-                      `}>
+                      `}
+                      >
                         {step.subtitle}
                       </p>
-                      <p className={`
+                      <p
+                        className={`
                         mt-3 sm:mt-4 md:mt-5
                         max-w-[90%] sm:max-w-[95%] md:max-w-[560px]
                         text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]
                         leading-6 sm:leading-7
                         transition-colors duration-300
                         ${isActive ? "text-white/90" : "text-white/60"}
-                      `}>
+                      `}
+                      >
                         {step.body}
                       </p>
                     </div>
@@ -305,8 +314,15 @@ export default function Process() {
 
           {/* Right Column - Image (Desktop Only with animation) */}
           {isDesktop && (
-            <div ref={visualRailRef} className="relative hidden lg:block" style={{ height: railHeight || undefined }}>
-              <div ref={visualCardRef} className="absolute left-0 top-20 w-full will-change-transform">
+            <div
+              ref={visualRailRef}
+              className="relative hidden lg:block"
+              style={{ height: railHeight || undefined }}
+            >
+              <div
+                ref={visualCardRef}
+                className="absolute left-0 top-20 w-full will-change-transform"
+              >
                 <div className="relative mx-auto aspect-[0.98] w-full max-w-[480px] xl:max-w-[540px] overflow-hidden rounded-[24px] lg:rounded-[26px] xl:rounded-[28px] border border-white/8 bg-[#111111] shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
                   {previousStep !== null && previousStep !== activeStep ? (
                     <div ref={previousImageRef} className="absolute inset-0">

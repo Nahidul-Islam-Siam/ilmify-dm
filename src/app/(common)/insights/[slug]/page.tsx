@@ -27,7 +27,7 @@ export default async function InsightDetails({ params }: InsightDetailsProps) {
       <div className="mx-auto max-w-[1400px]">
         <Link
           href="/insights"
-          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-white/70 transition hover:text-[#52F447]"
+          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-white/70 transition hover:text-purple-800"
         >
           <ArrowLeft size={15} />
           Back to insights
@@ -47,7 +47,7 @@ export default async function InsightDetails({ params }: InsightDetailsProps) {
             </div>
 
             <div className="space-y-5 px-5 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10">
-              <p className="text-sm font-medium text-[#52F447]">
+              <p className="text-sm font-medium text-purple-800">
                 {insight.meta}
               </p>
               <h1 className=" font-semibold leading-tight tracking-tight text-white sm:text-xl lg:text-3xl">
@@ -79,7 +79,7 @@ export default async function InsightDetails({ params }: InsightDetailsProps) {
                     <Link
                       key={item.slug}
                       href={`/insights/${item.slug}`}
-                      className="group block overflow-hidden rounded-[16px] border border-white/10 bg-[#141414] transition hover:border-[#52F447]/40"
+                      className="group block overflow-hidden rounded-[16px] border border-white/10 bg-[#141414] transition hover:border-purple-800/40"
                     >
                       <div className="relative aspect-[16/10] overflow-hidden">
                         <Image
@@ -91,13 +91,13 @@ export default async function InsightDetails({ params }: InsightDetailsProps) {
                         />
                       </div>
                       <div className="space-y-2 px-4 py-4">
-                        <p className="text-[11px] font-semibold text-[#52F447]">
+                        <p className="text-[11px] font-semibold text-purple-800">
                           {item.meta}
                         </p>
                         <h3 className="text-xs font-semibold leading-5 text-white">
                           {item.title}
                         </h3>
-                        <span className="inline-flex items-center gap-1 text-xs font-medium text-[#52F447]">
+                        <span className="inline-flex items-center gap-1 text-xs font-medium text-purple-800">
                           Read
                           <ArrowRight size={13} />
                         </span>

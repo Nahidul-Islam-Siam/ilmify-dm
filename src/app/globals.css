@@ -50,7 +50,7 @@ svg {
 }
 
 path {
-  fill: #2a354d; 
+  fill: currentColor;
 }
 
 .App { 
@@ -323,6 +323,26 @@ input[type="number"] {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    /* Global website theme tokens */
+    --site-accent: #52f447;
+    --site-text: #111111;
+    --site-text-muted: rgba(16, 16, 16, 0.72);
+    --site-panel-bg: rgba(255, 255, 255, 0.86);
+    --site-panel-soft: rgba(255, 255, 255, 0.78);
+    --site-border: rgba(15, 15, 15, 0.14);
+    --site-shadow: 0 14px 36px -20px rgba(25, 45, 25, 0.22);
+    --site-bg-start: #ffffff;
+    --site-bg-mid: #f5fbef;
+    --site-bg-end: #ffffff;
+    --site-glow-a: rgba(82, 244, 71, 0.2);
+    --site-glow-b: rgba(255, 235, 59, 0.14);
+    --site-hover-soft: rgba(82, 244, 71, 0.1);
+    --site-white-soft: rgba(15, 15, 15, 0.04);
+    --site-gradient-from: rgba(255, 255, 255, 0.72);
+    --site-gradient-via: rgba(245, 251, 239, 0.65);
+    --site-gradient-to: rgba(255, 255, 255, 0.55);
+    --site-accent-glow: rgba(82, 244, 71, 0.14);
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -358,5 +378,139 @@ input[type="number"] {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Global light theme sweep for marketing UI */
+@layer utilities {
+  body {
+    background:
+      radial-gradient(1200px 600px at 10% -10%, var(--site-glow-a), transparent 55%),
+      radial-gradient(900px 520px at 90% -8%, var(--site-glow-b), transparent 60%),
+      linear-gradient(
+        180deg,
+        var(--site-bg-start) 0%,
+        var(--site-bg-mid) 42%,
+        var(--site-bg-end) 100%
+      ) !important;
+    color: var(--site-text) !important;
+  }
+
+  html,
+  body,
+  #__next {
+    min-height: 100%;
+  }
+
+  section,
+  header,
+  footer,
+  main {
+    color: var(--site-text);
+  }
+
+  .bg-\[\#0b0b0b\],
+  .bg-\[\#0A0A0A\],
+  .bg-\[\#0D0D0D\],
+  .bg-\[\#121212\],
+  .bg-\[\#141414\],
+  .bg-black,
+  .from-\[\#0A0A0A\],
+  .from-\[\#0D0D0D\],
+  .to-\[\#111111\],
+  .to-\[\#080808\],
+  .bg-gradient-to-b,
+  .bg-gradient-to-br,
+  .bg-gradient-to-r {
+    background-color: var(--site-panel-bg) !important;
+    backdrop-filter: blur(8px);
+  }
+
+  .from-black\/80,
+  .from-black\/70,
+  .from-black\/65,
+  .from-black\/60,
+  .via-black\/70,
+  .via-black\/50,
+  .via-black\/10,
+  .to-black\/80,
+  .to-black\/65,
+  .to-black\/60,
+  .to-black\/40 {
+    --tw-gradient-from: var(--site-gradient-from) !important;
+    --tw-gradient-via: var(--site-gradient-via) !important;
+    --tw-gradient-to: var(--site-gradient-to) !important;
+  }
+
+  .shadow-\[0_25px_50px_-12px_rgba\(0\,0\,0\,0\.5\)\],
+  .shadow-\[0_20px_40px_-12px_rgba\(0\,0\,0\,0\.3\)\],
+  .shadow-2xl {
+    box-shadow: var(--site-shadow) !important;
+  }
+
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-xl {
+    backdrop-filter: blur(8px);
+  }
+
+  .bg-black\/80,
+  .bg-black\/70,
+  .bg-black\/60,
+  .bg-black\/55,
+  .bg-black\/50,
+  .bg-black\/40,
+  .bg-black\/35,
+  .bg-black\/30,
+  .bg-black\/20 {
+    background-color: var(--site-panel-soft) !important;
+  }
+
+  .from-\[\#52F447\]\/20,
+  .from-\[\#52F447\]\/15,
+  .from-\[\#52F447\]\/12,
+  .from-\[\#52F447\]\/10,
+  .from-\[\#52F447\]\/8 {
+    --tw-gradient-from: var(--site-accent-glow) !important;
+  }
+
+  .to-transparent {
+    --tw-gradient-to: rgba(255, 255, 255, 0) !important;
+  }
+
+  .hover\:bg-\[\#171717\]:hover,
+  .hover\:bg-white\/5:hover,
+  .hover\:bg-white\/10:hover {
+    background-color: var(--site-hover-soft) !important;
+  }
+
+  .bg-white\/5,
+  .bg-white\/10,
+  .bg-white\/12 {
+    background-color: var(--site-white-soft) !important;
+  }
+
+  .text-\[\#52F447\],
+  .hover\:text-\[\#52F447\]:hover,
+  .group:hover .group-hover\:text-\[\#52F447\] {
+    color: var(--site-accent) !important;
+  }
+
+  .bg-\[\#52F447\],
+  .hover\:bg-\[\#52F447\]:hover {
+    background-color: var(--site-accent) !important;
+  }
+
+  .border-\[\#52F447\],
+  .hover\:border-\[\#52F447\]:hover {
+    border-color: var(--site-accent) !important;
+  }
+
+  .from-\[\#52F447\],
+  .to-\[\#52F447\],
+  .via-\[\#52F447\] {
+    --tw-gradient-from: var(--site-accent) !important;
+    --tw-gradient-to: var(--site-accent) !important;
+    --tw-gradient-via: var(--site-accent) !important;
   }
 }

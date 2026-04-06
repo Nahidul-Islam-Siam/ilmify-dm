@@ -40,17 +40,17 @@ export default function FaqSection() {
       <div className="mx-auto max-w-[1400px]">
         <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-14 xl:gap-20">
           <div className="max-w-[470px]">
-            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#52F447] sm:text-[12px]">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-purple-800 sm:text-[12px]">
               FAQs
             </p>
 
-            <h2 className="mt-5 text-[2.4rem] font-semibold leading-[0.94] tracking-[-0.06em] text-white leading-10">
+            <h2 className="mt-5 text-[2.4rem] font-semibold leading-[0.94] tracking-[-0.06em] text-black leading-10">
               Questions? We&apos;ve
               <br />
               Got Answers
             </h2>
 
-            <p className="mt-5 max-w-[430px] text-[12px] leading-5 text-white/78 sm:text-[14px]">
+            <p className="mt-5 max-w-[430px] text-[12px] leading-5 text-white/78 sm:text-[14px] text-black">
               ZeeFrames reduces design complexity and speeds product launches
               with clear UX workflows, scalable visual systems, and thoughtful
               no-code execution support.
@@ -59,21 +59,21 @@ export default function FaqSection() {
             <div className="mt-8 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:items-center lg:flex-col lg:items-start xl:flex-row xl:items-center">
               <Link
                 href="#contact"
-                className="flex items-center justify-center gap-3 rounded-full bg-white text-[15px] font-semibold text-black transition hover:bg-[#52F447]  px-4 py-4"
+                className="flex items-center justify-center gap-3 rounded-full  text-[15px] font-semibold text-black hover:text-white transition hover:bg-purple-800  px-4 py-4"
               >
                 Book a free call
                 <ArrowUpRight size={18} strokeWidth={2.4} />
               </Link>
 
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6 text-[#52F447]">
-                  <div className="h-3 w-3 rounded-full bg-[#52F447] shadow-[0_0_14px_rgba(82,244,71,0.7)]" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6 text-purple-800">
+                  <div className="h-3 w-3 rounded-full bg-purple-800 shadow-[0_0_14px_rgba(82,244,71,0.7)]" />
                 </div>
                 <div>
-                  <div className="text-[15px] font-semibold tracking-[0.16em] text-[#52F447]">
+                  <div className="text-[15px] font-semibold tracking-[0.16em] text-purple-800">
                     5/5 SCORE
                   </div>
-                  <p className="mt-1 text-[14px] text-white/65">
+                  <p className="mt-1 text-[14px] text-black">
                     Rated 5.0 by product teams
                   </p>
                 </div>
@@ -90,8 +90,8 @@ export default function FaqSection() {
                   key={item.question}
                   className={`overflow-hidden rounded-[22px] border transition-all duration-300 ${
                     isOpen
-                      ? "border-[#52F447]/35 bg-[#111111]"
-                      : "border-white/10 bg-[#171717]"
+                      ? "border-purple-800/35 bg-[#fff]"
+                      : "border-black bg-[#fff]"
                   }`}
                 >
                   <button
@@ -99,14 +99,14 @@ export default function FaqSection() {
                     onClick={() => setOpenItem(isOpen ? -1 : index)}
                     className="flex w-full items-center justify-between gap-6 px-5 py-5 text-left sm:px-7 sm:py-6"
                   >
-                    <span className=" font-semibold leading-7 tracking-[-0.03em] text-white text-sm">
+                    <span className=" font-semibold leading-7 tracking-[-0.03em] text-black text-sm">
                       {item.question}
                     </span>
 
                     <span
                       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border transition-all duration-300 ${
                         isOpen
-                          ? "border-[#52F447]/35 bg-[#52F447] text-black"
+                          ? "border-white/10  bg-purple-800 text-white"
                           : "border-white/10 bg-white/6 text-white/72"
                       }`}
                     >
@@ -125,7 +125,7 @@ export default function FaqSection() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="px-5 pb-5 leading-8 text-white/72 sm:px-7 sm:pb-6 text-sm ">
+                      <p className="px-5 pb-5 leading-8 text-black sm:px-7 sm:pb-6 text-sm ">
                         {item.answer}
                       </p>
                     </div>

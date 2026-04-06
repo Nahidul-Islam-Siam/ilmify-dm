@@ -100,11 +100,7 @@ const CubeGraphic = () => (
   </svg>
 );
 
-function ServiceCard({
-  tag,
-  name,
-  border,
-}: (typeof services)[0]) {
+function ServiceCard({ tag, name, border }: (typeof services)[0]) {
   const imageRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
@@ -155,17 +151,15 @@ function ServiceCard({
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
       className={`group relative flex cursor-pointer items-center overflow-hidden border-[#252525] ${border} ${
-        border.includes('border-r') ? 'border-r-0 lg:border-r' : ''
-      } ${
-        border.includes('border-b') ? 'border-b-0 lg:border-b' : ''
-      }`}
-      style={{ 
+        border.includes("border-r") ? "border-r-0 lg:border-r" : ""
+      } ${border.includes("border-b") ? "border-b-0 lg:border-b" : ""}`}
+      style={{
         padding: "24px 20px",
-        minHeight: "120px"
+        minHeight: "120px",
       }}
     >
       <div
-        className="absolute left-0 top-0 z-20 h-0 w-[2px] lg:w-[3px] bg-[#52F447] transition-all group-hover:h-full"
+        className="absolute left-0 top-0 z-20 h-0 w-[2px] lg:w-[3px] bg-purple-800 transition-all group-hover:h-full"
         style={{
           transitionDuration: "420ms",
           transitionTimingFunction: "cubic-bezier(0.65, 0, 0.35, 1)",
@@ -186,9 +180,12 @@ function ServiceCard({
         <CubeGraphic />
       </div>
 
-      <div ref={textRef} className="relative z-10 will-change-transform flex-1 pr-12 lg:pr-24">
+      <div
+        ref={textRef}
+        className="relative z-10 will-change-transform flex-1 pr-12 lg:pr-24"
+      >
         <p
-          className="mb-1 lg:mb-2 text-[9px] lg:text-[10px] font-bold uppercase text-[#555] transition-colors duration-300 group-hover:text-[#52F447]"
+          className="mb-1 lg:mb-2 text-[9px] lg:text-[10px] font-bold uppercase text-[#555] transition-colors duration-300 group-hover:text-purple-800"
           style={{ letterSpacing: "0.15em", fontFamily: "Barlow, sans-serif" }}
         >
           {tag}
@@ -206,17 +203,17 @@ function ServiceCard({
 
       {/* Arrow Button - Consistent sizing across all devices */}
       <div
-        className={`absolute z-20 flex items-center justify-center rounded-full border transition-all duration-300 group-hover:rotate-45 group-hover:!bg-[#52F447] group-hover:!border-[#52F447] border-[#333] bg-[#1c1c1c]`}
-        style={{ 
-          right: "16px", 
-          top: "50%", 
+        className={`absolute z-20 flex items-center justify-center rounded-full border transition-all duration-300 group-hover:rotate-45 group-hover:!bg-[#333] group-hover:!border-[#ffff] border-[#333] bg-[#1c1c1c]`}
+        style={{
+          right: "16px",
+          top: "50%",
           transform: "translateY(-50%)",
           width: "36px",
-          height: "36px"
+          height: "36px",
         }}
       >
         <ArrowIcon
-          className={`transition-colors duration-300 group-hover:stroke-[#0d0d0d] stroke-[#666] w-3.5 h-3.5`}
+          className={`transition-colors duration-300 group-hover:stroke-[#fffff] stroke-[#fff] w-3.5 h-3.5`}
         />
       </div>
     </div>
@@ -225,11 +222,11 @@ function ServiceCard({
 
 export default function Services() {
   return (
-    <section className="w-full bg-[#0d0d0d] px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20">
+    <section className="w-full bg-forground px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-[1400px]">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center px-2 sm:px-4">
           <p
-            className="mb-2 sm:mb-3 lg:mb-4 text-[11px] sm:text-[13px] lg:text-[15px] font-bold uppercase text-[#52F447]"
+            className="mb-2 sm:mb-3 lg:mb-4 text-[11px] sm:text-[13px] lg:text-[15px] font-bold uppercase text-purple-800"
             style={{
               letterSpacing: "0.18em",
               fontFamily: "Barlow, sans-serif",

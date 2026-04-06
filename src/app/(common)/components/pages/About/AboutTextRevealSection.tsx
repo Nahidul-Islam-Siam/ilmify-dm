@@ -41,8 +41,10 @@ export default function MissionSectionExact() {
         scrub: 1.2,
         onUpdate: (self) => {
           const progress = self.progress;
-          
-          const heading = leftColumn.querySelector(".mission-heading") as HTMLElement;
+
+          const heading = leftColumn.querySelector(
+            ".mission-heading",
+          ) as HTMLElement;
           if (heading) {
             if (progress < 0.3) {
               heading.style.color = "#6b7280";
@@ -51,8 +53,10 @@ export default function MissionSectionExact() {
               heading.style.color = `rgba(82, 244, 71, ${opacity})`;
             }
           }
-          
-          const texts = leftColumn.querySelectorAll(".mission-text") as NodeListOf<HTMLElement>;
+
+          const texts = leftColumn.querySelectorAll(
+            ".mission-text",
+          ) as NodeListOf<HTMLElement>;
           texts.forEach((text) => {
             const opacity = Math.min(progress * 1.5, 1);
             text.style.color = `rgba(255, 255, 255, ${opacity})`;
@@ -109,7 +113,6 @@ export default function MissionSectionExact() {
           },
         },
       );
-
     }, section);
 
     return () => ctx.revert();
@@ -147,10 +150,7 @@ export default function MissionSectionExact() {
   ];
 
   return (
-    <section
-      ref={sectionRef}
-      className="py-20 md:py-24 lg:py-28 bg-[#0b0b0b]"
-    >
+    <section ref={sectionRef} className="py-20 md:py-24 lg:py-28 bg-[#0b0b0b]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Text Content */}
@@ -177,15 +177,15 @@ export default function MissionSectionExact() {
                 key={index}
                 className="stat-item flex items-center gap-4 group cursor-pointer"
               >
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-[#52F447]/10 flex items-center justify-center group-hover:bg-[#52F447]/20 transition-colors duration-300">
-                  <stat.icon className="w-5 h-5 text-[#52F447]" />
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-800/10 flex items-center justify-center group-hover:bg-purple-800/20 transition-colors duration-300">
+                  <stat.icon className="w-5 h-5 text-purple-800" />
                 </div>
                 <div>
                   <div className="flex items-baseline gap-0">
                     <span className="text-2xl sm:text-3xl font-bold text-gray-300">
                       {stat.value}
                     </span>
-                    <span className="text-2xl sm:text-3xl font-bold text-[#52F447]">
+                    <span className="text-2xl sm:text-3xl font-bold text-purple-800">
                       {stat.suffix}
                     </span>
                   </div>

@@ -1,6 +1,5 @@
 "use client";
 
-
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
@@ -10,16 +9,24 @@ import BrandMarquee from "./BrandMarquee";
 const toolBadges = [
   { link: "/assets/hero/Meta.png", className: "bg-[#2f2041] text-[#ff61f6]" },
   { link: "/assets/hero/SEO.png", className: "bg-[#25395f] text-[#42a5ff]" },
-  { link: "/assets/hero/Google-Ads.png", className: "bg-[#2b2b2b] text-[#ffb800]" },
-  { link: "/assets/hero/Email-Marketing.png", className: "bg-[#1f1f1f] text-[#f24e1e]" },
+  {
+    link: "/assets/hero/Google-Ads.png",
+    className: "bg-[#2b2b2b] text-[#ffb800]",
+  },
+  {
+    link: "/assets/hero/Email-Marketing.png",
+    className: "bg-[#1f1f1f] text-[#f24e1e]",
+  },
 ];
 
 export default function HomeShowcase() {
   return (
-    <main id="home" className="bg-[#0b0b0b] text-white overflow-x-hidden ">
-      <section className="relative w-full overflow-hidden px-4 sm:px-6 lg:px-10 pb-16 pt-16">
+    <main
+      id="home"
+      className="overflow-x-hidden bg-transparent text-[var(--site-text)]"
+    >
+      <section className="relative w-full overflow-hidden px-4 pb-16 pt-16 sm:px-6 lg:px-10">
         <div className="relative mx-auto flex max-w-[1260px] flex-col items-center">
-
           {/* Bubble */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[min(500px,70vw)] opacity-45">
@@ -35,25 +42,38 @@ export default function HomeShowcase() {
           </div>
 
           {/* Trust Badge */}
-          <div className="relative z-10 w-fit flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-2xl border border-white/10 bg-[#101010] p-4 shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
+          <div className="relative z-10 flex w-fit flex-col gap-3 rounded-2xl border border-[var(--site-border)] bg-white/92 p-4 shadow-[var(--site-shadow)] sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start sm:items-center gap-3 flex-1">
               <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full">
-                <Image src="/assets/hero/Trusted-by.png" width={25} height={30} alt="trusted" className="h-6 w-6" />
+                <Image
+                  src="/assets/hero/Trusted-by.png"
+                  width={25}
+                  height={30}
+                  alt="trusted"
+                  className="h-6 w-6"
+                />
               </span>
-              <p className="text-[13px] sm:text-sm md:text-[15px] font-semibold text-white leading-relaxed">
-                Helping startups and brands scale to $10M+ in revenue with data-backed marketing
+              <p className="text-[13px] font-semibold leading-relaxed text-[var(--site-text)] sm:text-sm md:text-[15px]">
+                Helping startups and brands scale to $10M+ in revenue with
+                data-backed marketing
               </p>
             </div>
-            <div className="flex items-center gap-2 flex-shrink-0">
+            <div className="flex items-center  gap-2 flex-shrink-0">
               {toolBadges.map((badge) => (
                 <span
                   key={badge.link}
                   className={cn(
                     "group flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition-all duration-300 hover:-translate-y-1 hover:scale-110",
-                    badge.className
+                    badge.className,
                   )}
                 >
-                  <Image src={badge.link} alt="badge" width={35} height={30} className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" />
+                  <Image
+                    src={badge.link}
+                    alt="badge"
+                    width={35}
+                    height={30}
+                    className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
+                  />
                 </span>
               ))}
             </div>
@@ -61,27 +81,28 @@ export default function HomeShowcase() {
 
           {/* Main Content */}
           <div className="relative z-10 w-full mt-10 sm:mt-12 md:mt-14 text-left md:text-center">
-            <h1 className="text-[clamp(22px,6vw,52px)] font-extrabold uppercase leading-tight tracking-tight break-words overflow-wrap-anywhere">
+            <h1 className="overflow-wrap-anywhere break-words text-[clamp(22px,6vw,52px)] font-extrabold uppercase leading-tight tracking-tight text-black">
               Get More Leads, Sales &amp; Growth
             </h1>
-            <h1 className="text-[clamp(22px,6vw,52px)] font-extrabold uppercase leading-tight tracking-tight break-words overflow-wrap-anywhere">
+            <h1 className="overflow-wrap-anywhere break-words text-[clamp(22px,6vw,52px)] font-extrabold uppercase leading-tight tracking-tight text-black">
               Guaranteed Strategy
             </h1>
 
-            <p className="mt-5 md:mt-6 max-w-full md:max-w-[680px] md:mx-auto text-[clamp(14px,2.5vw,18px)] font-semibold text-[#ece8e3] break-words">
-              We Craft <span className="text-[#52F447]">Stunning</span> Designs For Businesses Worldwide.
+            <p className="mt-5 max-w-full break-words text-[clamp(14px,2.5vw,18px)] font-semibold text-[var(--site-text-muted)] md:mx-auto md:mt-6 md:max-w-[680px]">
+              We Craft <span className="text-purple-800">Stunning</span> Designs
+              For Businesses Worldwide.
             </p>
 
             <div className="mt-7 md:mt-10 flex flex-col sm:flex-row items-center justify-start md:justify-center gap-3">
               <Link
                 href="#contact"
-                className="inline-flex h-12 w-full sm:w-auto min-w-[160px] items-center justify-center rounded-full bg-[#f2efea] px-8 text-[15px] font-semibold text-black transition hover:brightness-95"
+                className="inline-flex h-12 min-w-[160px] w-full items-center justify-center rounded-full border border-[var(--site-accent)] bg-[var(--site-accent)] px-8 text-[15px] font-semibold text-black transition hover:brightness-95 sm:w-auto"
               >
                 Book a Call
               </Link>
               <Link
                 href="#work"
-                className="inline-flex h-12 w-full sm:w-auto min-w-[156px] items-center justify-center gap-2 rounded-full border border-white bg-transparent px-8 text-[15px] font-semibold text-white transition hover:bg-white hover:text-black"
+                className="inline-flex h-12 min-w-[156px] w-full items-center justify-center gap-2 rounded-full border border-black/70 bg-transparent px-8 text-[15px] font-semibold text-black transition hover:border-[var(--site-accent)] hover:bg-[var(--site-accent)] sm:w-auto"
               >
                 Get Free Audit
                 <ArrowUpRight size={16} />
@@ -90,7 +111,7 @@ export default function HomeShowcase() {
           </div>
 
           {/* Tagline */}
-          <p className="relative z-10 mt-20 md:mt-28 lg:mt-36 text-center text-[10px] sm:text-xs font-bold uppercase tracking-[0.06em] text-white/85">
+          <p className="relative z-10 mt-20 text-center text-[10px] font-bold uppercase tracking-[0.06em] text-black/70 sm:text-xs md:mt-28 lg:mt-36">
             Trusted By Industry Leaders &amp; Fast-Growing Startups
           </p>
 

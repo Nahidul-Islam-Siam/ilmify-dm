@@ -6,21 +6,21 @@ import Link from "next/link";
 
 export default function WorkHero() {
   const containerRef = useRef<HTMLDivElement>(null);
-//   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  //   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
 
-//   useEffect(() => {
-//     const handleMouseMove = (e: MouseEvent) => {
-//       if (!containerRef.current) return;
-//       const rect = containerRef.current.getBoundingClientRect();
-//       setMousePosition({
-//         x: ((e.clientX - rect.left) / rect.width) * 100,
-//         y: ((e.clientY - rect.top) / rect.height) * 100,
-//       });
-//     };
-//     const container = containerRef.current;
-//     container?.addEventListener("mousemove", handleMouseMove);
-//     return () => container?.removeEventListener("mousemove", handleMouseMove);
-//   }, []);
+  //   useEffect(() => {
+  //     const handleMouseMove = (e: MouseEvent) => {
+  //       if (!containerRef.current) return;
+  //       const rect = containerRef.current.getBoundingClientRect();
+  //       setMousePosition({
+  //         x: ((e.clientX - rect.left) / rect.width) * 100,
+  //         y: ((e.clientY - rect.top) / rect.height) * 100,
+  //       });
+  //     };
+  //     const container = containerRef.current;
+  //     container?.addEventListener("mousemove", handleMouseMove);
+  //     return () => container?.removeEventListener("mousemove", handleMouseMove);
+  //   }, []);
 
   return (
     <section
@@ -29,7 +29,13 @@ export default function WorkHero() {
     >
       {/* Background bubble */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none z-0">
-        <Image src="/assets/hero/home_bubble.webp" alt="" fill className="object-cover opacity-10" priority />
+        <Image
+          src="/assets/hero/home_bubble.webp"
+          alt=""
+          fill
+          className="object-cover opacity-10"
+          priority
+        />
       </div>
 
       {/* Mouse glow */}
@@ -46,8 +52,6 @@ export default function WorkHero() {
         }}
       /> */}
 
-     
-
       {/* Main content */}
       <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20 max-w-5xl mx-auto">
         {/* Big heading */}
@@ -55,7 +59,7 @@ export default function WorkHero() {
           <span className="block text-white text-[clamp(32px,8vw,96px)]">
             OUR UI UX &amp; BRANDING
           </span>
-          <span className="block text-[#52F447] text-[clamp(32px,8vw,96px)]">
+          <span className="block text-purple-800 text-[clamp(32px,8vw,96px)]">
             CASE STUDIES
           </span>
         </h1>

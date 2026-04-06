@@ -61,7 +61,7 @@ export default function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-white/62 transition  hover:text-[#52F447]"
+                  className="text-sm text-white/62 transition  hover:text-purple-800"
                 >
                   {link.label}
                 </Link>
@@ -76,7 +76,7 @@ export default function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-white/62 transition hover:text-[#52F447]"
+                  className="text-sm text-white/62 transition hover:text-purple-800"
                 >
                   {link.label}
                 </Link>
@@ -105,7 +105,7 @@ export default function Footer() {
               <Link
                 key={label}
                 href={href}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/60 transition hover:border-[#52F447] hover:text-[#52F447]"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/60 transition hover:border-purple-800 hover:text-purple-800"
                 aria-label={label}
               >
                 <Icon size={16} />

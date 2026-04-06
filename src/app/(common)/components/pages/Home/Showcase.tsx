@@ -40,7 +40,7 @@ export default function Showcase() {
     <section className="bg-[#0b0b0b] px-5 py-20 text-white md:px-8 lg:py-24">
       <div className="mx-auto max-w-[1280px]">
         <div className="mx-auto max-w-[740px] text-center">
-          <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#52F447]">
+          <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-purple-800">
             How We Helped Others Succeed
           </p>
           <h2 className="mt-4 text-[2.25rem] font-semibold tracking-[-0.04em] text-white md:text-[3.2rem]">
@@ -86,7 +86,7 @@ export default function Showcase() {
           </h3>
           <p className="mx-auto  max-w-[680px] text-sm leading-8 text-white/88 md:text-md">
             The proof is in our work. Check out{" "}
-            <span className="font-semibold text-[#52F447] underline underline-offset-4">
+            <span className="font-semibold text-purple-800 underline underline-offset-4">
               our case studies
             </span>{" "}
             to learn how our product development services can transform your
@@ -96,11 +96,11 @@ export default function Showcase() {
           <div className="mt-5 flex justify-center">
             <Link href="#contact" className="group [perspective:1000px]">
               <span className="relative block h-[56px] w-[280px] [transform-style:preserve-3d] transition-transform duration-500 group-hover:[transform:rotateX(90deg)]">
-                <span className="absolute inset-0 flex items-center justify-center gap-3 rounded-full bg-[#52F447] px-8 text-[16px] font-semibold text-black [backface-visibility:hidden]">
+                <span className="absolute inset-0 flex items-center justify-center gap-3 rounded-full bg-purple-800 px-8 text-[16px] font-semibold text-black [backface-visibility:hidden]">
                   Book a discovery call
                   <ArrowUpRight size={18} strokeWidth={2.4} />
                 </span>
-                <span className="absolute inset-0 flex items-center justify-center rounded-full border border-[] bg-transparent px-8 text-[16px] font-semibold text-[#52F447] [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(28px)]">
+                <span className="absolute inset-0 flex items-center justify-center rounded-full border border-[] bg-transparent px-8 text-[16px] font-semibold text-purple-800 [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(28px)]">
                   Let&apos;s talk
                 </span>
               </span>

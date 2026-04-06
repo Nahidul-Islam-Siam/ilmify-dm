@@ -54,16 +54,41 @@ const serviceStructure = {
       {
         name: "Paid Advertising",
         services: [
-          { href: "/services/google-ads", title: "Google Ads", icon: Gauge, description: "Dominate search with PPC" },
-          { href: "/services/meta-ads", title: "Meta Ads", icon: LayoutDashboard, description: "Facebook & Instagram" },
-          { href: "/services/tiktok-ads", title: "TikTok Ads", icon: Sparkles, description: "Reach Gen Z" },
+          {
+            href: "/services/google-ads",
+            title: "Google Ads",
+            icon: Gauge,
+            description: "Dominate search with PPC",
+          },
+          {
+            href: "/services/meta-ads",
+            title: "Meta Ads",
+            icon: LayoutDashboard,
+            description: "Facebook & Instagram",
+          },
+          {
+            href: "/services/tiktok-ads",
+            title: "TikTok Ads",
+            icon: Sparkles,
+            description: "Reach Gen Z",
+          },
         ],
       },
       {
         name: "Organic Growth",
         services: [
-          { href: "/services/seo", title: "SEO Strategy", icon: FileSearch2, description: "Rank higher organically" },
-          { href: "/services/content-marketing", title: "Content Marketing", icon: PenTool, description: "Engage your audience" },
+          {
+            href: "/services/seo",
+            title: "SEO Strategy",
+            icon: FileSearch2,
+            description: "Rank higher organically",
+          },
+          {
+            href: "/services/content-marketing",
+            title: "Content Marketing",
+            icon: PenTool,
+            description: "Engage your audience",
+          },
         ],
       },
     ],
@@ -76,24 +101,64 @@ const serviceStructure = {
       {
         name: "Web Development",
         services: [
-          { href: "/services/nextjs", title: "Next.js", icon: Globe2, description: "React framework for production" },
-          { href: "/services/mern", title: "MERN Stack", icon: Brackets, description: "Full-stack JavaScript" },
-          { href: "/services/vue", title: "Vue.js", icon: LayoutDashboard, description: "Progressive framework" },
+          {
+            href: "/services/nextjs",
+            title: "Next.js",
+            icon: Globe2,
+            description: "React framework for production",
+          },
+          {
+            href: "/services/mern",
+            title: "MERN Stack",
+            icon: Brackets,
+            description: "Full-stack JavaScript",
+          },
+          {
+            href: "/services/vue",
+            title: "Vue.js",
+            icon: LayoutDashboard,
+            description: "Progressive framework",
+          },
         ],
       },
       {
         name: "App Development",
         services: [
-          { href: "/services/flutter", title: "Flutter", icon: Smartphone, description: "Cross-platform apps" },
-          { href: "/services/react-native", title: "React Native", icon: MonitorSmartphone, description: "Native performance" },
+          {
+            href: "/services/flutter",
+            title: "Flutter",
+            icon: Smartphone,
+            description: "Cross-platform apps",
+          },
+          {
+            href: "/services/react-native",
+            title: "React Native",
+            icon: MonitorSmartphone,
+            description: "Native performance",
+          },
         ],
       },
       {
         name: "CMS Solutions",
         services: [
-          { href: "/services/wordpress", title: "WordPress", icon: PenTool, description: "Versatile CMS" },
-          { href: "/services/shopify", title: "Shopify", icon: ShoppingCart, description: "E-commerce solution" },
-          { href: "/services/webflow", title: "Webflow", icon: Globe2, description: "Visual development" },
+          {
+            href: "/services/wordpress",
+            title: "WordPress",
+            icon: PenTool,
+            description: "Versatile CMS",
+          },
+          {
+            href: "/services/shopify",
+            title: "Shopify",
+            icon: ShoppingCart,
+            description: "E-commerce solution",
+          },
+          {
+            href: "/services/webflow",
+            title: "Webflow",
+            icon: Globe2,
+            description: "Visual development",
+          },
         ],
       },
     ],
@@ -106,15 +171,35 @@ const serviceStructure = {
       {
         name: "Brand Identity",
         services: [
-          { href: "/services/logo-design", title: "Logo Design", icon: PenTool, description: "Memorable logos" },
-          { href: "/services/brand-identity", title: "Brand Identity", icon: Palette, description: "Complete brand systems" },
+          {
+            href: "/services/logo-design",
+            title: "Logo Design",
+            icon: PenTool,
+            description: "Memorable logos",
+          },
+          {
+            href: "/services/brand-identity",
+            title: "Brand Identity",
+            icon: Palette,
+            description: "Complete brand systems",
+          },
         ],
       },
       {
         name: "Digital Assets",
         services: [
-          { href: "/services/ui-ux-design", title: "UI/UX Design", icon: Lightbulb, description: "User-centered design" },
-          { href: "/services/social-media-graphics", title: "Social Graphics", icon: LayoutDashboard, description: "Engaging visuals" },
+          {
+            href: "/services/ui-ux-design",
+            title: "UI/UX Design",
+            icon: Lightbulb,
+            description: "User-centered design",
+          },
+          {
+            href: "/services/social-media-graphics",
+            title: "Social Graphics",
+            icon: LayoutDashboard,
+            description: "Engaging visuals",
+          },
         ],
       },
     ],
@@ -140,8 +225,11 @@ function BrandMark() {
 
 // Mobile Accordion Component
 function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
-  const [expandedCategory, setExpandedCategory] = useState<ServiceCategoryKey | null>(null);
-  const [expandedSubcategory, setExpandedSubcategory] = useState<string | null>(null);
+  const [expandedCategory, setExpandedCategory] =
+    useState<ServiceCategoryKey | null>(null);
+  const [expandedSubcategory, setExpandedSubcategory] = useState<string | null>(
+    null,
+  );
 
   const toggleCategory = (key: ServiceCategoryKey) => {
     setExpandedCategory(expandedCategory === key ? null : key);
@@ -170,16 +258,18 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
               className="flex w-full items-center justify-between px-5 py-4 transition-colors hover:bg-white/5"
             >
               <div className="flex items-center gap-3">
-                <div className="rounded-xl bg-[#52F447]/10 p-2">
-                  <Icon size={18} className="text-[#52F447]" />
+                <div className="rounded-xl bg-purple-800/10 p-2">
+                  <Icon size={18} className="text-purple-800" />
                 </div>
-                <span className="text-base font-semibold text-white">{category.label}</span>
+                <span className="text-base font-semibold text-white">
+                  {category.label}
+                </span>
               </div>
               <ChevronDown
                 size={18}
                 className={cn(
                   "text-white/50 transition-transform duration-300",
-                  isExpanded && "rotate-180"
+                  isExpanded && "rotate-180",
                 )}
               />
             </button>
@@ -187,18 +277,24 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
             <div
               className={cn(
                 "transition-all duration-300 ease-in-out",
-                isExpanded ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0"
+                isExpanded ? "max-h-[800px] opacity-100" : "max-h-0 opacity-0",
               )}
             >
               <div className="border-t border-white/10 bg-white/[0.02]">
                 {category.subcategories.map((subcategory, idx) => {
-                  const isSubExpanded = expandedSubcategory === `${key}-${subcategory.name}`;
+                  const isSubExpanded =
+                    expandedSubcategory === `${key}-${subcategory.name}`;
 
                   return (
-                    <div key={idx} className="border-b border-white/5 last:border-0">
+                    <div
+                      key={idx}
+                      className="border-b border-white/5 last:border-0"
+                    >
                       <button
                         type="button"
-                        onClick={() => toggleSubcategory(`${key}-${subcategory.name}`)}
+                        onClick={() =>
+                          toggleSubcategory(`${key}-${subcategory.name}`)
+                        }
                         className="flex w-full items-center justify-between px-5 py-3 transition-colors hover:bg-white/5"
                       >
                         <span className="text-xs font-semibold uppercase tracking-wider text-white/40">
@@ -208,7 +304,7 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
                           size={14}
                           className={cn(
                             "text-white/30 transition-transform duration-300",
-                            isSubExpanded && "rotate-90"
+                            isSubExpanded && "rotate-90",
                           )}
                         />
                       </button>
@@ -216,7 +312,9 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
                       <div
                         className={cn(
                           "transition-all duration-300 overflow-hidden",
-                          isSubExpanded ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                          isSubExpanded
+                            ? "max-h-[500px] opacity-100"
+                            : "max-h-0 opacity-0",
                         )}
                       >
                         <div className="px-3 pb-4 space-y-2">
@@ -229,8 +327,11 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
                                 onClick={onLinkClick}
                                 className="group flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-white/10"
                               >
-                                <div className="rounded-lg bg-white/5 p-2 group-hover:bg-[#52F447]/20 transition-colors">
-                                  <ServiceIcon size={14} className="text-white/60 group-hover:text-[#52F447] transition-colors" />
+                                <div className="rounded-lg bg-white/5 p-2 group-hover:bg-purple-800/20 transition-colors">
+                                  <ServiceIcon
+                                    size={14}
+                                    className="text-white/60 group-hover:text-purple-800 transition-colors"
+                                  />
                                 </div>
                                 <div className="flex-1">
                                   <p className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">
@@ -242,7 +343,10 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
                                     </p>
                                   )}
                                 </div>
-                                <ArrowRight size={14} className="text-white/30 group-hover:text-[#52F447] group-hover:translate-x-0.5 transition-all" />
+                                <ArrowRight
+                                  size={14}
+                                  className="text-white/30 group-hover:text-purple-800 group-hover:translate-x-0.5 transition-all"
+                                />
                               </Link>
                             );
                           })}
@@ -264,7 +368,8 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<ServiceCategoryKey>("custom-development");
+  const [activeCategory, setActiveCategory] =
+    useState<ServiceCategoryKey>("custom-development");
   const [hoveredService, setHoveredService] = useState<string | null>(null);
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -322,8 +427,10 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div
         className={cn(
-          "border-b border-white/5 bg-[#0A0A0A] transition-all duration-300",
-          scrolled ? "shadow-[0_20px_40px_-12px_rgba(0,0,0,0.3)] backdrop-blur-xl bg-[#0A0A0A]/90" : "",
+          "border-b border-transparent bg-transparent transition-all duration-300",
+          scrolled
+            ? "border-[color:var(--site-border)] bg-[color:var(--site-panel-bg)] shadow-[var(--site-shadow)] backdrop-blur-xl"
+            : "",
         )}
       >
         <div className="mx-auto flex h-16 md:h-20 max-w-[1440px] items-center justify-between px-5 md:px-8 lg:px-12">
@@ -341,7 +448,7 @@ export default function Navbar() {
                         navigationMenuTriggerStyle(),
                         "relative h-10 rounded-none border-none bg-transparent px-5 text-[15px] font-medium text-white/80 shadow-none hover:bg-transparent hover:text-white focus:bg-transparent focus:text-white",
                         item.active &&
-                          "text-white after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-6 after:-translate-x-1/2 after:bg-[#52F447]",
+                          "text-white after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-6 after:-translate-x-1/2 after:bg-purple-800",
                       )}
                     >
                       {item.label}
@@ -365,7 +472,9 @@ export default function Navbar() {
                   <div className="w-[1100px] rounded-2xl border border-white/10 bg-[#0D0D0D] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] backdrop-blur-sm overflow-hidden mt-12">
                     {/* Category Tabs */}
                     <div className="flex border-b border-white/10 bg-white/5">
-                      {(Object.keys(serviceStructure) as ServiceCategoryKey[]).map((key) => {
+                      {(
+                        Object.keys(serviceStructure) as ServiceCategoryKey[]
+                      ).map((key) => {
                         const category = serviceStructure[key];
                         const Icon = category.icon;
                         const isActive = activeCategory === key;
@@ -377,8 +486,8 @@ export default function Navbar() {
                             className={cn(
                               "flex flex-1 items-center justify-center gap-2 px-4 py-3.5 text-sm font-medium transition-all duration-200",
                               isActive
-                                ? "text-[#52F447] border-b-2 border-[#52F447] bg-white/5"
-                                : "text-white/60 hover:text-white hover:bg-white/5"
+                                ? "text-purple-800 border-b-2 border-purple-800 bg-white/5"
+                                : "text-white/60 hover:text-white hover:bg-white/5",
                             )}
                           >
                             <Icon size={16} />
@@ -391,61 +500,81 @@ export default function Navbar() {
                     {/* Services Grid */}
                     <div className="p-5">
                       <div className="grid grid-cols-4 gap-4">
-                        {activeCategoryData.subcategories.map((subcategory, idx) => (
-                          <div key={idx} className="space-y-2">
-                            <p className="text-[11px] font-semibold uppercase tracking-wider text-white/40 px-2 mb-2">
-                              {subcategory.name}
-                            </p>
-                            <div className="space-y-1">
-                              {subcategory.services.map((service) => {
-                                const ServiceIcon = service.icon;
-                                const isHovered = hoveredService === service.title;
-                                return (
-                                  <Link
-                                    key={service.title}
-                                    href={service.href}
-                                    onMouseEnter={() => setHoveredService(service.title)}
-                                    onMouseLeave={() => setHoveredService(null)}
-                                    className="group relative flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all duration-200 overflow-hidden"
-                                  >
-                                    <div
-                                      className={cn(
-                                        "absolute inset-0 transition-opacity duration-200",
-                                        isHovered ? "opacity-100" : "opacity-0",
-                                        "bg-gradient-to-r from-[#52F447]/15 to-transparent rounded-lg"
-                                      )}
-                                    />
-                                    <div className={cn(
-                                      "rounded-md p-1.5 transition-all duration-200",
-                                      isHovered ? "bg-[#52F447]/20" : "bg-white/5"
-                                    )}>
-                                      <ServiceIcon
-                                        size={14}
+                        {activeCategoryData.subcategories.map(
+                          (subcategory, idx) => (
+                            <div key={idx} className="space-y-2">
+                              <p className="text-[11px] font-semibold uppercase tracking-wider text-white/40 px-2 mb-2">
+                                {subcategory.name}
+                              </p>
+                              <div className="space-y-1">
+                                {subcategory.services.map((service) => {
+                                  const ServiceIcon = service.icon;
+                                  const isHovered =
+                                    hoveredService === service.title;
+                                  return (
+                                    <Link
+                                      key={service.title}
+                                      href={service.href}
+                                      onMouseEnter={() =>
+                                        setHoveredService(service.title)
+                                      }
+                                      onMouseLeave={() =>
+                                        setHoveredService(null)
+                                      }
+                                      className="group relative flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all duration-200 overflow-hidden"
+                                    >
+                                      <div
                                         className={cn(
-                                          "transition-colors duration-200",
-                                          isHovered ? "text-[#52F447]" : "text-white/60"
+                                          "absolute inset-0 transition-opacity duration-200",
+                                          isHovered
+                                            ? "opacity-100"
+                                            : "opacity-0",
+                                          "bg-gradient-to-r from-purple-800/15 to-transparent rounded-lg",
                                         )}
                                       />
-                                    </div>
-                                    <span className={cn(
-                                      "text-sm font-medium transition-colors duration-200",
-                                      isHovered ? "text-white" : "text-white/70"
-                                    )}>
-                                      {service.title}
-                                    </span>
-                                    <ChevronRight
-                                      size={12}
-                                      className={cn(
-                                        "ml-auto transition-all duration-200 opacity-0 -translate-x-1",
-                                        isHovered && "opacity-100 translate-x-0 text-[#52F447]"
-                                      )}
-                                    />
-                                  </Link>
-                                );
-                              })}
+                                      <div
+                                        className={cn(
+                                          "rounded-md p-1.5 transition-all duration-200",
+                                          isHovered
+                                            ? "bg-purple-800/20"
+                                            : "bg-white/5",
+                                        )}
+                                      >
+                                        <ServiceIcon
+                                          size={14}
+                                          className={cn(
+                                            "transition-colors duration-200",
+                                            isHovered
+                                              ? "text-purple-800"
+                                              : "text-white/60",
+                                          )}
+                                        />
+                                      </div>
+                                      <span
+                                        className={cn(
+                                          "text-sm font-medium transition-colors duration-200",
+                                          isHovered
+                                            ? "text-white"
+                                            : "text-white/70",
+                                        )}
+                                      >
+                                        {service.title}
+                                      </span>
+                                      <ChevronRight
+                                        size={12}
+                                        className={cn(
+                                          "ml-auto transition-all duration-200 opacity-0 -translate-x-1",
+                                          isHovered &&
+                                            "opacity-100 translate-x-0 text-purple-800",
+                                        )}
+                                      />
+                                    </Link>
+                                  );
+                                })}
+                              </div>
                             </div>
-                          </div>
-                        ))}
+                          ),
+                        )}
                       </div>
 
                       {/* Bottom CTA */}
@@ -455,12 +584,12 @@ export default function Navbar() {
                           className="group flex items-center justify-between rounded-lg p-2 transition-all duration-300 hover:bg-white/5"
                         >
                           <div className="flex items-center gap-2">
-                            <Rocket size={14} className="text-[#52F447]" />
+                            <Rocket size={14} className="text-purple-800" />
                             <span className="text-sm text-white/60 group-hover:text-white">
                               View all {activeCategoryData.label} services
                             </span>
                           </div>
-                          <span className="text-white/30 group-hover:text-[#52F447] group-hover:translate-x-1 transition-all">
+                          <span className="text-white/30 group-hover:text-purple-800 group-hover:translate-x-1 transition-all">
                             →
                           </span>
                         </Link>
@@ -475,7 +604,7 @@ export default function Navbar() {
           <div className="hidden lg:flex">
             <Link
               href="#contact"
-              className="group relative inline-flex h-11 min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-[#52F447] px-6 text-sm font-semibold text-black transition-all duration-300 hover:bg-transparent hover:text-[#52F447] border border-transparent hover:border-[#52F447]"
+              className="group relative inline-flex h-11 min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-purple-800 px-6 text-sm font-semibold text-black transition-all duration-300 hover:bg-transparent hover:text-purple-800 border border-transparent hover:border-purple-800"
             >
               <span className="relative z-10 group-hover:scale-105 transition-transform">
                 Work with us
@@ -495,14 +624,18 @@ export default function Navbar() {
                 size={18}
                 className={cn(
                   "absolute transition-all duration-300",
-                  isMobileMenuOpen ? "rotate-90 opacity-0 scale-50" : "rotate-0 opacity-100 scale-100"
+                  isMobileMenuOpen
+                    ? "rotate-90 opacity-0 scale-50"
+                    : "rotate-0 opacity-100 scale-100",
                 )}
               />
               <X
                 size={18}
                 className={cn(
                   "absolute transition-all duration-300",
-                  isMobileMenuOpen ? "rotate-0 opacity-100 scale-100" : "-rotate-90 opacity-0 scale-50"
+                  isMobileMenuOpen
+                    ? "rotate-0 opacity-100 scale-100"
+                    : "-rotate-90 opacity-0 scale-50",
                 )}
               />
             </div>
@@ -513,7 +646,7 @@ export default function Navbar() {
         <div
           className={cn(
             "fixed inset-0 top-16 z-40 bg-black/80 backdrop-blur-md transition-all duration-300 lg:hidden",
-            isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+            isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible",
           )}
           onClick={closeMobileMenu}
         />
@@ -522,7 +655,7 @@ export default function Navbar() {
         <div
           className={cn(
             "fixed top-16 bottom-0 right-0 w-full max-w-[400px] bg-gradient-to-b from-[#0D0D0D] to-[#080808] shadow-2xl transition-all duration-500 ease-out lg:hidden z-50 overflow-hidden",
-            isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            isMobileMenuOpen ? "translate-x-0" : "translate-x-full",
           )}
         >
           <div className="h-full overflow-y-auto overscroll-contain pb-24">
@@ -537,13 +670,13 @@ export default function Navbar() {
                     className={cn(
                       "group flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-all duration-200 hover:bg-white/5",
                       item.active
-                        ? "text-[#52F447] bg-white/5"
-                        : "text-white/80 hover:text-white"
+                        ? "text-purple-800 bg-white/5"
+                        : "text-white/80 hover:text-white",
                     )}
                   >
                     <span>{item.label}</span>
                     {item.active && (
-                      <div className="h-1.5 w-1.5 rounded-full bg-[#52F447]" />
+                      <div className="h-1.5 w-1.5 rounded-full bg-purple-800" />
                     )}
                   </Link>
                 ))}
@@ -566,10 +699,13 @@ export default function Navbar() {
                 <Link
                   href="#contact"
                   onClick={closeMobileMenu}
-                  className="group flex w-full items-center justify-center gap-2 rounded-full bg-[#52F447] px-6 py-3.5 text-sm font-semibold text-black transition-all hover:bg-transparent hover:text-[#52F447] border border-transparent hover:border-[#52F447]"
+                  className="group flex w-full items-center justify-center gap-2 rounded-full bg-purple-800 px-6 py-3.5 text-sm font-semibold text-black transition-all hover:bg-transparent hover:text-purple-800 border border-transparent hover:border-purple-800"
                 >
                   <span>Work with us</span>
-                  <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-0.5 transition-transform"
+                  />
                 </Link>
               </div>
 

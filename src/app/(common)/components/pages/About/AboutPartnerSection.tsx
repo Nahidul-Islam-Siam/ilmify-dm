@@ -11,20 +11,17 @@ gsap.registerPlugin(ScrollTrigger);
 const aboutHighlights = [
   {
     title: "Our Team",
-    body:
-      "Our team of expert UI UX designers has a proven track record of creating innovative design solutions that transform businesses across various industries and geographies.",
+    body: "Our team of expert UI UX designers has a proven track record of creating innovative design solutions that transform businesses across various industries and geographies.",
     icon: Users,
   },
   {
     title: "Client-Centric Design",
-    body:
-      "At ZeeFrames, our unique design approach focuses on understanding client needs and collaborating to create exceptional, goal-driven digital products.",
+    body: "At ZeeFrames, our unique design approach focuses on understanding client needs and collaborating to create exceptional, goal-driven digital products.",
     icon: Handshake,
   },
   {
     title: "Testimonials Showcase",
-    body:
-      "Do not just take our word for it. See what satisfied clients say. Explore testimonials and case studies showcasing how our design solutions help businesses achieve their goals.",
+    body: "Do not just take our word for it. See what satisfied clients say. Explore testimonials and case studies showcasing how our design solutions help businesses achieve their goals.",
     icon: Trophy,
   },
 ];
@@ -135,8 +132,6 @@ export default function AboutPartnerSection() {
           >
             <div className="grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-start lg:gap-12 xl:grid-cols-[470px_minmax(0,1fr)] xl:gap-16">
               <div className="relative">
-              
-             
                 <div className="relative overflow-hidden rounded-[22px] md:mt-30">
                   <Image
                     src="/assets/about/about-banner.png"
@@ -149,7 +144,7 @@ export default function AboutPartnerSection() {
               </div>
 
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#52F447] sm:text-[12px]">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-purple-800 sm:text-[12px]">
                   About
                 </p>
                 <h2 className="mt-4  text-[2.2rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white ">
@@ -169,9 +164,9 @@ export default function AboutPartnerSection() {
                     return (
                       <div
                         key={item.title}
-                        className="rounded-[22px] border border-white/10 bg-[#0d0d0d] p-5 transition duration-300 hover:border-[#52F447]/30 hover:bg-[#121212] sm:p-6"
+                        className="rounded-[22px] border border-white/10 bg-[#0d0d0d] p-5 transition duration-300 hover:border-purple-800/30 hover:bg-[#121212] sm:p-6"
                       >
-                        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#52F447]/20 bg-[#52F447]/6 text-[#52F447]">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-purple-800/20 bg-purple-800/6 text-purple-800">
                           <Icon size={20} strokeWidth={2} />
                         </div>
                         <h3 className="mt-6 font-semibold leading-[1.06] tracking-[-0.04em] text-white ">

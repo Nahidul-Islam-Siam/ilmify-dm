@@ -32,8 +32,8 @@ export default function FeaturedInsightCard() {
   const formattedDate = formatDate(date);
 
   return (
-    <div className="group relative overflow-hidden  bg-gradient-to-br from-[#0A0A0A] to-[#111111]  ransition-all duration-500 hover:border-[#52F447]/30 hover:shadow-2xl hover:shadow-[#52F447]/5">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#52F447]/0 via-[#52F447]/0 to-[#52F447]/5 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+    <div className="group relative overflow-hidden  bg-gradient-to-br from-[#0A0A0A] to-[#111111]  ransition-all duration-500 hover:border-purple-800/30 hover:shadow-2xl hover:shadow-purple-800/5">
+      <div className="absolute inset-0 bg-gradient-to-r from-purple-800/0 via-purple-800/0 to-purple-800/5 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
       <div className="relative z-10 flex flex-col lg:flex-row gap-6 p-6 md:p-8 max-w-6xl mx-auto">
         {/* Image Section */}
@@ -48,10 +48,10 @@ export default function FeaturedInsightCard() {
           />
           {/* Badge */}
           <div className="absolute top-4 left-4 z-20">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#52F447]/20 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-[#52F447] border border-[#52F447]/30">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-purple-800/20 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-purple-800 border border-purple-800/30">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#52F447] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#52F447]" />
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-800 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-800" />
               </span>
               Featured Article
             </span>
@@ -63,11 +63,11 @@ export default function FeaturedInsightCard() {
           {/* Meta Info */}
           <div className="flex flex-wrap items-center gap-4 text-sm text-white/50">
             <div className="flex items-center gap-1.5">
-              <Clock size={14} className="text-[#52F447]" />
+              <Clock size={14} className="text-purple-800" />
               <span>{readTime}</span>
             </div>
             <div className="flex items-center gap-1.5">
-              <Calendar size={14} className="text-[#52F447]" />
+              <Calendar size={14} className="text-purple-800" />
               <span>{formattedDate}</span>
             </div>
           </div>
@@ -86,7 +86,7 @@ export default function FeaturedInsightCard() {
           <div className="pt-4">
             <Link
               href={`/insights/${insight.slug}`}
-              className="group/link inline-flex items-center gap-2 text-[#52F447] font-semibold transition-all duration-300 hover:gap-3"
+              className="group/link inline-flex items-center gap-2 text-purple-800 font-semibold transition-all duration-300 hover:gap-3"
             >
               <span>Read full article</span>
               <ArrowRight
@@ -100,7 +100,7 @@ export default function FeaturedInsightCard() {
 
       {/* Decorative corner accent */}
       {/* <div className="absolute bottom-0 right-0 h-24 w-24 opacity-20">
-        <div className="absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-[#52F447] blur-3xl" />
+        <div className="absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-purple-800 blur-3xl" />
       </div> */}
     </div>
   );
