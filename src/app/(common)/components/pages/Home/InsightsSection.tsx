@@ -1,7 +1,8 @@
-﻿import { ArrowUpRight } from "lucide-react";
+﻿
 import Image from "next/image";
 import Link from "next/link";
 import { insightItems } from "@/app/data/insight/Insight";
+import Button from "../../button/Button";
 
 export default function InsightsSection() {
   const latestInsights = insightItems.slice(0, 3);
@@ -20,7 +21,7 @@ export default function InsightsSection() {
             </h2>
           </div>
 
-          <div className="lg:pt-1">
+          {/* <div className="lg:pt-1">
             <Link
               href="#contact"
               className="inline-flex h-[54px] items-center justify-center gap-3 rounded-full  px-7 text-[15px] font-semibold transition bg-purple-800 text-white hover:bg-white hover:border hover:border-purple-800 hover:text-purple-800 sm:h-[56px] sm:px-8 sm:text-[16px]"
@@ -28,7 +29,8 @@ export default function InsightsSection() {
               Explore More
               <ArrowUpRight size={18} strokeWidth={2.4} />
             </Link>
-          </div>
+          </div> */}
+          <Button href="#contact" label="Explore More"/>
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">

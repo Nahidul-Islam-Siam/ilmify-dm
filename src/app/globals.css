@@ -81,11 +81,7 @@ body {
   overflow: hidden !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark background for dark mode */ /* Lighter text color for dark mode */
-  }
-}
+
 
 body {
   font-family: "Inter", sans-serif;
@@ -119,10 +115,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
-input[type="number"] {
-  -moz-appearance: textfield;
-}
 
 /* HTML: <div class="loader"></div> */
 .loader {

@@ -36,6 +36,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState, useRef } from "react";
+import Button from "../../button/Button";
 
 const navItems = [
   { href: "/", label: "Home", match: ["/"] },
@@ -261,14 +262,14 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
                 <div className="rounded-xl bg-purple-800/10 p-2">
                   <Icon size={18} className="text-purple-800" />
                 </div>
-                <span className="text-base font-semibold text-white">
+                <span className="text-sm font-semibold text-purple-800">
                   {category.label}
                 </span>
               </div>
               <ChevronDown
                 size={18}
                 className={cn(
-                  "text-white/50 transition-transform duration-300",
+                  "text-purple-800 transition-transform duration-300",
                   isExpanded && "rotate-180",
                 )}
               />
@@ -297,13 +298,13 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
                         }
                         className="flex w-full items-center justify-between px-5 py-3 transition-colors hover:bg-white/5"
                       >
-                        <span className="text-xs font-semibold uppercase tracking-wider text-white/40">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-purple-800">
                           {subcategory.name}
                         </span>
                         <ChevronRight
                           size={14}
                           className={cn(
-                            "text-white/30 transition-transform duration-300",
+                            "text-purple-800 transition-transform duration-300",
                             isSubExpanded && "rotate-90",
                           )}
                         />
@@ -330,15 +331,15 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
                                 <div className="rounded-lg bg-white/5 p-2 group-hover:bg-purple-800/20 transition-colors">
                                   <ServiceIcon
                                     size={14}
-                                    className="text-white/60 group-hover:text-purple-800 transition-colors"
+                                    className="text-purple-600 group-hover:text-purple-800 transition-colors"
                                   />
                                 </div>
                                 <div className="flex-1">
-                                  <p className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">
+                                  <p className="text-sm font-medium text-purple-600 transition-colors group-hover:text-purple-800">
                                     {service.title}
                                   </p>
                                   {service.description && (
-                                    <p className="text-xs text-white/40 mt-0.5">
+                                    <p className="text-xs text-black/80 mt-0.5">
                                       {service.description}
                                     </p>
                                   )}
@@ -446,9 +447,9 @@ export default function Navbar() {
                       href={item.href}
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "relative h-10 rounded-none border-none bg-transparent px-5 text-[15px] font-medium text-white/80 shadow-none hover:bg-transparent hover:text-white focus:bg-transparent focus:text-white",
+                        "relative h-10 rounded-none border-none bg-transparent px-5 text-[15px] font-medium text-black shadow-none hover:bg-transparent hover:text-purple-800 focus:bg-transparent focus:text-purple-800",
                         item.active &&
-                          "text-white after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-6 after:-translate-x-1/2 after:bg-purple-800",
+                          "text-purple-800 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-6 after:-translate-x-1/2 after:bg-purple-800",
                       )}
                     >
                       {item.label}
@@ -459,7 +460,7 @@ export default function Navbar() {
 
               <NavigationMenuItem>
                 <NavigationMenuTrigger
-                  className="h-10 rounded-none border-none px-5 text-[15px] font-medium text-white/80 shadow-none focus:text-white data-[state=open]:text-white"
+                  className="h-10 rounded-none border-none px-5 text-[15px] font-medium text-black shadow-none focus:text-purple-800 data-[state=open]:text-purple-800"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -469,7 +470,7 @@ export default function Navbar() {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="w-[1100px] rounded-2xl border border-white/10 bg-[#0D0D0D] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] backdrop-blur-sm overflow-hidden mt-12">
+                  <div className="w-[1100px] rounded-2xl border border-white/10  shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] bg-white  backdrop-blur-sm overflow-hidden mt-12">
                     {/* Category Tabs */}
                     <div className="flex border-b border-white/10 bg-white/5">
                       {(
@@ -487,7 +488,7 @@ export default function Navbar() {
                               "flex flex-1 items-center justify-center gap-2 px-4 py-3.5 text-sm font-medium transition-all duration-200",
                               isActive
                                 ? "text-purple-800 border-b-2 border-purple-800 bg-white/5"
-                                : "text-white/60 hover:text-white hover:bg-white/5",
+                                : "text-black hover:text-purple-800 hover:bg-white/5",
                             )}
                           >
                             <Icon size={16} />
@@ -503,7 +504,7 @@ export default function Navbar() {
                         {activeCategoryData.subcategories.map(
                           (subcategory, idx) => (
                             <div key={idx} className="space-y-2">
-                              <p className="text-[11px] font-semibold uppercase tracking-wider text-white/40 px-2 mb-2">
+                              <p className="text-[11px] font-semibold uppercase tracking-wider text-black px-2 mb-2">
                                 {subcategory.name}
                               </p>
                               <div className="space-y-1">
@@ -511,6 +512,8 @@ export default function Navbar() {
                                   const ServiceIcon = service.icon;
                                   const isHovered =
                                     hoveredService === service.title;
+                                  const isActive = pathname === service.href;
+                                  const isHighlighted = isHovered || isActive;
                                   return (
                                     <Link
                                       key={service.title}
@@ -526,36 +529,36 @@ export default function Navbar() {
                                       <div
                                         className={cn(
                                           "absolute inset-0 transition-opacity duration-200",
-                                          isHovered
+                                          isHighlighted
                                             ? "opacity-100"
                                             : "opacity-0",
-                                          "bg-gradient-to-r from-purple-800/15 to-transparent rounded-lg",
+                                          " rounded-lg",
                                         )}
                                       />
                                       <div
                                         className={cn(
                                           "rounded-md p-1.5 transition-all duration-200",
-                                          isHovered
-                                            ? "bg-purple-800/20"
-                                            : "bg-white/5",
+                                          isHighlighted
+                                            ? "bg-purple-800/15"
+                                            : "bg-black/10",
                                         )}
                                       >
                                         <ServiceIcon
                                           size={14}
                                           className={cn(
                                             "transition-colors duration-200",
-                                            isHovered
+                                            isHighlighted
                                               ? "text-purple-800"
-                                              : "text-white/60",
+                                              : "text-black/70",
                                           )}
                                         />
                                       </div>
                                       <span
                                         className={cn(
-                                          "text-sm font-medium transition-colors duration-200",
-                                          isHovered
-                                            ? "text-white"
-                                            : "text-white/70",
+                                          "text-sm font-medium  duration-200",
+                                          isHighlighted
+                                            ? "text-purple-800"
+                                            : "text-black/80",
                                         )}
                                       >
                                         {service.title}
@@ -564,7 +567,7 @@ export default function Navbar() {
                                         size={12}
                                         className={cn(
                                           "ml-auto transition-all duration-200 opacity-0 -translate-x-1",
-                                          isHovered &&
+                                          isHighlighted &&
                                             "opacity-100 translate-x-0 text-purple-800",
                                         )}
                                       />
@@ -585,7 +588,7 @@ export default function Navbar() {
                         >
                           <div className="flex items-center gap-2">
                             <Rocket size={14} className="text-purple-800" />
-                            <span className="text-sm text-white/60 group-hover:text-white">
+                            <span className="text-sm  group-hover:text-purple-800">
                               View all {activeCategoryData.label} services
                             </span>
                           </div>
@@ -602,21 +605,22 @@ export default function Navbar() {
           </NavigationMenu>
 
           <div className="hidden lg:flex">
-            <Link
+            {/* <Link
               href="#contact"
               className="group relative inline-flex h-11 min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-purple-800 px-6 text-sm font-semibold text-black transition-all duration-300 hover:bg-transparent hover:text-purple-800 border border-transparent hover:border-purple-800"
             >
               <span className="relative z-10 group-hover:scale-105 transition-transform">
                 Work with us
               </span>
-            </Link>
+            </Link> */}
+            <Button href="#contact" label="Work with us"/>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="relative h-10 w-10 rounded-full border border-white/10 text-white transition-all hover:bg-white/5 lg:hidden"
+            className="relative h-10 w-10 rounded-full border border-white/10 text-purple-800 transition-all hover:bg-white/5 lg:hidden"
             aria-label="Toggle menu"
           >
             <div className="absolute inset-0 flex items-center justify-center transition-all duration-300">
@@ -645,7 +649,7 @@ export default function Navbar() {
         {/* Mobile Menu Overlay */}
         <div
           className={cn(
-            "fixed inset-0 top-16 z-40 bg-black/80 backdrop-blur-md transition-all duration-300 lg:hidden",
+            "fixed inset-0 top-16 z-40 bg-purple-600backdrop-blur-md transition-all duration-300 lg:hidden",
             isMobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible",
           )}
           onClick={closeMobileMenu}
@@ -654,7 +658,7 @@ export default function Navbar() {
         {/* Mobile Menu Panel */}
         <div
           className={cn(
-            "fixed top-16 bottom-0 right-0 w-full max-w-[400px] bg-gradient-to-b from-[#0D0D0D] to-[#080808] shadow-2xl transition-all duration-500 ease-out lg:hidden z-50 overflow-hidden",
+            "fixed top-16 bottom-0 right-0 w-full max-w-[400px] bg-white backdrop-blur-sm shadow-2xl transition-all duration-500 ease-out lg:hidden z-50 overflow-hidden",
             isMobileMenuOpen ? "translate-x-0" : "translate-x-full",
           )}
         >
@@ -671,7 +675,7 @@ export default function Navbar() {
                       "group flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-all duration-200 hover:bg-white/5",
                       item.active
                         ? "text-purple-800 bg-white/5"
-                        : "text-white/80 hover:text-white",
+                        : "text-purple-600 hover:text-purple-800",
                     )}
                   >
                     <span>{item.label}</span>
@@ -686,7 +690,7 @@ export default function Navbar() {
               <div className="mb-8">
                 <div className="mb-3 flex items-center gap-2 px-4">
                   <div className="h-px flex-1 bg-white/10" />
-                  <span className="text-xs font-semibold uppercase tracking-wider text-white/40">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-purple-800">
                     Our Services
                   </span>
                   <div className="h-px flex-1 bg-white/10" />
@@ -695,7 +699,7 @@ export default function Navbar() {
               </div>
 
               {/* CTA Button */}
-              <div className="px-4 pt-4">
+              {/* <div className="px-4 pt-4">
                 <Link
                   href="#contact"
                   onClick={closeMobileMenu}
@@ -707,7 +711,8 @@ export default function Navbar() {
                     className="group-hover:translate-x-0.5 transition-transform"
                   />
                 </Link>
-              </div>
+              </div> */}
+              <Button href="#contact" label="Work with us"/>
 
               {/* Footer */}
               <div className="mt-8 px-4 pt-6 border-t border-white/10">
