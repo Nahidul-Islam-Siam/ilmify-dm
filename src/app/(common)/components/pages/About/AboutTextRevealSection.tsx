@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle, Repeat, Star, Users } from "lucide-react";
@@ -7,7 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function MissionSectionExact() {
+export default function AboutTextRevealSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const leftColumnRef = useRef<HTMLDivElement>(null);
   const rightColumnRef = useRef<HTMLDivElement>(null);
@@ -22,7 +22,6 @@ export default function MissionSectionExact() {
     const section = sectionRef.current;
     const leftColumn = leftColumnRef.current;
     const rightColumn = rightColumnRef.current;
-
     if (!section || !leftColumn || !rightColumn) return;
 
     const targets = {
@@ -33,36 +32,30 @@ export default function MissionSectionExact() {
     };
 
     const ctx = gsap.context(() => {
-      // Text color transitions
       ScrollTrigger.create({
         trigger: section,
-        start: "top 80%",
-        end: "top 30%",
-        scrub: 1.2,
+        start: "top 84%",
+        end: "top 28%",
+        scrub: 1.1,
         onUpdate: (self) => {
           const progress = self.progress;
 
-          const heading = leftColumn.querySelector(
-            ".mission-heading",
-          ) as HTMLElement;
+          const heading = leftColumn.querySelector(".mission-heading") as HTMLElement | null;
           if (heading) {
-            if (progress < 0.3) {
-              heading.style.color = "#6b7280";
+            if (progress < 0.25) {
+              heading.style.color = "rgba(17,17,17,0.45)";
             } else {
-              const opacity = Math.min((progress - 0.3) / 0.7, 1);
-              heading.style.color = `rgba(82, 244, 71, ${opacity})`;
+              const opacity = Math.min((progress - 0.25) / 0.75, 1);
+              heading.style.color = `rgba(123,31,162,${opacity})`;
             }
           }
 
-          const texts = leftColumn.querySelectorAll(
-            ".mission-text",
-          ) as NodeListOf<HTMLElement>;
+          const texts = leftColumn.querySelectorAll(".mission-text") as NodeListOf<HTMLElement>;
           texts.forEach((text) => {
-            const opacity = Math.min(progress * 1.5, 1);
-            text.style.color = `rgba(255, 255, 255, ${opacity})`;
+            const opacity = Math.min(progress * 1.4, 1);
+            text.style.color = `rgba(17,17,17,${0.38 + opacity * 0.45})`;
           });
 
-          // Update counts based on scroll progress
           setCounts({
             projects: Math.floor(targets.projects * progress),
             clients: Math.floor(targets.clients * progress),
@@ -72,35 +65,9 @@ export default function MissionSectionExact() {
         },
       });
 
-      // Stat items animation
-      const statItemsElements = rightColumn.querySelectorAll(".stat-item");
-      gsap.fromTo(
-        statItemsElements,
-        {
-          opacity: 0,
-          x: 30,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          stagger: 0.1,
-          duration: 1,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-            end: "top 30%",
-            scrub: 1,
-          },
-        },
-      );
-
-      // Left column animation
       gsap.fromTo(
         leftColumn,
-        {
-          opacity: 0,
-          x: -30,
-        },
+        { opacity: 0, x: -26 },
         {
           opacity: 1,
           x: 0,
@@ -108,7 +75,24 @@ export default function MissionSectionExact() {
           scrollTrigger: {
             trigger: section,
             start: "top 85%",
-            end: "top 40%",
+            end: "top 42%",
+            scrub: 1,
+          },
+        },
+      );
+
+      gsap.fromTo(
+        rightColumn.querySelectorAll(".stat-item"),
+        { opacity: 0, y: 28 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.1,
+          duration: 0.7,
+          scrollTrigger: {
+            trigger: section,
+            start: "top 84%",
+            end: "top 34%",
             scrub: 1,
           },
         },
@@ -150,46 +134,38 @@ export default function MissionSectionExact() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-24 lg:py-28 bg-[#0b0b0b]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Left Column - Text Content */}
+    <section ref={sectionRef} className="bg-transparent py-20 md:py-24 lg:py-28">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <div ref={leftColumnRef} className="space-y-4">
-            <h2 className="mission-heading text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-gray-500">
-              OUR MISSION
+            <h2 className="mission-heading text-xs font-bold uppercase tracking-[0.2em] text-black/55 sm:text-sm">
+              Our Mission
             </h2>
-            <p className="mission-text text-sm sm:text-base leading-relaxed text-gray-400">
-              ZeeFrames strives to be a leading UI UX design agency known for
-              innovative solutions that deliver exceptional user experiences and
-              drive business growth.
+            <p className="mission-text text-sm leading-relaxed text-black/62 sm:text-base">
+              ZeeFrames strives to be a leading UI UX design agency known for innovative
+              solutions that deliver exceptional user experiences and drive business growth.
             </p>
-            <p className="mission-text text-sm sm:text-base leading-relaxed text-gray-400">
-              We blend creativity and user-centered design to craft intuitive,
-              standout products and partner with clients to achieve lasting
-              impact.
+            <p className="mission-text text-sm leading-relaxed text-black/62 sm:text-base">
+              We blend creativity and user-centered design to craft intuitive, standout
+              products and partner with clients to achieve lasting impact.
             </p>
           </div>
 
-          {/* Right Column - Stats */}
           <div ref={rightColumnRef} className="grid grid-cols-2 gap-6">
-            {statsData.map((stat, index) => (
+            {statsData.map((stat) => (
               <div
-                key={index}
-                className="stat-item flex items-center gap-4 group cursor-pointer"
+                key={stat.key}
+                className="stat-item group flex items-center gap-4 rounded-2xl border border-black/10 bg-white/84 p-4 shadow-[var(--site-shadow)]"
               >
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-site-accent/10 flex items-center justify-center group-hover:bg-site-accent/20 transition-colors duration-300">
-                  <stat.icon className="w-5 h-5 text-site-accent" />
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-purple-800/10 transition-colors duration-300 group-hover:bg-purple-800/20">
+                  <stat.icon className="h-5 w-5 text-purple-800" />
                 </div>
                 <div>
                   <div className="flex items-baseline gap-0">
-                    <span className="text-2xl sm:text-3xl font-bold text-gray-300">
-                      {stat.value}
-                    </span>
-                    <span className="text-2xl sm:text-3xl font-bold text-site-accent">
-                      {stat.suffix}
-                    </span>
+                    <span className="text-2xl font-bold text-black sm:text-3xl">{stat.value}</span>
+                    <span className="text-2xl font-bold text-purple-800 sm:text-3xl">{stat.suffix}</span>
                   </div>
-                  <p className="stat-label text-xs sm:text-sm text-gray-500 group-hover:text-gray-300 transition-colors duration-300">
+                  <p className="stat-label text-xs text-black/58 transition-colors duration-300 group-hover:text-black/82 sm:text-sm">
                     {stat.label}
                   </p>
                 </div>

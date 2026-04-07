@@ -1,22 +1,17 @@
-"use client"
+"use client";
 import { ArrowUpRight } from "lucide-react";
-import Image from "next/image";
+// import Image from "next/image";
+import Lottie from "lottie-react";
 import Link from "next/link";
+import marketingAnimation from ".././../../../../../public/assets/Lottie/DigitalMarketing.json";
 
 export default function AiAction() {
   return (
     <section className="bg-transparent py-4">
       <div className="relative overflow-hidden rounded-[30px] border border-[var(--site-border)] bg-[var(--site-panel-bg)] shadow-[var(--site-shadow)]">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute -left-20 -top-24 h-[360px] w-[360px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.28)_0%,rgba(123,31,162,0)_72%)] blur-2xl animate-ai-float-a" />
-          <div className="absolute -right-16 top-1/3 h-[330px] w-[330px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.22)_0%,rgba(82,244,71,0)_72%)] blur-2xl animate-ai-float-b" />
-          <div className="absolute bottom-[-120px] left-1/3 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.85)_0%,rgba(255,255,255,0)_70%)] blur-3xl" />
-          <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(255,255,255,0.85)_0%,rgba(248,252,242,0.72)_45%,rgba(255,255,255,0.78)_100%)]" />
-        </div>
-
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
-          <div className="relative grid min-h-[420px] grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1.05fr_0.95fr]">
-            <div className="absolute inset-y-0 left-[54%] hidden w-px bg-gradient-to-b from-transparent via-black/10 to-transparent lg:block" />
+          <div className="relative grid min-h-[420px] grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1.20fr_0.80fr]">
+            <div className="absolute inset-y-0 left-[54%] hidden w-px  lg:block" />
 
             <div className="relative z-10 flex items-center py-14 sm:py-16 lg:py-20">
               <div className="max-w-[760px]">
@@ -52,7 +47,7 @@ export default function AiAction() {
               </div>
             </div>
 
-            <div className="relative z-10 flex min-h-[260px] items-center justify-center pb-12 pt-4 sm:min-h-[320px] lg:min-h-full lg:pb-0 lg:pt-0">
+            {/* <div className="relative z-10 flex min-h-[260px] items-center justify-center pb-12 pt-4 sm:min-h-[320px] lg:min-h-full lg:pb-0 lg:pt-0">
               <div className="relative flex h-full w-full items-center justify-center">
                 <div className="absolute h-[230px] w-[230px] rounded-full bg-purple-800/20 blur-3xl sm:h-[280px] sm:w-[280px] lg:h-[340px] lg:w-[340px] animate-ai-pulse" />
                 <Image
@@ -64,50 +59,12 @@ export default function AiAction() {
                   className="relative z-10 h-auto w-[180px] max-w-full object-contain drop-shadow-[0_18px_40px_rgba(123,31,162,0.26)] sm:w-[240px] md:w-[300px] lg:w-[380px] xl:w-[430px]"
                 />
               </div>
-            </div>
+            </div> */}
+         <Lottie animationData={marketingAnimation}/>
           </div>
         </div>
       </div>
-      <style jsx>{`
-        @keyframes ai-float-a {
-          0%,
-          100% {
-            transform: translate3d(0, 0, 0) scale(1);
-          }
-          50% {
-            transform: translate3d(24px, 14px, 0) scale(1.06);
-          }
-        }
-        @keyframes ai-float-b {
-          0%,
-          100% {
-            transform: translate3d(0, 0, 0) scale(1);
-          }
-          50% {
-            transform: translate3d(-20px, -16px, 0) scale(1.08);
-          }
-        }
-        @keyframes ai-pulse {
-          0%,
-          100% {
-            opacity: 0.45;
-            transform: scale(1);
-          }
-          50% {
-            opacity: 0.75;
-            transform: scale(1.07);
-          }
-        }
-        .animate-ai-float-a {
-          animation: ai-float-a 11s ease-in-out infinite;
-        }
-        .animate-ai-float-b {
-          animation: ai-float-b 12.5s ease-in-out infinite;
-        }
-        .animate-ai-pulse {
-          animation: ai-pulse 4.6s ease-in-out infinite;
-        }
-      `}</style>
+ 
     </section>
   );
 }

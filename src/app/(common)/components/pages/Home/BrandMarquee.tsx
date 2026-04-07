@@ -17,8 +17,8 @@ const brandLogos = [
 export default function BrandMarquee() {
   return (
     <div className="relative z-10 w-full overflow-hidden rounded-2xl border border-[var(--site-border)] bg-[var(--site-panel-bg)] py-2 shadow-[var(--site-shadow)]">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[var(--site-panel-bg)] to-transparent sm:w-24 md:w-32" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[var(--site-panel-bg)] to-transparent sm:w-24 md:w-32" />
+      {/* <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[var(--site-panel-bg)] to-transparent sm:w-24 md:w-32" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[var(--site-panel-bg)] to-transparent sm:w-24 md:w-32" /> */}
 
       <FastMarquee speed={40} gradient={false} pauseOnHover>
         {brandLogos.map((brand, index) => (
