@@ -144,7 +144,7 @@ export default function AboutPartnerSection() {
               </div>
 
               <div>
-                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-purple-800 sm:text-[12px]">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-site-accent sm:text-[12px]">
                   About
                 </p>
                 <h2 className="mt-4  text-[2.2rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white ">
@@ -164,9 +164,9 @@ export default function AboutPartnerSection() {
                     return (
                       <div
                         key={item.title}
-                        className="rounded-[22px] border border-white/10 bg-[#0d0d0d] p-5 transition duration-300 hover:border-purple-800/30 hover:bg-[#121212] sm:p-6"
+                        className="rounded-[22px] border border-white/10 bg-[#0d0d0d] p-5 transition duration-300 hover:border-site-accent/30 hover:bg-[#121212] sm:p-6"
                       >
-                        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-purple-800/20 bg-purple-800/6 text-purple-800">
+                        <div className="flex h-11 w-11 items-center justify-center rounded-full border border-site-accent/20 bg-site-accent/6 text-site-accent">
                           <Icon size={20} strokeWidth={2} />
                         </div>
                         <h3 className="mt-6 font-semibold leading-[1.06] tracking-[-0.04em] text-white ">

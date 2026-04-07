@@ -7,15 +7,13 @@ import Link from "next/link";
 import BrandMarquee from "./BrandMarquee";
 
 const toolBadges = [
-  { link: "/assets/hero/Meta.png",  },
-  { link: "/assets/hero/SEO.png",  },
+  { link: "/assets/hero/Meta.png" },
+  { link: "/assets/hero/SEO.png" },
   {
     link: "/assets/hero/Google-Ads.png",
-  
   },
   {
     link: "/assets/hero/Email-Marketing.png",
-  
   },
 ];
 
@@ -89,8 +87,8 @@ export default function HomeShowcase() {
             </h1>
 
             <p className="mt-5 max-w-full break-words text-[clamp(14px,2.5vw,18px)] font-semibold text-[var(--site-text-muted)] md:mx-auto md:mt-6 md:max-w-[680px]">
-              We Craft <span className="text-purple-800">Stunning</span> Designs
-              For Businesses Worldwide.
+              We Craft <span className="text-site-accent">Stunning</span>{" "}
+              Designs For Businesses Worldwide.
             </p>
 
             <div className="mt-7 md:mt-10 flex flex-col sm:flex-row items-center justify-start md:justify-center gap-3">
@@ -102,7 +100,7 @@ export default function HomeShowcase() {
               </Link>
               <Link
                 href="#work"
-                className="inline-flex h-12 min-w-[156px] w-full items-center justify-center gap-2 rounded-full border border-purple-800 bg-transparent px-8 text-[15px] font-semibold text-purple-800 transition hover:text-white hover:border-[var(--site-accent)] hover:bg-[var(--site-accent)] sm:w-auto"
+                className="inline-flex h-12 min-w-[156px] w-full items-center justify-center gap-2 rounded-full border border-site-accent bg-transparent px-8 text-[15px] font-semibold text-site-accent transition hover:text-white hover:border-[var(--site-accent)] hover:bg-[var(--site-accent)] sm:w-auto"
               >
                 Get Free Audit
                 <ArrowUpRight size={16} />

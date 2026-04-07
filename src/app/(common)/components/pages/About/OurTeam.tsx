@@ -235,12 +235,12 @@ export default function OurTeamSection() {
       className="relative overflow-hidden bg-[#0b0b0b] py-16 md:py-20 lg:py-24"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[5%] left-[-5%] h-[400px] w-[400px] rounded-full bg-gradient-to-br from-purple-800/15 to-transparent blur-3xl animate-float-slow" />
-        <div className="absolute top-[20%] right-[-10%] h-[500px] w-[500px] rounded-full bg-gradient-to-bl from-purple-800/10 to-transparent blur-3xl animate-float-delayed" />
-        <div className="absolute bottom-[10%] left-[10%] h-[450px] w-[450px] rounded-full bg-gradient-to-tr from-purple-800/12 to-transparent blur-3xl animate-float" />
-        <div className="absolute bottom-[30%] right-[5%] h-[350px] w-[350px] rounded-full bg-gradient-to-tl from-purple-800/8 to-transparent blur-3xl animate-float-slow" />
-        <div className="absolute top-[40%] left-[20%] h-[200px] w-[200px] rounded-full bg-gradient-to-br from-purple-800/20 to-purple-800/5 blur-2xl animate-pulse" />
-        <div className="absolute top-[60%] right-[15%] h-[180px] w-[180px] rounded-full bg-gradient-to-bl from-purple-800/15 to-transparent blur-2xl animate-float-delayed" />
+        <div className="absolute top-[5%] left-[-5%] h-[400px] w-[400px] rounded-full bg-gradient-to-br from-site-accent/15 to-transparent blur-3xl animate-float-slow" />
+        <div className="absolute top-[20%] right-[-10%] h-[500px] w-[500px] rounded-full bg-gradient-to-bl from-site-accent/10 to-transparent blur-3xl animate-float-delayed" />
+        <div className="absolute bottom-[10%] left-[10%] h-[450px] w-[450px] rounded-full bg-gradient-to-tr from-site-accent/12 to-transparent blur-3xl animate-float" />
+        <div className="absolute bottom-[30%] right-[5%] h-[350px] w-[350px] rounded-full bg-gradient-to-tl from-site-accent/8 to-transparent blur-3xl animate-float-slow" />
+        <div className="absolute top-[40%] left-[20%] h-[200px] w-[200px] rounded-full bg-gradient-to-br from-site-accent/20 to-site-accent/5 blur-2xl animate-pulse" />
+        <div className="absolute top-[60%] right-[15%] h-[180px] w-[180px] rounded-full bg-gradient-to-bl from-site-accent/15 to-transparent blur-2xl animate-float-delayed" />
       </div>
 
       <div className="absolute inset-0 bg-[#0b0b0b]/60 pointer-events-none" />
@@ -255,7 +255,7 @@ export default function OurTeamSection() {
               Passionate designers and developers ready to bring your vision to
               life
             </p>
-            <div className="mx-auto mt-6 h-px w-20 bg-gradient-to-r from-transparent via-purple-800 to-transparent" />
+            <div className="mx-auto mt-6 h-px w-20 bg-gradient-to-r from-transparent via-site-accent to-transparent" />
           </div>
 
           <div className="mx-auto mb-16 grid max-w-5xl grid-cols-1 gap-6 md:mb-20 md:grid-cols-3 md:gap-8 [perspective:1200px]">
@@ -268,7 +268,7 @@ export default function OurTeamSection() {
                 }}
                 className="leader-card group text-center [transform-style:preserve-3d]"
               >
-                <div className="relative mx-auto mb-4 h-32 w-32 overflow-hidden rounded-full border-2 border-purple-800/20 shadow-lg transition-all duration-300 group-hover:border-purple-800 group-hover:shadow-[0_0_30px_rgba(82,244,71,0.2)] md:h-40 md:w-40">
+                <div className="relative mx-auto mb-4 h-32 w-32 overflow-hidden rounded-full border-2 border-site-accent/20 shadow-lg transition-all duration-300 group-hover:border-site-accent group-hover:shadow-[0_0_30px_rgba(82,244,71,0.2)] md:h-40 md:w-40">
                   <Image
                     src={leader.image}
                     alt={leader.name}
@@ -279,7 +279,7 @@ export default function OurTeamSection() {
                 <h3 className="text-lg font-semibold text-white md:text-xl">
                   {leader.name}
                 </h3>
-                <p className="text-sm text-purple-800">{leader.role}</p>
+                <p className="text-sm text-site-accent">{leader.role}</p>
                 <p className="mt-2 text-xs text-gray-500">
                   {leader.experience} experience
                 </p>
@@ -296,7 +296,7 @@ export default function OurTeamSection() {
                     teamRefs.current[index] = node;
                     attachTilt(node);
                   }}
-                  className="team-card group overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition-all duration-500 hover:border-purple-800/30 [transform-style:preserve-3d]"
+                  className="team-card group overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm transition-all duration-500 hover:border-site-accent/30 [transform-style:preserve-3d]"
                 >
                   <div className="relative aspect-square overflow-hidden">
                     <Image
@@ -310,13 +310,13 @@ export default function OurTeamSection() {
                     {/* <div className="absolute bottom-4 left-0 right-0 flex translate-y-2 justify-center gap-3 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                       <Link
                         href={member.linkedin}
-                        className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/20 backdrop-blur-sm transition-all duration-300 hover:bg-purple-800"
+                        className="flex h-8 w-8 items-center justify-center rounded-full bg-site-accent/20 backdrop-blur-sm transition-all duration-300 hover:bg-site-accent"
                       >
                         <Linkedin size={14} className="text-white" />
                       </Link>
                       <Link
                         href={member.email}
-                        className="flex h-8 w-8 items-center justify-center rounded-full bg-purple-800/20 backdrop-blur-sm transition-all duration-300 hover:bg-purple-800"
+                        className="flex h-8 w-8 items-center justify-center rounded-full bg-site-accent/20 backdrop-blur-sm transition-all duration-300 hover:bg-site-accent"
                       >
                         <Mail size={14} className="text-white" />
                       </Link>
@@ -324,7 +324,7 @@ export default function OurTeamSection() {
                   </div>
 
                   <div className="p-4 text-center">
-                    <h4 className="text-base font-semibold text-white transition-colors duration-300 group-hover:text-purple-800 md:text-lg">
+                    <h4 className="text-base font-semibold text-white transition-colors duration-300 group-hover:text-site-accent md:text-lg">
                       {member.name}
                     </h4>
                     <p className="mb-2 text-xs text-gray-400 md:text-sm">
@@ -344,19 +344,19 @@ export default function OurTeamSection() {
           <div className="mt-16 text-center">
             <div className="inline-flex flex-wrap justify-center gap-8 md:gap-12">
               <div className="text-center">
-                <p className="text-2xl font-bold text-purple-800 md:text-3xl">
+                <p className="text-2xl font-bold text-site-accent md:text-3xl">
                   {teamMembers.length}+
                 </p>
                 <p className="text-xs text-gray-500">Expert Members</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-purple-800 md:text-3xl">
+                <p className="text-2xl font-bold text-site-accent md:text-3xl">
                   500+
                 </p>
                 <p className="text-xs text-gray-500">Projects Delivered</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-purple-800 md:text-3xl">
+                <p className="text-2xl font-bold text-site-accent md:text-3xl">
                   8+
                 </p>
                 <p className="text-xs text-gray-500">Years Combined</p>

@@ -319,8 +319,8 @@ input::-webkit-inner-spin-button {
     /* Global website theme tokens */
     --site-accent: #6A1B9A;
     --site-text: #111111;
-    --site-text-muted: rgba(16, 16, 16, 0.72);
-    --site-panel-bg: rgba(255, 255, 255, 0.86);
+    --site-muted: rgba(16, 16, 16, 0.72);
+    --site-panel: rgba(255, 255, 255, 0.86);
     --site-panel-soft: rgba(255, 255, 255, 0.78);
     --site-border: rgba(15, 15, 15, 0.14);
     --site-shadow: 0 14px 36px -20px rgba(25, 45, 25, 0.22);

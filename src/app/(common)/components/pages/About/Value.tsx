@@ -119,25 +119,25 @@ export default function OurValueSection() {
       {/* Gradient Bubble Background */}
       <div className="absolute inset-0">
         {/* Primary bubbles */}
-        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-purple-800/30 to-purple-800/5 blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-l from-purple-800/25 to-transparent blur-3xl animate-pulse-delayed" />
+        <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-gradient-to-r from-site-accent/30 to-site-accent/5 blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-l from-site-accent/25 to-transparent blur-3xl animate-pulse-delayed" />
 
         {/* Secondary bubbles */}
-        <div className="absolute top-1/2 -left-20 w-[250px] h-[250px] rounded-full bg-gradient-to-br from-purple-800/20 to-purple-800/5 blur-2xl animate-float" />
-        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-gradient-to-tl from-purple-800/15 to-transparent blur-2xl animate-float-slow" />
+        <div className="absolute top-1/2 -left-20 w-[250px] h-[250px] rounded-full bg-gradient-to-br from-site-accent/20 to-site-accent/5 blur-2xl animate-float" />
+        <div className="absolute bottom-0 right-0 w-[350px] h-[350px] rounded-full bg-gradient-to-tl from-site-accent/15 to-transparent blur-2xl animate-float-slow" />
 
         {/* Tertiary bubbles */}
-        <div className="absolute top-10 right-1/3 w-[150px] h-[150px] rounded-full bg-gradient-to-tr from-purple-800/20 to-purple-800/10 blur-xl animate-bubble" />
-        <div className="absolute bottom-20 left-1/3 w-[180px] h-[180px] rounded-full bg-gradient-to-bl from-purple-800/15 to-transparent blur-xl animate-bubble-delayed" />
+        <div className="absolute top-10 right-1/3 w-[150px] h-[150px] rounded-full bg-gradient-to-tr from-site-accent/20 to-site-accent/10 blur-xl animate-bubble" />
+        <div className="absolute bottom-20 left-1/3 w-[180px] h-[180px] rounded-full bg-gradient-to-bl from-site-accent/15 to-transparent blur-xl animate-bubble-delayed" />
 
         {/* Small accent bubbles */}
-        <div className="absolute top-2/3 left-10 w-[100px] h-[100px] rounded-full bg-gradient-to-r from-purple-800/25 to-purple-800/10 blur-lg animate-glow" />
-        <div className="absolute top-1/3 right-10 w-[120px] h-[120px] rounded-full bg-gradient-to-l from-purple-800/20 to-transparent blur-lg animate-glow-delayed" />
+        <div className="absolute top-2/3 left-10 w-[100px] h-[100px] rounded-full bg-gradient-to-r from-site-accent/25 to-site-accent/10 blur-lg animate-glow" />
+        <div className="absolute top-1/3 right-10 w-[120px] h-[120px] rounded-full bg-gradient-to-l from-site-accent/20 to-transparent blur-lg animate-glow-delayed" />
 
         {/* Extra small bubbles */}
-        <div className="absolute top-[15%] left-[45%] w-[60px] h-[60px] rounded-full bg-purple-800/20 blur-md animate-float" />
-        <div className="absolute bottom-[25%] right-[40%] w-[80px] h-[80px] rounded-full bg-purple-800/15 blur-md animate-float-delayed" />
-        <div className="absolute top-[75%] left-[60%] w-[50px] h-[50px] rounded-full bg-purple-800/10 blur-md animate-pulse" />
+        <div className="absolute top-[15%] left-[45%] w-[60px] h-[60px] rounded-full bg-site-accent/20 blur-md animate-float" />
+        <div className="absolute bottom-[25%] right-[40%] w-[80px] h-[80px] rounded-full bg-site-accent/15 blur-md animate-float-delayed" />
+        <div className="absolute top-[75%] left-[60%] w-[50px] h-[50px] rounded-full bg-site-accent/10 blur-md animate-pulse" />
       </div>
 
       {/* Gradient overlay for depth */}
@@ -147,19 +147,19 @@ export default function OurValueSection() {
         {/* Header */}
         <div ref={headerRef} className="text-center mb-16 md:mb-20">
           <div className="inline-flex items-center gap-3 mb-6">
-            <div className="w-8 h-px bg-purple-800" />
+            <div className="w-8 h-px bg-site-accent" />
             <span className="fade-text text-xs font-bold uppercase tracking-[0.2em] text-gray-500">
               Our Core Values
             </span>
-            <div className="w-8 h-px bg-purple-800" />
+            <div className="w-8 h-px bg-site-accent" />
           </div>
           <h2 className="fade-text text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-gray-500 mb-6">
             OUR VALUE
           </h2>
           <p className="fade-text text-base sm:text-lg md:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Together, we make{" "}
-            <span className="text-purple-800 font-bold">perfect partners</span>.
-            We offer worry-free partnerships and deliver your vision into
+            <span className="text-site-accent font-bold">perfect partners</span>
+            . We offer worry-free partnerships and deliver your vision into
             reality with our top-tier creativity.{" "}
             <span className="italic">No fluff, just the good stuff.</span>
           </p>
@@ -170,15 +170,15 @@ export default function OurValueSection() {
           {valuesData.map((value, index) => (
             <div
               key={index}
-              className="grid-item group relative bg-gradient-to-r from-black/60 via-black/40 to-transparent backdrop-blur-sm rounded-2xl border border-white/10 hover:border-purple-800/30 transition-all duration-500 overflow-hidden"
+              className="grid-item group relative bg-gradient-to-r from-black/60 via-black/40 to-transparent backdrop-blur-sm rounded-2xl border border-white/10 hover:border-site-accent/30 transition-all duration-500 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-800/0 via-purple-800/0 to-purple-800/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-r from-site-accent/0 via-site-accent/0 to-site-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative p-6 md:p-8">
                 <div className="flex flex-col md:flex-row md:items-center gap-6">
                   <div className="flex-shrink-0">
-                    <div className="value-number-circle w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/10 flex items-center justify-center group-hover:border-purple-800 group-hover:shadow-[0_0_30px_rgba(82,244,71,0.2)] transition-all duration-300">
-                      <span className="text-xl md:text-2xl font-bold text-gray-400 group-hover:text-purple-800 transition-colors duration-300">
+                    <div className="value-number-circle w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/10 flex items-center justify-center group-hover:border-site-accent group-hover:shadow-[0_0_30px_rgba(82,244,71,0.2)] transition-all duration-300">
+                      <span className="text-xl md:text-2xl font-bold text-gray-400 group-hover:text-site-accent transition-colors duration-300">
                         {value.number}
                       </span>
                     </div>
@@ -194,22 +194,22 @@ export default function OurValueSection() {
                   </div>
 
                   <div className="flex-shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
-                    <ArrowRight className="w-6 h-6 text-purple-800" />
+                    <ArrowRight className="w-6 h-6 text-site-accent" />
                   </div>
                 </div>
               </div>
 
-              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-800/30 to-transparent group-hover:via-purple-800/60 transition-all duration-500" />
+              <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-site-accent/30 to-transparent group-hover:via-site-accent/60 transition-all duration-500" />
             </div>
           ))}
         </div>
 
         <div className="mt-16 text-center">
-          <div className="inline-block p-4 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:border-purple-800/30 transition-all duration-300">
+          <div className="inline-block p-4 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:border-site-accent/30 transition-all duration-300">
             <p className="text-xs text-gray-400">
-              <span className="text-purple-800 animate-pulse">✦</span> Built on
+              <span className="text-site-accent animate-pulse">✦</span> Built on
               trust, transparency, and creativity{" "}
-              <span className="text-purple-800 animate-pulse">✦</span>
+              <span className="text-site-accent animate-pulse">✦</span>
             </p>
           </div>
         </div>

@@ -259,17 +259,17 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
               className="flex w-full items-center justify-between px-5 py-4 transition-colors hover:bg-white/5"
             >
               <div className="flex items-center gap-3">
-                <div className="rounded-xl bg-purple-800/10 p-2">
-                  <Icon size={18} className="text-purple-800" />
+                <div className="rounded-xl bg-site-accent/10 p-2">
+                  <Icon size={18} className="text-site-accent" />
                 </div>
-                <span className="text-sm font-semibold text-purple-800">
+                <span className="text-sm font-semibold text-site-accent">
                   {category.label}
                 </span>
               </div>
               <ChevronDown
                 size={18}
                 className={cn(
-                  "text-purple-800 transition-transform duration-300",
+                  "text-site-accent transition-transform duration-300",
                   isExpanded && "rotate-180",
                 )}
               />
@@ -298,13 +298,13 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
                         }
                         className="flex w-full items-center justify-between px-5 py-3 transition-colors hover:bg-white/5"
                       >
-                        <span className="text-xs font-semibold uppercase tracking-wider text-purple-800">
+                        <span className="text-xs font-semibold uppercase tracking-wider text-site-accent">
                           {subcategory.name}
                         </span>
                         <ChevronRight
                           size={14}
                           className={cn(
-                            "text-purple-800 transition-transform duration-300",
+                            "text-site-accent transition-transform duration-300",
                             isSubExpanded && "rotate-90",
                           )}
                         />
@@ -328,14 +328,14 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
                                 onClick={onLinkClick}
                                 className="group flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-white/10"
                               >
-                                <div className="rounded-lg bg-white/5 p-2 group-hover:bg-purple-800/20 transition-colors">
+                                <div className="rounded-lg bg-white/5 p-2 group-hover:bg-site-accent/20 transition-colors">
                                   <ServiceIcon
                                     size={14}
-                                    className="text-purple-600 group-hover:text-purple-800 transition-colors"
+                                    className="text-purple-600 group-hover:text-site-accent transition-colors"
                                   />
                                 </div>
                                 <div className="flex-1">
-                                  <p className="text-sm font-medium text-purple-600 transition-colors group-hover:text-purple-800">
+                                  <p className="text-sm font-medium text-purple-600 transition-colors group-hover:text-site-accent">
                                     {service.title}
                                   </p>
                                   {service.description && (
@@ -346,7 +346,7 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
                                 </div>
                                 <ArrowRight
                                   size={14}
-                                  className="text-white/30 group-hover:text-purple-800 group-hover:translate-x-0.5 transition-all"
+                                  className="text-white/30 group-hover:text-site-accent group-hover:translate-x-0.5 transition-all"
                                 />
                               </Link>
                             );
@@ -447,9 +447,9 @@ export default function Navbar() {
                       href={item.href}
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "relative h-10 rounded-none border-none bg-transparent px-5 text-[15px] font-medium text-black shadow-none hover:bg-transparent hover:text-purple-800 focus:bg-transparent focus:text-purple-800",
+                        "relative h-10 rounded-none border-none bg-transparent px-5 text-[15px] font-medium text-black shadow-none hover:bg-transparent hover:text-site-accent focus:bg-transparent focus:text-site-accent",
                         item.active &&
-                          "text-purple-800 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-6 after:-translate-x-1/2 after:bg-purple-800",
+                          "text-site-accent after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-6 after:-translate-x-1/2 after:bg-site-accent",
                       )}
                     >
                       {item.label}
@@ -460,7 +460,7 @@ export default function Navbar() {
 
               <NavigationMenuItem>
                 <NavigationMenuTrigger
-                  className="h-10 rounded-none border-none px-5 text-[15px] font-medium text-black shadow-none focus:text-purple-800 data-[state=open]:text-purple-800"
+                  className="h-10 rounded-none border-none px-5 text-[15px] font-medium text-black shadow-none focus:text-site-accent data-[state=open]:text-site-accent"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -487,8 +487,8 @@ export default function Navbar() {
                             className={cn(
                               "flex flex-1 items-center justify-center gap-2 px-4 py-3.5 text-sm font-medium transition-all duration-200",
                               isActive
-                                ? "text-purple-800 border-b-2 border-purple-800 bg-white/5"
-                                : "text-black hover:text-purple-800 hover:bg-white/5",
+                                ? "text-site-accent border-b-2 border-site-accent bg-white/5"
+                                : "text-black hover:text-site-accent hover:bg-white/5",
                             )}
                           >
                             <Icon size={16} />
@@ -539,7 +539,7 @@ export default function Navbar() {
                                         className={cn(
                                           "rounded-md p-1.5 transition-all duration-200",
                                           isHighlighted
-                                            ? "bg-purple-800/15"
+                                            ? "bg-site-accent/15"
                                             : "bg-black/10",
                                         )}
                                       >
@@ -548,7 +548,7 @@ export default function Navbar() {
                                           className={cn(
                                             "transition-colors duration-200",
                                             isHighlighted
-                                              ? "text-purple-800"
+                                              ? "text-site-accent"
                                               : "text-black/70",
                                           )}
                                         />
@@ -557,7 +557,7 @@ export default function Navbar() {
                                         className={cn(
                                           "text-sm font-medium  duration-200",
                                           isHighlighted
-                                            ? "text-purple-800"
+                                            ? "text-site-accent"
                                             : "text-black/80",
                                         )}
                                       >
@@ -568,7 +568,7 @@ export default function Navbar() {
                                         className={cn(
                                           "ml-auto transition-all duration-200 opacity-0 -translate-x-1",
                                           isHighlighted &&
-                                            "opacity-100 translate-x-0 text-purple-800",
+                                            "opacity-100 translate-x-0 text-site-accent",
                                         )}
                                       />
                                     </Link>
@@ -587,12 +587,12 @@ export default function Navbar() {
                           className="group flex items-center justify-between rounded-lg p-2 transition-all duration-300 hover:bg-white/5"
                         >
                           <div className="flex items-center gap-2">
-                            <Rocket size={14} className="text-purple-800" />
-                            <span className="text-sm  group-hover:text-purple-800">
+                            <Rocket size={14} className="text-site-accent" />
+                            <span className="text-sm  group-hover:text-site-accent">
                               View all {activeCategoryData.label} services
                             </span>
                           </div>
-                          <span className="text-white/30 group-hover:text-purple-800 group-hover:translate-x-1 transition-all">
+                          <span className="text-white/30 group-hover:text-site-accent group-hover:translate-x-1 transition-all">
                             →
                           </span>
                         </Link>
@@ -607,20 +607,20 @@ export default function Navbar() {
           <div className="hidden lg:flex">
             {/* <Link
               href="#contact"
-              className="group relative inline-flex h-11 min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-purple-800 px-6 text-sm font-semibold text-black transition-all duration-300 hover:bg-transparent hover:text-purple-800 border border-transparent hover:border-purple-800"
+              className="group relative inline-flex h-11 min-w-[160px] items-center justify-center overflow-hidden rounded-full bg-site-accent px-6 text-sm font-semibold text-black transition-all duration-300 hover:bg-transparent hover:text-site-accent border border-transparent hover:border-site-accent"
             >
               <span className="relative z-10 group-hover:scale-105 transition-transform">
                 Work with us
               </span>
             </Link> */}
-            <Button href="#contact" label="Work with us"/>
+            <Button href="#contact" label="Work with us" />
           </div>
 
           {/* Mobile Menu Button */}
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="relative h-10 w-10 rounded-full border border-white/10 text-purple-800 transition-all hover:bg-white/5 lg:hidden"
+            className="relative h-10 w-10 rounded-full border border-white/10 text-site-accent transition-all hover:bg-white/5 lg:hidden"
             aria-label="Toggle menu"
           >
             <div className="absolute inset-0 flex items-center justify-center transition-all duration-300">
@@ -674,13 +674,13 @@ export default function Navbar() {
                     className={cn(
                       "group flex items-center justify-between rounded-xl px-4 py-3 text-base font-medium transition-all duration-200 hover:bg-white/5",
                       item.active
-                        ? "text-purple-800 bg-white/5"
-                        : "text-purple-600 hover:text-purple-800",
+                        ? "text-site-accent bg-white/5"
+                        : "text-purple-600 hover:text-site-accent",
                     )}
                   >
                     <span>{item.label}</span>
                     {item.active && (
-                      <div className="h-1.5 w-1.5 rounded-full bg-purple-800" />
+                      <div className="h-1.5 w-1.5 rounded-full bg-site-accent" />
                     )}
                   </Link>
                 ))}
@@ -690,7 +690,7 @@ export default function Navbar() {
               <div className="mb-8">
                 <div className="mb-3 flex items-center gap-2 px-4">
                   <div className="h-px flex-1 bg-white/10" />
-                  <span className="text-xs font-semibold uppercase tracking-wider text-purple-800">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-site-accent">
                     Our Services
                   </span>
                   <div className="h-px flex-1 bg-white/10" />
@@ -703,7 +703,7 @@ export default function Navbar() {
                 <Link
                   href="#contact"
                   onClick={closeMobileMenu}
-                  className="group flex w-full items-center justify-center gap-2 rounded-full bg-purple-800 px-6 py-3.5 text-sm font-semibold text-black transition-all hover:bg-transparent hover:text-purple-800 border border-transparent hover:border-purple-800"
+                  className="group flex w-full items-center justify-center gap-2 rounded-full bg-site-accent px-6 py-3.5 text-sm font-semibold text-black transition-all hover:bg-transparent hover:text-site-accent border border-transparent hover:border-site-accent"
                 >
                   <span>Work with us</span>
                   <ArrowRight
@@ -712,7 +712,7 @@ export default function Navbar() {
                   />
                 </Link>
               </div> */}
-              <Button href="#contact" label="Work with us"/>
+              <Button href="#contact" label="Work with us" />
 
               {/* Footer */}
               <div className="mt-8 px-4 pt-6 border-t border-white/10">

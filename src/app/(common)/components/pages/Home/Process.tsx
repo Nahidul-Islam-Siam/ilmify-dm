@@ -211,17 +211,17 @@ export default function Process() {
   }, [activeStep, isDesktop]);
 
   return (
-    <section className="bg-[#0b0b0b] px-4 py-12 text-white sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:py-24">
+    <section className="bg-transparent px-4 py-12 text-[var(--site-text)] sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:py-24">
       <div className="mx-auto max-w-[1400px]">
         {/* Header Section - Responsive */}
         <div className="mx-auto max-w-[90%] sm:max-w-[85%] md:max-w-[760px] text-center">
-          <p className="text-[10px] sm:text-[11px] md:text-[12px] font-bold uppercase tracking-[0.14em] sm:tracking-[0.16em] text-purple-800">
+          <p className="text-[10px] sm:text-[11px] md:text-[12px] font-bold uppercase tracking-[0.14em] sm:tracking-[0.16em] text-site-accent">
             Our Process, Your Advantage
           </p>
-          <h2 className="mt-3 sm:mt-4 text-[1.75rem] sm:text-[2rem] md:text-[2.65rem] lg:text-[3rem] xl:text-[3.5rem] font-semibold tracking-[-0.04em] sm:tracking-[-0.05em] text-white leading-tight">
+          <h2 className="mt-3 sm:mt-4 text-[1.75rem] sm:text-[2rem] md:text-[2.65rem] lg:text-[3rem] xl:text-[3.5rem] font-semibold tracking-[-0.04em] sm:tracking-[-0.05em] text-site-text leading-tight">
             From Idea To Execution
           </h2>
-          <p className="mx-auto mt-3 sm:mt-4 max-w-[90%] sm:max-w-[720px] text-[13px] sm:text-[14px] md:text-[15px] leading-6 sm:leading-7 text-white/78">
+          <p className="mx-auto mt-3 sm:mt-4 max-w-[90%] sm:max-w-[720px] text-[13px] sm:text-[14px] md:text-[15px] leading-6 sm:leading-7 text-site-muted">
             We have become experts in creating top-notch digital products. We
             design beautifully and develop excellently. And we care deeply about
             what we do.
@@ -233,10 +233,10 @@ export default function Process() {
           {/* Left Column - Timeline */}
           <div ref={timelineRef} className="relative">
             {/* Vertical Line - Positioned to the right of numbers */}
-            <div className="absolute left-[60px] sm:left-[70px] md:left-[80px] lg:left-[88px] top-0 hidden md:block h-full w-[2px] -translate-x-1/2 rounded-full bg-white/12" />
+            <div className="absolute left-[60px] top-0 hidden h-full w-[3px] -translate-x-1/2 rounded-full bg-black/15 sm:left-[70px] md:left-[80px] md:block lg:left-[88px] lg:w-[4px]" />
             <div
               ref={progressFillRef}
-              className="absolute left-[60px] sm:left-[70px] md:left-[80px] lg:left-[88px] top-0 hidden md:block h-0 w-[3px] lg:w-[4px] -translate-x-1/2 rounded-full bg-purple-800"
+              className="absolute left-[60px] sm:left-[70px] md:left-[80px] lg:left-[88px] top-0 hidden md:block h-0 w-[3px] lg:w-[4px] -translate-x-1/2 rounded-full bg-site-accent"
             />
 
             {/* Steps Container */}
@@ -253,7 +253,7 @@ export default function Process() {
                     className={`
                       relative rounded-[18px] sm:rounded-[20px] md:rounded-[22px] 
                       transition-all duration-300
-                      ${isActive ? "border border-white/10 bg-white/[0.02]" : "border border-white/5 bg-transparent"}
+                      ${isActive ? "border border-black/10 bg-white/80 shadow-[var(--site-shadow)]" : "border border-black/10 bg-white/60"}
                       p-4 pl-14 sm:p-5 sm:pl-16 md:p-6 md:pl-20 lg:p-7 lg:pl-24
                       md:border-0 md:bg-transparent
                     `}
@@ -265,7 +265,7 @@ export default function Process() {
                       text-[1.25rem] sm:text-[1.35rem] md:text-[1.5rem] lg:text-[1.75rem] xl:text-[2rem]
                       font-semibold leading-none tracking-[-0.04em]
                       transition-colors duration-300
-                      ${isActive ? "text-purple-800" : "text-white/60"}
+                      ${isActive ? "text-purple-800" : "text-[var(--site-text)]"}
                     `}
                     >
                       {step.number}
@@ -274,10 +274,10 @@ export default function Process() {
                     <div className="min-h-[180px] sm:min-h-[200px] md:min-h-[220px] lg:min-h-[250px]">
                       <h3
                         className={`
-                        text-[1.25rem] sm:text-[1.35rem] md:text-[1.55rem] lg:text-[1.75rem] xl:text-[1.85rem]
+                        text-[1.25rem] sm:text-[1.35rem] md:text-[1.55rem] lg:text-[1.75rem] xl:text-[1.85rem] leading-[1.08]
                         font-semibold tracking-[-0.03em] sm:tracking-[-0.04em]
                         transition-colors duration-300
-                        ${isActive ? "text-white" : "text-white/80"}
+                        ${isActive ? "text-purple-800" : "text-black/75"}
                       `}
                       >
                         {step.title}
@@ -285,10 +285,10 @@ export default function Process() {
                       <p
                         className={`
                         mt-0.5 sm:mt-1
-                        text-[0.95rem] sm:text-[1rem] md:text-[1.05rem] lg:text-[1.15rem] xl:text-[1.25rem]
+                        text-[0.95rem] sm:text-[1rem] md:text-[1.05rem] lg:text-[1.15rem] xl:text-[1.25rem] leading-[1.25]
                         tracking-[-0.02em] sm:tracking-[-0.03em]
                         transition-colors duration-300
-                        ${isActive ? "text-white/70" : "text-white/50"}
+                        ${isActive ? "text-black/70" : "text-black/55"}
                       `}
                       >
                         {step.subtitle}
@@ -297,10 +297,9 @@ export default function Process() {
                         className={`
                         mt-3 sm:mt-4 md:mt-5
                         max-w-[90%] sm:max-w-[95%] md:max-w-[560px]
-                        text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px]
-                        leading-6 sm:leading-7
+                        text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] leading-[1.75]
                         transition-colors duration-300
-                        ${isActive ? "text-white/90" : "text-white/60"}
+                        ${isActive ? "text-black/85" : "text-black/65"}
                       `}
                       >
                         {step.body}
@@ -323,7 +322,7 @@ export default function Process() {
                 ref={visualCardRef}
                 className="absolute left-0 top-20 w-full will-change-transform"
               >
-                <div className="relative mx-auto aspect-[0.98] w-full max-w-[480px] xl:max-w-[540px] overflow-hidden rounded-[24px] lg:rounded-[26px] xl:rounded-[28px] border border-white/8 bg-[#111111] shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
+                <div className="relative mx-auto aspect-[0.98] w-full max-w-[480px] overflow-hidden rounded-[24px] border border-black/10 bg-white/85 shadow-[var(--site-shadow)] lg:rounded-[26px] xl:max-w-[540px] xl:rounded-[28px]">
                   {previousStep !== null && previousStep !== activeStep ? (
                     <div ref={previousImageRef} className="absolute inset-0">
                       <Image

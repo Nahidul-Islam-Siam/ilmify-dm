@@ -79,7 +79,7 @@ export default function LatestInsight() {
       <div className="mx-auto max-w-[1400px]">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4 sm:mb-10">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.16em] text-purple-800">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-site-accent">
               Latest Insights
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -92,7 +92,7 @@ export default function LatestInsight() {
               type="button"
               onClick={() => scrollCards("prev")}
               disabled={!canPrev}
-              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-purple-800 bg-purple-800 text-black transition hover:brightness-95 disabled:cursor-not-allowed disabled:border-white/20 disabled:bg-white/10 disabled:text-white/30"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-site-accent bg-site-accent text-black transition hover:brightness-95 disabled:cursor-not-allowed disabled:border-white/20 disabled:bg-white/10 disabled:text-white/30"
               aria-label="Previous insights"
             >
               <ArrowLeft size={18} />
@@ -101,7 +101,7 @@ export default function LatestInsight() {
               type="button"
               onClick={() => scrollCards("next")}
               disabled={!canNext}
-              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-purple-800 bg-purple-800 text-black transition hover:brightness-95 disabled:cursor-not-allowed disabled:border-white/20 disabled:bg-white/10 disabled:text-white/30"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-site-accent bg-site-accent text-black transition hover:brightness-95 disabled:cursor-not-allowed disabled:border-white/20 disabled:bg-white/10 disabled:text-white/30"
               aria-label="Next insights"
             >
               <ArrowRight size={18} />
@@ -118,7 +118,7 @@ export default function LatestInsight() {
               key={item.slug}
               href={`/insights/${item.slug}`}
               data-latest-card
-              className="group w-[86vw] max-w-[390px] shrink-0 snap-start overflow-hidden rounded-[22px] border border-white/14 bg-[#1a1a1a] transition duration-300 hover:border-purple-800/45"
+              className="group w-[86vw] max-w-[390px] shrink-0 snap-start overflow-hidden rounded-[22px] border border-white/14 bg-[#1a1a1a] transition duration-300 hover:border-site-accent/45"
             >
               <div className="relative aspect-[1.12] overflow-hidden">
                 <Image

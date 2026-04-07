@@ -57,7 +57,7 @@ export default function InsightsHero() {
           <span className="block text-white text-[clamp(32px,8vw,96px)]">
             Stay Updated With
           </span>
-          <span className="block text-purple-800 text-[clamp(32px,8vw,96px)]">
+          <span className="block text-site-accent text-[clamp(32px,8vw,96px)]">
             Our insights
           </span>
         </h1>

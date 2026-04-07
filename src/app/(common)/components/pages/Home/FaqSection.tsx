@@ -1,8 +1,9 @@
 "use client";
 
-import { ArrowUpRight, Plus } from "lucide-react";
-import Link from "next/link";
+
 import { useState } from "react";
+import Button from "../../button/Button";
+import { Plus } from "lucide-react";
 
 const faqItems = [
   {
@@ -40,7 +41,7 @@ export default function FaqSection() {
       <div className="mx-auto max-w-[1400px]">
         <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-14 xl:gap-20">
           <div className="max-w-[470px]">
-            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-purple-800 sm:text-[12px]">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-site-accent sm:text-[12px]">
               FAQs
             </p>
 
@@ -56,21 +57,22 @@ export default function FaqSection() {
               no-code execution support.
             </p>
 
-            <div className="mt-8 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:items-center lg:flex-col lg:items-start xl:flex-row xl:items-center">
-              <Link
+            <div className="mt-8 flex flex-col gap-2 sm:mt-10 sm:flex-row sm:items-center lg:flex-col lg:items-start xl:flex-row xl:items-center">
+              {/* <Link
                 href="#contact"
-                className="flex items-center justify-center gap-3 rounded-full  text-[15px] font-semibold text-black hover:text-white transition hover:bg-purple-800  px-4 py-4"
+                className="flex items-center justify-center gap-3 rounded-full  text-[15px] font-semibold text-black hover:text-white transition hover:bg-site-accent  px-4 py-4"
               >
                 Book a free call
                 <ArrowUpRight size={18} strokeWidth={2.4} />
-              </Link>
+              </Link> */}
+              <Button label="Book a free call" href="#contact" size="text-xs"/>
 
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6 text-purple-800">
-                  <div className="h-3 w-3 rounded-full bg-purple-800 shadow-[0_0_14px_rgba(82,244,71,0.7)]" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6 text-site-accent">
+                  <div className="h-3 w-3 rounded-full bg-site-accent shadow-[0_0_14px_rgba(82,244,71,0.7)]" />
                 </div>
                 <div>
-                  <div className="text-[15px] font-semibold tracking-[0.16em] text-purple-800">
+                  <div className="text-[15px] font-semibold tracking-[0.16em] text-site-accent">
                     5/5 SCORE
                   </div>
                   <p className="mt-1 text-[14px] text-black">
@@ -90,7 +92,7 @@ export default function FaqSection() {
                   key={item.question}
                   className={`overflow-hidden rounded-[22px] border transition-all duration-300 ${
                     isOpen
-                      ? "border-purple-800/35 bg-[#fff]"
+                      ? "border-site-accent/35 bg-[#fff]"
                       : "border-black bg-[#fff]"
                   }`}
                 >
@@ -106,7 +108,7 @@ export default function FaqSection() {
                     <span
                       className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border transition-all duration-300 ${
                         isOpen
-                          ? "border-white/10  bg-purple-800 text-white"
+                          ? "border-white/10  bg-site-accent text-white"
                           : "border-white/10 bg-white/6 text-white/72"
                       }`}
                     >

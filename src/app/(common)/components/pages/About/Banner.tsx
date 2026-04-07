@@ -47,11 +47,11 @@ export default function AboutBanner() {
               <div className="mt-7 flex justify-center lg:mt-9">
                 <Link href="#contact" className="group [perspective:1000px]">
                   <span className="relative block h-[54px] w-[270px] [transform-style:preserve-3d] transition-transform duration-500 group-hover:[transform:rotateX(90deg)] sm:h-[58px] sm:w-[300px]">
-                    <span className="absolute inset-0 flex items-center justify-center gap-3 rounded-full border border-purple-800 bg-purple-800 px-7 text-[15px] font-semibold text-black [backface-visibility:hidden]">
+                    <span className="absolute inset-0 flex items-center justify-center gap-3 rounded-full border border-site-accent bg-site-accent px-7 text-[15px] font-semibold text-black [backface-visibility:hidden]">
                       Request a Proposal Today
                       <ArrowUpRight size={18} strokeWidth={2.4} />
                     </span>
-                    <span className="absolute inset-0 flex items-center justify-center rounded-full border border-purple-800 bg-transparent px-7 text-[15px] font-semibold text-purple-800 [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(29px)] sm:px-8 sm:text-[16px]">
+                    <span className="absolute inset-0 flex items-center justify-center rounded-full border border-site-accent bg-transparent px-7 text-[15px] font-semibold text-site-accent [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(29px)] sm:px-8 sm:text-[16px]">
                       Book a Demo
                     </span>
                   </span>
@@ -70,7 +70,7 @@ export default function AboutBanner() {
               <div className="flex items-center justify-center gap-2 font-semibold tracking-[-0.05em] text-white">
                 <span>{card.title}</span>
                 {card.verified ? (
-                  <BadgeCheck size={20} className="text-purple-800" />
+                  <BadgeCheck size={20} className="text-site-accent" />
                 ) : null}
               </div>
 

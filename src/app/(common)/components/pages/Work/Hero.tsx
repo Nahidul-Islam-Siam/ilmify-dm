@@ -59,7 +59,7 @@ export default function WorkHero() {
           <span className="block text-white text-[clamp(32px,8vw,96px)]">
             OUR UI UX &amp; BRANDING
           </span>
-          <span className="block text-purple-800 text-[clamp(32px,8vw,96px)]">
+          <span className="block text-site-accent text-[clamp(32px,8vw,96px)]">
             CASE STUDIES
           </span>
         </h1>

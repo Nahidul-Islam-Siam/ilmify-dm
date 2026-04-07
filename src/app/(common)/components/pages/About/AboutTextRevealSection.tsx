@@ -177,15 +177,15 @@ export default function MissionSectionExact() {
                 key={index}
                 className="stat-item flex items-center gap-4 group cursor-pointer"
               >
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-purple-800/10 flex items-center justify-center group-hover:bg-purple-800/20 transition-colors duration-300">
-                  <stat.icon className="w-5 h-5 text-purple-800" />
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-site-accent/10 flex items-center justify-center group-hover:bg-site-accent/20 transition-colors duration-300">
+                  <stat.icon className="w-5 h-5 text-site-accent" />
                 </div>
                 <div>
                   <div className="flex items-baseline gap-0">
                     <span className="text-2xl sm:text-3xl font-bold text-gray-300">
                       {stat.value}
                     </span>
-                    <span className="text-2xl sm:text-3xl font-bold text-purple-800">
+                    <span className="text-2xl sm:text-3xl font-bold text-site-accent">
                       {stat.suffix}
                     </span>
                   </div>

@@ -5,14 +5,14 @@ import Link from "next/link";
 export default function AiAction() {
   return (
     <section className=" text-white ">
-      <div className="relative overflow-hidden  bg-purple-800 shadow-[0_24px_90px_rgba(0,0,0,0.34)]">
+      <div className="relative overflow-hidden  bg-site-accent shadow-[0_24px_90px_rgba(0,0,0,0.34)]">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <div className="relative grid min-h-[420px] grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1.05fr_0.95fr] ">
             <div className="absolute inset-y-0 left-[54%] hidden w-px bg-gradient-to-b from-transparent via-white/6 to-transparent lg:block" />
 
             <div className="relative z-10 flex items-center py-14 sm:py-16 lg:py-20">
               <div className="max-w-[760px]">
-                <div className="mb-5 inline-flex items-center rounded-full border border-purple-800/20 bg-purple-800/8 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#fff] backdrop-blur-sm sm:text-[12px]">
+                <div className="mb-5 inline-flex items-center rounded-full border border-site-accent/20 bg-site-accent/8 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#fff] backdrop-blur-sm sm:text-[12px]">
                   AI-Ready Product Systems
                 </div>
 
@@ -31,7 +31,7 @@ export default function AiAction() {
                 <div className="mt-8 flex flex-wrap items-center gap-4 sm:mt-10">
                   <Link
                     href="#contact"
-                    className="inline-flex h-[54px] items-center justify-center gap-3 rounded-full bg-purple-800 px-7 text-[15px] font-semibold text-black shadow-[0_0_32px_rgba(82,244,71,0.22)] transition hover:brightness-95 sm:h-[58px] sm:px-8 sm:text-[16px]"
+                    className="inline-flex h-[54px] items-center justify-center gap-3 rounded-full bg-site-accent px-7 text-[15px] font-semibold text-black shadow-[0_0_32px_rgba(82,244,71,0.22)] transition hover:brightness-95 sm:h-[58px] sm:px-8 sm:text-[16px]"
                   >
                     See AI in Action
                     <ArrowUpRight size={18} strokeWidth={2.4} />

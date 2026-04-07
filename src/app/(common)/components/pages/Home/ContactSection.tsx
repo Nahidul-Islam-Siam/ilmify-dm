@@ -35,7 +35,7 @@ export default function ContactSection() {
       <div className="mx-auto max-w-[1400px]">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_0.92fr] lg:items-start lg:gap-14 xl:gap-24">
           <div className="max-w-[640px]">
-            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-purple-800 sm:text-[12px]">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-site-accent sm:text-[12px]">
               Contact Us
             </p>
 
@@ -54,7 +54,7 @@ export default function ContactSection() {
             <div className="mt-8 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center lg:gap-6">
               {people.map((person, index) => (
                 <div key={person.name} className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-purple-800/25 bg-[linear-gradient(135deg,rgba(82,244,71,0.22),rgba(255,255,255,0.05))] text-sm font-semibold text-white shadow-[0_0_24px_rgba(82,244,71,0.12)]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-site-accent/25 bg-[linear-gradient(135deg,rgba(82,244,71,0.22),rgba(255,255,255,0.05))] text-sm font-semibold text-white shadow-[0_0_24px_rgba(82,244,71,0.12)]">
                     {person.initials}
                   </div>
                   <div>
@@ -103,32 +103,32 @@ export default function ContactSection() {
               <input
                 type="text"
                 placeholder="Full Name*"
-                className="h-[54px] w-full rounded-[14px] border border-white/10 bg-[#1c1c1c] px-4 text-[15px] text-white outline-none transition placeholder:text-white/38 focus:border-purple-800/55"
+                className="h-[54px] w-full rounded-[14px] border border-white/10 bg-[#1c1c1c] px-4 text-[15px] text-white outline-none transition placeholder:text-white/38 focus:border-site-accent/55"
               />
               <input
                 type="email"
                 placeholder="Email*"
-                className="h-[54px] w-full rounded-[14px] border border-white/10 bg-[#1c1c1c] px-4 text-[15px] text-white outline-none transition placeholder:text-white/38 focus:border-purple-800/55"
+                className="h-[54px] w-full rounded-[14px] border border-white/10 bg-[#1c1c1c] px-4 text-[15px] text-white outline-none transition placeholder:text-white/38 focus:border-site-accent/55"
               />
               <input
                 type="text"
                 placeholder="Company"
-                className="h-[54px] w-full rounded-[14px] border border-white/10 bg-[#1c1c1c] px-4 text-[15px] text-white outline-none transition placeholder:text-white/38 focus:border-purple-800/55"
+                className="h-[54px] w-full rounded-[14px] border border-white/10 bg-[#1c1c1c] px-4 text-[15px] text-white outline-none transition placeholder:text-white/38 focus:border-site-accent/55"
               />
               <input
                 type="text"
                 placeholder="Contact"
-                className="h-[54px] w-full rounded-[14px] border border-white/10 bg-[#1c1c1c] px-4 text-[15px] text-white outline-none transition placeholder:text-white/38 focus:border-purple-800/55"
+                className="h-[54px] w-full rounded-[14px] border border-white/10 bg-[#1c1c1c] px-4 text-[15px] text-white outline-none transition placeholder:text-white/38 focus:border-site-accent/55"
               />
               <textarea
                 placeholder="Tell us about your project*"
                 rows={6}
-                className="w-full rounded-[14px] border border-white/10 bg-[#1c1c1c] px-4 py-4 text-[15px] text-white outline-none transition placeholder:text-white/38 focus:border-purple-800/55"
+                className="w-full rounded-[14px] border border-white/10 bg-[#1c1c1c] px-4 py-4 text-[15px] text-white outline-none transition placeholder:text-white/38 focus:border-site-accent/55"
               />
 
               <button
                 type="submit"
-                className="inline-flex h-[56px] w-full items-center justify-center gap-3 rounded-full border border-purple-800 bg-[linear-gradient(180deg,rgba(82,244,71,0.14),rgba(82,244,71,0.05))] text-[17px] font-semibold text-white transition hover:bg-purple-800 hover:text-black"
+                className="inline-flex h-[56px] w-full items-center justify-center gap-3 rounded-full border border-site-accent bg-[linear-gradient(180deg,rgba(82,244,71,0.14),rgba(82,244,71,0.05))] text-[17px] font-semibold text-white transition hover:bg-site-accent hover:text-black"
               >
                 Submit Inquiry
                 <MoveRight size={18} strokeWidth={2.4} />

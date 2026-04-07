@@ -1,5 +1,4 @@
-﻿
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { insightItems } from "@/app/data/insight/Insight";
 import Button from "../../button/Button";
@@ -7,11 +6,11 @@ import Button from "../../button/Button";
 export default function InsightsSection() {
   const latestInsights = insightItems.slice(0, 3);
   return (
-    <section className="bg-[#0b0b0b] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section className=" px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="mx-auto max-w-[1400px]">
         <div className="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-center lg:justify-between ">
           <div className="max-w-[620px]">
-            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-purple-800 sm:text-[12px]">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-site-accent sm:text-[12px]">
               Insights
             </p>
             <h2 className="mt-5 text-[2rem] font-semibold leading-10 tracking-[-0.06em] text-black ">
@@ -24,22 +23,22 @@ export default function InsightsSection() {
           {/* <div className="lg:pt-1">
             <Link
               href="#contact"
-              className="inline-flex h-[54px] items-center justify-center gap-3 rounded-full  px-7 text-[15px] font-semibold transition bg-purple-800 text-white hover:bg-white hover:border hover:border-purple-800 hover:text-purple-800 sm:h-[56px] sm:px-8 sm:text-[16px]"
+              className="inline-flex h-[54px] items-center justify-center gap-3 rounded-full  px-7 text-[15px] font-semibold transition bg-site-accent text-white hover:bg-white hover:border hover:border-site-accent hover:text-site-accent sm:h-[56px] sm:px-8 sm:text-[16px]"
             >
               Explore More
               <ArrowUpRight size={18} strokeWidth={2.4} />
             </Link>
           </div> */}
-          <Button href="#contact" label="Explore More"/>
+          <Button href="#contact" label="Explore More" />
         </div>
 
         <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
           {latestInsights.map((item) => (
             <article
               key={item.title}
-              className="group overflow-hidden rounded-[22px] border border-gray-800 bg-[#141414] transition duration-300 hover:border-purple-800/30 hover:bg-[#171717]"
+              className="group overflow-hidden rounded-[22px] border border-site-border hover:border-site-accent  transition duration-300 hover:border-site-accent/30 "
             >
-              <Link href={`/insights/${item.slug}`} className="block">
+              <Link href={`/insights/${item.slug}`} className="">
                 <div className="relative aspect-[1.28] overflow-hidden">
                   <Image
                     src={item.image}
@@ -55,7 +54,7 @@ export default function InsightsSection() {
                 </div>
 
                 <div className="px-5 py-5 sm:px-6 sm:py-6">
-                  <h3 className=" font-semibold leading-6 tracking-[-0.04em] text-black transition-colors duration-300 group-hover:text-purple-800">
+                  <h3 className=" font-semibold leading-6 tracking-[-0.04em] text-black transition-colors duration-300 group-hover:text-site-accent">
                     {item.title}
                   </h3>
                   <p className="mt-4  text-gray-800/80 text-xs">

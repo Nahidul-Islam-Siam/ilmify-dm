@@ -159,7 +159,7 @@ function ServiceCard({ tag, name, border }: (typeof services)[0]) {
       }}
     >
       <div
-        className="absolute left-0 top-0 z-20 h-0 w-[2px] lg:w-[3px] bg-purple-800 transition-all group-hover:h-full"
+        className="absolute left-0 top-0 z-20 h-0 w-[2px] lg:w-[3px] bg-site-accent transition-all group-hover:h-full"
         style={{
           transitionDuration: "420ms",
           transitionTimingFunction: "cubic-bezier(0.65, 0, 0.35, 1)",
@@ -185,13 +185,13 @@ function ServiceCard({ tag, name, border }: (typeof services)[0]) {
         className="relative z-10 will-change-transform flex-1 pr-12 lg:pr-24"
       >
         <p
-          className="mb-1 lg:mb-2 text-[9px] lg:text-[10px] font-bold uppercase text-[#555] transition-colors duration-300 group-hover:text-purple-800"
+          className="mb-1 lg:mb-2 text-[9px] lg:text-[10px] font-bold uppercase text-[#555] transition-colors duration-300 group-hover:text-site-accent"
           style={{ letterSpacing: "0.15em", fontFamily: "Barlow, sans-serif" }}
         >
           {tag}
         </p>
         <h3
-          className="leading-tight text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-[38px]"
+          className="leading-tight text-[var(--site-text)] text-lg"
           style={{
             fontFamily: "'Bebas Neue', sans-serif",
             letterSpacing: "0.02em",
@@ -203,7 +203,7 @@ function ServiceCard({ tag, name, border }: (typeof services)[0]) {
 
       {/* Arrow Button - Consistent sizing across all devices */}
       <div
-        className={`absolute z-20 flex items-center justify-center rounded-full border transition-all duration-300 group-hover:rotate-45 group-hover:!bg-[#333] group-hover:!border-[#ffff] border-[#333] bg-[#1c1c1c]`}
+        className={`absolute z-20 flex items-center justify-center rounded-full border transition-all duration-300 group-hover:rotate-45 group-hover:!bg-[#6A1B9A] group-hover:!border-[#ffff] border-[#333] bg-[#1c1c1c]`}
         style={{
           right: "16px",
           top: "50%",
@@ -226,7 +226,7 @@ export default function Services() {
       <div className="mx-auto max-w-[1400px]">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center px-2 sm:px-4">
           <p
-            className="mb-2 sm:mb-3 lg:mb-4 text-[11px] sm:text-[13px] lg:text-[15px] font-bold uppercase text-purple-800"
+            className="mb-2 sm:mb-3 lg:mb-4 text-[11px] sm:text-[13px] lg:text-[15px] font-bold uppercase text-site-accent"
             style={{
               letterSpacing: "0.18em",
               fontFamily: "Barlow, sans-serif",
@@ -234,7 +234,7 @@ export default function Services() {
           >
             We Are Great At
           </p>
-          <h2 className="mb-2 sm:mb-3 text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold px-2">
+          <h2 className="mb-2 sm:mb-3 text-[var(--site-text)] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold px-2">
             UI UX Design and Product Experience Services
           </h2>
           <p
