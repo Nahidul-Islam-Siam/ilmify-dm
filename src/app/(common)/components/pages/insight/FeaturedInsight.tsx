@@ -85,7 +85,7 @@ export default function FeaturedInsightCard() {
           {/* Read More Link */}
           <div className="pt-4">
             <Link
-              href={`/insights/${insight.slug}`}
+              href={`/case-studies/${insight.slug}`}
               className="group/link inline-flex items-center gap-2 text-site-accent font-semibold transition-all duration-300 hover:gap-3"
             >
               <span>Read full article</span>

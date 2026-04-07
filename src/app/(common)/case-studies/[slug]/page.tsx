@@ -78,7 +78,7 @@ export default async function InsightDetails({ params }: InsightDetailsProps) {
                   {relatedInsights.map((item) => (
                     <Link
                       key={item.slug}
-                      href={`/insights/${item.slug}`}
+                      href={`/case-studies/${item.slug}`}
                       className="group block overflow-hidden rounded-[16px] border border-white/10 bg-[#141414] transition hover:border-site-accent/40"
                     >
                       <div className="relative aspect-[16/10] overflow-hidden">
