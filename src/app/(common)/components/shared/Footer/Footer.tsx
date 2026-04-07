@@ -35,7 +35,12 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-black px-5 py-16 text-white lg:px-8">
+    <footer className="relative overflow-hidden border-t border-[var(--site-border)] bg-[var(--site-panel-bg)] px-5 py-16 text-[var(--site-text)] lg:px-8">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-20 top-[-90px] h-[260px] w-[260px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.16)_0%,rgba(123,31,162,0)_72%)] blur-2xl" />
+        <div className="absolute right-[-80px] bottom-[-120px] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.14)_0%,rgba(82,244,71,0)_74%)] blur-2xl" />
+      </div>
+
       <div className="mx-auto max-w-[1320px]">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div className="max-w-[420px]">
@@ -47,7 +52,7 @@ export default function Footer() {
               width={200}
               className="h-auto w-[180px] object-contain md:w-[200px]"
             />
-            <p className="mt-6 text-sm leading-7 text-white/60">
+            <p className="mt-6 text-sm leading-7 text-black/68">
               We transform ideas into user-centered digital experiences for
               global brands, ambitious startups, and teams that want bold work
               that performs.
@@ -55,13 +60,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white">Company</h3>
+            <h3 className="text-lg font-semibold text-black">Company</h3>
             <div className="mt-5 flex flex-col gap-3">
               {companyLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-white/62 transition  hover:text-site-accent"
+                  className="text-sm text-black/66 transition hover:text-purple-800"
                 >
                   {link.label}
                 </Link>
@@ -70,13 +75,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white">Services</h3>
+            <h3 className="text-lg font-semibold text-black">Services</h3>
             <div className="mt-5 flex flex-col gap-3">
               {serviceLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="text-sm text-white/62 transition hover:text-site-accent"
+                  className="text-sm text-black/66 transition hover:text-purple-800"
                 >
                   {link.label}
                 </Link>
@@ -85,10 +90,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white">Reviews</h3>
+            <h3 className="text-lg font-semibold text-black">Reviews</h3>
             <div className="mt-5 flex flex-col gap-3">
               {reviews.map((item) => (
-                <p key={item} className="text-sm text-white/62">
+                <p key={item} className="text-sm text-black/66">
                   {item}
                 </p>
               ))}
@@ -96,8 +101,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-5  pt-8 md:flex-row md:items-center md:justify-between">
-          <p className="text-xs text-white/48">
+        <div className="mt-12 flex flex-col gap-5 border-t border-black/10 pt-8 md:flex-row md:items-center md:justify-between">
+          <p className="text-xs text-black/52">
             &copy; Ilmify Studio. All Rights Reserved.
           </p>
           <div className="flex flex-wrap items-center gap-3">
@@ -105,7 +110,7 @@ export default function Footer() {
               <Link
                 key={label}
                 href={href}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/60 transition hover:border-site-accent hover:text-site-accent"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/12 bg-white/75 text-black/60 transition hover:border-purple-800 hover:bg-purple-800 hover:text-white"
                 aria-label={label}
               >
                 <Icon size={16} />

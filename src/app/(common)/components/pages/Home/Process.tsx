@@ -233,7 +233,7 @@ export default function Process() {
           {/* Left Column - Timeline */}
           <div ref={timelineRef} className="relative">
             {/* Vertical Line - Positioned to the right of numbers */}
-            <div className="absolute left-[60px] top-0 hidden h-full w-[3px] -translate-x-1/2 rounded-full bg-black/15 sm:left-[70px] md:left-[80px] md:block lg:left-[88px] lg:w-[4px]" />
+            <div className="absolute left-[60px] top-0 hidden  w-[3px] -translate-x-1/2 rounded-full bg-black/15 sm:left-[70px] md:left-[80px] md:block lg:left-[88px] lg:w-[4px]" />
             <div
               ref={progressFillRef}
               className="absolute left-[60px] sm:left-[70px] md:left-[80px] lg:left-[88px] top-0 hidden md:block h-0 w-[3px] lg:w-[4px] -translate-x-1/2 rounded-full bg-site-accent"
