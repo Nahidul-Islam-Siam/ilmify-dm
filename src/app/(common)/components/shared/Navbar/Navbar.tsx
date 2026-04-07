@@ -430,7 +430,7 @@ export default function Navbar() {
         className={cn(
           "border-b border-transparent bg-transparent transition-all duration-300",
           scrolled
-            ? "border-[color:var(--site-border)] bg-[color:var(--site-panel-bg)] shadow-[var(--site-shadow)] backdrop-blur-xl"
+            ? "bg-white "
             : "",
         )}
       >

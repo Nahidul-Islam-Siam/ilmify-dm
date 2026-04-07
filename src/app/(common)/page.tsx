@@ -16,7 +16,10 @@ export default function CommonHomePage() {
       <Services />
       <Showcase />
       <Process />
-      <AiAction />
+      <div className="mt-10 lg:mt-20">
+        <AiAction />
+      </div>
+
       <FaqSection />
       <InsightsSection />
       <ContactSection />
