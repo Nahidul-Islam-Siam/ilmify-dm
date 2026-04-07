@@ -42,7 +42,7 @@ const navItems = [
   { href: "/", label: "Home", match: ["/"] },
   { href: "/about", label: "About", match: ["/about"] },
   { href: "/work", label: "Work", match: ["/work"] },
-  { href: "/insights", label: "Insights", match: ["/insights"] },
+  { href: "/case-studies", label: "Case Studies", match: ["/case-studies"] },
 ];
 
 // Service categories with their subcategories and services

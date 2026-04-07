@@ -108,6 +108,42 @@ html {
   }
 }
 
+@keyframes work-snake-float {
+  0% {
+    transform: translate3d(-18%, 12%, 0) rotate(-14deg) scaleX(0.92);
+  }
+  25% {
+    transform: translate3d(8%, -4%, 0) rotate(-6deg) scaleX(1.04);
+  }
+  50% {
+    transform: translate3d(20%, -16%, 0) rotate(6deg) scaleX(0.98);
+  }
+  75% {
+    transform: translate3d(-2%, 6%, 0) rotate(14deg) scaleX(1.08);
+  }
+  100% {
+    transform: translate3d(-18%, 12%, 0) rotate(-14deg) scaleX(0.92);
+  }
+}
+
+@keyframes work-snake-float-alt {
+  0% {
+    transform: translate3d(20%, -10%, 0) rotate(18deg) scaleX(1.05);
+  }
+  25% {
+    transform: translate3d(-6%, 10%, 0) rotate(8deg) scaleX(0.96);
+  }
+  50% {
+    transform: translate3d(-22%, 18%, 0) rotate(-4deg) scaleX(1.08);
+  }
+  75% {
+    transform: translate3d(6%, -2%, 0) rotate(-14deg) scaleX(0.94);
+  }
+  100% {
+    transform: translate3d(20%, -10%, 0) rotate(18deg) scaleX(1.05);
+  }
+}
+
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

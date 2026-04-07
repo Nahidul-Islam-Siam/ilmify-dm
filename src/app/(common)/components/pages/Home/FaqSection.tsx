@@ -1,15 +1,14 @@
 "use client";
 
-
 import { useState } from "react";
 import Button from "../../button/Button";
 import { Plus } from "lucide-react";
 
 const faqItems = [
   {
-    question: "How do you structure AI-ready product design work?",
+    question: "How do you structure digital marketing work?",
     answer:
-      "We start with product goals, user flows, and system logic, then turn that into reusable interface patterns. That means your product looks polished today while staying scalable for future features and AI workflows.",
+      "We follow a proven, step-by-step approach — starting with research and strategy, then moving into asset creation, campaign execution, and continuous optimization.Every decision is backed by data, not assumptions, so your marketing actually performs, not just looks good.",
   },
   {
     question: "What does a typical design engagement include?",
@@ -17,19 +16,24 @@ const faqItems = [
       "Most engagements include research, UX strategy, wireframes, UI design, responsive layouts, interaction thinking, and delivery-ready systems. We can also extend into product audits and design support for launches.",
   },
   {
-    question: "Can you design for startups as well as growing SaaS products?",
+    question: "What does a typical engagement include?",
     answer:
-      "Yes. We work with early-stage teams validating an idea as well as mature products that need a sharper system, cleaner flows, or stronger conversion-focused interface design.",
+      "It covers everything needed to grow your brand — strategy, funnel planning, ad creatives, landing pages, campaign management, and performance tracking.You’re not just getting execution, you’re getting a complete system built to generate results.",
   },
   {
-    question: "How do you make sure the final UI feels premium and usable?",
+    question: "Do you work with startups as well as growing brands?",
     answer:
-      "We balance visual polish with structure. Typography, spacing, states, and motion are all designed around clarity, so the experience feels elegant without becoming harder to use.",
+      "Yes. Whether you’re starting from scratch or scaling an existing business, we adapt our approach to your stage.Startups get clarity and structure, while growing brands get optimization and scale",
   },
   {
-    question: "Do you support responsive design and design systems together?",
+    question: "How do you ensure campaigns actually perform?",
     answer:
-      "Absolutely. Every interface is considered across mobile, tablet, and desktop, and we package decisions into reusable components and rules so the product can grow consistently.",
+      "We focus on testing and iteration. From creatives to targeting and funnels, everything is continuously refined using real performance data.This allows us to improve results over time and maximize your return on investment.",
+  },
+  {
+    question: "Do you handle both strategy and execution?",
+    answer:
+      "Yes - we handle everything end-to-end. From planning and setup to launch, optimization, and scaling. This ensures consistency, faster execution, and better results.",
   },
 ];
 
@@ -46,15 +50,15 @@ export default function FaqSection() {
             </p>
 
             <h2 className="mt-5 text-[2.4rem] font-semibold leading-[0.94] tracking-[-0.06em] text-black leading-10">
-              Questions? We&apos;ve
+              Questions? We’ve Got Answers
               <br />
               Got Answers
             </h2>
 
             <p className="mt-5 max-w-[430px] text-[12px] leading-5 text-white/78 sm:text-[14px] text-black">
-              ZeeFrames reduces design complexity and speeds product launches
-              with clear UX workflows, scalable visual systems, and thoughtful
-              no-code execution support.
+              Still unsure if this is the right fit? We break down our process,
+              approach, and how we help brands grow - so you can move forward
+              with confidence.
             </p>
 
             <div className="mt-8 flex flex-col gap-2 sm:mt-10 sm:flex-row sm:items-center lg:flex-col lg:items-start xl:flex-row xl:items-center">
@@ -65,7 +69,7 @@ export default function FaqSection() {
                 Book a free call
                 <ArrowUpRight size={18} strokeWidth={2.4} />
               </Link> */}
-              <Button label="Book a free call" href="#contact" size="text-xs"/>
+              <Button label="Book a free call" href="#contact" size="text-xs" />
 
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/12 bg-white/6 text-site-accent">

@@ -4,10 +4,10 @@ import ContactSection from "../components/pages/Home/ContactSection";
 
 const Workpage = () => {
   return (
-    <div>
-      <WorkHero />
-      <ContactSection />
-    </div>
+      <div className="relative z-10">
+         <WorkHero />
+        <ContactSection />
+      </div>
   );
 };
 

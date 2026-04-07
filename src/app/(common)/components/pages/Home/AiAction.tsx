@@ -3,8 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 // import Image from "next/image";
 import Lottie from "lottie-react";
 import Link from "next/link";
-import marketingAnimation from ".././../../../../../public/assets/Lottie/DigitalMarketing.json";
-
+import marketingAnimation from ".././../../../../../public/assets/Lottie/Marketing.json";
 export default function AiAction() {
   return (
     <section className="bg-transparent py-4">
@@ -20,15 +19,13 @@ export default function AiAction() {
                 </div>
 
                 <h2 className="max-w-[760px] text-balance text-[2.5rem] font-semibold leading-[0.96] text-black sm:text-[2.9rem] lg:text-[3.2rem]">
-                  Design That Thinks.
+                  Marketing That Thinks.
                   <br />
-                  <span className="text-purple-800">Interfaces</span> That Feel.
+                  <span className="text-purple-800">Growth </span> That Scales.
                 </h2>
 
                 <p className="mt-7 max-w-[700px] text-[17px] leading-8 text-black/75 sm:text-[19px] md:text-[20px] lg:mt-8 lg:text-[21px]">
-                  At ZeeFrames, we craft AI-ready design systems for modern
-                  software that feel responsive, scalable, and deeply
-                  human-centered.
+       We design AI-ready marketing ecosystems that connect content, ads, and data into one powerful growth engine. Built for brands that want more than just visibility.
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-4 sm:mt-10">
