@@ -16,22 +16,22 @@ const brandLogos = [
 
 export default function BrandMarquee() {
   return (
-    <div className="relative z-10 w-full overflow-hidden rounded-2xl border border-[var(--site-border)] bg-white/92 py-2 shadow-[var(--site-shadow)]">
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-white to-transparent sm:w-24 md:w-32" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-white to-transparent sm:w-24 md:w-32" />
+    <div className="relative z-10 w-full overflow-hidden rounded-2xl border border-[var(--site-border)] bg-[var(--site-panel-bg)] py-2 shadow-[var(--site-shadow)]">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-[var(--site-panel-bg)] to-transparent sm:w-24 md:w-32" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[var(--site-panel-bg)] to-transparent sm:w-24 md:w-32" />
 
       <FastMarquee speed={40} gradient={false} pauseOnHover>
         {brandLogos.map((brand, index) => (
           <div
             key={brand.alt}
-            className="mx-6 flex h-10 min-w-[120px] items-center justify-center opacity-75 transition-all duration-300 hover:scale-105 hover:opacity-100 sm:mx-8 sm:h-12 sm:min-w-[140px] md:mx-10 md:h-14 md:min-w-[160px]"
+            className="mx-6 flex h-10 min-w-[120px] items-center justify-center opacity-80 transition-all duration-300 hover:scale-105 hover:opacity-100 sm:mx-8 sm:h-12 sm:min-w-[140px] md:mx-10 md:h-14 md:min-w-[160px]"
           >
             <Image
               src={brand.src}
               alt={brand.alt}
               width={160}
               height={40}
-              className="max-h-8 w-auto object-contain opacity-85 grayscale transition-all duration-300 hover:opacity-100 hover:grayscale-0 sm:max-h-10 md:max-h-12"
+              className="max-h-8 w-auto object-contain brightness-0 opacity-80 transition-all duration-300 hover:opacity-100 sm:max-h-10 md:max-h-12"
               priority={index < 3}
             />
           </div>

@@ -317,7 +317,7 @@ input::-webkit-inner-spin-button {
     --radius: 0.5rem;
 
     /* Global website theme tokens */
-    --site-accent: #52f447;
+    --site-accent: #6A1B9A;
     --site-text: #111111;
     --site-text-muted: rgba(16, 16, 16, 0.72);
     --site-panel-bg: rgba(255, 255, 255, 0.86);

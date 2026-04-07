@@ -7,15 +7,15 @@ import Link from "next/link";
 import BrandMarquee from "./BrandMarquee";
 
 const toolBadges = [
-  { link: "/assets/hero/Meta.png", className: "bg-[#2f2041] text-[#ff61f6]" },
-  { link: "/assets/hero/SEO.png", className: "bg-[#25395f] text-[#42a5ff]" },
+  { link: "/assets/hero/Meta.png",  },
+  { link: "/assets/hero/SEO.png",  },
   {
     link: "/assets/hero/Google-Ads.png",
-    className: "bg-[#2b2b2b] text-[#ffb800]",
+  
   },
   {
     link: "/assets/hero/Email-Marketing.png",
-    className: "bg-[#1f1f1f] text-[#f24e1e]",
+  
   },
 ];
 
@@ -64,7 +64,7 @@ export default function HomeShowcase() {
                   key={badge.link}
                   className={cn(
                     "group flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold transition-all duration-300 hover:-translate-y-1 hover:scale-110",
-                    badge.className,
+                    "bg-white border border-purple-500",
                   )}
                 >
                   <Image
@@ -96,13 +96,13 @@ export default function HomeShowcase() {
             <div className="mt-7 md:mt-10 flex flex-col sm:flex-row items-center justify-start md:justify-center gap-3">
               <Link
                 href="#contact"
-                className="inline-flex h-12 min-w-[160px] w-full items-center justify-center rounded-full border border-[var(--site-accent)] bg-[var(--site-accent)] px-8 text-[15px] font-semibold text-black transition hover:brightness-95 sm:w-auto"
+                className="inline-flex h-12 min-w-[160px] w-full items-center justify-center rounded-full border border-[var(--site-accent)] bg-[var(--site-accent)] px-8 text-[15px] font-semibold text-white transition hover:brightness-95 sm:w-auto"
               >
                 Book a Call
               </Link>
               <Link
                 href="#work"
-                className="inline-flex h-12 min-w-[156px] w-full items-center justify-center gap-2 rounded-full border border-black/70 bg-transparent px-8 text-[15px] font-semibold text-black transition hover:border-[var(--site-accent)] hover:bg-[var(--site-accent)] sm:w-auto"
+                className="inline-flex h-12 min-w-[156px] w-full items-center justify-center gap-2 rounded-full border border-purple-800 bg-transparent px-8 text-[15px] font-semibold text-purple-800 transition hover:text-white hover:border-[var(--site-accent)] hover:bg-[var(--site-accent)] sm:w-auto"
               >
                 Get Free Audit
                 <ArrowUpRight size={16} />
