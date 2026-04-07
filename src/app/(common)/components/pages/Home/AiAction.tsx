@@ -8,7 +8,7 @@ import marketingAnimation from ".././../../../../../public/assets/Lottie/Digital
 export default function AiAction() {
   return (
     <section className="bg-transparent py-4">
-      <div className="relative overflow-hidden rounded-[30px] border border-[var(--site-border)] bg-[var(--site-panel-bg)] shadow-[var(--site-shadow)]">
+      <div className="relative overflow-hidden rounded-[30px] border border-site-border bg-site-panel shadow-[var(--site-shadow)]">
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <div className="relative grid min-h-[420px] grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1.20fr_0.80fr]">
             <div className="absolute inset-y-0 left-[54%] hidden w-px  lg:block" />
@@ -60,11 +60,10 @@ export default function AiAction() {
                 />
               </div>
             </div> */}
-         <Lottie animationData={marketingAnimation}/>
+            <Lottie animationData={marketingAnimation} />
           </div>
         </div>
       </div>
- 
     </section>
   );
 }

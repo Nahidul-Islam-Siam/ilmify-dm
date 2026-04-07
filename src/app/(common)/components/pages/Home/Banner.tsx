@@ -40,7 +40,7 @@ export default function HomeShowcase() {
           </div>
 
           {/* Trust Badge */}
-          <div className="relative z-10 flex w-fit flex-col gap-3 rounded-2xl border border-[var(--site-border)] bg-white/92 p-4 shadow-[var(--site-shadow)] sm:flex-row sm:items-center sm:justify-between">
+          <div className="relative z-10 flex w-fit flex-col gap-3 rounded-2xl border border-site-border bg-white/92 p-4 shadow-[var(--site-shadow)] sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-start sm:items-center gap-3 flex-1">
               <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full">
                 <Image

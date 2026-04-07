@@ -123,7 +123,10 @@ export default function AboutPartnerSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative bg-transparent text-[var(--site-text)]">
+    <section
+      ref={sectionRef}
+      className="relative bg-transparent text-[var(--site-text)]"
+    >
       <div className="sticky top-20 h-[72vh] min-h-[420px] overflow-hidden sm:h-[80vh] lg:h-screen">
         <div ref={imageLayerRef} className="relative h-full w-full">
           <Image
@@ -140,7 +143,7 @@ export default function AboutPartnerSection() {
         <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
           <div
             ref={panelRef}
-            className="relative overflow-hidden rounded-[32px] border border-[var(--site-border)] bg-[var(--site-panel-bg)] p-6 shadow-[var(--site-shadow)] sm:p-8 lg:p-10 xl:p-12"
+            className="relative overflow-hidden rounded-[32px] border border-site-border bg-site-panel p-6 shadow-[var(--site-shadow)] sm:p-8 lg:p-10 xl:p-12"
           >
             <div className="pointer-events-none absolute inset-0">
               <div className="absolute -left-20 top-[-90px] h-[260px] w-[260px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.18)_0%,rgba(123,31,162,0)_72%)] blur-2xl animate-about-float-a" />
@@ -173,9 +176,11 @@ export default function AboutPartnerSection() {
                   Who We Are as a Design Partner
                 </h2>
                 <p className="about-partner-copy mt-5 text-[16px] leading-8 text-black/72 sm:text-[17px]">
-                  ZeeFrames is a specialized UI UX design agency focused on crafting digital products
-                  that look exceptional, feel intuitive, and perform in real business environments.
-                  We partner with teams to turn ambition into reliable product outcomes.
+                  ZeeFrames is a specialized UI UX design agency focused on
+                  crafting digital products that look exceptional, feel
+                  intuitive, and perform in real business environments. We
+                  partner with teams to turn ambition into reliable product
+                  outcomes.
                 </p>
 
                 <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 md:grid-cols-2 xl:grid-cols-3">
