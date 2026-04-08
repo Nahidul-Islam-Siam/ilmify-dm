@@ -1,8 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Button from "../../button/Button";
 import { Plus } from "lucide-react";
+import { useTransition } from "@/app/hooks/TransitionContext";
+import { TransitionType } from "@/app/types/TransitionTypes";
 
 const faqItems = [
   {
@@ -39,12 +41,34 @@ const faqItems = [
 
 export default function FaqSection() {
   const [openItem, setOpenItem] = useState(0);
+  const introRef = useRef<HTMLDivElement>(null);
+  const accordionRef = useRef<HTMLDivElement>(null);
+  const itemRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const { applyTransition } = useTransition();
+
+  useEffect(() => {
+    if (introRef.current) {
+      applyTransition(introRef.current, TransitionType.Fade);
+    }
+
+    if (accordionRef.current) {
+      applyTransition(accordionRef.current, TransitionType.Slide);
+    }
+
+    itemRefs.current.forEach((item, index) => {
+      if (!item) return;
+      applyTransition(
+        item,
+        index % 2 === 0 ? TransitionType.Scale : TransitionType.ZoomBlur,
+      );
+    });
+  }, [applyTransition]);
 
   return (
     <section className="bg-[#0b0b0b] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="site-shell">
         <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-14 xl:gap-20">
-          <div className="max-w-[470px]">
+          <div ref={introRef} className="max-w-[470px]">
             <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-site-accent sm:text-[12px]">
               FAQs
             </p>
@@ -87,13 +111,16 @@ export default function FaqSection() {
             </div>
           </div>
 
-          <div className="space-y-4 sm:space-y-5">
+          <div ref={accordionRef} className="space-y-4 sm:space-y-5">
             {faqItems.map((item, index) => {
               const isOpen = openItem === index;
 
               return (
                 <div
                   key={item.question}
+                  ref={(node) => {
+                    itemRefs.current[index] = node;
+                  }}
                   className={`overflow-hidden rounded-[22px] border transition-all duration-300 ${
                     isOpen
                       ? "border-site-accent/35 bg-[#fff]"

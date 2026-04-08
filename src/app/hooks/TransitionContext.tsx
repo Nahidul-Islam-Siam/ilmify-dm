@@ -30,8 +30,8 @@ export const TransitionProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     else if (transitionType === TransitionType.Scale) {
       gsap.fromTo(
         el,
-        { scale: 0.5, opacity: 0 },
-        { scale: 1, opacity: 1, duration: 1.5, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 80%", end: "bottom 20%", scrub: true } }
+        { scale: 0.8, opacity: 0.5 },
+        { scale: 1, opacity: 1, duration: 1, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 80%", end: "bottom 20%", scrub: true } }
       );
     }
 

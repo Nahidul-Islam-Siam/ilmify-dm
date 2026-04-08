@@ -37,7 +37,7 @@ import Button from "../../button/Button";
 const navItems = [
   { href: "/", label: "Home", match: ["/"] },
   { href: "/about", label: "About", match: ["/about"] },
-  { href: "/work", label: "Work", match: ["/work"] },
+  // { href: "/work", label: "Work", match: ["/work"] },
   { href: "/case-studies", label: "Case Studies", match: ["/case-studies"] },
 ];
 
