@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { TransitionType } from "@/app/types/TransitionTypes";
 import { useTransition } from "@/app/hooks/TransitionContext";
 
-
 const services = [
   {
     tag: "For Digital Experiences",
@@ -30,7 +29,7 @@ const services = [
     tag: "For Rapid App Builders",
     name: "Social Media Management",
     border: "border-b",
-    image: "/assets/hero/Trusted-by.png",
+    image: "/assets/hero/Trusted_by.png",
   },
   {
     tag: "For Startups & Founders",
@@ -45,11 +44,6 @@ const services = [
     image: "/assets/hero/Email-Marketing.png",
   },
 ];
-
-type Service = (typeof services)[number];
-type ServiceCardProps = Service & {
-  transitionType?: TransitionType;
-};
 
 const ArrowIcon = ({ className = "" }: { className?: string }) => (
   <svg
@@ -67,25 +61,31 @@ const ArrowIcon = ({ className = "" }: { className?: string }) => (
   </svg>
 );
 
+interface ServiceCardProps {
+  tag: string;
+  name: string;
+  border: string;
+  image: string;
+  transitionType?: TransitionType;
+}
+
 function ServiceCard({
   tag,
   name,
   border,
   image,
-  transitionType = TransitionType.Fade,
+  transitionType,
 }: ServiceCardProps) {
   const imageRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLDivElement | null>(null);
-  const { applyTransition } = useTransition();
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { applyTransition } = useTransition(); // Use the transition hook
 
   useEffect(() => {
     if (sectionRef.current) {
-      applyTransition(sectionRef.current, transitionType);
+      applyTransition(sectionRef.current, transitionType); // Apply transition type dynamically
     }
   }, [applyTransition, transitionType]);
-  
-
   const handleEnter = () => {
     if (textRef.current) {
       gsap.killTweensOf(textRef.current);
@@ -213,7 +213,7 @@ function ServiceCard({
 
 export default function Services() {
   return (
-    <section className="w-full bg-forground px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20">
+    <section className="w-full bg-gray-300/30 px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-[1400px]">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center px-2 sm:px-4">
           <p
@@ -238,11 +238,7 @@ export default function Services() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-[#252525]">
           {services.map((service) => (
-            <ServiceCard
-              key={service.name}
-              {...service}
-              transitionType={TransitionType.Slide}
-            />
+            <ServiceCard key={service.name} {...service} />
           ))}
         </div>
       </div>

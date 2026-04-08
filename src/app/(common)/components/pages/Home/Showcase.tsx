@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import FlipButton from "../../button/FlipButton";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -71,13 +71,13 @@ export default function Showcase() {
         tl.fromTo(
           card,
           {
-            yPercent: 34,
+            yPercent: 10,
             opacity: 0.15,
             scale: 0.82,
             rotateX: 26,
             rotateY: index % 2 ? -10 : 10,
             rotateZ: index % 2 ? 2 : -2,
-            filter: "blur(10px) brightness(0.82)",
+            filter: "blur(5px) brightness(0.82)",
           },
           {
             yPercent: -2,
@@ -118,7 +118,7 @@ export default function Showcase() {
   return (
     <section
       ref={sectionRef}
-      className="bg-[#0b0b0b] px-5 py-20 text-white md:px-8 lg:py-24"
+      className="bg-[#0b0b0b] px-5 py-10 text-white md:px-8 lg:py-20"
     >
       <div className="mx-auto max-w-[1280px]">
         <div className="mx-auto max-w-[740px] text-center">
@@ -177,38 +177,7 @@ export default function Showcase() {
           ))}
         </div>
 
-        <div className="mt-20 rounded-[34px] border border-dashed border-gray-800 px-6 py-14 text-center md:px-10 md:py-10">
-          <h3 className="text-[2rem] font-semibold tracking-[-0.04em] text-site-text md:text-xl">
-            Your project here
-          </h3>
-          <p className="mx-auto  max-w-[680px] text-sm leading-8 text-site-text md:text-md">
-            The proof is in our work. Check out{" "}
-            <span className="font-semibold text-site-accent underline underline-offset-4">
-              our case studies
-            </span>{" "}
-            to learn how our product development services can transform your
-            business.
-          </p>
-
-          {/* <div className="mt-5 flex justify-center">
-            <Link href="#contact" className="group [perspective:1000px]">
-              <span className="relative block h-[56px] w-[280px] [transform-style:preserve-3d] transition-transform duration-500 group-hover:[transform:rotateX(90deg)]">
-                <span className="absolute inset-0 flex items-center justify-center gap-3 rounded-full bg-site-accent px-8 text-[16px] font-semibold text-black [backface-visibility:hidden]">
-                  Book a discovery call
-                  <ArrowUpRight size={18} strokeWidth={2.4} />
-                </span>
-                <span className="absolute inset-0 flex items-center justify-center rounded-full border border-[] bg-transparent px-8 text-[16px] font-semibold text-site-accent [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(28px)]">
-                  Let&apos;s talk
-                </span>
-              </span>
-            </Link>
-          </div> */}
-          <FlipButton
-            href="#contact"
-            label="Book a discovery call"
-            flipLabel="Let's talk"
-          />
-        </div>
+    
       </div>
     </section>
   );

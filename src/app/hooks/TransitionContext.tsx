@@ -57,12 +57,12 @@ export const TransitionProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     {
       rotationY: 0, // Flip back to normal
       opacity: 1,
-      duration: 1.8,
+      duration: 2,
       ease: "power3.out",
       scrollTrigger: {
         trigger: el,
-        start: "top 80%",
-        end: "bottom 20%",
+        start: "top 100%",
+        end: "bottom 50%",
         scrub: true,
       },
     }
