@@ -46,7 +46,7 @@ export const TransitionProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     else if (transitionType === TransitionType.Slide) {
       gsap.fromTo(
         el,
-        { x: -100, opacity: 0 },
+        { x: -100, opacity: 0.5 },
         { x: 0, opacity: 1, duration: 1.5, ease: "power3.out", scrollTrigger: { trigger: el, start: "top 80%", end: "bottom 20%", scrub: true } }
       );
     }
@@ -90,7 +90,7 @@ else if (transitionType === TransitionType.Wave) {
 else if (transitionType === TransitionType.Scramble) {
   gsap.fromTo(
     el,
-    { opacity: 0, textShadow: "0px 0px 5px rgba(255, 255, 255, 0.4)" }, // Start with no opacity and a mild text shadow
+    { opacity: 0},
     {
       opacity: 1,
       textShadow: "0px 0px 20px rgba(255, 0, 0, 1)", // Glowing effect for text

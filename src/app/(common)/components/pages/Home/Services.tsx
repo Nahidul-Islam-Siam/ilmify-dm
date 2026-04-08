@@ -214,7 +214,7 @@ function ServiceCard({
 export default function Services() {
   return (
     <section className="w-full bg-gray-300/30 px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-[1400px]">
+      <div className="mx-auto max-w-[1440px]">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center px-2 sm:px-4">
           <p
             className="mb-2 sm:mb-3 lg:mb-4 text-[11px] sm:text-[13px] lg:text-[15px] font-bold uppercase text-site-accent"

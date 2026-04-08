@@ -24,7 +24,7 @@ export default async function InsightDetails({ params }: InsightDetailsProps) {
 
   return (
     <section className="bg-[#0b0b0b] px-4 pb-16 pt-28 text-white sm:px-6 sm:pb-20 sm:pt-16 lg:px-8 lg:pb-24">
-      <div className="mx-auto max-w-[1400px]">
+      <div className="mx-auto max-w-[1440px]">
         <Link
           href="/insights"
           className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-white/70 transition hover:text-site-accent"

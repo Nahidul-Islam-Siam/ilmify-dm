@@ -1,15 +1,15 @@
-"use client"
+"use client";
 import { Check, Mail, MoveRight } from "lucide-react";
 
 const people = [
   {
-    id:1,
+    id: 1,
     name: "Saruar Zahan",
     role: "Director & Co-Founder",
     initials: "SZ",
   },
   {
-    id:2,
+    id: 2,
     name: "Saruar Zahan",
     role: "Director & Co-Founder",
     initials: "SZ",
@@ -40,7 +40,7 @@ export default function ContactSection() {
         <div className="absolute right-[-70px] top-[18%] h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.16)_0%,rgba(82,244,71,0)_72%)] blur-2xl animate-contact-float-b" />
       </div>
 
-      <div className="mx-auto max-w-[1400px]">
+      <div className="mx-auto max-w-[1440px]">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_0.92fr] lg:items-start lg:gap-14 xl:gap-24">
           <div className="max-w-[640px]">
             <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-site-accent sm:text-[12px]">
