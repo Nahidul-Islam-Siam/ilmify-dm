@@ -1,7 +1,7 @@
 import { Dribbble, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
+import logo from "../../../../../assets/ilmify-Logo.svg";
 const companyLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
@@ -45,7 +45,7 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div className="max-w-[420px]">
             <Image
-              src="/assets/logo/Logo.svg"
+              src={logo}
               alt="Ilmify Studio Logo"
               priority
               height={200}

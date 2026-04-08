@@ -1,8 +1,11 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
+import { TransitionType } from "@/app/types/TransitionTypes";
+import { useTransition } from "@/app/hooks/TransitionContext";
+
 
 const services = [
   {
@@ -43,6 +46,11 @@ const services = [
   },
 ];
 
+type Service = (typeof services)[number];
+type ServiceCardProps = Service & {
+  transitionType?: TransitionType;
+};
+
 const ArrowIcon = ({ className = "" }: { className?: string }) => (
   <svg
     width="15"
@@ -59,9 +67,24 @@ const ArrowIcon = ({ className = "" }: { className?: string }) => (
   </svg>
 );
 
-function ServiceCard({ tag, name, border, image }: (typeof services)[0]) {
+function ServiceCard({
+  tag,
+  name,
+  border,
+  image,
+  transitionType = TransitionType.Fade,
+}: ServiceCardProps) {
   const imageRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
+  const { applyTransition } = useTransition();
+
+  useEffect(() => {
+    if (sectionRef.current) {
+      applyTransition(sectionRef.current, transitionType);
+    }
+  }, [applyTransition, transitionType]);
+  
 
   const handleEnter = () => {
     if (textRef.current) {
@@ -109,6 +132,7 @@ function ServiceCard({ tag, name, border, image }: (typeof services)[0]) {
     <div
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
+      ref={sectionRef}
       className={`group relative flex cursor-pointer items-center overflow-hidden border-[#252525] ${border} ${
         border.includes("border-r") ? "border-r-0 lg:border-r" : ""
       } ${border.includes("border-b") ? "border-b-0 lg:border-b" : ""}`}
@@ -214,7 +238,11 @@ export default function Services() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-[#252525]">
           {services.map((service) => (
-            <ServiceCard key={service.name} {...service} />
+            <ServiceCard
+              key={service.name}
+              {...service}
+              transitionType={TransitionType.Slide}
+            />
           ))}
         </div>
       </div>
