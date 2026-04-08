@@ -1,5 +1,5 @@
-import type { Config } from "tailwindcss";
 import { nextui } from "@nextui-org/react";
+import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
 
 export default {
@@ -11,6 +11,17 @@ export default {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fadeInUp: {
+          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+      },
+      animation: {
+        // Used as: animate-[fadeInUp_0.6s_ease-out_forwards]
+        // The arbitrary value syntax handles this automatically —
+        // no extra entry needed here unless you want a shorthand class.
+      },
       fontFamily: {
         inter: ["var(--font-inter)"],
       },
