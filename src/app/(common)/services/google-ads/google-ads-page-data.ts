@@ -105,24 +105,31 @@ export const googleAdsUniqueStrengthSection = {
     "In Google Ads, ILMIFY focuses on the parts that actually move performance: search intent, account structure, tracking quality, and landing page consistency. We do not treat campaigns like isolated ad groups; we treat them as part of a revenue system.",
     "Our strength is the way we combine data review, audience thinking, ad copy direction, and practical optimization. That means better budget control, stronger visibility into waste, and more confidence about where the next round of spending should go.",
   ],
-  images: [
-    {
-      src: "/assets/our-culture/about-member-4.png",
-      alt: "Campaign planning session",
-      objectPosition: "center 38%",
-    },
-    {
-      src: "/assets/our-culture/about-member-5.png",
-      alt: "Performance marketer reviewing creative",
-      objectPosition: "center center",
-    },
-    {
-      src: "/assets/our-culture/about-member-3.png",
-      alt: "Team collaboration in the office",
-      objectPosition: "center center",
-    },
-  ],
 };
+
+export const googleAdsAuditFramework = [
+  {
+    step: "01",
+    title: "Audit",
+    detail:
+      "We review search terms, wasted spend, conversion tracking, and landing page message match before changing scale.",
+    tag: "Account clarity first",
+  },
+  {
+    step: "02",
+    title: "Fix",
+    detail:
+      "We improve campaign structure, tighten keyword intent, refine copy, and clean up weak signals that hurt performance.",
+    tag: "Reduce waste fast",
+  },
+  {
+    step: "03",
+    title: "Scale",
+    detail:
+      "Once the signals are stronger, we shift budget, expand winning groups, and grow the account more confidently.",
+    tag: "Grow with better signals",
+  },
+];
 
 export const googleAdsExpectations = [
   {
@@ -176,6 +183,39 @@ export const googleAdsComparisonPoints = {
   ],
 };
 
+export const googleAdsComparisonScorecard = [
+  {
+    label: "Keyword Strategy",
+    ourSide: "Intent-led search mapping",
+    otherSide: "Broad, generic targeting",
+  },
+  {
+    label: "Tracking Quality",
+    ourSide: "Conversion signals reviewed",
+    otherSide: "Weak or incomplete setup",
+  },
+  {
+    label: "Budget Control",
+    ourSide: "Spend follows best performers",
+    otherSide: "Budget drifts without discipline",
+  },
+  {
+    label: "Landing Page Fit",
+    ourSide: "Message match is reviewed",
+    otherSide: "Traffic lands on weak pages",
+  },
+  {
+    label: "Optimization Rhythm",
+    ourSide: "Active testing and refinement",
+    otherSide: "Set live, then barely touched",
+  },
+  {
+    label: "Reporting",
+    ourSide: "Clear next-step decisions",
+    otherSide: "Surface metrics without direction",
+  },
+];
+
 export const googleAdsTestimonials = [
   {
     quote:
@@ -184,6 +224,7 @@ export const googleAdsTestimonials = [
     role: "Growth Manager",
     company: "Verve Beauty",
     companyMark: "VB",
+    badge: "6.4x ROAS",
   },
   {
     quote:
@@ -192,6 +233,7 @@ export const googleAdsTestimonials = [
     role: "Marketing Lead",
     company: "Northstar Tech",
     companyMark: "NT",
+    badge: "-32% CPL",
   },
   {
     quote:
@@ -200,6 +242,7 @@ export const googleAdsTestimonials = [
     role: "Ecommerce Director",
     company: "Luma Retail",
     companyMark: "LR",
+    badge: "+219% Leads",
   },
 ];
 

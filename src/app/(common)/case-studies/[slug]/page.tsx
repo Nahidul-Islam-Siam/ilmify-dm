@@ -10,17 +10,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export function generateStaticParams() {
   return caseStudies.map((study) => ({ slug: study.slug }));
 }
 
-export default function CaseStudyDetails({ params }: Props) {
-  const study = caseStudies.find((item) => item.slug === params.slug);
+export default async function CaseStudyDetails({ params }: Props) {
+  const { slug } = await params;
+  const study = caseStudies.find((item) => item.slug === slug);
 
   if (!study) {
     notFound();

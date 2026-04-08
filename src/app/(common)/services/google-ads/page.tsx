@@ -10,10 +10,10 @@ import {
   Star,
   X,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import {
-  googleAdsComparisonPoints,
+  googleAdsAuditFramework,
+  googleAdsComparisonScorecard,
   googleAdsExpectations,
   googleAdsFaqs,
   googleAdsGrowthSection,
@@ -29,6 +29,12 @@ export default function GoogleAdsPage() {
     googleAdsMetrics[0],
     googleAdsMetrics[2],
     googleAdsMetrics[1],
+  ];
+  const heroDashboardMetrics = [
+    { value: heroMetrics[0].value, label: heroMetrics[0].label, tone: "violet" },
+    { value: "4.1%", label: "Average CTR", tone: "white" },
+    { value: heroMetrics[1].value, label: heroMetrics[1].label, tone: "white" },
+    { value: heroMetrics[2].value, label: heroMetrics[2].label, tone: "blue" },
   ];
 
   const buildChartPath = (values: number[]) => {
@@ -129,42 +135,80 @@ export default function GoogleAdsPage() {
                   </div>
                 </div>
 
-                <div className="relative flex flex-wrap items-center justify-center gap-4 py-1 sm:min-h-[308px] lg:block">
-                  {heroMetrics.map((metric, index) => {
-                    const positions = [
-                      "sm:absolute sm:left-[98px] sm:top-[2px]",
-                      "sm:absolute sm:left-[66px] sm:top-[164px]",
-                      "sm:absolute sm:right-[10px] sm:top-[108px]",
-                    ];
+                <div className="rounded-[24px] border border-white/85 bg-white/78 p-4 shadow-[0_22px_46px_-30px_rgba(11,59,133,0.3)] backdrop-blur-sm">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <span className="rounded-full bg-[#f2edff] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7d6af1]">
+                      Search only
+                    </span>
+                    <span className="rounded-full border border-[#ddd5ff] bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#0b3b85]/68">
+                      Last 90 Days
+                    </span>
+                  </div>
 
-                    const circleStyles = [
-                      "bg-[#efeaff]",
-                      "bg-[#e6f2ff]",
-                      "bg-[#fff1f2]",
-                    ];
+                  <div className="mt-4 rounded-[18px] border border-[#ece6ff] bg-[#f8f4ff] p-4">
+                    <div className="flex items-center justify-between gap-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#0b3b85]/48">
+                      <span>Ad account preview</span>
+                      <span>Audit ready</span>
+                    </div>
 
-                    const labelSizes = [
-                      "sm:max-w-[152px] sm:text-[11px] sm:leading-[1.45]",
-                      "sm:max-w-[118px] sm:text-[12px] sm:leading-[1.45]",
-                      "sm:max-w-[140px] sm:text-[12px] sm:leading-[1.45]",
-                    ];
+                    <div className="mt-3 rounded-[14px] border border-[#e5defe] bg-white px-3.5 py-3">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#9c8cff]">
+                        Search Campaign
+                      </p>
+                      <p className="mt-1.5 text-[14px] font-semibold leading-[1.35] tracking-[-0.03em] text-[#0b3b85]">
+                        google ads management for business growth
+                      </p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {["High Intent", "Lead Ready", "Tracked"].map((chip) => (
+                          <span
+                            key={chip}
+                            className="rounded-full border border-[#ebe5ff] bg-[#faf8ff] px-2.5 py-1 text-[10px] font-medium text-[#617197]"
+                          >
+                            {chip}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
 
-                    return (
-                      <article
-                        key={metric.label}
-                        className={`flex h-[126px] w-[126px] shrink-0 flex-col items-center justify-center rounded-full border-[6px] border-white px-3 text-center shadow-[0_16px_40px_-28px_rgba(11,59,133,0.35)] sm:h-[156px] sm:w-[156px] ${positions[index]} ${circleStyles[index]}`}
-                      >
-                        <p className="text-[1.85rem] font-semibold tracking-[-0.08em] text-[#0b3b85] sm:text-[2.1rem]">
-                          {metric.value}
+                    <div className="mt-3 grid gap-2 sm:grid-cols-2">
+                      {heroDashboardMetrics.map((metric) => {
+                        const toneClasses =
+                          metric.tone === "violet"
+                            ? "bg-[#a796ff] text-white"
+                            : metric.tone === "blue"
+                              ? "bg-[#8ca8ff] text-white"
+                              : "border border-[#e8e3fb] bg-white text-[#0b3b85]";
+
+                        return (
+                          <div
+                            key={metric.label}
+                            className={`rounded-[14px] px-3 py-3 ${toneClasses}`}
+                          >
+                            <p className="text-[10px] font-medium opacity-80">
+                              {metric.label}
+                            </p>
+                            <p className="mt-1.5 text-[1.3rem] font-semibold tracking-[-0.05em]">
+                              {metric.value}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="mt-3 flex items-center justify-between rounded-[14px] border border-[#ece6ff] bg-white/80 px-3.5 py-3">
+                      <div>
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#0b3b85]/48">
+                          Budget Focus
                         </p>
-                        <p
-                          className={`mt-1.5 max-w-[100px] text-[10px] leading-5 text-[#0b3b85] ${labelSizes[index]}`}
-                        >
-                          {metric.label}
+                        <p className="mt-1 text-[13px] font-semibold text-[#0b3b85]">
+                          Intent, tracking, and landing page fit
                         </p>
-                      </article>
-                    );
-                  })}
+                      </div>
+                      <span className="rounded-full bg-[#f2edff] px-3 py-1 text-[10px] font-semibold text-[#7d6af1]">
+                        Optimize
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -294,26 +338,48 @@ export default function GoogleAdsPage() {
           <div className="mx-auto w-full max-w-[var(--site-max-width)] rounded-[24px] bg-[#faf6ff] px-6 py-8 md:px-10 lg:px-12 lg:py-9 xl:px-16">
             <div className="grid items-center gap-7 md:gap-10 lg:grid-cols-[390px_minmax(0,1fr)] lg:gap-10 xl:gap-14">
               <div className="flex justify-center">
-                <div className="w-full max-w-[390px] overflow-hidden rounded-xl bg-white shadow-md">
-                  <div className="grid gap-[8px] bg-white p-[0px] sm:grid-cols-2">
-                    {googleAdsUniqueStrengthSection.images.map((image, index) => (
-                      <div
-                        key={`${image.src}-${index}`}
-                        className={`relative overflow-hidden ${
-                          index < 2 ? "aspect-[0.92/1]" : "aspect-[1.9/1] sm:col-span-2"
-                        }`}
-                      >
-                        <Image
-                          src={image.src}
-                          alt={image.alt}
-                          fill
-                          className="object-cover"
-                          style={{ objectPosition: image.objectPosition }}
-                          sizes="(max-width: 1024px) 100vw, 390px"
-                        />
-                      </div>
-                    ))}
+                <div className="w-full max-w-[390px] space-y-3">
+                  <div className="rounded-[18px] border border-[#e7dfff] bg-white px-4 py-4 shadow-[0_20px_38px_-30px_rgba(11,59,133,0.18)]">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9c8cff]">
+                      Audit - Fix - Scale
+                    </p>
+                    <p className="mt-2 text-[1.1rem] font-semibold tracking-[-0.04em] text-[#0b3b85]">
+                      A cleaner way to improve account performance
+                    </p>
                   </div>
+
+                  {googleAdsAuditFramework.map((item, index) => (
+                    <article
+                      key={item.step}
+                      className="rounded-[18px] border border-[#e9e1ff] bg-white px-4 py-4 shadow-[0_18px_34px_-30px_rgba(11,59,133,0.14)]"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <span className="rounded-full bg-[#f3eeff] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7d6af1]">
+                              {item.step}
+                            </span>
+                            <p className="text-[0.98rem] font-semibold text-[#0b3b85]">
+                              {item.title}
+                            </p>
+                          </div>
+                          <p className="mt-2 text-[12.5px] leading-[1.65] text-[#5e6780]">
+                            {item.detail}
+                          </p>
+                        </div>
+
+                        <span
+                          className={`mt-1 hidden rounded-full px-2.5 py-1 text-[10px] font-medium sm:block ${
+                            index === 1
+                              ? "bg-[#eaf3ff] text-[#4c76d8]"
+                              : "bg-[#f7f3ff] text-[#7d6af1]"
+                          }`}
+                        >
+                          {item.tag}
+                        </span>
+                      </div>
+                    </article>
+                  ))}
                 </div>
               </div>
 
@@ -329,18 +395,18 @@ export default function GoogleAdsPage() {
 
                 <div className="flex flex-wrap gap-3 pt-7">
                   <Link
-                    href="/services"
+                    href="#google-ads-services"
                     className="inline-flex items-center justify-center rounded-[6px] border-[2px] px-4 py-2.5 text-[13px] font-medium transition hover:border-transparent hover:bg-[#9c8cff] hover:text-white md:text-[13px] lg:text-[15px]"
                     style={{ borderColor: accent, color: accent }}
                   >
-                    Show Price
+                    View Service Types
                   </Link>
                   <Link
                     href="#contact"
                     className="inline-flex items-center justify-center rounded-[6px] border-[2px] px-4 py-2.5 text-[13px] font-medium text-white transition hover:border-transparent hover:opacity-95 md:text-[13px] lg:text-[15px]"
                     style={{ borderColor: accent, backgroundColor: accent }}
                   >
-                    Book a Free Consultation
+                    Book an Audit Review
                   </Link>
                 </div>
               </div>
@@ -349,10 +415,9 @@ export default function GoogleAdsPage() {
         </section>
 
         <GoogleAdsCampaignExpectationsSection
-          title="What you Expect from Our Google Ads Campaign?"
+          title="What We Optimize in Google Ads"
           items={googleAdsExpectations}
-          imageSrc="/assets/hero/Google-Ads.png"
-          imageAlt="Google Ads campaign expectation"
+          accent={accent}
         />
 
         <section className="px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
@@ -368,49 +433,58 @@ export default function GoogleAdsPage() {
               </div>
             </div>
 
-            <div className="mx-auto mt-6 grid max-w-[940px] gap-5 lg:grid-cols-2 lg:gap-6">
-              <div className="rounded-[24px] border border-[#e8ddff] bg-[#f2ecff] px-5 py-6 sm:px-6 sm:py-7 lg:min-h-[430px] xl:px-8">
-                <p className="text-center text-[1.35rem] font-semibold tracking-[-0.05em] text-[#0b3b85] sm:text-[1.5rem]">
+            <div className="mx-auto mt-6 max-w-[940px] overflow-hidden rounded-[24px] border border-[#ebe5ff] bg-white shadow-[0_24px_48px_-36px_rgba(11,59,133,0.18)]">
+              <div className="hidden grid-cols-[190px_1fr_1fr] bg-[#f6f2ff] md:grid">
+                <div className="border-r border-[#ebe5ff] px-5 py-4" />
+                <div className="border-r border-[#ebe5ff] px-5 py-4 text-center text-[1.1rem] font-semibold tracking-[-0.04em] text-[#0b3b85]">
                   ILMIFY Agency
-                </p>
-                <ul className="mx-auto mt-6 max-w-[350px] space-y-4">
-                  {googleAdsComparisonPoints.ourSide.map((point) => (
-                    <li
-                      key={point}
-                      className="flex items-start gap-[9px] text-[12.5px] leading-[1.42] text-[#0b3b85]/92 sm:text-[13px]"
-                    >
-                      <Check
-                        size={10}
-                        strokeWidth={2.5}
-                        className="mt-[4px] shrink-0"
-                        style={{ color: accent }}
-                      />
-                      <p>{point}</p>
-                    </li>
-                  ))}
-                </ul>
+                </div>
+                <div className="px-5 py-4 text-center text-[1.1rem] font-semibold tracking-[-0.04em] text-[#0b3b85]">
+                  Other Agency
+                </div>
               </div>
 
-              <div className="rounded-[24px] border border-[#efeaff] bg-[#fdfcff] px-5 py-6 sm:px-6 sm:py-7 lg:min-h-[430px] xl:px-8">
-                <p className="text-center text-[1.35rem] font-semibold tracking-[-0.05em] text-[#0b3b85] sm:text-[1.5rem]">
-                  Other Agency
-                </p>
-                <ul className="mx-auto mt-6 max-w-[350px] space-y-4">
-                  {googleAdsComparisonPoints.otherSide.map((point) => (
-                    <li
-                      key={point}
-                      className="flex items-start gap-[9px] text-[12.5px] leading-[1.42] text-black/78 sm:text-[13px]"
-                    >
-                      <X
-                        size={10}
+              {googleAdsComparisonScorecard.map((item, index) => (
+                <div
+                  key={item.label}
+                  className={`grid md:grid-cols-[190px_1fr_1fr] ${
+                    index !== 0 ? "border-t border-[#ebe5ff]" : ""
+                  }`}
+                >
+                  <div className="bg-[#fbf9ff] px-5 py-4 text-[12px] font-semibold uppercase tracking-[0.12em] text-[#7d6af1] md:flex md:items-center md:border-r md:border-[#ebe5ff]">
+                    {item.label}
+                  </div>
+
+                  <div className="border-t border-[#ebe5ff] px-5 py-4 md:border-r md:border-t-0 md:border-[#ebe5ff]">
+                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#7d6af1] md:hidden">
+                      ILMIFY Agency
+                    </p>
+                    <div className="flex items-start gap-2.5 text-[13px] leading-[1.55] text-[#0b3b85]">
+                      <Check
+                        size={12}
                         strokeWidth={2.4}
-                        className="mt-[4px] shrink-0 text-[#ee5b5b]"
+                        className="mt-[3px] shrink-0"
+                        style={{ color: accent }}
                       />
-                      <p>{point}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                      <p>{item.ourSide}</p>
+                    </div>
+                  </div>
+
+                  <div className="border-t border-[#ebe5ff] px-5 py-4 md:border-t-0">
+                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#0b3b85]/44 md:hidden">
+                      Other Agency
+                    </p>
+                    <div className="flex items-start gap-2.5 text-[13px] leading-[1.55] text-black/76">
+                      <X
+                        size={12}
+                        strokeWidth={2.3}
+                        className="mt-[3px] shrink-0 text-[#ee5b5b]"
+                      />
+                      <p>{item.otherSide}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -480,7 +554,7 @@ export default function GoogleAdsPage() {
                         Clutch
                       </div>
 
-                      <div className="relative flex min-h-[256px] flex-col px-5 py-[18px]">
+                      <div className="relative flex min-h-[242px] flex-col px-5 py-[18px]">
                         {index === 0 ? (
                           <ChevronLeft
                             size={22}
@@ -508,7 +582,11 @@ export default function GoogleAdsPage() {
                           </div>
                         </div>
 
-                        <p className="mt-4 max-w-[250px] text-[0.88rem] font-semibold leading-[1.55] text-[#0b3b85]">
+                        <span className="mt-4 inline-flex w-fit rounded-full bg-[#f2edff] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#7d6af1]">
+                          {item.badge}
+                        </span>
+
+                        <p className="mt-3 max-w-[250px] text-[0.88rem] font-semibold leading-[1.55] text-[#0b3b85]">
                           {item.quote}
                         </p>
 
@@ -545,14 +623,14 @@ export default function GoogleAdsPage() {
               <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-9">
                 <div className="max-w-[430px]">
                   <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#9c8cff]">
-                    Book a Free Google Ads Consultation
+                    Book a Free Google Ads Audit
                   </p>
                   <h2 className="mt-3 text-[2.15rem] font-semibold leading-[1.02] tracking-[-0.06em] text-[#0b3b85] sm:text-[3rem] lg:text-[3.4rem]">
-                    Let&apos;s Plan Your Ad Growth.
+                    Find What&apos;s Wasting Budget.
                   </h2>
                   <p className="mt-4 max-w-[400px] text-[14px] leading-[1.75] text-[#44546f] sm:text-[15px]">
-                    Talk with ILMIFY about account waste, conversion tracking,
-                    campaign structure, and the fastest next steps for more
+                    Talk with ILMIFY about search intent, tracking quality,
+                    landing page fit, and the highest-priority fixes for more
                     efficient Google Ads performance.
                   </p>
 
@@ -581,18 +659,18 @@ export default function GoogleAdsPage() {
                           <MessageCircle size={16} />
                         </span>
                         <p className="text-[12px] font-semibold uppercase tracking-[0.16em]">
-                          Free Strategy Call
+                          Free Audit Review
                         </p>
                       </div>
 
                       <h3 className="mt-4 text-[1.35rem] font-semibold leading-[1.2] tracking-[-0.04em] text-[#0b3b85]">
-                        What we cover in one conversation
+                        What we review in a quick audit
                       </h3>
 
                       <div className="mt-5 space-y-3.5">
                         {[
-                          "Account waste, structure issues, and budget leaks",
-                          "Priority campaigns, audiences, and conversion paths",
+                          "Search terms, wasted spend, and campaign structure",
+                          "Tracking accuracy, conversion paths, and signal quality",
                           "A clearer roadmap for more efficient ad growth",
                         ].map((item) => (
                           <div key={item} className="flex items-start gap-3">
@@ -613,24 +691,25 @@ export default function GoogleAdsPage() {
                           Focus Area
                         </p>
                         <p className="mt-3 text-[1.25rem] font-semibold tracking-[-0.04em] text-[#0b3b85]">
-                          Google Ads Audit
+                          Search Terms
                         </p>
                         <p className="mt-2 text-[13px] leading-[1.6] text-[#44546f]">
-                          Search terms, tracking quality, budget distribution,
-                          ad relevance, and landing page readiness.
+                          Match types, query waste, negatives, and how well
+                          search intent lines up with the offer.
                         </p>
                       </div>
 
                       <div className="rounded-[22px] bg-[#18345f] p-4 text-white shadow-[0_18px_36px_-28px_rgba(10,37,76,0.5)]">
                         <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/68">
-                          Fast Reply
+                          Focus Area
                         </p>
-                        <p className="mt-3 text-[2rem] font-semibold tracking-[-0.06em]">
-                          24h
+                        <p className="mt-3 text-[1.25rem] font-semibold tracking-[-0.04em]">
+                          Tracking + Landing Page Fit
                         </p>
                         <p className="mt-2 text-[13px] leading-[1.6] text-white/78">
-                          We follow up with practical next steps, budget
-                          direction, and where the account needs attention first.
+                          We review whether conversions are being measured
+                          clearly and whether the page supports the promise in
+                          the ad.
                         </p>
                       </div>
                     </div>

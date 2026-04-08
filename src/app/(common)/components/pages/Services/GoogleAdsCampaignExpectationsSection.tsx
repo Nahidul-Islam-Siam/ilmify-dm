@@ -1,9 +1,3 @@
-"use client";
-
-import { Minus, Plus } from "lucide-react";
-import Image from "next/image";
-import { useState } from "react";
-
 type GoogleAdsCampaignExpectationItem = {
   title: string;
   content: string;
@@ -12,107 +6,84 @@ type GoogleAdsCampaignExpectationItem = {
 type GoogleAdsCampaignExpectationsSectionProps = {
   title: string;
   items: GoogleAdsCampaignExpectationItem[];
-  imageSrc: string;
-  imageAlt?: string;
+  accent?: string;
 };
 
 export default function GoogleAdsCampaignExpectationsSection({
   title,
   items,
-  imageSrc,
-  imageAlt = "google-ads-campaign",
+  accent = "#9c8cff",
 }: GoogleAdsCampaignExpectationsSectionProps) {
-  const [openIndexes, setOpenIndexes] = useState<number[]>([0, 1]);
-
-  const toggleItem = (index: number) => {
-    setOpenIndexes((current) =>
-      current.includes(index)
-        ? current.filter((item) => item !== index)
-        : [...current, index],
-    );
-  };
+  const spotlight = ["Search Terms", "Tracking", "Budget Control"];
 
   return (
     <section className="relative z-[1] bg-white px-4 py-9 sm:px-6 lg:px-8 lg:py-11">
       <div className="mx-auto w-full max-w-[var(--site-max-width)]">
-        <div className="grid items-center gap-6 md:gap-10 lg:grid-cols-[minmax(0,1fr)_500px] lg:gap-7">
-          <div className="grid justify-center md:hidden lg:hidden">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              width={323}
-              height={350}
-              className="rounded-xl"
-            />
-          </div>
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-start lg:gap-7">
+          <div className="rounded-[24px] border border-[#e9e1ff] bg-[#faf7ff] px-5 py-6 sm:px-6 lg:px-7 lg:py-7">
+            <p
+              className="text-[11px] font-semibold uppercase tracking-[0.16em]"
+              style={{ color: accent }}
+            >
+              Optimization Focus
+            </p>
+            <h2 className="mt-3 max-w-[480px] text-[1.55rem] font-semibold leading-[1.18] tracking-[-0.05em] text-[#0b3b85] sm:text-[1.9rem]">
+              {title}
+            </h2>
+            <p className="mt-4 max-w-[470px] text-[13px] leading-[1.72] text-[#51617e] sm:text-[14px]">
+              We improve Google Ads by tightening the parts that drive better
+              efficiency: search intent, account structure, signal quality,
+              landing page fit, and the way budget follows real performance.
+            </p>
 
-          <div className="hidden justify-center md:grid lg:hidden">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              width={277}
-              height={300}
-              className="rounded-xl"
-            />
-          </div>
+            <div className="mt-5 flex flex-wrap gap-2.5">
+              {spotlight.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-[#ddd5ff] bg-white px-3 py-1.5 text-[11px] font-semibold text-[#0b3b85]"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
 
-          <div className="bg-white lg:order-1">
-            <div className="pt-2 lg:pt-0">
-              <h2 className="mb-6 max-w-[560px] text-[24px] font-bold leading-[1.32] text-[#0b3b85] sm:mb-8 sm:text-[28px]">
-                {title}
-              </h2>
-
-              <div className="text-[#0b3b85]">
-                {items.map((item, index) => {
-                  const isOpen = openIndexes.includes(index);
-
-                  return (
-                    <div key={item.title}>
-                      <button
-                        type="button"
-                        onClick={() => toggleItem(index)}
-                        className="flex w-full items-center justify-between hover:cursor-pointer"
-                      >
-                        <h3 className="mr-[10px] text-left text-[16px] font-semibold text-[#0b3b85] sm:text-[17px]">
-                          {item.title}
-                        </h3>
-                        {isOpen ? (
-                          <Minus
-                            size={18}
-                            className="shrink-0 text-[#0b3b85]"
-                            strokeWidth={1.8}
-                          />
-                        ) : (
-                          <Plus
-                            size={18}
-                            className="shrink-0 text-[#0b3b85]"
-                            strokeWidth={1.8}
-                          />
-                        )}
-                      </button>
-
-                      {isOpen ? (
-                        <div className="pt-4 text-[14px] leading-[1.45] text-[#323232] lg:pr-[30px]">
-                          {item.content}
-                        </div>
-                      ) : null}
-
-                      <div className="my-4 border-t border-[#9c8cff]" />
-                    </div>
-                  );
-                })}
-              </div>
+            <div className="mt-6 rounded-[18px] border border-[#e4dcff] bg-white px-4 py-4 shadow-[0_18px_36px_-30px_rgba(11,59,133,0.12)]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#7d6af1]">
+                Audit Priority
+              </p>
+              <p className="mt-2 text-[1rem] font-semibold tracking-[-0.04em] text-[#0b3b85]">
+                Fix the weakest signal before scaling spend
+              </p>
+              <p className="mt-2 text-[12.5px] leading-[1.65] text-[#5d6982]">
+                Better performance usually comes from removing waste, improving
+                relevance, and strengthening conversion feedback before pushing
+                more budget into the account.
+              </p>
             </div>
           </div>
 
-          <div className="hidden justify-start lg:flex lg:order-2">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              width={500}
-              height={541}
-              className="rounded-xl"
-            />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {items.map((item, index) => (
+              <article
+                key={item.title}
+                className="rounded-[20px] border border-[#e9e1ff] bg-white px-4 py-4 shadow-[0_20px_36px_-32px_rgba(11,59,133,0.16)]"
+              >
+                <div className="flex items-center gap-2">
+                  <span
+                    className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f2edff] text-[11px] font-semibold"
+                    style={{ color: accent }}
+                  >
+                    {(index + 1).toString().padStart(2, "0")}
+                  </span>
+                  <h3 className="text-[0.98rem] font-semibold tracking-[-0.03em] text-[#0b3b85]">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="mt-3 text-[12.5px] leading-[1.68] text-[#5d6982]">
+                  {item.content}
+                </p>
+              </article>
+            ))}
           </div>
         </div>
       </div>
