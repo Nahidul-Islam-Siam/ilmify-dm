@@ -19,7 +19,7 @@ const ShowCaseContact = ({ transitionType }: ShowcaseContactProps) => {
   return (
     <div
       ref={sectionRef}
-      className="my-10 rounded-[34px] border border-dashed border-gray-800 px-6 py-14 text-center md:px-10 md:py-10 max-w-[1440px] mx-auto"
+      className="site-shell my-10 rounded-[34px] border border-dashed border-gray-800 px-6 py-14 text-center md:px-10 md:py-10"
     >
       <h3 className="text-[2rem] font-semibold tracking-[-0.04em] text-site-text md:text-xl">
         Your project here

@@ -62,7 +62,7 @@ export default function SocialMediaAdsPage() {
             <div className="absolute right-[-90px] top-[120px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(218,205,255,0.68)_0%,rgba(218,205,255,0)_74%)] blur-3xl" />
           </div>
 
-          <div className="relative mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
+          <div className="site-shell relative grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
             <div>
               <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#6a52ff]">
                 Social Media Advertisement

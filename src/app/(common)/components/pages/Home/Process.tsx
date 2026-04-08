@@ -227,7 +227,7 @@ export default function Process() {
 
   return (
     <section className="bg-gray-300/50 px-4 py-12 text-[var(--site-text)] sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:py-24">
-      <div className="mx-auto max-w-[1440px]">
+      <div className="site-shell">
         {/* Header Section - Responsive */}
         <div
           ref={headerRef}

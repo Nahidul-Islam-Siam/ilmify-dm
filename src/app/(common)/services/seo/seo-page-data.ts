@@ -182,6 +182,54 @@ export const seoProcessItems = [
   },
 ];
 
+export const seoGrowthSection = {
+  title: "516% Organic Traffic Growth",
+  paragraphs: [
+    "We helped a growth-focused brand increase organic traffic by 516% through a coordinated SEO campaign built around keyword research, content optimization, technical improvements, and off-page authority work.",
+    "By combining link building, article production, and onsite optimization in one system, the campaign improved search visibility across priority keywords while also supporting stronger engagement and conversion readiness.",
+  ],
+  filters: ["Search type: Web", "Date: Jan 10, 2022-Oct 31, 2022", "New"],
+  metrics: [
+    { label: "Total clicks", value: "13K", tone: "blue" },
+    { label: "Total impressions", value: "559K", tone: "violet" },
+    { label: "Average CTR", value: "2%", tone: "neutral" },
+    { label: "Average position", value: "40.4", tone: "neutral" },
+  ],
+  clicksTrend: [
+    14, 13, 12, 15, 14, 13, 18, 16, 19, 17, 21, 24, 23, 28, 27, 31, 35, 33,
+    39, 42, 40, 48, 52, 56,
+  ],
+  impressionsTrend: [
+    12, 11, 11, 13, 12, 13, 14, 15, 16, 18, 21, 23, 24, 27, 31, 35, 38, 42,
+    47, 52, 60, 54, 72, 66,
+  ],
+};
+
+export const seoUniqueStrengthSection = {
+  title: "Our Unique Strength in SEO Services",
+  paragraphs: [
+    "In the vast sea of SEO services, ILMIFY stands as an innovation and personalized strategy. Unlike one-size-fits-all solutions, we dive deep into your industry, audience, and goals directly to your needs. Our secret weapon?",
+    "A blend of cutting-edge technology and human creativity that uncovers untapped opportunities and navigates the complexities of search engine algorithms with unmatched precision. ILMIFY is not just about increasing visibility; we are about multiplying your impact.",
+  ],
+  images: [
+    {
+      src: "/assets/our-culture/about-member-4.png",
+      alt: "Team strategy planning session",
+      objectPosition: "center 38%",
+    },
+    {
+      src: "/assets/our-culture/about-member-5.png",
+      alt: "SEO specialist at a workstation",
+      objectPosition: "center center",
+    },
+    {
+      src: "/assets/our-culture/about-member-3.png",
+      alt: "Digital team collaboration workspace",
+      objectPosition: "center center",
+    },
+  ],
+};
+
 export const seoWhyItMattersItems = [
   "Keyword research that matches business intent",
   "Content that supports visibility and trust",
@@ -214,34 +262,34 @@ export const seoStrengths = [
 
 export const seoExpectations = [
   {
-    title: "Building domain authority",
+    title: "Building Domain Authority",
     content:
-      "We work on the trust layer of the website through stronger backlinks, better topic authority, and a cleaner overall signal profile so search engines read the brand as more credible.",
+      "Imagine your website as a reputable go-to source in your industry. That's what we aim for by building your domain authority. Through meticulous link-building, engaging content, and optimizing your site's structure, we make your website more trustworthy to search engines. This means when customers are looking for expertise, your site stands out as a leader.",
   },
   {
-    title: "A more content-rich website",
+    title: "Content-Rich Website",
     content:
-      "The site becomes more useful to visitors because we expand the pages, topics, and supporting content that answer real search intent instead of relying on thin copy.",
+      "Your website will transform into a treasure of information that your audience values. By crafting high-quality, relevant content, we not only satisfy your audience's queries but also position you as an authority. This isn't just about quantity; it's about delivering value that keeps users coming back for more.",
   },
   {
-    title: "A stronger flow of organic traffic",
+    title: "Significant Number of Organic Traffic",
     content:
-      "As pages rank for more relevant terms, qualified search traffic grows naturally and becomes less dependent on paid acquisition alone.",
+      "Picture a steady stream of visitors naturally finding their way to your site. That's the power of organic traffic. We optimize your website to rank higher for relevant keywords, making it easier for your target audience to find you. More visibility means more visitors, and more visitors mean more opportunities for conversion.",
   },
   {
-    title: "Targeted traffic instead of random volume",
+    title: "Targeted Traffic",
     content:
-      "We aim for visitors who are more likely to need your offer, not just vanity traffic numbers that look good on a dashboard but do not turn into business.",
+      "It's not just about attracting more visitors; it's about attracting the right ones. Our SEO strategies are designed to draw in the audience that is most likely to benefit from your products or services. By focusing on targeted traffic, we ensure that the people who visit your site are those with a genuine interest in what you offer.",
   },
   {
-    title: "Better conversion readiness",
+    title: "Conversion Optimization",
     content:
-      "SEO works best when the page experience supports action, so we look at message clarity, page structure, and trust signals that support conversion.",
+      "What happens when a visitor lands on your site? The journey leads them to take action. Whether it's making a purchase, signing up for a newsletter, or filling out a contact form, optimization tactics improve the user experience and guide visitors towards converting. It's about turning traffic into tangible outcomes.",
   },
   {
-    title: "Stronger search presence for the brand",
+    title: "Increase Brand Presence in Search Engine",
     content:
-      "As rankings improve across service, category, and supporting content pages, the brand becomes easier to find and easier to trust in search.",
+      "Imagine your brand becoming synonymous with your industry's top searches. We enhance your visibility on search engines, ensuring that when potential customers search for services or products you offer, your brand appears prominently. An increased brand presence not only boosts traffic but also creates your status in the digital marketplace.",
   },
 ];
 

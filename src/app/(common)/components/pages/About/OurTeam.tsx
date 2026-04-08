@@ -168,7 +168,7 @@ export default function OurTeamSection() {
       </div>
 
       <div ref={contentRef} className="relative z-10 opacity-0 translate-y-10">
-        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+        <div className="site-shell px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center md:mb-16">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-black sm:text-4xl md:text-5xl lg:text-6xl">
               Meet Our Expert Team

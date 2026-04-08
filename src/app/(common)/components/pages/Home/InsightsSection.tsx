@@ -7,7 +7,7 @@ export default function InsightsSection() {
   const latestInsights = insightItems.slice(0, 3);
   return (
     <section className=" px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <div className="mx-auto max-w-[1440px]">
+      <div className="site-shell">
         <div className="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-center lg:justify-between ">
           <div className="max-w-[620px]">
             <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-site-accent sm:text-[12px]">

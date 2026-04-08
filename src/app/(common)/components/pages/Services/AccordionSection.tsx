@@ -30,7 +30,7 @@ export default function AccordionSection({
 
   return (
     <section className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-      <div className="mx-auto max-w-[1400px]">
+      <div className="site-shell">
         <div className="max-w-[780px]">
           <p
             className="text-[12px] font-bold uppercase tracking-[0.22em]"

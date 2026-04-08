@@ -53,7 +53,7 @@ export default function ServicesPage() {
             <div className="absolute right-[-90px] top-[100px] h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.12)_0%,rgba(82,244,71,0)_72%)] blur-3xl" />
           </div>
 
-          <div className="relative mx-auto max-w-[1400px]">
+          <div className="site-shell relative">
             <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-site-accent">
               Services
             </p>
@@ -70,7 +70,7 @@ export default function ServicesPage() {
         </section>
 
         <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-24">
-          <div className="mx-auto grid max-w-[1400px] gap-6 xl:grid-cols-3">
+          <div className="site-shell grid gap-6 xl:grid-cols-3">
             {categories.map((category) => {
               const Icon = category.icon;
 

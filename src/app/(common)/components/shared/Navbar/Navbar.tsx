@@ -460,7 +460,7 @@ export default function Navbar() {
             : "",
         )}
       >
-        <div className="mx-auto flex h-16 md:h-20 max-w-[1440px] items-center justify-between   ">
+        <div className="site-shell flex h-16 md:h-20 items-center justify-between">
           <BrandMark />
 
           {/* Desktop Navigation */}

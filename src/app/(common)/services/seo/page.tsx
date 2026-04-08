@@ -1,22 +1,43 @@
 import ContactSection from "@/app/(common)/components/pages/Home/ContactSection";
 import AccordionSection from "@/app/(common)/components/pages/Services/AccordionSection";
+import SeoCampaignExpectationsSection from "@/app/(common)/components/pages/Services/SeoCampaignExpectationsSection";
 import SeoServicesShowcase from "@/app/(common)/components/pages/Services/SeoServicesShowcase";
 import { MessageCircle, Star } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   seoComparisonPoints,
   seoExpectations,
   seoFaqs,
+  seoGrowthSection,
   seoMetrics,
   seoProcessItems,
-  seoStrengths,
   seoTestimonials,
-  seoWhyItMattersItems,
+  seoUniqueStrengthSection,
 } from "./seo-page-data";
 // sfdgasdfasdfas
 
 export default function SeoPage() {
   const heroMetrics = [seoMetrics[0], seoMetrics[2], seoMetrics[1]];
+  const buildChartPath = (values: number[]) => {
+    const width = 520;
+    const height = 190;
+    const min = Math.min(...values);
+    const max = Math.max(...values);
+
+    return values
+      .map((value, index) => {
+        const x = (index / (values.length - 1)) * width;
+        const ratio = max === min ? 0.5 : (value - min) / (max - min);
+        const y = height - ratio * (height - 20) - 10;
+
+        return `${x},${y}`;
+      })
+      .join(" ");
+  };
+
+  const clicksPath = buildChartPath(seoGrowthSection.clicksTrend);
+  const impressionsPath = buildChartPath(seoGrowthSection.impressionsTrend);
 
   return (
     <>
@@ -27,7 +48,7 @@ export default function SeoPage() {
             <div className="absolute right-[-110px] top-[120px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(106,27,154,0.15)_0%,rgba(106,27,154,0)_74%)] blur-3xl" />
           </div>
 
-          <div className="relative mx-auto max-w-[1220px]">
+          <div className="site-shell relative">
             <div className="rounded-[30px] border border-white/60 bg-[#d9dbfb] px-6 py-7 shadow-[var(--site-shadow)] sm:px-10 sm:py-9 lg:px-[4.6rem] lg:py-[3.35rem]">
               <div className="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-center">
                 <div>
@@ -37,7 +58,7 @@ export default function SeoPage() {
                   <h1 className="mt-5 max-w-[640px] text-[2rem] font-semibold leading-[1.03] tracking-[-0.052em] text-[#0b3b85] sm:text-[2.55rem] lg:text-[3rem]">
                     <span className="whitespace-nowrap">Best SEO Services to</span>
                     <br />
-                    Drive Business
+                    Drive Business             
                     <br />
                     Revenue
                   </h1>
@@ -116,97 +137,124 @@ export default function SeoPage() {
         />
 
         <section className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="mx-auto grid max-w-[1400px] gap-6 lg:grid-cols-[1fr_0.96fr]">
-            <div className="overflow-hidden rounded-[30px] border border-black/10 bg-[linear-gradient(180deg,#eff4ff_0%,#d9e5ff_100%)] p-7 shadow-[var(--site-shadow)] sm:p-8">
-              <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#245bdf]">
-                Growth Story
-              </p>
-              <h2 className="mt-4 text-[2rem] font-semibold tracking-[-0.06em] text-black sm:text-[2.4rem]">
-                516% organic traffic growth is the kind of result strong SEO
-                systems can unlock.
+          <div className="site-shell grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(420px,560px)] lg:items-center xl:gap-16">
+            <div className="max-w-[600px]">
+              <h2 className="text-[2.15rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[3rem]">
+                {seoGrowthSection.title}
               </h2>
-              <p className="mt-5 max-w-[560px] text-[16px] leading-8 text-black/72">
-                The point of a case study like this is not a flashy number on
-                its own. It shows what can happen when research, technical
-                cleanup, content improvements, and authority-building are all
-                handled as one connected campaign.
-              </p>
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-[22px] bg-white/76 px-5 py-5">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-black/45">
-                    Traffic Lift
-                  </p>
-                  <p className="mt-3 text-[2rem] font-semibold tracking-[-0.06em] text-black">
-                    516%
-                  </p>
-                </div>
-                <div className="rounded-[22px] bg-white/76 px-5 py-5">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-black/45">
-                    Methods
-                  </p>
-                  <p className="mt-3 text-[1rem] leading-7 text-black/75">
-                    SEO research, content updates, technical fixes
-                  </p>
-                </div>
-                <div className="rounded-[22px] bg-white/76 px-5 py-5">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-black/45">
-                    Outcome
-                  </p>
-                  <p className="mt-3 text-[1rem] leading-7 text-black/75">
-                    More visibility, stronger conversion readiness
-                  </p>
-                </div>
+              <div className="mt-8 space-y-8 text-[16px] leading-[1.9] text-black/72 sm:text-[17px]">
+                {seoGrowthSection.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </div>
             </div>
 
-            <div className="rounded-[30px] border border-black/10 bg-white/88 p-7 shadow-[var(--site-shadow)] sm:p-8">
-              <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-site-accent">
-                Why This Matters
-              </p>
-              <h2 className="mt-4 text-[2rem] font-semibold tracking-[-0.06em] text-black">
-                Search growth gets stronger when the campaign is treated like a
-                full system.
-              </h2>
-              <p className="mt-5 text-[16px] leading-8 text-black/72">
-                We do not separate rankings, content, technical health, and
-                authority into unrelated tasks. The campaign performs better
-                when each layer supports the others in sequence.
-              </p>
-              <div className="mt-8 space-y-4">
-                {seoWhyItMattersItems.map((item) => (
-                  <div
-                    key={item}
-                    className="rounded-[18px] border border-black/8 bg-[#f7f9ff] px-4 py-4 text-[15px] leading-7 text-black/74"
+            <div className="rounded-[28px] border border-[#e4ebfb] bg-white p-4 shadow-[0_28px_64px_-40px_rgba(36,91,223,0.32)] sm:p-5">
+              <div className="flex items-center justify-between gap-4 text-[11px] font-semibold text-black/46">
+                <p>Performance on Search results</p>
+                <p className="uppercase tracking-[0.12em]">Export</p>
+              </div>
+
+              <div className="mt-4 flex flex-wrap gap-2 text-[10px] font-medium text-black/56">
+                {seoGrowthSection.filters.map((filter) => (
+                  <span
+                    key={filter}
+                    className="rounded-full border border-[#dbe5fb] bg-[#f6f9ff] px-3 py-1.5"
                   >
-                    {item}
-                  </div>
+                    {filter}
+                  </span>
                 ))}
               </div>
-              <div className="mt-8 rounded-[22px] border border-black/10 bg-[#f4f8ff] p-5">
-                <div className="flex items-end justify-between gap-4">
-                  <div>
-                    <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#245bdf]">
-                      Campaign Snapshot
-                    </p>
-                    <p className="mt-3 text-[1.8rem] font-semibold tracking-[-0.06em] text-black">
-                      Visibility trend moving up
-                    </p>
-                  </div>
-                  <p className="text-[2.2rem] font-semibold tracking-[-0.08em] text-[#245bdf]">
-                    +516%
-                  </p>
-                </div>
-                <div className="mt-6 flex items-end gap-2">
-                  {[28, 46, 58, 74, 98, 126].map((height, index) => (
-                    <span
-                      key={height}
-                      className="w-full rounded-t-full bg-[#245bdf]/85"
-                      style={{
-                        height: `${height}px`,
-                        opacity: 0.4 + index * 0.1,
-                      }}
-                    />
+
+              <div className="mt-5 grid gap-2 sm:grid-cols-4">
+                {seoGrowthSection.metrics.map((metric) => {
+                  const toneClasses =
+                    metric.tone === "blue"
+                      ? "bg-[#3377f3] text-white"
+                      : metric.tone === "violet"
+                        ? "bg-[#7a5af8] text-white"
+                        : "border border-[#e7ebf6] bg-white text-black/72";
+
+                  return (
+                    <div
+                      key={metric.label}
+                      className={`rounded-[14px] px-3 py-3 ${toneClasses}`}
+                    >
+                      <p className="text-[10px] font-medium opacity-80">
+                        {metric.label}
+                      </p>
+                      <p className="mt-2 text-[1.65rem] font-semibold tracking-[-0.05em]">
+                        {metric.value}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+
+              <div className="mt-5 overflow-hidden rounded-[20px] border border-[#edf1fa] bg-[#fbfcff] p-3 sm:p-4">
+                <div className="mb-4 grid grid-cols-6 gap-2 text-[9px] text-black/34">
+                  {Array.from({ length: 6 }).map((_, index) => (
+                    <span key={index} className="h-px w-full bg-[#edf1fa]" />
                   ))}
+                </div>
+
+                <div className="relative h-[190px]">
+                  <div className="pointer-events-none absolute inset-0">
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <span
+                        key={index}
+                        className="absolute left-0 right-0 border-t border-dashed border-[#edf1fa]"
+                        style={{ top: `${index * 25}%` }}
+                      />
+                    ))}
+                  </div>
+
+                  <svg
+                    viewBox="0 0 520 190"
+                    className="h-full w-full"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                  >
+                    <defs>
+                      <linearGradient
+                        id="seo-chart-fill"
+                        x1="0"
+                        y1="0"
+                        x2="0"
+                        y2="1"
+                      >
+                        <stop offset="0%" stopColor="#6f7bf7" stopOpacity="0.22" />
+                        <stop offset="100%" stopColor="#6f7bf7" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+
+                    <polyline
+                      fill="none"
+                      stroke="#7a5af8"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      points={impressionsPath}
+                    />
+                    <polyline
+                      fill="none"
+                      stroke="#3377f3"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      points={clicksPath}
+                    />
+                  </svg>
+
+                  <div className="pointer-events-none absolute inset-x-3 bottom-3 h-[54px] rounded-[18px] bg-[linear-gradient(180deg,rgba(251,252,255,0)_0%,rgba(251,252,255,0.92)_55%,#fbfcff_100%)]" />
+                </div>
+
+                <div className="mt-3 flex items-center justify-between text-[10px] text-black/42">
+                  <span>1/10/22</span>
+                  <span>3/14/22</span>
+                  <span>5/20/22</span>
+                  <span>7/28/22</span>
+                  <span>10/31/22</span>
                 </div>
               </div>
             </div>
@@ -214,64 +262,70 @@ export default function SeoPage() {
         </section>
 
         <section className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="mx-auto grid max-w-[1400px] gap-8 lg:grid-cols-[0.88fr_1.12fr]">
-            <div className="rounded-[30px] border border-black/10 bg-[linear-gradient(180deg,#eef3ff_0%,#d8e5ff_100%)] p-7 shadow-[var(--site-shadow)] sm:p-8">
-              <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#245bdf]">
-                Unique Strength
-              </p>
-              <h2 className="mt-4 text-[2.15rem] font-semibold tracking-[-0.06em] text-black sm:text-[3rem]">
-                What makes this SEO approach different.
-              </h2>
-              <p className="mt-4 max-w-[560px] text-[16px] leading-8 text-black/72 sm:text-[17px]">
-                This section mirrors the role of the &ldquo;Our Unique Strength
-                in SEO Services&rdquo; block from the reference page, but the content is
-                adapted to fit your site.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Link
-                  href="#contact"
-                  className="inline-flex h-12 items-center justify-center rounded-full bg-black px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5"
-                >
-                  Book a Free Consultation
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex h-12 items-center justify-center rounded-full border border-black/10 bg-white/85 px-6 text-sm font-semibold text-black transition hover:border-[#245bdf]/35 hover:text-[#245bdf]"
-                >
-                  Explore All Services
-                </Link>
+          <div className="site-shell rounded-[24px] bg-[#efedff] px-[30px] py-[60px] md:px-[60px] lg:px-[60px] xl:px-[90px]">
+            <div className="grid items-center gap-10 md:gap-20 lg:grid-cols-[434px_minmax(0,1fr)] lg:gap-[60px] xl:gap-20">
+              <div className="flex justify-center">
+                <div className="w-full max-w-[434px] overflow-hidden rounded-xl bg-white shadow-md">
+                  <div className="grid gap-[8px] bg-white p-[0px] sm:grid-cols-2">
+                {seoUniqueStrengthSection.images.map((image, index) => (
+                  <div
+                    key={`${image.src}-${index}`}
+                        className={`relative overflow-hidden ${
+                      index < 2 ? "aspect-[0.92/1]" : "aspect-[1.9/1] sm:col-span-2"
+                    }`}
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                      style={{ objectPosition: image.objectPosition }}
+                          sizes="(max-width: 1024px) 100vw, 434px"
+                    />
+                  </div>
+                ))}
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div className="grid gap-5 md:grid-cols-2">
-              {seoStrengths.map((strength) => (
-                <article
-                  key={strength.title}
-                  className="rounded-[26px] border border-black/10 bg-white/88 p-6 shadow-[var(--site-shadow)]"
-                >
-                  <h3 className="text-[1.2rem] font-semibold tracking-[-0.04em] text-black">
-                    {strength.title}
-                  </h3>
-                  <p className="mt-3 text-[15px] leading-7 text-black/72">
-                    {strength.description}
-                  </p>
-                </article>
-              ))}
+              <div className="max-w-[500px]">
+                <h2 className="max-w-[500px] text-[30px] font-bold leading-[1.35] tracking-[-0.04em] text-[#0b3b85] md:text-[36px] lg:text-[36px] xl:text-[48px]">
+                  {seoUniqueStrengthSection.title}
+                </h2>
+                <div className="mt-[20px] max-w-[480px] space-y-[22px] text-[16px] font-normal leading-[1.6] text-[#5b5b5b] md:text-[16px] lg:text-[16px] xl:text-[18px]">
+                  {seoUniqueStrengthSection.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-0 pt-[60px]">
+                  <Link
+                    href="/services"
+                    className="mr-[20px] inline-flex items-center justify-center rounded-[6px] border-[2px] border-[#0b3b85] px-[20px] py-[10px] text-[14px] font-normal text-[#0b3b85] transition hover:border-transparent hover:bg-[#0084ff] hover:text-white md:text-[14px] lg:text-[18px] xl:text-[18px]"
+                  >
+                    Show Price
+                  </Link>
+                  <Link
+                    href="#contact"
+                    className="inline-flex items-center justify-center rounded-[6px] border-[2px] border-[#0084ff] bg-[#0084ff] px-[20px] py-[10px] text-[14px] font-normal text-white transition hover:border-transparent hover:bg-[#0084ff] md:text-[14px] lg:text-[18px] xl:text-[18px]"
+                  >
+                    Book a Free Consultation
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <AccordionSection
-          eyebrow="Campaign Expectations"
-          title="What clients should expect from the SEO campaign."
-          description="The reference page uses an accordion here, so we are keeping the same structure while tailoring the wording for your site."
+        <SeoCampaignExpectationsSection
+          title="What you Expect from Our SEO Campaign?"
           items={seoExpectations}
-          accent="#245bdf"
-          softBg="#f4f8ff"
+          imageSrc="/assets/services/seo-campaign-expectations.png"
+          imageAlt="faqimage"
         />
 
         <section className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="mx-auto max-w-[1400px]">
+          <div className="site-shell">
             <div className="max-w-[760px]">
               <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-site-accent">
                 Comparison
@@ -318,7 +372,7 @@ export default function SeoPage() {
         </section>
 
         <section className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="mx-auto max-w-[1400px]">
+          <div className="site-shell">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div className="max-w-[760px]">
                 <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-site-accent">
