@@ -35,7 +35,7 @@ export default function CaseStudies() {
 
   return (
     <section className="bg-gray-300/30 px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <div className="w-full">
+      <div className="mx-auto w-full max-w-[var(--site-max-width)]">
         <div
           ref={headerRef}
           className="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-center lg:justify-between"

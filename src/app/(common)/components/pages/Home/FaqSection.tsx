@@ -66,7 +66,7 @@ export default function FaqSection() {
 
   return (
     <section className="bg-[#0b0b0b] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <div className="w-full">
+      <div className="mx-auto w-full max-w-[var(--site-max-width)]">
         <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-14 xl:gap-20">
           <div ref={introRef} className="max-w-[470px]">
             <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-site-accent sm:text-[12px]">

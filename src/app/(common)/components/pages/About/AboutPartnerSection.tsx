@@ -140,7 +140,7 @@ export default function AboutPartnerSection() {
       </div>
 
       <div className="relative z-10 -mt-16 pb-16 sm:-mt-24 sm:pb-20 lg:pb-24">
-        <div className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-[var(--site-max-width)] px-4 sm:px-6 lg:px-8">
           <div
             ref={panelRef}
             className="relative overflow-hidden rounded-[32px] border border-site-border bg-site-panel p-6 shadow-[var(--site-shadow)] sm:p-8 lg:p-10 xl:p-12"

@@ -29,7 +29,7 @@ export default function HomeShowcase() {
       </div>
 
       <section className="relative w-full overflow-hidden px-4 pb-16 pt-16 sm:px-6 lg:px-10 flex items-center flex-col">
-        <div className="w-full relative flex flex-col items-center">
+        <div className="relative mx-auto flex w-full max-w-[var(--site-max-width)] flex-col items-center">
           {/* Bubble */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             {/* <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[min(500px,70vw)] opacity-45">

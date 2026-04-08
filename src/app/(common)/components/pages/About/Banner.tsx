@@ -33,7 +33,7 @@ export default function AboutBanner() {
         <div className="absolute right-[-70px] top-[18%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.20)_50%,rgba(82,244,71,0)_74%)] blur-2xl" />
       </div>
 
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-full max-w-[var(--site-max-width)] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1080px] text-center">
           <h1 className="text-balance text-[2.7rem] font-bold uppercase leading-[0.95] tracking-[-0.05em] text-black sm:text-5xl md:text-6xl lg:text-7xl">
             A Strategic UI UX
