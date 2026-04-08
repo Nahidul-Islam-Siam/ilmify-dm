@@ -120,7 +120,7 @@ export default function Showcase() {
       ref={sectionRef}
       className="bg-[#0b0b0b] px-5 py-10 text-white md:px-8 lg:py-20"
     >
-      <div className="site-shell">
+      <div className="w-full">
         <div className="mx-auto max-w-[740px] text-center">
           <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-site-accent">
             How We Helped Others Succeed

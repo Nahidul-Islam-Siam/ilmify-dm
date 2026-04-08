@@ -12,7 +12,9 @@ export default function CommonLayout({
     <>
       <TransitionProvider>
         <Navbar />
-        <div className="min-h-screen pt-16">{children}</div>
+        <main className="mx-auto min-h-screen w-full max-w-[var(--site-max-width)] pt-16">
+          {children}
+        </main>
         <Footer />
       </TransitionProvider>
     </>

@@ -48,7 +48,7 @@ export default function SeoPage() {
             <div className="absolute right-[-110px] top-[120px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(106,27,154,0.15)_0%,rgba(106,27,154,0)_74%)] blur-3xl" />
           </div>
 
-          <div className="site-shell relative">
+          <div className="w-full relative">
             <div className="rounded-[30px] border border-white/60 bg-[#d9dbfb] px-6 py-7 shadow-[var(--site-shadow)] sm:px-10 sm:py-9 lg:px-[4.6rem] lg:py-[3.35rem]">
               <div className="grid gap-8 lg:grid-cols-[1fr_420px] lg:items-center">
                 <div>
@@ -137,7 +137,7 @@ export default function SeoPage() {
         />
 
         <section className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="site-shell grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(420px,560px)] lg:items-center xl:gap-16">
+          <div className="w-full grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(420px,560px)] lg:items-center xl:gap-16">
             <div className="max-w-[600px]">
               <h2 className="text-[2.15rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[3rem]">
                 {seoGrowthSection.title}
@@ -262,7 +262,7 @@ export default function SeoPage() {
         </section>
 
         <section className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="site-shell rounded-[24px] bg-[#efedff] px-[30px] py-[60px] md:px-[60px] lg:px-[60px] xl:px-[90px]">
+          <div className="w-full rounded-[24px] bg-[#efedff] px-[30px] py-[60px] md:px-[60px] lg:px-[60px] xl:px-[90px]">
             <div className="grid items-center gap-10 md:gap-20 lg:grid-cols-[434px_minmax(0,1fr)] lg:gap-[60px] xl:gap-20">
               <div className="flex justify-center">
                 <div className="w-full max-w-[434px] overflow-hidden rounded-xl bg-white shadow-md">
@@ -325,7 +325,7 @@ export default function SeoPage() {
         />
 
         <section className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="site-shell">
+          <div className="w-full">
             <div className="max-w-[760px]">
               <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-site-accent">
                 Comparison
@@ -372,7 +372,7 @@ export default function SeoPage() {
         </section>
 
         <section className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-          <div className="site-shell">
+          <div className="w-full">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div className="max-w-[760px]">
                 <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-site-accent">

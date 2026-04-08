@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
@@ -35,7 +35,7 @@ export default function CaseStudies() {
 
   return (
     <section className="bg-gray-300/30 px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <div className="mx-auto max-w-[1440px]">
+      <div className="w-full">
         <div
           ref={headerRef}
           className="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-center lg:justify-between"

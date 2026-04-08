@@ -34,7 +34,7 @@ export default function SeoCampaignExpectationsSection({
 
   return (
     <section className="relative z-[1] bg-white px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-      <div className="site-shell">
+      <div className="w-full">
         <div className="grid items-center gap-10 md:gap-16 lg:grid-cols-[minmax(0,1fr)_595px] lg:gap-10">
           <div className="grid justify-center md:hidden lg:hidden">
             <Image

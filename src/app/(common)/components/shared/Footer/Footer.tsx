@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="absolute right-[-80px] bottom-[-120px] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.14)_0%,rgba(82,244,71,0)_74%)] blur-2xl" />
       </div> */}
 
-      <div className="site-shell">
+      <div className="mx-auto max-w-[var(--site-max-width)]">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div className="max-w-[420px]">
             <Image

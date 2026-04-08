@@ -80,7 +80,7 @@ export default function CategoryTabsSection({
       id={id}
       className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20"
     >
-        <div className="site-shell">
+        <div className="w-full">
         <div
           className={cn(
             "max-w-[820px]",

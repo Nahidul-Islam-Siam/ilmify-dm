@@ -5,7 +5,7 @@ export const insightItems = [
     excerpt:
       "Learn how to fix the interface patterns that quietly reduce trust, clarity, and conversion momentum across your product funnel.",
     meta: "7 min read | 2026-02-05",
-    image: "/assets/idea/home-process-1.png",
+    image: "/assets/idea/Discovery.jpg",
     featured: true,
   },
   {
@@ -14,7 +14,7 @@ export const insightItems = [
     excerpt:
       "Discover practical ways to gather better user feedback, validate flows earlier, and turn research into design direction your team can act on.",
     meta: "6 min read | 2026-01-16",
-    image: "/assets/idea/home-process-2.png",
+    image: "/assets/idea/Strategy.jpg",
   },
   {
     slug: "improving-website-conversion-with-a-ux-led-growth-approach",
@@ -70,7 +70,7 @@ export const insightItems = [
     excerpt:
       "Make dense data easier to scan through better visual hierarchy, semantic grouping, and meaningful defaults.",
     meta: "8 min read | 2025-06-21",
-    image: "/assets/idea/home-process-3.png",
+    image: "/assets/idea/AssetsSetup.jpg",
   },
   {
     slug: "experiment-design-for-growth-teams-without-sacrificing-brand-trust",
@@ -78,7 +78,7 @@ export const insightItems = [
     excerpt:
       "Balance rapid A/B testing with consistent UX principles so performance gains do not erode long-term product trust.",
     meta: "7 min read | 2025-05-19",
-    image: "/assets/idea/home-process-4.png",
+    image: "/assets/idea/CampaignLaunch.png",
   },
   {
     slug: "content-design-checklist-for-saas-product-pages-and-flows",
@@ -86,6 +86,6 @@ export const insightItems = [
     excerpt:
       "Use this checklist to sharpen microcopy, empty states, and in-flow guidance so users always know what comes next.",
     meta: "6 min read | 2025-04-11",
-    image: "/assets/idea/home-process-5.png",
+    image: "/assets/idea/Optimization.png",
   },
 ];
