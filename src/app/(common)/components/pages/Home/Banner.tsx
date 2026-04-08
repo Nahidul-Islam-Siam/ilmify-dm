@@ -53,7 +53,7 @@ export default function HomeShowcase() {
             <div className="flex items-start sm:items-center gap-3 flex-1">
               <span className="flex h-3 w-6 flex-shrink-0 items-center justify-center rounded-full">
                 <Image
-                  src="/assets/hero/Trusted-by.png"
+                  src="/assets/hero/Trusted_by.png"
                   width={25}
                   height={30}
                   alt="trusted"

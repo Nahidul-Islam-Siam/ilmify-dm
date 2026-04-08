@@ -50,7 +50,11 @@ const serviceStructure = {
   "digital-marketing": {
     label: "Digital Marketing",
     icon: Megaphone,
-    color: "#FF6B35",
+    previewTitle: "VISER X",
+    previewDescription:
+      "Crafting high-converting campaigns that communicate value, capture attention, and accelerate growth.",
+    previewGradient:
+      "linear-gradient(180deg, #eef3ff 0%, #b9ccff 58%, #4674f3 100%)",
     subcategories: [
       {
         name: "Paid Advertising",
@@ -95,9 +99,13 @@ const serviceStructure = {
     ],
   },
   "custom-development": {
-    label: "Custom Development",
+    label: "Website",
     icon: Code2,
-    color: "#3B82F6",
+    previewTitle: "NOVA WEB",
+    previewDescription:
+      "Modern websites designed to feel premium, perform fast, and turn visitors into qualified leads.",
+    previewGradient:
+      "linear-gradient(180deg, #f4f6ff 0%, #d2dcff 58%, #7391ff 100%)",
     subcategories: [
       {
         name: "Web Development",
@@ -165,9 +173,13 @@ const serviceStructure = {
     ],
   },
   "graphics-design": {
-    label: "Graphics Design",
+    label: "Creative Design",
     icon: Palette,
-    color: "#8B5CF6",
+    previewTitle: "LUMA ART",
+    previewDescription:
+      "Crafting visually stunning designs that communicate ideas, inspire emotion, and elevate brand identity.",
+    previewGradient:
+      "linear-gradient(180deg, #f7f5ff 0%, #ddd4ff 58%, #8c75ff 100%)",
     subcategories: [
       {
         name: "Brand Identity",
@@ -205,6 +217,74 @@ const serviceStructure = {
       },
     ],
   },
+  software: {
+    label: "Software",
+    icon: Rocket,
+    previewTitle: "FLOW OPS",
+    previewDescription:
+      "Scalable product systems for startups and teams who need clarity, speed, and reliable digital operations.",
+    previewGradient:
+      "linear-gradient(180deg, #f5f7fb 0%, #d3dcef 58%, #8397cc 100%)",
+    subcategories: [
+      {
+        name: "Software Delivery",
+        services: [
+          {
+            href: "/services/web-app-development",
+            title: "Web App Development",
+            icon: Globe2,
+            description: "Robust browser products",
+          },
+          {
+            href: "/services/admin-dashboard",
+            title: "Admin Dashboard",
+            icon: LayoutDashboard,
+            description: "Clear internal tools",
+          },
+          {
+            href: "/services/automation-systems",
+            title: "Automation Systems",
+            icon: Brackets,
+            description: "Reduce repetitive work",
+          },
+        ],
+      },
+    ],
+  },
+  "creative-content": {
+    label: "Creative Content",
+    icon: PenTool,
+    previewTitle: "PIXEL VOICE",
+    previewDescription:
+      "Story-led content systems that keep your message clear, consistent, and visually magnetic across channels.",
+    previewGradient:
+      "linear-gradient(180deg, #fbf7ff 0%, #e2d7ff 58%, #9b7cff 100%)",
+    subcategories: [
+      {
+        name: "Content Production",
+        services: [
+          {
+            href: "/services/content-strategy",
+            title: "Content Strategy",
+            icon: FileSearch2,
+            description: "Structured messaging systems",
+          },
+          {
+            href: "/services/copywriting",
+            title: "Copywriting",
+            icon: PenTool,
+            description: "Clear, persuasive copy",
+          },
+          {
+            href: "/services/motion-graphics",
+            title: "Motion Graphics Design",
+            icon: Sparkles,
+            description: "Animated visual storytelling",
+          },
+        ],
+      },
+    ],
+  },
 };
 
 type ServiceCategoryKey = keyof typeof serviceStructure;
@@ -213,7 +293,7 @@ function BrandMark() {
   return (
     <Link href="/" className="flex items-center">
       <Image
-        src="/assets/logo/logo.svg"
+        src="/assets/logo/ilmify-logo.svg"
         alt="Ilmify Agency"
         priority
         height={200}
@@ -423,6 +503,9 @@ export default function Navbar() {
   };
 
   const activeCategoryData = serviceStructure[activeCategory];
+  const activeServices = activeCategoryData.subcategories.flatMap(
+    (subcategory) => subcategory.services,
+  );
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -470,14 +553,14 @@ export default function Navbar() {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="w-[1100px] rounded-2xl border border-white/10  shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)] bg-white  backdrop-blur-sm overflow-hidden mt-12">
-                    {/* Category Tabs */}
-                    <div className="flex border-b border-white/10 bg-white/5">
+                  <div className="mt-12 w-[1100px] rounded-[28px] border border-black/5 bg-[#f5f5f6] p-3 shadow-[0_35px_80px_-35px_rgba(22,22,22,0.28)]">
+                    <div className="grid grid-cols-[340px_1fr_345px] gap-4 rounded-[22px] bg-white p-3">
+                      <div className="rounded-[18px] bg-[#f0f0f2] p-2">
+                        <div className="space-y-1.5">
                       {(
                         Object.keys(serviceStructure) as ServiceCategoryKey[]
                       ).map((key) => {
                         const category = serviceStructure[key];
-                        const Icon = category.icon;
                         const isActive = activeCategory === key;
                         return (
                           <button
@@ -485,114 +568,69 @@ export default function Navbar() {
                             type="button"
                             onMouseEnter={() => setActiveCategory(key)}
                             className={cn(
-                              "flex flex-1 items-center justify-center gap-2 px-4 py-3.5 text-sm font-medium transition-all duration-200",
+                              "flex w-full items-center justify-between rounded-[14px] px-5 py-4 text-left text-[18px] font-medium transition-all duration-200",
                               isActive
-                                ? "text-site-accent border-b-2 border-site-accent bg-white/5"
-                                : "text-black hover:text-site-accent hover:bg-white/5",
+                                ? "bg-white text-black shadow-sm"
+                                : "text-black/90 hover:bg-white/70",
                             )}
                           >
-                            <Icon size={16} />
                             <span>{category.label}</span>
+                            <ChevronRight size={18} />
                           </button>
                         );
                       })}
-                    </div>
-
-                    {/* Services Grid */}
-                    <div className="p-5">
-                      <div className="grid grid-cols-4 gap-4">
-                        {activeCategoryData.subcategories.map(
-                          (subcategory, idx) => (
-                            <div key={idx} className="space-y-2">
-                              <p className="text-[11px] font-semibold uppercase tracking-wider text-black px-2 mb-2">
-                                {subcategory.name}
-                              </p>
-                              <div className="space-y-1">
-                                {subcategory.services.map((service) => {
-                                  const ServiceIcon = service.icon;
-                                  const isHovered =
-                                    hoveredService === service.title;
-                                  const isActive = pathname === service.href;
-                                  const isHighlighted = isHovered || isActive;
-                                  return (
-                                    <Link
-                                      key={service.title}
-                                      href={service.href}
-                                      onMouseEnter={() =>
-                                        setHoveredService(service.title)
-                                      }
-                                      onMouseLeave={() =>
-                                        setHoveredService(null)
-                                      }
-                                      className="group relative flex items-center gap-3 rounded-lg px-3 py-2.5 transition-all duration-200 overflow-hidden"
-                                    >
-                                      <div
-                                        className={cn(
-                                          "absolute inset-0 transition-opacity duration-200",
-                                          isHighlighted
-                                            ? "opacity-100"
-                                            : "opacity-0",
-                                          " rounded-lg",
-                                        )}
-                                      />
-                                      <div
-                                        className={cn(
-                                          "rounded-md p-1.5 transition-all duration-200",
-                                          isHighlighted
-                                            ? "bg-site-accent/15"
-                                            : "bg-black/10",
-                                        )}
-                                      >
-                                        <ServiceIcon
-                                          size={14}
-                                          className={cn(
-                                            "transition-colors duration-200",
-                                            isHighlighted
-                                              ? "text-site-accent"
-                                              : "text-black/70",
-                                          )}
-                                        />
-                                      </div>
-                                      <span
-                                        className={cn(
-                                          "text-sm font-medium  duration-200",
-                                          isHighlighted
-                                            ? "text-site-accent"
-                                            : "text-black/80",
-                                        )}
-                                      >
-                                        {service.title}
-                                      </span>
-                                      <ChevronRight
-                                        size={12}
-                                        className={cn(
-                                          "ml-auto transition-all duration-200 opacity-0 -translate-x-1",
-                                          isHighlighted &&
-                                            "opacity-100 translate-x-0 text-site-accent",
-                                        )}
-                                      />
-                                    </Link>
-                                  );
-                                })}
-                              </div>
-                            </div>
-                          ),
-                        )}
+                        </div>
                       </div>
 
-                      {/* Bottom CTA */}
-                      <div className="mt-5 pt-4 border-t border-white/10">
+                      <div className="px-2 py-3">
+                        <div className="space-y-1">
+                          {activeServices.map((service) => {
+                            const isHovered = hoveredService === service.title;
+                            return (
+                              <Link
+                                key={service.title}
+                                href={service.href}
+                                onMouseEnter={() =>
+                                  setHoveredService(service.title)
+                                }
+                                onMouseLeave={() => setHoveredService(null)}
+                                className="group flex items-center justify-between border-b border-black/10 py-4 text-[17px] text-black/80 transition-colors hover:text-black"
+                              >
+                                <span>{service.title}</span>
+                                <ArrowRight
+                                  size={16}
+                                  className={cn(
+                                    "text-black/30 transition-all duration-200",
+                                    isHovered &&
+                                      "-translate-y-0.5 translate-x-0.5 text-site-accent",
+                                  )}
+                                />
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      <div
+                        className="flex min-h-[390px] flex-col justify-between rounded-[20px] px-8 py-9"
+                        style={{ background: activeCategoryData.previewGradient }}
+                      >
+                        <div>
+                          <p className="text-[18px] font-bold tracking-[-0.03em] text-[#1770ff]">
+                            {activeCategoryData.previewTitle}
+                          </p>
+                          <p className="mt-3 max-w-[245px] text-[16px] leading-9 text-black/55">
+                            {activeCategoryData.previewDescription}
+                          </p>
+                        </div>
+
                         <Link
                           href="/services"
-                          className="group flex items-center justify-between rounded-lg p-2 transition-all duration-300 hover:bg-white/5"
+                          className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full bg-black px-6 text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5"
                         >
-                          <div className="flex items-center gap-2">
-                            <Rocket size={14} className="text-site-accent" />
-                            <span className="text-sm  group-hover:text-site-accent">
-                              View all {activeCategoryData.label} services
-                            </span>
-                          </div>
-                          <span className="text-white/30 group-hover:text-site-accent group-hover:translate-x-1 transition-all">
+                          Explore
+                          <ArrowRight size={15} />
+                          <span className="hidden">
                             →
                           </span>
                         </Link>
