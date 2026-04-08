@@ -1,5 +1,8 @@
 "use client";
+import { useEffect, useRef } from "react";
 import { Check, Mail, MoveRight } from "lucide-react";
+import { useTransition } from "@/app/hooks/TransitionContext";
+import { TransitionType } from "@/app/types/TransitionTypes";
 
 const people = [
   {
@@ -30,6 +33,25 @@ const trustBadges = [
 ];
 
 export default function ContactSection() {
+  const introRef = useRef<HTMLDivElement>(null);
+  const badgesRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+  const { applyTransition } = useTransition();
+
+  useEffect(() => {
+    if (introRef.current) {
+      applyTransition(introRef.current, TransitionType.Fade);
+    }
+
+    if (badgesRef.current) {
+      applyTransition(badgesRef.current, TransitionType.Scale);
+    }
+
+    if (formRef.current) {
+      applyTransition(formRef.current, TransitionType.Slide);
+    }
+  }, [applyTransition]);
+
   return (
     <section
       id="contact"
@@ -42,7 +64,7 @@ export default function ContactSection() {
 
       <div className="mx-auto max-w-[1440px]">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_0.92fr] lg:items-start lg:gap-14 xl:gap-24">
-          <div className="max-w-[640px]">
+          <div ref={introRef} className="max-w-[640px]">
             <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-site-accent sm:text-[12px]">
               Contact Us
             </p>
@@ -91,7 +113,10 @@ export default function ContactSection() {
               ))}
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-2 border-t border-black/10 pt-8 sm:gap-5 sm:pt-8">
+            <div
+              ref={badgesRef}
+              className="mt-10 flex flex-wrap items-center gap-2 border-t border-black/10 pt-8 sm:gap-5 sm:pt-8"
+            >
               {trustBadges.map((badge) => (
                 <div
                   key={badge}
@@ -103,7 +128,10 @@ export default function ContactSection() {
             </div>
           </div>
 
-          <div className="relative rounded-[26px] border border-black/10 bg-white/88 p-5 shadow-[var(--site-shadow)] sm:rounded-[30px] sm:p-6 lg:p-7">
+          <div
+            ref={formRef}
+            className="relative rounded-[26px] border border-black/10 bg-white/88 p-5 shadow-[var(--site-shadow)] sm:rounded-[30px] sm:p-6 lg:p-7"
+          >
             <div className="pointer-events-none absolute -right-12 -top-14 h-[190px] w-[190px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.18)_0%,rgba(123,31,162,0)_70%)] blur-2xl" />
             <form className="space-y-4 sm:space-y-5">
               <input

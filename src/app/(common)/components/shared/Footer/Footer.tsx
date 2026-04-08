@@ -35,13 +35,13 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-site-border bg-site-panel px-5 py-16 text-[var(--site-text)] lg:px-8">
+    <footer className="relative overflow-hidden border-t border-site-border bg-site-panel px-5 py-16 text-[var(--site-text)] ">
       {/* <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-20 top-[-90px] h-[260px] w-[260px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.16)_0%,rgba(123,31,162,0)_72%)] blur-2xl" />
         <div className="absolute right-[-80px] bottom-[-120px] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.14)_0%,rgba(82,244,71,0)_74%)] blur-2xl" />
       </div> */}
 
-      <div className="mx-auto max-w-[1320px]">
+      <div className="mx-auto max-w-[1440px]">
         <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr_0.8fr_0.8fr]">
           <div className="max-w-[420px]">
             <Image
