@@ -1,6 +1,6 @@
 "use client";
-
 import { usePathname } from "next/navigation";
+import logo from "../../../../../assets/ilmify-Logo.svg";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -293,7 +293,7 @@ function BrandMark() {
   return (
     <Link href="/" className="flex items-center">
       <Image
-        src="/assets/logo/ilmify-logo.svg"
+        src={logo}
         alt="Ilmify Agency"
         priority
         height={200}
