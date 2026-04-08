@@ -4,24 +4,24 @@ import { Minus, Plus } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 
-type SeoCampaignExpectationItem = {
+type GoogleAdsCampaignExpectationItem = {
   title: string;
   content: string;
 };
 
-type SeoCampaignExpectationsSectionProps = {
+type GoogleAdsCampaignExpectationsSectionProps = {
   title: string;
-  items: SeoCampaignExpectationItem[];
+  items: GoogleAdsCampaignExpectationItem[];
   imageSrc: string;
   imageAlt?: string;
 };
 
-export default function SeoCampaignExpectationsSection({
+export default function GoogleAdsCampaignExpectationsSection({
   title,
   items,
   imageSrc,
-  imageAlt = "faqimage",
-}: SeoCampaignExpectationsSectionProps) {
+  imageAlt = "google-ads-campaign",
+}: GoogleAdsCampaignExpectationsSectionProps) {
   const [openIndexes, setOpenIndexes] = useState<number[]>([0, 1]);
 
   const toggleItem = (index: number) => {

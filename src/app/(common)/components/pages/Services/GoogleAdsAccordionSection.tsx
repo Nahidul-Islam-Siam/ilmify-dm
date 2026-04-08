@@ -3,27 +3,24 @@
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
-export type AccordionItemData = {
+export type GoogleAdsAccordionItemData = {
   title: string;
   content: string;
 };
 
-type AccordionSectionProps = {
+type GoogleAdsAccordionSectionProps = {
   eyebrow: string;
   title: string;
-  description?: string;
-  items: AccordionItemData[];
+  items: GoogleAdsAccordionItemData[];
   accent: string;
-  softBg?: string;
 };
 
-export default function AccordionSection({
+export default function GoogleAdsAccordionSection({
   eyebrow,
   title,
-  description,
   items,
   accent,
-}: AccordionSectionProps) {
+}: GoogleAdsAccordionSectionProps) {
   const [openIndex, setOpenIndex] = useState(-1);
 
   return (
@@ -55,12 +52,6 @@ export default function AccordionSection({
               />
             </div>
           </div>
-
-          <p
-            className="mx-auto mt-4 hidden max-w-[720px] text-center text-[15px] leading-7 text-white/70 sm:text-[16px]"
-          >
-            {description}
-          </p>
 
           <div className="mx-auto mt-6 max-w-[980px]">
             {items.map((item, index) => {

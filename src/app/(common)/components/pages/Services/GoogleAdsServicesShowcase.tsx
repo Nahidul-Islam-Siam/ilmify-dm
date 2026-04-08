@@ -5,7 +5,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-export type SeoShowcaseItem = {
+export type GoogleAdsShowcaseItem = {
   id: string;
   title: string;
   description: string;
@@ -15,19 +15,19 @@ export type SeoShowcaseItem = {
   imageCaption?: string;
 };
 
-type SeoServicesShowcaseProps = {
+type GoogleAdsServicesShowcaseProps = {
   id?: string;
   title: string;
-  items: SeoShowcaseItem[];
+  items: GoogleAdsShowcaseItem[];
   accent?: string;
 };
 
-export default function SeoServicesShowcase({
+export default function GoogleAdsServicesShowcase({
   id,
   title,
   items,
   accent = "#9c8cff",
-}: SeoServicesShowcaseProps) {
+}: GoogleAdsServicesShowcaseProps) {
   const itemIds = useMemo(() => items.map((item) => item.id), [items]);
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
   const tabsRef = useRef<HTMLDivElement>(null);
@@ -149,33 +149,33 @@ export default function SeoServicesShowcase({
 
           <div
             ref={tabsRef}
-            className="seo-scroll-row overflow-x-auto pb-2 scroll-smooth"
+            className="google-ads-scroll-row overflow-x-auto pb-2 scroll-smooth"
           >
-            <div className="flex w-max min-w-full justify-center gap-2 lg:px-11 md:gap-3">
-            {items.map((item) => {
-              const isActive = item.id === activeId;
+            <div className="flex w-max min-w-full justify-center gap-2 md:gap-3 lg:px-11">
+              {items.map((item) => {
+                const isActive = item.id === activeId;
 
-              return (
-                <button
-                  key={item.id}
-                  id={item.id}
-                  type="button"
-                  onClick={() => handleSelect(item.id)}
-                  className={cn(
-                    "scroll-mt-28 inline-flex items-center gap-2 rounded-[8px] border px-3 py-2 text-[12px] font-medium transition-all md:text-[13px]",
-                    isActive
-                      ? "border-transparent text-white shadow-[0_18px_36px_-24px_rgba(0,0,0,0.35)]"
-                      : "border-transparent bg-[#fbf8ff] text-[#0b3b85] hover:bg-[#f3eeff]",
-                  )}
-                  style={isActive ? { background: accent } : undefined}
-                >
-                  <span>{item.title}</span>
-                  <ArrowRight size={16} />
-                </button>
-              );
-            })}
+                return (
+                  <button
+                    key={item.id}
+                    id={item.id}
+                    type="button"
+                    onClick={() => handleSelect(item.id)}
+                    className={cn(
+                      "scroll-mt-28 inline-flex items-center gap-2 rounded-[8px] border px-3 py-2 text-[12px] font-medium transition-all md:text-[13px]",
+                      isActive
+                        ? "border-transparent text-white shadow-[0_18px_36px_-24px_rgba(0,0,0,0.35)]"
+                        : "border-transparent bg-[#fbf8ff] text-[#0b3b85] hover:bg-[#f3eeff]",
+                    )}
+                    style={isActive ? { background: accent } : undefined}
+                  >
+                    <span>{item.title}</span>
+                    <ArrowRight size={16} />
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
         </div>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_430px] lg:items-center lg:gap-7 xl:grid-cols-[1fr_455px]">
@@ -224,11 +224,11 @@ export default function SeoServicesShowcase({
         </div>
       </div>
       <style jsx>{`
-        .seo-scroll-row {
+        .google-ads-scroll-row {
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
-        .seo-scroll-row::-webkit-scrollbar {
+        .google-ads-scroll-row::-webkit-scrollbar {
           display: none;
         }
       `}</style>

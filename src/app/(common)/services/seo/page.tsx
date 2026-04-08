@@ -1,4 +1,3 @@
-import ContactSection from "@/app/(common)/components/pages/Home/ContactSection";
 import AccordionSection from "@/app/(common)/components/pages/Services/AccordionSection";
 import SeoCampaignExpectationsSection from "@/app/(common)/components/pages/Services/SeoCampaignExpectationsSection";
 import SeoServicesShowcase from "@/app/(common)/components/pages/Services/SeoServicesShowcase";
@@ -25,6 +24,7 @@ import {
 } from "./seo-page-data";
 
 export default function SeoPage() {
+  const accent = "#9c8cff";
   const heroMetrics = [seoMetrics[0], seoMetrics[2], seoMetrics[1]];
   const buildChartPath = (values: number[]) => {
     const width = 520;
@@ -92,12 +92,12 @@ export default function SeoPage() {
       <main className="bg-transparent text-[var(--site-text)]">
         <section className="relative overflow-hidden px-4 pb-6 pt-6 sm:px-6 lg:px-8 lg:pb-9 lg:pt-8">
           <div className="pointer-events-none absolute inset-0">
-            <div className="absolute left-[-130px] top-[14px] h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(70,116,243,0.24)_0%,rgba(70,116,243,0)_72%)] blur-3xl" />
-            <div className="absolute right-[-110px] top-[120px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(106,27,154,0.15)_0%,rgba(106,27,154,0)_74%)] blur-3xl" />
+            <div className="absolute left-[-130px] top-[14px] h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(156,140,255,0.20)_0%,rgba(156,140,255,0)_72%)] blur-3xl" />
+            <div className="absolute right-[-110px] top-[120px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(209,183,255,0.14)_0%,rgba(209,183,255,0)_74%)] blur-3xl" />
           </div>
 
           <div className="relative mx-auto w-full max-w-[var(--site-max-width)]">
-            <div className="rounded-[28px] border border-white/60 bg-[#d9dbfb] px-5 py-6 shadow-[var(--site-shadow)] sm:px-8 sm:py-8 lg:px-[4rem] lg:py-[2.8rem]">
+            <div className="rounded-[28px] border border-white/60 bg-[#f1eeff] px-5 py-6 shadow-[var(--site-shadow)] sm:px-8 sm:py-8 lg:px-[4rem] lg:py-[2.8rem]">
               <div className="grid gap-6 lg:grid-cols-[1fr_390px] lg:items-center">
                 <div>
                   <p className="text-[12px] font-bold uppercase tracking-[0.22em] text-[#0b3b85]">
@@ -129,7 +129,8 @@ export default function SeoPage() {
                     </Link>
                     <Link
                       href="#contact"
-                      className="inline-flex h-10 items-center justify-center rounded-[10px] bg-[#1e88f5] px-[18px] text-[13px] font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#1677df]"
+                      className="inline-flex h-10 items-center justify-center rounded-[10px] px-[18px] text-[13px] font-semibold text-white transition hover:-translate-y-0.5 hover:opacity-95"
+                      style={{ backgroundColor: accent }}
                     >
                       Get Free Assessment
                     </Link>
@@ -145,9 +146,9 @@ export default function SeoPage() {
                     ];
 
                     const circleStyles = [
-                      "bg-[#e6e2ff]",
-                      "bg-[#d8efff]",
-                      "bg-[#fceceb]",
+                      "bg-[#efeaff]",
+                      "bg-[#e6f2ff]",
+                      "bg-[#fff1f2]",
                     ];
 
                     const labelSizes = [
@@ -182,6 +183,7 @@ export default function SeoPage() {
           id="seo-process"
           title="Our SEO Services"
           items={seoProcessItems}
+          accent={accent}
         />
 
         <section className="px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pb-12 lg:pt-2">
@@ -207,7 +209,7 @@ export default function SeoPage() {
                 {seoGrowthSection.filters.map((filter) => (
                   <span
                     key={filter}
-                    className="rounded-full border border-[#dbe5fb] bg-[#f6f9ff] px-3 py-1.5"
+                    className="rounded-full border border-[#e6e0ff] bg-[#fbf9ff] px-3 py-1.5"
                   >
                     {filter}
                   </span>
@@ -218,9 +220,9 @@ export default function SeoPage() {
                 {seoGrowthSection.metrics.map((metric) => {
                   const toneClasses =
                     metric.tone === "blue"
-                      ? "bg-[#3377f3] text-white"
+                      ? "bg-[#8ca8ff] text-white"
                       : metric.tone === "violet"
-                        ? "bg-[#7a5af8] text-white"
+                        ? "bg-[#a796ff] text-white"
                         : "border border-[#e7ebf6] bg-white text-black/72";
 
                   return (
@@ -271,14 +273,14 @@ export default function SeoPage() {
                         x2="0"
                         y2="1"
                       >
-                        <stop offset="0%" stopColor="#6f7bf7" stopOpacity="0.22" />
-                        <stop offset="100%" stopColor="#6f7bf7" stopOpacity="0" />
+                        <stop offset="0%" stopColor="#a796ff" stopOpacity="0.22" />
+                        <stop offset="100%" stopColor="#a796ff" stopOpacity="0" />
                       </linearGradient>
                     </defs>
 
                     <polyline
                       fill="none"
-                      stroke="#7a5af8"
+                      stroke="#a796ff"
                       strokeWidth="3"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -286,7 +288,7 @@ export default function SeoPage() {
                     />
                     <polyline
                       fill="none"
-                      stroke="#3377f3"
+                      stroke="#8ca8ff"
                       strokeWidth="3"
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -310,7 +312,7 @@ export default function SeoPage() {
         </section>
 
         <section className="px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
-          <div className="mx-auto w-full max-w-[var(--site-max-width)] rounded-[24px] bg-[#efedff] px-6 py-8 md:px-10 lg:px-12 lg:py-9 xl:px-16">
+          <div className="mx-auto w-full max-w-[var(--site-max-width)] rounded-[24px] bg-[#faf6ff] px-6 py-8 md:px-10 lg:px-12 lg:py-9 xl:px-16">
             <div className="grid items-center gap-7 md:gap-10 lg:grid-cols-[390px_minmax(0,1fr)] lg:gap-10 xl:gap-14">
               <div className="flex justify-center">
                 <div className="w-full max-w-[390px] overflow-hidden rounded-xl bg-white shadow-md">
@@ -349,13 +351,15 @@ export default function SeoPage() {
                 <div className="flex flex-wrap gap-3 pt-7">
                   <Link
                     href="/services"
-                    className="inline-flex items-center justify-center rounded-[6px] border-[2px] border-[#0b3b85] px-4 py-2.5 text-[13px] font-medium text-[#0b3b85] transition hover:border-transparent hover:bg-[#0084ff] hover:text-white md:text-[13px] lg:text-[15px]"
+                    className="inline-flex items-center justify-center rounded-[6px] border-[2px] px-4 py-2.5 text-[13px] font-medium transition hover:border-transparent hover:bg-[#9c8cff] hover:text-white md:text-[13px] lg:text-[15px]"
+                    style={{ borderColor: accent, color: accent }}
                   >
                     Show Price
                   </Link>
                   <Link
                     href="#contact"
-                    className="inline-flex items-center justify-center rounded-[6px] border-[2px] border-[#0084ff] bg-[#0084ff] px-4 py-2.5 text-[13px] font-medium text-white transition hover:border-transparent hover:bg-[#0084ff] md:text-[13px] lg:text-[15px]"
+                    className="inline-flex items-center justify-center rounded-[6px] border-[2px] px-4 py-2.5 text-[13px] font-medium text-white transition hover:border-transparent hover:opacity-95 md:text-[13px] lg:text-[15px]"
+                    style={{ borderColor: accent, backgroundColor: accent }}
                   >
                     Book a Free Consultation
                   </Link>
@@ -379,14 +383,14 @@ export default function SeoPage() {
                 Compare To other SEO Service
               </h2>
               <div className="mt-3 flex items-center justify-center gap-[10px]">
-                <span className="h-[10px] w-[10px] rounded-full bg-[#1683f6]" />
-                <span className="block h-[4px] w-[82px] rounded-full bg-[#1683f6]" />
-                <span className="h-[10px] w-[10px] rounded-full bg-[#1683f6]" />
+                <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
+                <span className="block h-[4px] w-[82px] rounded-full" style={{ backgroundColor: accent }} />
+                <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
               </div>
             </div>
 
             <div className="mx-auto mt-6 grid max-w-[940px] gap-5 lg:grid-cols-2 lg:gap-6">
-              <div className="rounded-[24px] border border-[#d9def6] bg-[#d9dbfb] px-5 py-6 sm:px-6 sm:py-7 lg:min-h-[430px] xl:px-8">
+              <div className="rounded-[24px] border border-[#e8ddff] bg-[#f2ecff] px-5 py-6 sm:px-6 sm:py-7 lg:min-h-[430px] xl:px-8">
                 <p className="text-center text-[1.35rem] font-semibold tracking-[-0.05em] text-[#0b3b85] sm:text-[1.5rem]">
                   ILMIFY Agency
                 </p>
@@ -399,7 +403,8 @@ export default function SeoPage() {
                       <Check
                         size={10}
                         strokeWidth={2.5}
-                        className="mt-[4px] shrink-0 text-[#1683f6]"
+                        className="mt-[4px] shrink-0"
+                        style={{ color: accent }}
                       />
                       <p>{point}</p>
                     </li>
@@ -407,7 +412,7 @@ export default function SeoPage() {
                 </ul>
               </div>
 
-              <div className="rounded-[24px] border border-[#ececf4] bg-[#f6f7fb] px-5 py-6 sm:px-6 sm:py-7 lg:min-h-[430px] xl:px-8">
+              <div className="rounded-[24px] border border-[#efeaff] bg-[#fdfcff] px-5 py-6 sm:px-6 sm:py-7 lg:min-h-[430px] xl:px-8">
                 <p className="text-center text-[1.35rem] font-semibold tracking-[-0.05em] text-[#0b3b85] sm:text-[1.5rem]">
                   Other Agency
                 </p>
@@ -433,11 +438,11 @@ export default function SeoPage() {
 
         <section className="px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
           <div className="mx-auto w-full max-w-[var(--site-max-width)]">
-            <div className="relative overflow-hidden rounded-[28px] bg-[#d9ebf8] px-5 py-7 sm:px-6 lg:px-8 lg:py-9">
+            <div className="relative overflow-hidden rounded-[28px] bg-[#f5f0ff] px-5 py-7 sm:px-6 lg:px-8 lg:py-9">
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-x-0 top-[-82px] flex justify-center text-[138px] font-semibold uppercase leading-none tracking-[-0.08em] opacity-[0.22] sm:top-[-92px] sm:text-[176px] lg:top-[-102px] lg:text-[220px]"
-                style={{ WebkitTextStroke: "2px #0b3b85", color: "transparent" }}
+                style={{ WebkitTextStroke: `2px ${accent}`, color: "transparent" }}
               >
                 ILMIFY
               </div>
@@ -448,9 +453,9 @@ export default function SeoPage() {
                     Clients Feedback
                   </h2>
                   <div className="mt-3 flex items-center justify-center gap-[10px]">
-                    <span className="h-[10px] w-[10px] rounded-full bg-[#1683f6]" />
-                    <span className="block h-[4px] w-[82px] rounded-full bg-[#1683f6]" />
-                    <span className="h-[10px] w-[10px] rounded-full bg-[#1683f6]" />
+                    <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
+                    <span className="block h-[4px] w-[82px] rounded-full" style={{ backgroundColor: accent }} />
+                    <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
                   </div>
                 </div>
 
@@ -459,7 +464,7 @@ export default function SeoPage() {
                     <p className="text-[1.7rem] font-semibold tracking-[-0.06em]">
                       Clutch
                     </p>
-                    <span className="hidden h-8 w-px bg-[#1683f6]/45 sm:block" />
+                    <span className="hidden h-8 w-px sm:block" style={{ backgroundColor: `${accent}73` }} />
                     <div className="flex items-center gap-2">
                       <div className="flex items-center gap-1 text-[#ff4b3e]">
                         {Array.from({ length: 5 }).map((_, index) => (
@@ -481,7 +486,10 @@ export default function SeoPage() {
                     className="inline-flex items-center gap-3 text-[0.88rem] font-semibold text-[#0b3b85]"
                   >
                     <span>See All Review</span>
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full border border-[#1683f6] text-[#1683f6]">
+                    <span
+                      className="flex h-8 w-8 items-center justify-center rounded-full border"
+                      style={{ borderColor: accent, color: accent }}
+                    >
                       <ArrowRight size={15} />
                     </span>
                   </Link>
@@ -513,7 +521,7 @@ export default function SeoPage() {
 
                         <div className="flex flex-wrap items-center gap-3 border-b border-[#e7eef5] pb-4">
                           {renderReviewBrand(item.companyMark)}
-                          <span className="hidden h-6 w-px bg-[#1683f6]/35 sm:block" />
+                          <span className="hidden h-6 w-px sm:block" style={{ backgroundColor: `${accent}59` }} />
                           <div className="flex items-center gap-1 text-[#ff4b3e]">
                             {Array.from({ length: 5 }).map((_, starIndex) => (
                               <Star
@@ -550,11 +558,114 @@ export default function SeoPage() {
           eyebrow="Find Answers"
           title="Frequently Asked Question"
           items={seoFaqs}
-          accent="#1683f6"
+          accent={accent}
         />
-      </main>
 
-      <ContactSection />
+        <section
+          id="contact"
+          className="px-4 pb-12 pt-4 sm:px-6 lg:px-8 lg:pb-16 lg:pt-6"
+        >
+          <div className="mx-auto w-full max-w-[var(--site-max-width)]">
+            <div className="overflow-hidden rounded-[30px] border border-white/70 bg-[linear-gradient(135deg,#eef6ff_0%,#f8f2ff_100%)] px-6 py-7 shadow-[var(--site-shadow)] sm:px-8 sm:py-9 lg:px-12 lg:py-10">
+              <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-9">
+                <div className="max-w-[430px]">
+                  <p className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#9c8cff]">
+                    Book a Free SEO Consultation
+                  </p>
+                  <h2 className="mt-3 text-[2.15rem] font-semibold leading-[1.02] tracking-[-0.06em] text-[#0b3b85] sm:text-[3rem] lg:text-[3.4rem]">
+                    Let&apos;s Plan Your Search Growth.
+                  </h2>
+                  <p className="mt-4 max-w-[400px] text-[14px] leading-[1.75] text-[#44546f] sm:text-[15px]">
+                    Talk with ILMIFY about your rankings, technical blockers,
+                    content gaps, and the fastest next steps for sustainable
+                    organic growth.
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <Link
+                      href="mailto:contact@zeeframes.com"
+                      className="inline-flex h-11 items-center justify-center rounded-[12px] bg-[#9c8cff] px-5 text-[14px] font-semibold text-white transition hover:opacity-95"
+                    >
+                      Contact Us
+                    </Link>
+                    <Link
+                      href="#seo-process"
+                      className="inline-flex h-11 items-center justify-center gap-2 rounded-[12px] border border-[#c8bbff] bg-white/75 px-5 text-[14px] font-semibold text-[#0b3b85] transition hover:bg-white"
+                    >
+                      View Services
+                      <ArrowRight size={15} />
+                    </Link>
+                  </div>
+                </div>
+
+                <div className="relative">
+                  <div className="grid gap-3 md:grid-cols-[1.08fr_0.92fr]">
+                    <div className="rounded-[24px] border border-white/80 bg-white/80 p-5 shadow-[0_24px_44px_-32px_rgba(11,59,133,0.24)] backdrop-blur-sm">
+                      <div className="flex items-center gap-2 text-[#9c8cff]">
+                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#f2edff]">
+                          <MessageCircle size={16} />
+                        </span>
+                        <p className="text-[12px] font-semibold uppercase tracking-[0.16em]">
+                          Free Strategy Call
+                        </p>
+                      </div>
+
+                      <h3 className="mt-4 text-[1.35rem] font-semibold leading-[1.2] tracking-[-0.04em] text-[#0b3b85]">
+                        What we cover in one conversation
+                      </h3>
+
+                      <div className="mt-5 space-y-3.5">
+                        {[
+                          "Current SEO blockers and missed opportunities",
+                          "Quick-win pages, keywords, and content priorities",
+                          "A realistic roadmap for stronger search growth",
+                        ].map((item) => (
+                          <div key={item} className="flex items-start gap-3">
+                            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#f1edff] text-[#8a78ff]">
+                              <Check size={12} strokeWidth={2.7} />
+                            </span>
+                            <p className="text-[13px] leading-[1.6] text-[#44546f]">
+                              {item}
+                            </p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="grid gap-3">
+                      <div className="rounded-[22px] border border-[#eadfff] bg-[#f8f4ff] p-4">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#9c8cff]">
+                          Focus Area
+                        </p>
+                        <p className="mt-3 text-[1.25rem] font-semibold tracking-[-0.04em] text-[#0b3b85]">
+                          SEO Audit
+                        </p>
+                        <p className="mt-2 text-[13px] leading-[1.6] text-[#44546f]">
+                          Technical issues, keyword direction, content gaps,
+                          and page-level improvements.
+                        </p>
+                      </div>
+
+                      <div className="rounded-[22px] bg-[#18345f] p-4 text-white shadow-[0_18px_36px_-28px_rgba(10,37,76,0.5)]">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-white/68">
+                          Fast Reply
+                        </p>
+                        <p className="mt-3 text-[2rem] font-semibold tracking-[-0.06em]">
+                          24h
+                        </p>
+                        <p className="mt-2 text-[13px] leading-[1.6] text-white/78">
+                          We follow up quickly with the right next step, not a
+                          generic sales response.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
     </>
   );
 }
