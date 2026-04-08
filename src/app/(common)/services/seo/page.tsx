@@ -13,6 +13,7 @@ import {
   seoTestimonials,
   seoWhyItMattersItems,
 } from "./seo-page-data";
+// sfdgasdfasdfas
 
 export default function SeoPage() {
   const heroMetrics = [seoMetrics[0], seoMetrics[2], seoMetrics[1]];
