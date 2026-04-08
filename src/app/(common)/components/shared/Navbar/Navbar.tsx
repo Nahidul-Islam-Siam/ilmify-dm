@@ -442,6 +442,7 @@ export default function Navbar() {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+  // a'sdkfasdkmf
 
   const activeCategoryData = serviceStructure[activeCategory];
   const activeServices = activeCategoryData.subcategories.flatMap(
