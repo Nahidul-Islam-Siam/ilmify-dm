@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef } from "react";
-import Image from "next/image";
 export default function InsightsHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   //   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
@@ -27,13 +26,13 @@ export default function InsightsHero() {
     >
       {/* Background bubble */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none z-0">
-        <Image
+        {/* <Image
           src="/assets/hero/home_bubble.webp"
           alt=""
           fill
           className="object-cover opacity-10"
           priority
-        />
+        /> */}
       </div>
 
       {/* Mouse glow */}
@@ -54,7 +53,7 @@ export default function InsightsHero() {
       <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 py-16 sm:py-20 max-w-5xl mx-auto">
         {/* Big heading */}
         <h1 className="font-black uppercase leading-[1.05] tracking-tight">
-          <span className="block text-white text-[clamp(32px,8vw,96px)]">
+          <span className="block text-site-text ">
             Stay Updated With
           </span>
           <span className="block text-site-accent text-[clamp(32px,8vw,96px)]">

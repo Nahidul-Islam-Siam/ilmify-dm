@@ -3,14 +3,16 @@ import { Check, Mail, MoveRight } from "lucide-react";
 
 const people = [
   {
-    name: "Mohammad Ali",
+    id:1,
+    name: "Saruar Zahan",
     role: "Director & Co-Founder",
-    initials: "MA",
+    initials: "SZ",
   },
   {
-    name: "Muhammad Babar",
+    id:2,
+    name: "Saruar Zahan",
     role: "Director & Co-Founder",
-    initials: "MB",
+    initials: "SZ",
   },
 ];
 
@@ -59,7 +61,7 @@ export default function ContactSection() {
 
             <div className="mt-8 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center lg:gap-6">
               {people.map((person, index) => (
-                <div key={person.name} className="flex items-center gap-4">
+                <div key={person.id} className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full border border-purple-800/25 bg-[linear-gradient(135deg,rgba(123,31,162,0.16),rgba(255,255,255,0.8))] text-sm font-semibold text-purple-800 shadow-[0_10px_22px_-14px_rgba(123,31,162,0.42)]">
                     {person.initials}
                   </div>

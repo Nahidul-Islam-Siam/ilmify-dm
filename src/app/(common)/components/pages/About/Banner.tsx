@@ -29,8 +29,8 @@ export default function AboutBanner() {
   return (
     <section className="relative overflow-hidden bg-transparent pb-0 pt-28 text-[var(--site-text)] sm:pt-32 lg:pt-36">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-20 top-[-120px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.18)_0%,rgba(123,31,162,0)_70%)] blur-2xl" />
-        <div className="absolute right-[-70px] top-[18%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.14)_0%,rgba(82,244,71,0)_74%)] blur-2xl" />
+        <div className="absolute -left-20 top-[-120px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.20)_50%,rgba(123,31,162,0)_70%)] blur-2xl" />
+        <div className="absolute right-[-70px] top-[18%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.20)_50%,rgba(82,244,71,0)_74%)] blur-2xl" />
       </div>
 
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">

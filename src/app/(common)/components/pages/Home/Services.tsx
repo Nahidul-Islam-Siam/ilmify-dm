@@ -1,45 +1,45 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 
 const services = [
   {
     tag: "For Digital Experiences",
     name: "Meta Ads (Facebook/Instagram)",
-    bg: "linear-gradient(130deg,#0c1a38 0%,#0e2148 100%)",
     border: "border-b border-r",
+    image: "/assets/hero/Meta.png",
   },
   {
     tag: "For Startups & Existing Companies",
     name: "Google Ads (PPC)",
-    bg: "linear-gradient(130deg,#280e00 0%,#3c1600 100%)",
     border: "border-b",
+    image: "/assets/hero/Google-Ads.png",
   },
   {
     tag: "For Visual Storytellers",
     name: "SEO (Search Engine Optimization)",
-    bg: "linear-gradient(130deg,#001a0e 0%,#003322 100%)",
     border: "border-b border-r",
+    image: "/assets/hero/SEO.png",
   },
   {
     tag: "For Rapid App Builders",
     name: "Social Media Management",
-    bg: "linear-gradient(130deg,#1a001c 0%,#2e0032 100%)",
     border: "border-b",
+    image: "/assets/hero/Trusted-by.png",
   },
   {
     tag: "For Startups & Founders",
     name: "Funnel & Landing Page Optimization",
-    bg: "linear-gradient(130deg,#001418 0%,#002230 100%)",
     border: "border-r",
+    image: "/assets/hero/Google-Ads.png",
   },
   {
     tag: "Dedicated UX UI Team",
     name: "Email Marketing / Automation",
-    bg: "linear-gradient(130deg,#191400 0%,#2c2200 100%)",
     border: "",
-    featured: true,
+    image: "/assets/hero/Email-Marketing.png",
   },
 ];
 
@@ -59,48 +59,7 @@ const ArrowIcon = ({ className = "" }: { className?: string }) => (
   </svg>
 );
 
-const CubeGraphic = () => (
-  <svg
-    width="150"
-    height="150"
-    viewBox="0 0 150 150"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect
-      x="10"
-      y="10"
-      width="88"
-      height="88"
-      rx="5"
-      stroke="#3A3A3A"
-      strokeWidth="1.4"
-    />
-    <rect
-      x="52"
-      y="52"
-      width="88"
-      height="88"
-      rx="5"
-      stroke="#3A3A3A"
-      strokeWidth="1.4"
-    />
-    <line x1="10" y1="10" x2="52" y2="52" stroke="#2E2E2E" strokeWidth="1.4" />
-    <line x1="98" y1="10" x2="140" y2="52" stroke="#2E2E2E" strokeWidth="1.4" />
-    <line x1="10" y1="98" x2="52" y2="140" stroke="#2E2E2E" strokeWidth="1.4" />
-    <rect
-      x="30"
-      y="30"
-      width="88"
-      height="88"
-      rx="5"
-      stroke="#232323"
-      strokeWidth="0.8"
-    />
-  </svg>
-);
-
-function ServiceCard({ tag, name, border }: (typeof services)[0]) {
+function ServiceCard({ tag, name, border, image }: (typeof services)[0]) {
   const imageRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
@@ -166,18 +125,26 @@ function ServiceCard({ tag, name, border }: (typeof services)[0]) {
         }}
       />
 
-      {/* Cube Graphic - Hidden on mobile/tablet, visible on desktop */}
+      {/* Dynamic service image - Hidden on mobile/tablet, visible on desktop */}
       <div
         ref={imageRef}
-        className="absolute z-10 pointer-events-none opacity-0 hidden xl:block"
+        className="pointer-events-none absolute z-10 hidden overflow-hidden rounded-[20px] border border-[rgba(106,27,154,0.18)] bg-white/70 opacity-0 shadow-[0_20px_45px_-24px_rgba(106,27,154,0.32)] xl:block"
         style={{
-          right: "108px",
+          right: "88px",
           top: "50%",
           transform: "translateY(-50%) translateX(-40px)",
           willChange: "transform, opacity",
+          width: "154px",
+          height: "104px",
         }}
       >
-        <CubeGraphic />
+        <Image
+          src={image}
+          alt={name}
+          fill
+          className="object-cover"
+          sizes="154px"
+        />
       </div>
 
       <div

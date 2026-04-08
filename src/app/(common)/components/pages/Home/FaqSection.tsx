@@ -50,7 +50,7 @@ export default function FaqSection() {
             </p>
 
             <h2 className="mt-5 text-[2.4rem] font-semibold leading-[0.94] tracking-[-0.06em] text-black leading-10">
-              Questions? We’ve Got Answers
+              Questions? We’ve 
               <br />
               Got Answers
             </h2>

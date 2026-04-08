@@ -24,14 +24,14 @@ export default function BrandMarquee() {
         {brandLogos.map((brand, index) => (
           <div
             key={brand.alt}
-            className="mx-6 flex h-10 min-w-[120px] items-center justify-center opacity-80 transition-all duration-300 hover:scale-105 hover:opacity-100 sm:mx-8 sm:h-12 sm:min-w-[140px] md:mx-10 md:h-14 md:min-w-[160px]"
+            className="mx-6 flex h-14 min-w-[120px] items-center justify-center opacity-80 transition-all duration-300 hover:scale-105 hover:opacity-100 sm:mx-8 sm:h-12 sm:min-w-[140px] md:mx-10 md:h-18 md:min-w-[160px] overflow-hidden"
           >
             <Image
               src={brand.src}
               alt={brand.alt}
               width={160}
               height={40}
-              className="max-h-8 w-auto object-contain brightness-0 opacity-80 transition-all duration-300 hover:opacity-100 sm:max-h-10 md:max-h-12"
+              className="max-h-8 w-auto object-contain brightness-0 opacity-80 transition-all duration-300 hover:opacity-100 sm:max-h-10 md:max-h-14"
               priority={index < 3}
             />
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import Button from "../../button/Button";
 
 export default function WorkHero() {
@@ -8,7 +8,7 @@ export default function WorkHero() {
     <section className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden bg-transparent px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
 
       {/* 3. Hero Bubble Image */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2">
+      {/* <div className="pointer-events-none absolute left-1/2 top-1/2 z-0 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2">
         <Image
           src="/assets/hero/home_bubble.webp"
           alt="Hero Background Bubble"
@@ -16,7 +16,7 @@ export default function WorkHero() {
           className="object-cover opacity-30 mix-blend-multiply"
           priority
         />
-      </div>
+      </div> */}
 
       {/* 4. Text & Action Content */}
       <div className="relative z-20 mx-auto max-w-5xl px-2 text-center sm:px-4">
