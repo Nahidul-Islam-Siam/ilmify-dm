@@ -43,7 +43,7 @@ const navItems = [
 
 // Service categories with their subcategories and services
 const serviceStructure = {
-  "SEO": {
+  seo: {
     label: "SEO",
     icon: Megaphone,
     previewTitle: "VISER X",
@@ -56,49 +56,49 @@ const serviceStructure = {
         name: "SEO Process",
         services: [
           {
-            href: "/services/seo-audit",
+            href: "/services/seo#seo-audit",
             title: "SEO Audit",
             icon: FileSearch2,
             description: "Find ranking blockers fast",
           },
           {
-            href: "/services/technical-seo",
+            href: "/services/seo#technical-seo",
             title: "Technical SEO",
             icon: Code2,
             description: "Fix crawl and speed issues",
           },
           {
-            href: "/services/keyword-research",
+            href: "/services/seo#keyword-research",
             title: "KW Research",
             icon: Lightbulb,
             description: "Target high-intent keywords",
           },
           {
-            href: "/services/content-writing",
+            href: "/services/seo#content-writing",
             title: "Content Writing",
             icon: PenTool,
             description: "Publish search-ready content",
           },
           {
-            href: "/services/on-page-seo",
+            href: "/services/seo#on-page-seo",
             title: "On-Page SEO",
             icon: LayoutDashboard,
             description: "Optimize pages for rankings",
           },
           {
-            href: "/services/link-building",
+            href: "/services/seo#link-building",
             title: "Link Building",
             icon: Globe2,
             description: "Earn authority backlinks",
           },
           {
-            href: "/services/guest-posting",
+            href: "/services/seo#guest-posting",
             title: "Guest Posting",
             icon: Sparkles,
             description: "Expand reach on trusted sites",
           },
           {
-            href: "/services/reporting",
+            href: "/services/seo#reporting",
             title: "Reporting",
             icon: Gauge,
             description: "Track SEO growth clearly",
@@ -120,25 +120,25 @@ const serviceStructure = {
         name: "",
         services: [
           {
-            href: "/services/google-search-ads",
+            href: "/services/google-ads#google-search-ads",
             title: "Google Search Ads",
             icon: FileSearch2,
             description: "Appear for buyer-ready searches",
           },
           {
-            href: "/services/google-display-ads",
+            href: "/services/google-ads#google-display-ads",
             title: "Google Display Ads",
             icon: LayoutDashboard,
             description: "Reach audiences across the web",
           },
           {
-            href: "/services/youtube-ads",
+            href: "/services/google-ads#youtube-ads",
             title: "YouTube Ads",
             icon: Sparkles,
             description: "Video campaigns that drive action",
           },
           {
-            href: "/services/performance-max",
+            href: "/services/google-ads#performance-max",
             title: "Performance Max",
             icon: Lightbulb,
             description: "Automated campaigns across Google",
@@ -160,25 +160,25 @@ const serviceStructure = {
         name: "",
         services: [
           {
-            href: "/services/meta-ads",
+            href: "/services/social-media-ads#meta-ads",
             title: "Meta Ads",
             icon: LayoutDashboard,
             description: "Facebook and Instagram growth",
           },
           {
-            href: "/services/tiktok-ads",
+            href: "/services/social-media-ads#tiktok-ads",
             title: "TikTok Ads",
             icon: Sparkles,
             description: "Short-form campaigns for fast reach",
           },
           {
-            href: "/services/linkedin-ads",
+            href: "/services/social-media-ads#linkedin-ads",
             title: "LinkedIn Ads",
             icon: Brackets,
             description: "B2B targeting for qualified leads",
           },
           {
-            href: "/services/pinterest-ads",
+            href: "/services/social-media-ads#pinterest-ads",
             title: "Pinterest Ads",
             icon: Palette,
             description: "Visual campaigns for discovery",
@@ -391,7 +391,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeCategory, setActiveCategory] =
-    useState<ServiceCategoryKey>("SEO");
+    useState<ServiceCategoryKey>("seo");
   const [hoveredService, setHoveredService] = useState<string | null>(null);
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -448,6 +448,7 @@ export default function Navbar() {
   const activeServices = activeCategoryData.subcategories.flatMap(
     (subcategory) => subcategory.services,
   );
+  const activeCategoryHref = `/services/${activeCategory}`;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -567,7 +568,7 @@ export default function Navbar() {
                         </div>
 
                         <Link
-                          href="/services"
+                          href={activeCategoryHref}
                           className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full bg-black px-6 text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5"
                         >
                           Explore
