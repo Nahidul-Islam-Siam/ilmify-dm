@@ -6,7 +6,7 @@ import FeaturedInsightCard from "./FeaturedInsight";
 export default function LatestInsight() {
   return (
     <section className="bg-[#f4f5fb] px-4 py-16 sm:px-6 lg:px-8">
-      <div className="w-full">
+      <div className="mx-auto w-full max-w-[var(--site-max-width)]">
         <div className="mb-12 animate-[fadeInUp_0.5s_ease-out_forwards]">
           <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#6c63d4]">
             Case Studies
@@ -24,7 +24,7 @@ export default function LatestInsight() {
           {caseStudies.map((study, index) => (
             <div
               key={study.slug}
-              className={`w-full lg:w-[70%] ${
+              className={`w-full lg:w-[76%] ${
                 index % 2 === 0 ? "lg:ml-0" : "lg:ml-auto"
               }`}
             >

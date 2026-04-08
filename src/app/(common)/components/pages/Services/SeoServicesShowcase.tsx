@@ -59,13 +59,16 @@ export default function SeoServicesShowcase({
   if (!activeItem) return null;
 
   return (
-    <section id={id} className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-      <div className="w-full">
+    <section
+      id={id}
+      className="px-4 pb-4 pt-10 sm:px-6 lg:px-8 lg:pb-5 lg:pt-12"
+    >
+      <div className="mx-auto w-full max-w-[var(--site-max-width)]">
         <div className="mx-auto max-w-[780px] text-center">
-          <h2 className="text-[2.15rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[3rem]">
+          <h2 className="text-[1.8rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[2.35rem]">
             {title}
           </h2>
-          <div className="mt-4 flex items-center justify-center gap-3">
+          <div className="mt-3 flex items-center justify-center gap-3">
             <span
               className="h-2.5 w-2.5 rounded-full"
               style={{ background: accent }}
@@ -81,7 +84,7 @@ export default function SeoServicesShowcase({
           </div>
         </div>
 
-        <div className="mt-10 overflow-x-auto pb-2">
+        <div className="mt-6 overflow-x-auto pb-2">
           <div className="flex min-w-max justify-center gap-2 md:gap-3">
             {items.map((item) => {
               const isActive = item.id === activeId;
@@ -93,7 +96,7 @@ export default function SeoServicesShowcase({
                   type="button"
                   onClick={() => handleSelect(item.id)}
                   className={cn(
-                    "scroll-mt-28 inline-flex items-center gap-2 rounded-[8px] border px-4 py-3 text-[14px] font-medium transition-all md:text-[15px]",
+                    "scroll-mt-28 inline-flex items-center gap-2 rounded-[8px] border px-3 py-2 text-[12px] font-medium transition-all md:text-[13px]",
                     isActive
                       ? "border-transparent text-white shadow-[0_18px_36px_-24px_rgba(0,0,0,0.35)]"
                       : "border-transparent bg-[#f4f6fb] text-[#0b3b85] hover:bg-[#eef3fb]",
@@ -108,18 +111,18 @@ export default function SeoServicesShowcase({
           </div>
         </div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_500px] lg:items-center xl:grid-cols-[1fr_540px]">
-          <div className="max-w-[640px]">
-            <h3 className="text-[2.3rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[3rem]">
+        <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_430px] lg:items-center lg:gap-7 xl:grid-cols-[1fr_455px]">
+          <div className="max-w-[600px]">
+            <h3 className="text-[1.75rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[2.15rem]">
               {activeItem.title}
             </h3>
-            <p className="mt-8 text-[16px] leading-[1.9] text-[#44546f] sm:text-[17px]">
+            <p className="mt-4 text-[14px] leading-[1.7] text-[#44546f] sm:text-[15px]">
               {activeItem.description}
             </p>
           </div>
 
-          <div className="relative overflow-hidden rounded-[28px] bg-[#0e1a2b] shadow-[0_24px_44px_-24px_rgba(11,30,62,0.45)]">
-            <div className="relative aspect-[1.2/1]">
+          <div className="relative overflow-hidden rounded-[24px] bg-[#0e1a2b] shadow-[0_24px_44px_-24px_rgba(11,30,62,0.45)]">
+            <div className="relative aspect-[1.26/1]">
               <Image
                 src={activeItem.imageSrc}
                 alt={activeItem.imageAlt ?? activeItem.title}
@@ -129,21 +132,21 @@ export default function SeoServicesShowcase({
               />
               <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,34,0.12)_0%,rgba(7,18,34,0.18)_38%,rgba(7,18,34,0.52)_100%)]" />
 
-              <div className="absolute inset-x-0 top-0 p-6 text-center text-white sm:p-7">
-                <p className="text-[15px] font-semibold uppercase tracking-[0.08em]">
+              <div className="absolute inset-x-0 top-0 p-5 text-center text-white sm:p-6">
+                <p className="text-[13px] font-semibold uppercase tracking-[0.08em]">
                   {activeItem.title}
                 </p>
                 {activeItem.imageEyebrow ? (
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-white/75">
+                  <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-white/75">
                     {activeItem.imageEyebrow}
                   </p>
                 ) : null}
               </div>
 
               {activeItem.imageCaption ? (
-                <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
-                  <div className="rounded-[18px] border border-white/15 bg-black/20 px-4 py-3 backdrop-blur-sm">
-                    <p className="text-[12px] leading-6 text-white/92">
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                  <div className="rounded-[16px] border border-white/15 bg-black/20 px-4 py-3 backdrop-blur-sm">
+                    <p className="text-[11px] leading-5 text-white/92">
                       {activeItem.imageCaption}
                     </p>
                   </div>

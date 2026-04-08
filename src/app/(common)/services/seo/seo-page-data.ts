@@ -295,43 +295,47 @@ export const seoExpectations = [
 
 export const seoComparisonPoints = {
   ourSide: [
-    "Strategies shaped around your business model instead of recycled keyword templates.",
-    "Modern SEO execution that blends technical work, content systems, and user experience thinking.",
-    "Transparent progress tracking with regular reporting, not a single end-of-project summary.",
-    "Decisions guided by analytics, market behavior, and what your site can realistically win next.",
+    "We meticulously craft strategies tailored to your business, ensuring a precise and effective approach that aligns with your goals.",
+    "Our commitment to innovation sets us apart, incorporating the latest technologies and trends to keep your SEO ahead of the curve.",
+    "We go beyond keywords, focusing on holistic optimization that considers content quality, user experience, and technical strength.",
+    "Experience a new level of transparency with comprehensive, real-time reporting that keeps you informed about the impact of our SEO efforts.",
+    "Our success stories speak volumes. Explore a track record of measurable results and satisfied clients across diverse industries.",
+    "Leverage the power of data-driven decision-making, ensuring that every strategy is rooted in analytics for optimal performance.",
   ],
   otherSide: [
-    "One-size-fits-all campaigns that ignore the differences between industries and buying journeys.",
-    "Outdated tactics that lean on shortcuts instead of durable SEO fundamentals.",
-    "Keyword-heavy work without enough attention to content quality, UX, or intent matching.",
-    "Limited reporting that hides performance drops and leaves strategy changes unclear.",
+    "Crafts common strategies and applies them to all clients in the same way. So, the SEO campaigns fail in a bad way.",
+    "Still applies the old trends and technologies that is no longer supported by search engines like Google or Yahoo.",
+    "Only focuses on common keywords and random links, not ensuring the authenticity and unique user experience.",
+    "Reports you at the end of the project with the most successful data, not the time-to-time data to show the ups and down cases.",
+    "Has a limited amount of track record of some non reputed companies, instead of local and international brands.",
+    "Applies assumed decisions and work without clear mission goals, as a result cannot find data to imply suitable tactics.",
   ],
 };
 
 export const seoTestimonials = [
   {
     quote:
-      "Their project management was structured, responsive, and easy to work with from week to week.",
-    name: "Adam Rosenke",
-    role: "Law Firm Partner",
-  },
-  {
-    quote:
-      "The team moved efficiently and kept the work focused on outcomes instead of vanity updates.",
+      "They were very efficient, and their time and project management were top-notch.",
     name: "Tauhidul Islam",
     role: "Research Scientist",
+    company: "Stanford University",
+    companyMark: "Stanford",
   },
   {
     quote:
-      "What stood out was their ability to understand the business context before recommending changes.",
+      "We were impressed with their strong understanding of the work and great customer service.",
     name: "Ariful Alam",
     role: "Communications Manager",
+    company: "Nagad",
+    companyMark: "Nagad",
   },
   {
     quote:
-      "Communication stayed open throughout the engagement, and that made collaboration much easier.",
+      "They have open communication and teamwork with clients.",
     name: "Anonymous",
-    role: "Marketing Technology Lead",
+    role: "Marketing Technology Senior Manager",
+    company: "DBS",
+    companyMark: "DBS",
   },
 ];
 
@@ -342,28 +346,43 @@ export const seoFaqs = [
       "That is the goal. We improve the technical setup, content targeting, and page structure so the website is better prepared to compete in search.",
   },
   {
-    title: "How long does SEO usually take to show results?",
+    title: "How Many Links Can I Expect?",
+    content:
+      "The number depends on your niche, current authority, and campaign scope. We prioritize relevant, credible placements over inflated link volume so growth stays safer and more sustainable.",
+  },
+  {
+    title: "How Long Will It Take to See Results?",
     content:
       "It depends on competition, site quality, and how much authority the domain already has. In many cases, early signs appear within a few months, while stronger gains take longer.",
   },
   {
-    title: "Can SEO improve sales, not just traffic?",
+    title: "Will Your Service Improve My Sales?",
     content:
-      "Yes, when the campaign focuses on the right keywords, the right pages, and a conversion-ready user journey. Traffic alone is not enough.",
+      "Yes, when the campaign focuses on the right keywords, the right pages, and a conversion-ready user journey. Traffic alone is not enough, so we align SEO with lead quality and sales intent.",
   },
   {
-    title: "Do you help with content creation too?",
+    title: "How can I get unique and structured content for my site?",
     content:
-      "Yes. Content writing is part of the SEO workflow, so we can support service pages, articles, and supporting search content that fits the campaign.",
+      "We handle content strategy and writing as part of the SEO workflow. That includes service pages, articles, keyword mapping, and structure that supports both search visibility and user clarity.",
   },
   {
-    title: "How do you audit a website's SEO performance?",
+    title: "How will you audit the SEO performance of my website?",
     content:
       "We review site health, crawl behavior, rankings, content quality, keyword coverage, authority signals, and usability patterns that influence visibility.",
   },
   {
-    title: "Do you provide support and reporting during the campaign?",
+    title: "Do You Offer Customer Support?",
     content:
-      "Yes. We keep reporting active throughout the engagement so you can see movement, understand priorities, and follow the reasoning behind the work.",
+      "Yes. We stay available during the campaign, share progress updates, and respond to implementation questions so the SEO work stays clear and actionable.",
+  },
+  {
+    title: "Is There a Minimum Term Contract?",
+    content:
+      "The structure depends on the engagement type, but SEO generally needs enough time to build momentum. We recommend a realistic campaign window instead of promising rushed results.",
+  },
+  {
+    title: "Why Should I Choose ILMIFY Over Other Providers?",
+    content:
+      "Because we combine technical depth, content thinking, transparent reporting, and business context instead of relying on generic SEO packages. The goal is durable growth, not vanity metrics.",
   },
 ];

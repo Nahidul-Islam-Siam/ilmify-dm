@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
 
@@ -24,86 +23,85 @@ export default function AccordionSection({
   description,
   items,
   accent,
-  softBg = "#f7f7fb",
 }: AccordionSectionProps) {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(-1);
 
   return (
-    <section className="px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-      <div className="w-full">
-        <div className="max-w-[780px]">
-          <p
-            className="text-[12px] font-bold uppercase tracking-[0.22em]"
-            style={{ color: accent }}
-          >
-            {eyebrow}
-          </p>
-          <h2 className="mt-4 text-[2.15rem] font-semibold tracking-[-0.06em] text-black sm:text-[3rem]">
-            {title}
-          </h2>
-          {description ? (
-            <p className="mt-4 max-w-[760px] text-[16px] leading-8 text-black/72 sm:text-[17px]">
-              {description}
+    <section className="px-4 py-8 sm:px-6 lg:px-8 lg:py-10">
+      <div className="mx-auto w-full max-w-[var(--site-max-width)]">
+        <div className="mx-auto max-w-[1080px] rounded-[24px] bg-[#0b2341] px-5 py-7 sm:px-7 lg:px-10 lg:py-8">
+          <div className="mx-auto max-w-[700px] text-center">
+            <p
+              className="text-[11px] font-medium tracking-[0.02em]"
+              style={{ color: accent }}
+            >
+              {eyebrow}
             </p>
-          ) : null}
-        </div>
+            <h2 className="mt-2 text-[1.55rem] font-semibold tracking-[-0.05em] text-white sm:text-[1.95rem] lg:text-[2.1rem]">
+              {title}
+            </h2>
+            <div className="mt-2.5 flex items-center justify-center gap-[8px]">
+              <span
+                className="h-[6px] w-[6px] rounded-full"
+                style={{ backgroundColor: accent }}
+              />
+              <span
+                className="block h-[3px] w-[42px] rounded-full"
+                style={{ backgroundColor: accent }}
+              />
+              <span
+                className="h-[6px] w-[6px] rounded-full"
+                style={{ backgroundColor: accent }}
+              />
+            </div>
+          </div>
 
-        <div className="mt-10 space-y-4">
-          {items.map((item, index) => {
-            const isOpen = openIndex === index;
+          <p
+            className="mx-auto mt-4 hidden max-w-[720px] text-center text-[15px] leading-7 text-white/70 sm:text-[16px]"
+          >
+            {description}
+          </p>
 
-            return (
-              <div
-                key={item.title}
-                className="overflow-hidden rounded-[24px] border border-black/10 bg-white/88 shadow-[var(--site-shadow)]"
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
-                  className="flex w-full items-center justify-between gap-6 px-6 py-5 text-left sm:px-7"
-                >
-                  <div>
-                    <p
-                      className="text-[11px] font-bold uppercase tracking-[0.16em]"
-                      style={{ color: accent }}
-                    >
-                      0{index + 1}
-                    </p>
-                    <h3 className="mt-2 text-[1.2rem] font-semibold tracking-[-0.04em] text-black sm:text-[1.45rem]">
+          <div className="mx-auto mt-6 max-w-[980px]">
+            {items.map((item, index) => {
+              const isOpen = openIndex === index;
+
+              return (
+                <div key={item.title} className="border-b border-[#1683f6]">
+                  <button
+                    type="button"
+                    onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                    className="flex w-full items-center justify-between gap-6 py-3.5 text-left text-white sm:py-4"
+                  >
+                    <h3 className="pr-6 text-[0.9rem] font-semibold leading-[1.4] tracking-[-0.03em] sm:text-[0.95rem]">
                       {item.title}
                     </h3>
-                  </div>
+
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center text-white/90">
+                      {isOpen ? (
+                        <Minus size={14} style={{ color: "#ffffff" }} />
+                      ) : (
+                        <Plus size={14} style={{ color: "#ffffff" }} />
+                      )}
+                    </span>
+                  </button>
 
                   <div
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-black/10"
-                    style={{ background: isOpen ? softBg : "#ffffff" }}
+                    className="grid transition-all duration-300 ease-out"
+                    style={{
+                      gridTemplateRows: isOpen ? "1fr" : "0fr",
+                    }}
                   >
-                    {isOpen ? (
-                      <Minus size={18} style={{ color: accent }} />
-                    ) : (
-                      <Plus size={18} style={{ color: accent }} />
-                    )}
-                  </div>
-                </button>
-
-                <div
-                  className={cn(
-                    "grid transition-all duration-300 ease-out",
-                    isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
-                  )}
-                >
-                  <div className="overflow-hidden">
-                    <div
-                      className="mx-6 mb-6 rounded-[20px] px-5 py-5 text-[15px] leading-8 text-black/72 sm:mx-7"
-                      style={{ background: softBg }}
-                    >
-                      {item.content}
+                    <div className="overflow-hidden">
+                      <div className="pb-3.5 pr-10 text-[12.5px] leading-[1.7] text-white/78 sm:text-[13px]">
+                        {item.content}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

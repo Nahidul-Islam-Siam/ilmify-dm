@@ -30,7 +30,7 @@ export default function CaseStudyDetails({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-[#f4f5fb] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-      <div className="w-full space-y-12">
+      <div className="mx-auto w-full max-w-[var(--site-max-width)] space-y-12">
         <section className="rounded-[28px] border border-[#e8eaf0] bg-white px-6 py-8 shadow-sm sm:px-8 lg:px-10">
           <Link
             href="/case-studies"
@@ -95,7 +95,7 @@ export default function CaseStudyDetails({ params }: Props) {
                 <p className="mb-1 text-[11px] font-semibold uppercase tracking-widest text-[#9898b0]">
                   {key}
                 </p>
-                <p className="text-[0.95rem] font-bold leading-snug text-[#1a1a2e]">
+                <p className="text-[0.95rem] font-bold leading-snug text-[#1a1a2e]"> 
                   {value}
                 </p>
               </div>

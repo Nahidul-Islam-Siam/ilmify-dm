@@ -33,9 +33,9 @@ export default function SeoCampaignExpectationsSection({
   };
 
   return (
-    <section className="relative z-[1] bg-white px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
-      <div className="w-full">
-        <div className="grid items-center gap-10 md:gap-16 lg:grid-cols-[minmax(0,1fr)_595px] lg:gap-10">
+    <section className="relative z-[1] bg-white px-4 py-9 sm:px-6 lg:px-8 lg:py-11">
+      <div className="mx-auto w-full max-w-[var(--site-max-width)]">
+        <div className="grid items-center gap-6 md:gap-10 lg:grid-cols-[minmax(0,1fr)_500px] lg:gap-7">
           <div className="grid justify-center md:hidden lg:hidden">
             <Image
               src={imageSrc}
@@ -57,8 +57,8 @@ export default function SeoCampaignExpectationsSection({
           </div>
 
           <div className="bg-white lg:order-1">
-            <div className="pt-[40px]">
-              <h2 className="mb-[30px] max-w-[620px] text-[30px] font-bold leading-[1.45] text-[#0b3b85] sm:mb-[60px] sm:text-[36px]">
+            <div className="pt-2 lg:pt-0">
+              <h2 className="mb-6 max-w-[560px] text-[24px] font-bold leading-[1.32] text-[#0b3b85] sm:mb-8 sm:text-[28px]">
                 {title}
               </h2>
 
@@ -73,7 +73,7 @@ export default function SeoCampaignExpectationsSection({
                         onClick={() => toggleItem(index)}
                         className="flex w-full items-center justify-between hover:cursor-pointer"
                       >
-                        <h3 className="mr-[10px] text-left text-[20px] font-semibold text-[#0b3b85]">
+                        <h3 className="mr-[10px] text-left text-[16px] font-semibold text-[#0b3b85] sm:text-[17px]">
                           {item.title}
                         </h3>
                         {isOpen ? (
@@ -92,12 +92,12 @@ export default function SeoCampaignExpectationsSection({
                       </button>
 
                       {isOpen ? (
-                        <div className="pt-[30px] text-[16px] leading-[1.55] text-[#323232] lg:pr-[80px]">
+                        <div className="pt-4 text-[14px] leading-[1.45] text-[#323232] lg:pr-[30px]">
                           {item.content}
                         </div>
                       ) : null}
 
-                      <div className="my-[20px] border-t border-[#0084ff]" />
+                      <div className="my-4 border-t border-[#0084ff]" />
                     </div>
                   );
                 })}
@@ -109,8 +109,8 @@ export default function SeoCampaignExpectationsSection({
             <Image
               src={imageSrc}
               alt={imageAlt}
-              width={595}
-              height={644}
+              width={500}
+              height={541}
               className="rounded-xl"
             />
           </div>
