@@ -20,16 +20,12 @@ import {
   Lightbulb,
   Megaphone,
   Menu,
-  MonitorSmartphone,
   Palette,
   PenTool,
-  Rocket,
-  Smartphone,
   Sparkles,
   X,
   ChevronRight,
   ChevronDown,
-  ShoppingCart,
   Brackets,
   ArrowRight,
 } from "lucide-react";
@@ -47,239 +43,145 @@ const navItems = [
 
 // Service categories with their subcategories and services
 const serviceStructure = {
-  "digital-marketing": {
-    label: "Digital Marketing",
+  seo: {
+    label: "SEO",
     icon: Megaphone,
     previewTitle: "VISER X",
     previewDescription:
-      "Crafting high-converting campaigns that communicate value, capture attention, and accelerate growth.",
+      "Boost visibility, drive traffic, and accelerate growth.",
     previewGradient:
       "linear-gradient(180deg, #eef3ff 0%, #b9ccff 58%, #4674f3 100%)",
     subcategories: [
       {
-        name: "Paid Advertising",
+        name: "SEO Process",
         services: [
           {
-            href: "/services/google-ads",
-            title: "Google Ads",
-            icon: Gauge,
-            description: "Dominate search with PPC",
+            href: "/services/seo#seo-audit",
+            title: "SEO Audit",
+            icon: FileSearch2,
+            description: "Find ranking blockers fast",
           },
           {
-            href: "/services/meta-ads",
+            href: "/services/seo#technical-seo",
+            title: "Technical SEO",
+            icon: Code2,
+            description: "Fix crawl and speed issues",
+          },
+          {
+            href: "/services/seo#keyword-research",
+            title: "KW Research",
+            icon: Lightbulb,
+            description: "Target high-intent keywords",
+          },
+          {
+            href: "/services/seo#content-writing",
+            title: "Content Writing",
+            icon: PenTool,
+            description: "Publish search-ready content",
+          },
+          {
+            href: "/services/seo#on-page-seo",
+            title: "On-Page SEO",
+            icon: LayoutDashboard,
+            description: "Optimize pages for rankings",
+          },
+          {
+            href: "/services/seo#link-building",
+            title: "Link Building",
+            icon: Globe2,
+            description: "Earn authority backlinks",
+          },
+          {
+            href: "/services/seo#guest-posting",
+            title: "Guest Posting",
+            icon: Sparkles,
+            description: "Expand reach on trusted sites",
+          },
+          {
+            href: "/services/seo#reporting",
+            title: "Reporting",
+            icon: Gauge,
+            description: "Track SEO growth clearly",
+          },
+        ],
+      },
+    ],
+  },
+  "google-ads": {
+    label: "Google Ads",
+    icon: Gauge,
+    previewTitle: "PULSE PPC",
+    previewDescription:
+      "Performance-focused Google campaigns built to capture high-intent traffic and turn clicks into qualified leads.",
+    previewGradient:
+      "linear-gradient(180deg, #fff7ef 0%, #ffd7b2 58%, #ff8a3d 100%)",
+    subcategories: [
+      {
+        name: "",
+        services: [
+          {
+            href: "/services/google-ads#google-search-ads",
+            title: "Google Search Ads",
+            icon: FileSearch2,
+            description: "Appear for buyer-ready searches",
+          },
+          {
+            href: "/services/google-ads#google-display-ads",
+            title: "Google Display Ads",
+            icon: LayoutDashboard,
+            description: "Reach audiences across the web",
+          },
+          {
+            href: "/services/google-ads#youtube-ads",
+            title: "YouTube Ads",
+            icon: Sparkles,
+            description: "Video campaigns that drive action",
+          },
+          {
+            href: "/services/google-ads#performance-max",
+            title: "Performance Max",
+            icon: Lightbulb,
+            description: "Automated campaigns across Google",
+          },
+        ],
+      },
+    ],
+  },
+  "social-media-ads": {
+    label: "Social Media Advertisement",
+    icon: LayoutDashboard,
+    previewTitle: "SOCIAL AMP",
+    previewDescription:
+      "Conversion-led paid social campaigns designed to scale reach, engagement, and sales across modern platforms.",
+    previewGradient:
+      "linear-gradient(180deg, #f7f4ff 0%, #dacdff 58%, #7e67ff 100%)",
+    subcategories: [
+      {
+        name: "",
+        services: [
+          {
+            href: "/services/social-media-ads#meta-ads",
             title: "Meta Ads",
             icon: LayoutDashboard,
-            description: "Facebook & Instagram",
+            description: "Facebook and Instagram growth",
           },
           {
-            href: "/services/tiktok-ads",
+            href: "/services/social-media-ads#tiktok-ads",
             title: "TikTok Ads",
             icon: Sparkles,
-            description: "Reach Gen Z",
-          },
-        ],
-      },
-      {
-        name: "Organic Growth",
-        services: [
-          {
-            href: "/services/seo",
-            title: "SEO Strategy",
-            icon: FileSearch2,
-            description: "Rank higher organically",
+            description: "Short-form campaigns for fast reach",
           },
           {
-            href: "/services/content-marketing",
-            title: "Content Marketing",
-            icon: PenTool,
-            description: "Engage your audience",
-          },
-        ],
-      },
-    ],
-  },
-  "custom-development": {
-    label: "Website",
-    icon: Code2,
-    previewTitle: "NOVA WEB",
-    previewDescription:
-      "Modern websites designed to feel premium, perform fast, and turn visitors into qualified leads.",
-    previewGradient:
-      "linear-gradient(180deg, #f4f6ff 0%, #d2dcff 58%, #7391ff 100%)",
-    subcategories: [
-      {
-        name: "Web Development",
-        services: [
-          {
-            href: "/services/nextjs",
-            title: "Next.js",
-            icon: Globe2,
-            description: "React framework for production",
-          },
-          {
-            href: "/services/mern",
-            title: "MERN Stack",
+            href: "/services/social-media-ads#linkedin-ads",
+            title: "LinkedIn Ads",
             icon: Brackets,
-            description: "Full-stack JavaScript",
+            description: "B2B targeting for qualified leads",
           },
           {
-            href: "/services/vue",
-            title: "Vue.js",
-            icon: LayoutDashboard,
-            description: "Progressive framework",
-          },
-        ],
-      },
-      {
-        name: "App Development",
-        services: [
-          {
-            href: "/services/flutter",
-            title: "Flutter",
-            icon: Smartphone,
-            description: "Cross-platform apps",
-          },
-          {
-            href: "/services/react-native",
-            title: "React Native",
-            icon: MonitorSmartphone,
-            description: "Native performance",
-          },
-        ],
-      },
-      {
-        name: "CMS Solutions",
-        services: [
-          {
-            href: "/services/wordpress",
-            title: "WordPress",
-            icon: PenTool,
-            description: "Versatile CMS",
-          },
-          {
-            href: "/services/shopify",
-            title: "Shopify",
-            icon: ShoppingCart,
-            description: "E-commerce solution",
-          },
-          {
-            href: "/services/webflow",
-            title: "Webflow",
-            icon: Globe2,
-            description: "Visual development",
-          },
-        ],
-      },
-    ],
-  },
-  "graphics-design": {
-    label: "Creative Design",
-    icon: Palette,
-    previewTitle: "LUMA ART",
-    previewDescription:
-      "Crafting visually stunning designs that communicate ideas, inspire emotion, and elevate brand identity.",
-    previewGradient:
-      "linear-gradient(180deg, #f7f5ff 0%, #ddd4ff 58%, #8c75ff 100%)",
-    subcategories: [
-      {
-        name: "Brand Identity",
-        services: [
-          {
-            href: "/services/logo-design",
-            title: "Logo Design",
-            icon: PenTool,
-            description: "Memorable logos",
-          },
-          {
-            href: "/services/brand-identity",
-            title: "Brand Identity",
+            href: "/services/social-media-ads#pinterest-ads",
+            title: "Pinterest Ads",
             icon: Palette,
-            description: "Complete brand systems",
-          },
-        ],
-      },
-      {
-        name: "Digital Assets",
-        services: [
-          {
-            href: "/services/ui-ux-design",
-            title: "UI/UX Design",
-            icon: Lightbulb,
-            description: "User-centered design",
-          },
-          {
-            href: "/services/social-media-graphics",
-            title: "Social Graphics",
-            icon: LayoutDashboard,
-            description: "Engaging visuals",
-          },
-        ],
-      },
-    ],
-  },
-  software: {
-    label: "Software",
-    icon: Rocket,
-    previewTitle: "FLOW OPS",
-    previewDescription:
-      "Scalable product systems for startups and teams who need clarity, speed, and reliable digital operations.",
-    previewGradient:
-      "linear-gradient(180deg, #f5f7fb 0%, #d3dcef 58%, #8397cc 100%)",
-    subcategories: [
-      {
-        name: "Software Delivery",
-        services: [
-          {
-            href: "/services/web-app-development",
-            title: "Web App Development",
-            icon: Globe2,
-            description: "Robust browser products",
-          },
-          {
-            href: "/services/admin-dashboard",
-            title: "Admin Dashboard",
-            icon: LayoutDashboard,
-            description: "Clear internal tools",
-          },
-          {
-            href: "/services/automation-systems",
-            title: "Automation Systems",
-            icon: Brackets,
-            description: "Reduce repetitive work",
-          },
-        ],
-      },
-    ],
-  },
-  "creative-content": {
-    label: "Creative Content",
-    icon: PenTool,
-    previewTitle: "PIXEL VOICE",
-    previewDescription:
-      "Story-led content systems that keep your message clear, consistent, and visually magnetic across channels.",
-    previewGradient:
-      "linear-gradient(180deg, #fbf7ff 0%, #e2d7ff 58%, #9b7cff 100%)",
-    subcategories: [
-      {
-        name: "Content Production",
-        services: [
-          {
-            href: "/services/content-strategy",
-            title: "Content Strategy",
-            icon: FileSearch2,
-            description: "Structured messaging systems",
-          },
-          {
-            href: "/services/copywriting",
-            title: "Copywriting",
-            icon: PenTool,
-            description: "Clear, persuasive copy",
-          },
-          {
-            href: "/services/motion-graphics",
-            title: "Motion Graphics Design",
-            icon: Sparkles,
-            description: "Animated visual storytelling",
+            description: "Visual campaigns for discovery",
           },
         ],
       },
@@ -363,6 +265,45 @@ function MobileServicesAccordion({ onLinkClick }: { onLinkClick: () => void }) {
             >
               <div className="border-t border-white/10 bg-white/[0.02]">
                 {category.subcategories.map((subcategory, idx) => {
+                  if (!subcategory.name) {
+                    return (
+                      <div key={idx} className="px-3 py-4 space-y-2">
+                        {subcategory.services.map((service) => {
+                          const ServiceIcon = service.icon;
+                          return (
+                            <Link
+                              key={service.title}
+                              href={service.href}
+                              onClick={onLinkClick}
+                              className="group flex items-center gap-3 rounded-xl px-4 py-3 transition-all duration-200 hover:bg-white/10"
+                            >
+                              <div className="rounded-lg bg-white/5 p-2 group-hover:bg-site-accent/20 transition-colors">
+                                <ServiceIcon
+                                  size={14}
+                                  className="text-purple-600 group-hover:text-site-accent transition-colors"
+                                />
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-sm font-medium text-purple-600 transition-colors group-hover:text-site-accent">
+                                  {service.title}
+                                </p>
+                                {service.description && (
+                                  <p className="text-xs text-black/80 mt-0.5">
+                                    {service.description}
+                                  </p>
+                                )}
+                              </div>
+                              <ArrowRight
+                                size={14}
+                                className="text-white/30 group-hover:text-site-accent group-hover:translate-x-0.5 transition-all"
+                              />
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    );
+                  }
+
                   const isSubExpanded =
                     expandedSubcategory === `${key}-${subcategory.name}`;
 
@@ -450,7 +391,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeCategory, setActiveCategory] =
-    useState<ServiceCategoryKey>("custom-development");
+    useState<ServiceCategoryKey>("seo");
   const [hoveredService, setHoveredService] = useState<string | null>(null);
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -501,11 +442,13 @@ export default function Navbar() {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+  // a'sdkfasdkmf
 
   const activeCategoryData = serviceStructure[activeCategory];
   const activeServices = activeCategoryData.subcategories.flatMap(
     (subcategory) => subcategory.services,
   );
+  const activeCategoryHref = `/services/${activeCategory}`;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
@@ -625,7 +568,7 @@ export default function Navbar() {
                         </div>
 
                         <Link
-                          href="/services"
+                          href={activeCategoryHref}
                           className="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-full bg-black px-6 text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5"
                         >
                           Explore
