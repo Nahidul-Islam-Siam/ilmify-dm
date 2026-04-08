@@ -3,6 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Image from "next/image";
+import { useTransition } from "@/app/hooks/TransitionContext";
+import { TransitionType } from "@/app/types/TransitionTypes";
 
 const processSteps = [
   {
@@ -50,6 +52,8 @@ const processSteps = [
 ];
 
 export default function Process() {
+  const headerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<HTMLDivElement>(null);
   const progressFillRef = useRef<HTMLDivElement>(null);
   const visualRailRef = useRef<HTMLDivElement>(null);
@@ -63,6 +67,17 @@ export default function Process() {
   const [previousStep, setPreviousStep] = useState<number | null>(null);
   const [railHeight, setRailHeight] = useState(0);
   const [isDesktop, setIsDesktop] = useState(false);
+  const { applyTransition } = useTransition();
+
+  useEffect(() => {
+    if (headerRef.current) {
+      applyTransition(headerRef.current, TransitionType.Fade);
+    }
+
+    if (contentRef.current) {
+      applyTransition(contentRef.current, TransitionType.Slide);
+    }
+  }, [applyTransition]);
 
   // Check if desktop on mount and resize
   useEffect(() => {
@@ -211,17 +226,20 @@ export default function Process() {
   }, [activeStep, isDesktop]);
 
   return (
-    <section className="bg-transparent px-4 py-12 text-[var(--site-text)] sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:py-24">
-      <div className="mx-auto max-w-[1400px]">
+    <section className="bg-gray-300/50 px-4 py-12 text-[var(--site-text)] sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:py-24">
+      <div className="mx-auto max-w-[1440px]">
         {/* Header Section - Responsive */}
-        <div className="mx-auto max-w-[90%] sm:max-w-[85%] md:max-w-[760px] text-center">
+        <div
+          ref={headerRef}
+          className="mx-auto max-w-[90%] text-center sm:max-w-[85%] md:max-w-[760px]"
+        >
           <p className="text-[10px] sm:text-[11px] md:text-[12px] font-bold uppercase tracking-[0.14em] sm:tracking-[0.16em] text-site-accent">
             Our Process, Your Advantage
           </p>
           <h2 className="mt-3 sm:mt-4 text-[1.75rem] sm:text-[2rem] md:text-[2.65rem] lg:text-[3rem] xl:text-[3.5rem] font-semibold tracking-[-0.04em] sm:tracking-[-0.05em] text-site-text leading-tight">
             From Idea To Execution
           </h2>
-          <p className="mx-auto mt-3 sm:mt-4 max-w-[90%] sm:max-w-[720px] text-[13px] sm:text-[14px] md:text-[15px] leading-6 sm:leading-7 text-site-muted">
+          <p className="mx-auto mt-3 sm:mt-4 max-w-[90%] sm:max-w-[720px] text-[13px] sm:text-[14px] md:text-[15px] leading-6 sm:leading-5 text-site-muted">
             We have become experts in creating top-notch digital products. We
             design beautifully and develop excellently. And we care deeply about
             what we do.
@@ -229,7 +247,10 @@ export default function Process() {
         </div>
 
         {/* Main Content - Responsive Grid */}
-        <div className="mt-8 sm:mt-10 md:mt-12 lg:mt-16 grid gap-6 sm:gap-8 lg:gap-10 xl:gap-16 lg:grid-cols-[minmax(0,1.04fr)_minmax(300px,0.78fr)] lg:items-start">
+        <div
+          ref={contentRef}
+          className="mt-8 grid gap-6 sm:mt-10 sm:gap-8 md:mt-12 lg:mt-16 lg:grid-cols-[minmax(0,1.04fr)_minmax(300px,0.78fr)] lg:items-start lg:gap-10 xl:gap-16"
+        >
           {/* Left Column - Timeline */}
           <div ref={timelineRef} className="relative">
             {/* Vertical Line - Positioned to the right of numbers */}

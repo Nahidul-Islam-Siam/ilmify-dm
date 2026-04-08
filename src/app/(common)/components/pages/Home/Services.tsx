@@ -1,8 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
+import { TransitionType } from "@/app/types/TransitionTypes";
+import { useTransition } from "@/app/hooks/TransitionContext";
 
 const services = [
   {
@@ -27,7 +29,7 @@ const services = [
     tag: "For Rapid App Builders",
     name: "Social Media Management",
     border: "border-b",
-    image: "/assets/hero/Trusted-by.png",
+    image: "/assets/hero/Trusted_by.png",
   },
   {
     tag: "For Startups & Founders",
@@ -59,10 +61,31 @@ const ArrowIcon = ({ className = "" }: { className?: string }) => (
   </svg>
 );
 
-function ServiceCard({ tag, name, border, image }: (typeof services)[0]) {
+interface ServiceCardProps {
+  tag: string;
+  name: string;
+  border: string;
+  image: string;
+  transitionType?: TransitionType;
+}
+
+function ServiceCard({
+  tag,
+  name,
+  border,
+  image,
+  transitionType,
+}: ServiceCardProps) {
   const imageRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { applyTransition } = useTransition(); // Use the transition hook
 
+  useEffect(() => {
+    if (sectionRef.current) {
+      applyTransition(sectionRef.current, transitionType); // Apply transition type dynamically
+    }
+  }, [applyTransition, transitionType]);
   const handleEnter = () => {
     if (textRef.current) {
       gsap.killTweensOf(textRef.current);
@@ -109,6 +132,7 @@ function ServiceCard({ tag, name, border, image }: (typeof services)[0]) {
     <div
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
+      ref={sectionRef}
       className={`group relative flex cursor-pointer items-center overflow-hidden border-[#252525] ${border} ${
         border.includes("border-r") ? "border-r-0 lg:border-r" : ""
       } ${border.includes("border-b") ? "border-b-0 lg:border-b" : ""}`}
@@ -189,8 +213,8 @@ function ServiceCard({ tag, name, border, image }: (typeof services)[0]) {
 
 export default function Services() {
   return (
-    <section className="w-full bg-forground px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20">
-      <div className="mx-auto max-w-[1400px]">
+    <section className="w-full bg-gray-300/30 px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-[1440px]">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center px-2 sm:px-4">
           <p
             className="mb-2 sm:mb-3 lg:mb-4 text-[11px] sm:text-[13px] lg:text-[15px] font-bold uppercase text-site-accent"

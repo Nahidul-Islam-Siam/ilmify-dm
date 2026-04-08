@@ -76,7 +76,7 @@ export default function LatestInsight() {
 
   return (
     <section className="bg-[#0b0b0b] px-4 pb-16 pt-8 text-white sm:px-6 sm:pb-20 lg:px-8 lg:pb-24">
-      <div className="mx-auto max-w-[1400px]">
+      <div className="mx-auto max-w-[1440px]">
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4 sm:mb-10">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-site-accent">

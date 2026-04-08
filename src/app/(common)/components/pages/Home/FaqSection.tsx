@@ -42,7 +42,7 @@ export default function FaqSection() {
 
   return (
     <section className="bg-[#0b0b0b] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-      <div className="mx-auto max-w-[1400px]">
+      <div className="mx-auto max-w-[1440px]">
         <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-14 xl:gap-20">
           <div className="max-w-[470px]">
             <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-site-accent sm:text-[12px]">
@@ -50,7 +50,7 @@ export default function FaqSection() {
             </p>
 
             <h2 className="mt-5 text-[2.4rem] font-semibold leading-[0.94] tracking-[-0.06em] text-black leading-10">
-              Questions? We’ve 
+              Questions? We’ve
               <br />
               Got Answers
             </h2>

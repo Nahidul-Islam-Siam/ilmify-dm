@@ -8,7 +8,7 @@ export default function AiAction() {
   return (
     <section className="bg-transparent py-4">
       <div className="relative overflow-hidden rounded-[30px] border border-site-border bg-site-panel shadow-[var(--site-shadow)]">
-        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
           <div className="relative grid min-h-[420px] grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1.20fr_0.80fr]">
             <div className="absolute inset-y-0 left-[54%] hidden w-px  lg:block" />
 
@@ -25,7 +25,9 @@ export default function AiAction() {
                 </h2>
 
                 <p className="mt-7 max-w-[700px] text-[17px] leading-8 text-black/75 sm:text-[19px] md:text-[20px] lg:mt-8 lg:text-[21px]">
-       We design AI-ready marketing ecosystems that connect content, ads, and data into one powerful growth engine. Built for brands that want more than just visibility.
+                  We design AI-ready marketing ecosystems that connect content,
+                  ads, and data into one powerful growth engine. Built for
+                  brands that want more than just visibility.
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-4 sm:mt-10">

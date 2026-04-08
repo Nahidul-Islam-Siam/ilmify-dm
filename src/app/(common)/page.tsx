@@ -1,5 +1,5 @@
 import Banner from "@/app/(common)/components/pages/Home/Banner";
-import Showcase from "./components/pages/Home/Showcase";
+// import Showcase from "./components/pages/Home/Showcase";
 // import WorkVideo from "./components/pages/Home/WorkVideo";
 import Services from "./components/pages/Home/Services";
 import Process from "./components/pages/Home/Process";
@@ -7,6 +7,7 @@ import AiAction from "./components/pages/Home/AiAction";
 import FaqSection from "./components/pages/Home/FaqSection";
 import InsightsSection from "./components/pages/Home/InsightsSection";
 import ContactSection from "./components/pages/Home/ContactSection";
+// import ShowCaseContact from "./components/pages/Home/ShowCaseContact";
 
 export default function CommonHomePage() {
   return (
@@ -14,7 +15,8 @@ export default function CommonHomePage() {
       <Banner />
       {/* <WorkVideo /> */}
       <Services />
-      <Showcase />
+      {/* <Showcase /> */}
+      {/* <ShowCaseContact/> */}
       <Process />
       <div className="mt-10 lg:mt-20">
         <AiAction />
