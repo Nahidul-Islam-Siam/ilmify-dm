@@ -226,13 +226,14 @@ export default function Services() {
             We Are Great At
           </p>
           <h2 className="mb-2 sm:mb-3 text-[var(--site-text)] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold px-2">
-            UI UX Design and Product Experience Services
+            Full-Funnel Marketing That Delivers Results
           </h2>
           <p
             className="text-[10px] sm:text-xs lg:text-sm text-gray-500"
             style={{ letterSpacing: "0.08em" }}
           >
-            Designs with Exceptional User Experiences
+         We design and optimize every stage of your customer journey - from awareness to conversion and retention.
+
           </p>
         </div>
 

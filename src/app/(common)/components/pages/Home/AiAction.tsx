@@ -6,28 +6,27 @@ import Link from "next/link";
 import marketingAnimation from ".././../../../../../public/assets/Lottie/Marketing.json";
 export default function AiAction() {
   return (
-    <section className="bg-transparent py-4">
-      <div className="relative overflow-hidden rounded-[30px] border border-site-border bg-site-panel shadow-[var(--site-shadow)]">
+    <section className="bg-transparent ">
+      <div className="relative overflow-hidden rounded-[30px]  bg-site-panel shadow-[var(--site-shadow)]">
         <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
           <div className="relative grid min-h-[420px] grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1.20fr_0.80fr]">
             <div className="absolute inset-y-0 left-[54%] hidden w-px  lg:block" />
 
-            <div className="relative z-10 flex items-center py-14 sm:py-16 lg:py-20">
+            <div className="relative z-10 flex items-center">
               <div className="max-w-[760px]">
                 <div className="mb-5 inline-flex items-center rounded-full border border-purple-800/25 bg-white/70 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-purple-800 backdrop-blur-sm sm:text-[12px]">
                   AI-Ready Product Systems
                 </div>
 
                 <h2 className="max-w-[760px] text-balance text-[2.5rem] font-semibold leading-[0.96] text-black sm:text-[2.9rem] lg:text-[3.2rem]">
-                  Marketing That Thinks.
+  Growth Stories That 
                   <br />
-                  <span className="text-purple-800">Growth </span> That Scales.
+                  <span className="text-purple-800"> Speak</span> for Themselves
                 </h2>
 
                 <p className="mt-7 max-w-[700px] text-[17px] leading-8 text-black/75 sm:text-[19px] md:text-[20px] lg:mt-8 lg:text-[21px]">
-                  We design AI-ready marketing ecosystems that connect content,
-                  ads, and data into one powerful growth engine. Built for
-                  brands that want more than just visibility.
+              Every project is built to perform. Explore how we’ve helped brands turn attention into measurable success.
+
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center gap-4 sm:mt-10">

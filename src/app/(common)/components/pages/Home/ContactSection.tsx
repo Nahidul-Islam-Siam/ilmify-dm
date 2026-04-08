@@ -48,15 +48,12 @@ export default function ContactSection() {
             </p>
 
             <h2 className="mt-5 text-[2.45rem] font-semibold leading-10 tracking-[-0.06em] text-black">
-              Lets Work On What You
-              <br />
-              Care About!
+          Ready to Scale Your Growth?
+
             </h2>
 
-            <p className="mt-5 max-w-[620px] text-[16px] leading-8 text-black/72 sm:text-[17px]">
-              Got a project in mind? From a full UI UX refresh to a brand-new
-              digital experience, we are ready to help. Lets turn your vision
-              into a clear, scalable product direction.
+            <p className="mt-3  max-w-[620px] text-[16px] leading-5 text-black/72 sm:text-[17px]">
+           From generating leads to increasing conversions, we build marketing systems that deliver real results - not just activity.
             </p>
 
             <div className="mt-8 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center lg:gap-6">
@@ -80,11 +77,11 @@ export default function ContactSection() {
               ))}
             </div>
 
-            <div className="mt-8 space-y-4 sm:mt-10">
+            <div className="mt-5 space-y-2 sm:mt-10">
               {bulletPoints.map((item) => (
                 <div
                   key={item}
-                  className="flex items-start gap-3 text-black/80"
+                  className="flex items-start gap-2 text-black/80"
                 >
                   <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-800 text-white">
                     <Check size={13} strokeWidth={2.8} />
@@ -94,7 +91,7 @@ export default function ContactSection() {
               ))}
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4 border-t border-black/10 pt-8 sm:gap-5 sm:pt-10">
+            <div className="mt-10 flex flex-wrap items-center gap-2 border-t border-black/10 pt-8 sm:gap-5 sm:pt-8">
               {trustBadges.map((badge) => (
                 <div
                   key={badge}
