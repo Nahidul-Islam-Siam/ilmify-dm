@@ -122,7 +122,7 @@ type Props = {
 export default function FeaturedInsightCard({ study, index = 0 }: Props) {
   return (
     <Link
-      href={`/case-studies/${study.slug}`}
+      href={study.href}
       style={{ animationDelay: `${index * 150}ms` }}
       className="
         group flex flex-col sm:flex-row items-stretch
@@ -133,7 +133,7 @@ export default function FeaturedInsightCard({ study, index = 0 }: Props) {
         animate-[fadeInUp_0.6s_ease-out_forwards]
       "
     >
-      {/* ── Image block ── */}
+      {/* Image block */}
       <div className="relative w-full sm:w-[300px] lg:w-[340px] shrink-0 min-h-[240px] sm:min-h-[340px] bg-gradient-to-br from-[#eceaff] to-[#f8eaff] overflow-hidden">
         {/* Blobs */}
         <div className="absolute bottom-0 left-0 w-28 h-28 rounded-tr-[70px] bg-[#a8a4e8] opacity-60 z-10 transition-all duration-500 group-hover:scale-110 group-hover:opacity-80" />
@@ -159,7 +159,7 @@ export default function FeaturedInsightCard({ study, index = 0 }: Props) {
         </div>
       </div>
 
-      {/* ── Content ── */}
+      {/* Content */}
       <div className="flex flex-col justify-between gap-6 flex-1 min-w-0 px-7 py-8 sm:py-10">
         <div className="space-y-4">
           {/* Title */}

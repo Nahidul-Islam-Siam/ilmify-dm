@@ -23,7 +23,7 @@ export default function LatestInsight() {
         <div className="flex flex-col gap-6">
           {caseStudies.map((study, index) => (
             <div
-              key={study.slug}
+              key={study.href}
               className={`w-full lg:w-[76%] ${
                 index % 2 === 0 ? "lg:ml-0" : "lg:ml-auto"
               }`}
