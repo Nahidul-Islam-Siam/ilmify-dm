@@ -98,7 +98,7 @@ export default function CaseStudies() {
                 `}
                 style={{ transitionDelay: `${index * 0.12}s` }}
               >
-                <Link href={`/insights/${item.slug}`}>
+                <Link href={item.href}>
                   <div className="relative aspect-[1.5] overflow-hidden">
                     <Image
                       src={item.image}
