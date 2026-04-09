@@ -130,12 +130,12 @@ export default function AboutPartnerSection() {
       <div className="sticky top-20 h-[72vh] min-h-[420px] overflow-hidden sm:h-[80vh] lg:h-screen">
         <div ref={imageLayerRef} className="relative h-full w-full">
           <Image
-            src="/assets/about/about-group-image.png"
+            src="/assets/about/Panjabi.png"
             alt="about-group"
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.1)_0%,rgba(245,250,240,0.42)_40%,rgba(255,255,255,0.9)_100%)]" />
+<div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.1)_0%,rgba(0,0,0,0.35)_40%,rgba(0,0,0,0.7)_100%)] backdrop-blur-xs" />
         </div>
       </div>
 
@@ -169,13 +169,13 @@ export default function AboutPartnerSection() {
               </div>
 
               <div>
-                <p className="about-partner-eyebrow text-[11px] font-bold uppercase tracking-[0.16em] text-purple-800 sm:text-[12px]">
+                <p className="about-partner-eyebrow text-[11px] font-bold uppercase tracking-[0.16em] text-white">
                   About
                 </p>
-                <h2 className="about-partner-heading mt-4 text-[2.2rem] font-semibold leading-[0.95] tracking-[-0.05em] text-black">
+                <h2 className="about-partner-heading mt-4 text-[2.2rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white">
                  Who We Are as a Growth Partner
                 </h2>
-                <p className="about-partner-copy mt-5 text-[16px] leading-8 text-black/72 sm:text-[17px]">
+                <p className="about-partner-copy mt-5 text-[16px] leading-8 text-gray-200 sm:text-[17px]">
                   We are a results-focused digital marketing agency helping brands grow through strategy, creativity, and performance-driven execution. From social media management and paid campaigns to lead generation and optimization, we partner with businesses to turn marketing efforts into measurable growth.
                 </p>
 
