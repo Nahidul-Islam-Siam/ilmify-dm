@@ -1,6 +1,6 @@
-import GoogleAdsAccordionSection from "@/app/(common)/components/pages/Services/GoogleAdsAccordionSection";
-import GoogleAdsCampaignExpectationsSection from "@/app/(common)/components/pages/Services/GoogleAdsCampaignExpectationsSection";
-import GoogleAdsServicesShowcase from "@/app/(common)/components/pages/Services/GoogleAdsServicesShowcase";
+import GoogleAdsAccordionSection from "@/components/pages/Services/GoogleAdsAccordionSection";
+import GoogleAdsCampaignExpectationsSection from "@/components/pages/Services/GoogleAdsCampaignExpectationsSection";
+import GoogleAdsServicesShowcase from "@/components/pages/Services/GoogleAdsServicesShowcase";
 import {
   ArrowRight,
   Check,
@@ -31,7 +31,11 @@ export default function GoogleAdsPage() {
     googleAdsMetrics[1],
   ];
   const heroDashboardMetrics = [
-    { value: heroMetrics[0].value, label: heroMetrics[0].label, tone: "violet" },
+    {
+      value: heroMetrics[0].value,
+      label: heroMetrics[0].label,
+      tone: "violet",
+    },
     { value: "4.1%", label: "Average CTR", tone: "white" },
     { value: heroMetrics[1].value, label: heroMetrics[1].label, tone: "white" },
     { value: heroMetrics[2].value, label: heroMetrics[2].label, tone: "blue" },
@@ -159,14 +163,16 @@ export default function GoogleAdsPage() {
                         google ads management for business growth
                       </p>
                       <div className="mt-3 flex flex-wrap gap-2">
-                        {["High Intent", "Lead Ready", "Tracked"].map((chip) => (
-                          <span
-                            key={chip}
-                            className="rounded-full border border-[#ebe5ff] bg-[#faf8ff] px-2.5 py-1 text-[10px] font-medium text-[#617197]"
-                          >
-                            {chip}
-                          </span>
-                        ))}
+                        {["High Intent", "Lead Ready", "Tracked"].map(
+                          (chip) => (
+                            <span
+                              key={chip}
+                              className="rounded-full border border-[#ebe5ff] bg-[#faf8ff] px-2.5 py-1 text-[10px] font-medium text-[#617197]"
+                            >
+                              {chip}
+                            </span>
+                          ),
+                        )}
                       </div>
                     </div>
 
@@ -388,9 +394,11 @@ export default function GoogleAdsPage() {
                   {googleAdsUniqueStrengthSection.title}
                 </h2>
                 <div className="mt-4 max-w-[450px] space-y-4 text-[14px] font-normal leading-[1.62] text-[#5b5b5b] md:text-[14px] lg:text-[14px] xl:text-[15px]">
-                  {googleAdsUniqueStrengthSection.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
+                  {googleAdsUniqueStrengthSection.paragraphs.map(
+                    (paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ),
+                  )}
                 </div>
 
                 <div className="flex flex-wrap gap-3 pt-7">
@@ -427,9 +435,18 @@ export default function GoogleAdsPage() {
                 Compare To other Google Ads Service
               </h2>
               <div className="mt-3 flex items-center justify-center gap-[10px]">
-                <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
-                <span className="block h-[4px] w-[82px] rounded-full" style={{ backgroundColor: accent }} />
-                <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
+                <span
+                  className="h-[10px] w-[10px] rounded-full"
+                  style={{ backgroundColor: accent }}
+                />
+                <span
+                  className="block h-[4px] w-[82px] rounded-full"
+                  style={{ backgroundColor: accent }}
+                />
+                <span
+                  className="h-[10px] w-[10px] rounded-full"
+                  style={{ backgroundColor: accent }}
+                />
               </div>
             </div>
 
@@ -495,7 +512,10 @@ export default function GoogleAdsPage() {
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-x-0 top-[-82px] flex justify-center text-[138px] font-semibold uppercase leading-none tracking-[-0.08em] opacity-[0.22] sm:top-[-92px] sm:text-[176px] lg:top-[-102px] lg:text-[220px]"
-                style={{ WebkitTextStroke: `2px ${accent}`, color: "transparent" }}
+                style={{
+                  WebkitTextStroke: `2px ${accent}`,
+                  color: "transparent",
+                }}
               >
                 ILMIFY
               </div>
@@ -506,9 +526,18 @@ export default function GoogleAdsPage() {
                     Clients Feedback
                   </h2>
                   <div className="mt-3 flex items-center justify-center gap-[10px]">
-                    <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
-                    <span className="block h-[4px] w-[82px] rounded-full" style={{ backgroundColor: accent }} />
-                    <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
+                    <span
+                      className="h-[10px] w-[10px] rounded-full"
+                      style={{ backgroundColor: accent }}
+                    />
+                    <span
+                      className="block h-[4px] w-[82px] rounded-full"
+                      style={{ backgroundColor: accent }}
+                    />
+                    <span
+                      className="h-[10px] w-[10px] rounded-full"
+                      style={{ backgroundColor: accent }}
+                    />
                   </div>
                 </div>
 
@@ -517,11 +546,18 @@ export default function GoogleAdsPage() {
                     <p className="text-[1.7rem] font-semibold tracking-[-0.06em]">
                       Clutch
                     </p>
-                    <span className="hidden h-8 w-px sm:block" style={{ backgroundColor: `${accent}73` }} />
+                    <span
+                      className="hidden h-8 w-px sm:block"
+                      style={{ backgroundColor: `${accent}73` }}
+                    />
                     <div className="flex items-center gap-2">
                       <div className="flex items-center gap-1 text-[#ff4b3e]">
                         {Array.from({ length: 5 }).map((_, index) => (
-                          <Star key={index} size={11} className="fill-current" />
+                          <Star
+                            key={index}
+                            size={11}
+                            className="fill-current"
+                          />
                         ))}
                       </div>
                       <span className="text-[0.88rem] font-medium text-[#0b3b85]">
@@ -569,8 +605,15 @@ export default function GoogleAdsPage() {
                         ) : null}
 
                         <div className="flex flex-wrap items-center gap-3 border-b border-[#e7eef5] pb-4">
-                          {renderReviewBrand(item.companyMark, item.company, index)}
-                          <span className="hidden h-6 w-px sm:block" style={{ backgroundColor: `${accent}59` }} />
+                          {renderReviewBrand(
+                            item.companyMark,
+                            item.company,
+                            index,
+                          )}
+                          <span
+                            className="hidden h-6 w-px sm:block"
+                            style={{ backgroundColor: `${accent}59` }}
+                          />
                           <div className="flex items-center gap-1 text-[#ff4b3e]">
                             {Array.from({ length: 5 }).map((_, starIndex) => (
                               <Star

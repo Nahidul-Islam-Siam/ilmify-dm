@@ -1,13 +1,13 @@
 import { Dribbble, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../../../../assets/ilmify-Logo.svg";
+import logo from "@/assets/logo/ilmify-Logo.svg";
 const companyLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/work", label: "Work" },
   { href: "#contact", label: "Contact" },
-  { href: "/insights", label: "Insights" },
+  { href: "/case-studies", label: "Case Studies" },
 ];
 
 const serviceLinks = [

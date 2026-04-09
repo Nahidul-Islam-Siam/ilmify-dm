@@ -226,7 +226,7 @@ export default function Process() {
   }, [activeStep, isDesktop]);
 
   return (
-    <section className="bg-gray-300/50 px-4 py-12 text-[var(--site-text)] sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:py-24">
+    <section className="bg-site-bg-accent px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:py-24">
       <div className="mx-auto w-full max-w-[var(--site-max-width)]">
         {/* Header Section - Responsive */}
         <div
@@ -236,7 +236,7 @@ export default function Process() {
           <p className="text-[10px] sm:text-[11px] md:text-[12px] font-bold uppercase tracking-[0.14em] sm:tracking-[0.16em] text-site-accent">
             Our Process, Your Advantage
           </p>
-          <h2 className="mt-3 sm:mt-4 text-[1.75rem] sm:text-[2rem] md:text-[2.65rem] lg:text-[3rem] xl:text-[3.5rem] font-semibold tracking-[-0.04em] sm:tracking-[-0.05em] text-site-text leading-tight">
+          <h2 className="mt-3 sm:mt-4 text-[1.75rem] sm:text-[2rem] md:text-[2.65rem] lg:text-[3rem] xl:text-[3.5rem] font-semibold tracking-[-0.04em] sm:tracking-[-0.05em] text-site-textleading-tight">
             From Idea To Execution
           </h2>
           <p className="mx-auto mt-3 sm:mt-4 max-w-[90%] sm:max-w-[720px] text-[13px] sm:text-[14px] md:text-[15px] leading-6 sm:leading-5 text-site-muted">

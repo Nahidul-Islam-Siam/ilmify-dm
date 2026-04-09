@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import image from "../../../../../assets/case_study/demo_case_study.png";
+import image from "@/assets/case_study/demo_case_study.png";
 
-export default function InsightsHero() {
+export default function CaseStudyHero() {
   const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

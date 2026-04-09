@@ -6,7 +6,7 @@ import Lottie from "lottie-react";
 import Link from "next/link";
 import { useTransition } from "@/app/hooks/TransitionContext";
 import { TransitionType } from "@/app/types/TransitionTypes";
-import marketingAnimation from "@/assets/Lottie/DigitalMarketing.json";
+import marketingAnimation from "@/assets/Lottie/Marketing.json";
 
 export default function AiAction() {
   const badgeRef = useRef<HTMLDivElement>(null);
@@ -39,8 +39,8 @@ export default function AiAction() {
   }, [applyTransition]);
 
   return (
-    <section className="bg-transparent py-4">
-      <div className="relative mx-auto w-full max-w-[var(--site-max-width)] overflow-hidden rounded-[30px] border border-site-border bg-site-panel shadow-[var(--site-shadow)]">
+    <section className="bg-transparent py-10">
+      <div className="relative mx-auto w-full max-w-[var(--site-max-width)] overflow-hidden rounded-[30px]  bg-site-panel shadow-[var(--site-shadow)]">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative grid min-h-[420px] grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1.20fr_0.80fr]">
             <div className="absolute inset-y-0 left-[54%] hidden w-px  lg:block" />

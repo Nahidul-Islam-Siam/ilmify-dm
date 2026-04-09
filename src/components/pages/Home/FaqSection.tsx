@@ -52,14 +52,14 @@ export default function FaqSection() {
     }
 
     if (accordionRef.current) {
-      applyTransition(accordionRef.current, TransitionType.Slide);
+      applyTransition(accordionRef.current, TransitionType.Scale);
     }
 
     itemRefs.current.forEach((item, index) => {
       if (!item) return;
       applyTransition(
         item,
-        index % 2 === 0 ? TransitionType.Scale : TransitionType.ZoomBlur,
+        index % 2 === 0 ? TransitionType.Scale : TransitionType.Fade,
       );
     });
   }, [applyTransition]);
@@ -123,8 +123,8 @@ export default function FaqSection() {
                   }}
                   className={`overflow-hidden rounded-[22px] border transition-all duration-300 ${
                     isOpen
-                      ? "border-site-accent/35 bg-[#fff]"
-                      : "border-black bg-[#fff]"
+                      ? " bg-site-bg-accent"
+                      : "border-purple-300 bg-[#fff]"
                   }`}
                 >
                   <button

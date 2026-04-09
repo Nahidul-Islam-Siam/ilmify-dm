@@ -7,13 +7,13 @@ import Link from "next/link";
 import BrandMarquee from "./BrandMarquee";
 
 const toolBadges = [
-  { link: "/assets/hero/Meta.png" },
-  { link: "/assets/hero/SEO.png" },
+  { link: "/assets/hero/Meta.svg" },
+  { link: "/assets/hero/SEO.svg" },
   {
-    link: "/assets/hero/Google-Ads.png",
+    link: "/assets/hero/Ads.svg",
   },
   {
-    link: "/assets/hero/Email-Marketing.png",
+    link: "/assets/hero/Email-Marketing.svg",
   },
 ];
 
@@ -24,8 +24,8 @@ export default function HomeShowcase() {
       className="overflow-x-hidden bg-transparent text-[var(--site-text)]"
     >
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-20 top-[-120px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.20)_50%,rgba(123,31,162,0)_70%)] blur-2xl" />
-        <div className="absolute right-[-70px] top-[18%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.20)_50%,rgba(82,244,71,0)_74%)] blur-2xl" />
+        <div className="absolute -left-20 -top-[-80px] h-[320px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.20)_50%,rgba(123,31,162,0)_70%)] blur-2xl hidden lg:block" />
+        <div className="absolute right-0 top-[40%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.20)_50%,rgba(82,244,71,0)_74%)] blur-2xl hidden lg:block" />
       </div>
 
       <section className="relative w-full overflow-hidden px-4 pb-16 pt-16 sm:px-6 lg:px-10 flex items-center flex-col">
@@ -51,7 +51,7 @@ export default function HomeShowcase() {
               <span className="flex h-3 w-6 flex-shrink-0 items-center justify-center rounded-full">
                 <Image
                   src="/assets/hero/Trusted_by.png"
-                  width={25}
+                  width={50}
                   height={30}
                   alt="trusted"
                   className="h-6 w-6"
@@ -74,9 +74,9 @@ export default function HomeShowcase() {
                   <Image
                     src={badge.link}
                     alt="badge"
-                    width={35}
-                    height={30}
-                    className="h-5 w-5 transition-transform duration-300 group-hover:scale-110"
+                    width={100}
+                    height={100}
+                    className="h-5 w-6 transition-transform duration-300 group-hover:scale-110"
                   />
                 </span>
               ))}

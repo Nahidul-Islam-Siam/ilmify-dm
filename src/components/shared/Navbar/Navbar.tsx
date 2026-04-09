@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import logo from "../../../../../assets/ilmify-Logo.svg";
+import logo from "@/assets/logo/ilmify-Logo.svg";
 import {
   NavigationMenu,
   NavigationMenuContent,
