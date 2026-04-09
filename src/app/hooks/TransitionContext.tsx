@@ -57,12 +57,12 @@ export const TransitionProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     {
       rotationY: 0, // Flip back to normal
       opacity: 1,
-      duration: 2,
+      duration: 4,
       ease: "power3.out",
       scrollTrigger: {
         trigger: el,
         start: "top 100%",
-        end: "bottom 50%",
+        end: "bottom 60%",
         scrub: true,
       },
     }
@@ -117,9 +117,10 @@ else if (transitionType === TransitionType.ZoomBlur) {
       ease: "power3.out",
       scrollTrigger: {
         trigger: el,
-        start: "top 80%",
-        end: "bottom 20%",
-        scrub: true,
+        start: "top 90%",
+        end: "bottom 50%",
+        scrub: true,       
+        markers:false
       },
     }
   );

@@ -29,6 +29,7 @@ export default {
         "site-text": "var(--site-text)",
         "site-accent": "var(--site-accent)",
         "site-bg": "var(--site-bg-start)",
+        "site-bg-accent": "var(--site-bg-accent)",
         "site-panel": "var(--site-panel-bg)",
         "site-border": "var(--site-border)",
         "site-muted": "var(--site-muted)",

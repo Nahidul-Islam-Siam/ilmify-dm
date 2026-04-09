@@ -1,4 +1,4 @@
-import ContactSection from "@/app/(common)/components/pages/Home/ContactSection";
+import ContactSection from "@/components/pages/Home/ContactSection";
 import { ArrowRight, Gauge, LayoutDashboard, Megaphone } from "lucide-react";
 import Link from "next/link";
 
@@ -10,8 +10,7 @@ const categories = [
     icon: Megaphone,
     description:
       "Technical SEO, keyword research, content writing, on-page optimization, link building, and reporting under one category.",
-    gradient:
-      "linear-gradient(180deg, #eef3ff 0%, #d8e4ff 52%, #99b3ff 100%)",
+    gradient: "linear-gradient(180deg, #eef3ff 0%, #d8e4ff 52%, #99b3ff 100%)",
     items: ["SEO Audit", "Technical SEO", "Content Writing", "Reporting"],
   },
   {
@@ -21,8 +20,7 @@ const categories = [
     icon: Gauge,
     description:
       "Google Search Ads, Display Ads, YouTube Ads, and Performance Max campaigns shaped around conversion quality.",
-    gradient:
-      "linear-gradient(180deg, #fff7ef 0%, #ffe3c3 52%, #ffb46d 100%)",
+    gradient: "linear-gradient(180deg, #fff7ef 0%, #ffe3c3 52%, #ffb46d 100%)",
     items: [
       "Google Search Ads",
       "Google Display Ads",
@@ -37,8 +35,7 @@ const categories = [
     icon: LayoutDashboard,
     description:
       "Meta, TikTok, LinkedIn, and Pinterest ads with stronger creative testing and platform-specific campaign logic.",
-    gradient:
-      "linear-gradient(180deg, #f7f4ff 0%, #e3d8ff 52%, #b59fff 100%)",
+    gradient: "linear-gradient(180deg, #f7f4ff 0%, #e3d8ff 52%, #b59fff 100%)",
     items: ["Meta Ads", "TikTok Ads", "LinkedIn Ads", "Pinterest Ads"],
   },
 ];
@@ -62,9 +59,9 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-6 max-w-[760px] text-[17px] leading-8 text-black/70">
               We currently organize our services into three main categories:
-              SEO, Google Ads, and Social Media Advertisement. Each category
-              has its own page so visitors can understand exactly what sits
-              inside it.
+              SEO, Google Ads, and Social Media Advertisement. Each category has
+              its own page so visitors can understand exactly what sits inside
+              it.
             </p>
           </div>
         </section>

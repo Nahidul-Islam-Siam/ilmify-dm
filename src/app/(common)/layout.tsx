@@ -1,5 +1,5 @@
-import Footer from "@/app/(common)/components/shared/Footer/Footer";
-import Navbar from "@/app/(common)/components/shared/Navbar/Navbar";
+import Footer from "@/components/shared/Footer/Footer";
+import Navbar from "@/components/shared/Navbar/Navbar";
 import type { ReactNode } from "react";
 import { TransitionProvider } from "../hooks/TransitionContext";
 

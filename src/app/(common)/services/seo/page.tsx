@@ -1,6 +1,6 @@
-import AccordionSection from "@/app/(common)/components/pages/Services/AccordionSection";
-import SeoCampaignExpectationsSection from "@/app/(common)/components/pages/Services/SeoCampaignExpectationsSection";
-import SeoServicesShowcase from "@/app/(common)/components/pages/Services/SeoServicesShowcase";
+import AccordionSection from "@/components/pages/Services/AccordionSection";
+import SeoCampaignExpectationsSection from "@/components/pages/Services/SeoCampaignExpectationsSection";
+import SeoServicesShowcase from "@/components/pages/Services/SeoServicesShowcase";
 import {
   ArrowRight,
   Check,
@@ -104,7 +104,9 @@ export default function SeoPage() {
                     SEO Services
                   </p>
                   <h1 className="mt-4 max-w-[610px] text-[1.7rem] font-semibold leading-[1.04] tracking-[-0.052em] text-[#0b3b85] sm:text-[2.2rem] lg:text-[2.65rem]">
-                    <span className="whitespace-nowrap">Best SEO Services to</span>
+                    <span className="whitespace-nowrap">
+                      Best SEO Services to
+                    </span>
                     <br />
                     Drive Business
                     <br />
@@ -112,11 +114,10 @@ export default function SeoPage() {
                   </h1>
                   <p className="mt-5 max-w-[470px] text-[13px] leading-[1.72] text-[#264673] sm:text-[14px]">
                     Maximize your revenue with our customized SEO service,
-                    optimizing your online visibility, driving targeted
-                    traffic, and boosting conversions for enhanced success. We
-                    construct strategies for keyword optimization, content
-                    enhancements, and analytics insights to ensure sustainable
-                    results.
+                    optimizing your online visibility, driving targeted traffic,
+                    and boosting conversions for enhanced success. We construct
+                    strategies for keyword optimization, content enhancements,
+                    and analytics insights to ensure sustainable results.
                   </p>
 
                   <div className="mt-6 flex flex-wrap gap-4">
@@ -273,8 +274,16 @@ export default function SeoPage() {
                         x2="0"
                         y2="1"
                       >
-                        <stop offset="0%" stopColor="#a796ff" stopOpacity="0.22" />
-                        <stop offset="100%" stopColor="#a796ff" stopOpacity="0" />
+                        <stop
+                          offset="0%"
+                          stopColor="#a796ff"
+                          stopOpacity="0.22"
+                        />
+                        <stop
+                          offset="100%"
+                          stopColor="#a796ff"
+                          stopOpacity="0"
+                        />
                       </linearGradient>
                     </defs>
 
@@ -321,7 +330,9 @@ export default function SeoPage() {
                       <div
                         key={`${image.src}-${index}`}
                         className={`relative overflow-hidden ${
-                          index < 2 ? "aspect-[0.92/1]" : "aspect-[1.9/1] sm:col-span-2"
+                          index < 2
+                            ? "aspect-[0.92/1]"
+                            : "aspect-[1.9/1] sm:col-span-2"
                         }`}
                       >
                         <Image
@@ -329,7 +340,7 @@ export default function SeoPage() {
                           alt={image.alt}
                           fill
                           className="object-cover"
-                      style={{ objectPosition: image.objectPosition }}
+                          style={{ objectPosition: image.objectPosition }}
                           sizes="(max-width: 1024px) 100vw, 390px"
                         />
                       </div>
@@ -383,9 +394,18 @@ export default function SeoPage() {
                 Compare To other SEO Service
               </h2>
               <div className="mt-3 flex items-center justify-center gap-[10px]">
-                <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
-                <span className="block h-[4px] w-[82px] rounded-full" style={{ backgroundColor: accent }} />
-                <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
+                <span
+                  className="h-[10px] w-[10px] rounded-full"
+                  style={{ backgroundColor: accent }}
+                />
+                <span
+                  className="block h-[4px] w-[82px] rounded-full"
+                  style={{ backgroundColor: accent }}
+                />
+                <span
+                  className="h-[10px] w-[10px] rounded-full"
+                  style={{ backgroundColor: accent }}
+                />
               </div>
             </div>
 
@@ -442,7 +462,10 @@ export default function SeoPage() {
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-x-0 top-[-82px] flex justify-center text-[138px] font-semibold uppercase leading-none tracking-[-0.08em] opacity-[0.22] sm:top-[-92px] sm:text-[176px] lg:top-[-102px] lg:text-[220px]"
-                style={{ WebkitTextStroke: `2px ${accent}`, color: "transparent" }}
+                style={{
+                  WebkitTextStroke: `2px ${accent}`,
+                  color: "transparent",
+                }}
               >
                 ILMIFY
               </div>
@@ -453,9 +476,18 @@ export default function SeoPage() {
                     Clients Feedback
                   </h2>
                   <div className="mt-3 flex items-center justify-center gap-[10px]">
-                    <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
-                    <span className="block h-[4px] w-[82px] rounded-full" style={{ backgroundColor: accent }} />
-                    <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
+                    <span
+                      className="h-[10px] w-[10px] rounded-full"
+                      style={{ backgroundColor: accent }}
+                    />
+                    <span
+                      className="block h-[4px] w-[82px] rounded-full"
+                      style={{ backgroundColor: accent }}
+                    />
+                    <span
+                      className="h-[10px] w-[10px] rounded-full"
+                      style={{ backgroundColor: accent }}
+                    />
                   </div>
                 </div>
 
@@ -464,7 +496,10 @@ export default function SeoPage() {
                     <p className="text-[1.7rem] font-semibold tracking-[-0.06em]">
                       Clutch
                     </p>
-                    <span className="hidden h-8 w-px sm:block" style={{ backgroundColor: `${accent}73` }} />
+                    <span
+                      className="hidden h-8 w-px sm:block"
+                      style={{ backgroundColor: `${accent}73` }}
+                    />
                     <div className="flex items-center gap-2">
                       <div className="flex items-center gap-1 text-[#ff4b3e]">
                         {Array.from({ length: 5 }).map((_, index) => (
@@ -521,7 +556,10 @@ export default function SeoPage() {
 
                         <div className="flex flex-wrap items-center gap-3 border-b border-[#e7eef5] pb-4">
                           {renderReviewBrand(item.companyMark)}
-                          <span className="hidden h-6 w-px sm:block" style={{ backgroundColor: `${accent}59` }} />
+                          <span
+                            className="hidden h-6 w-px sm:block"
+                            style={{ backgroundColor: `${accent}59` }}
+                          />
                           <div className="flex items-center gap-1 text-[#ff4b3e]">
                             {Array.from({ length: 5 }).map((_, starIndex) => (
                               <Star
@@ -641,8 +679,8 @@ export default function SeoPage() {
                           SEO Audit
                         </p>
                         <p className="mt-2 text-[13px] leading-[1.6] text-[#44546f]">
-                          Technical issues, keyword direction, content gaps,
-                          and page-level improvements.
+                          Technical issues, keyword direction, content gaps, and
+                          page-level improvements.
                         </p>
                       </div>
 

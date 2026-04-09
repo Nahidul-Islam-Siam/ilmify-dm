@@ -11,37 +11,37 @@ const services = [
     tag: "For Digital Experiences",
     name: "Meta Ads (Facebook/Instagram)",
     border: "border-b border-r",
-    image: "/assets/hero/Meta.png",
+    image: "/assets/services/meta.svg",
   },
   {
     tag: "For Startups & Existing Companies",
     name: "Google Ads (PPC)",
     border: "border-b",
-    image: "/assets/hero/Google-Ads.png",
+    image: "/assets/services/google-ads.svg",
   },
   {
     tag: "For Visual Storytellers",
     name: "SEO (Search Engine Optimization)",
     border: "border-b border-r",
-    image: "/assets/hero/SEO.png",
+    image: "/assets/services/SEO.svg",
   },
   {
     tag: "For Rapid App Builders",
     name: "Social Media Management",
     border: "border-b",
-    image: "/assets/hero/Trusted_by.png",
+    image: "/assets/services/Social.svg",
   },
   {
     tag: "For Startups & Founders",
     name: "Funnel & Landing Page Optimization",
     border: "border-r",
-    image: "/assets/hero/Google-Ads.png",
+    image: "/assets/services/Optimize.svg",
   },
   {
     tag: "Dedicated UX UI Team",
     name: "Email Marketing / Automation",
     border: "",
-    image: "/assets/hero/Email-Marketing.png",
+    image: "/assets/services/email-marketing.svg",
   },
 ];
 
@@ -133,16 +133,14 @@ function ServiceCard({
       onMouseEnter={handleEnter}
       onMouseLeave={handleLeave}
       ref={sectionRef}
-      className={`group relative flex cursor-pointer items-center overflow-hidden border-[#252525] ${border} ${
-        border.includes("border-r") ? "border-r-0 lg:border-r" : ""
-      } ${border.includes("border-b") ? "border-b-0 lg:border-b" : ""}`}
+      className={`group relative flex cursor-pointer items-center overflow-hidden border-purple-800 ${border}`}
       style={{
         padding: "24px 20px",
         minHeight: "120px",
       }}
     >
       <div
-        className="absolute left-0 top-0 z-20 h-0 w-[2px] lg:w-[3px] bg-site-accent transition-all group-hover:h-full"
+        className="absolute left-0 top-0 z-20 h-0 w-[2px] lg:w-[3px] bg-site-bg-accent transition-all group-hover:h-full"
         style={{
           transitionDuration: "420ms",
           transitionTimingFunction: "cubic-bezier(0.65, 0, 0.35, 1)",
@@ -152,22 +150,22 @@ function ServiceCard({
       {/* Dynamic service image - Hidden on mobile/tablet, visible on desktop */}
       <div
         ref={imageRef}
-        className="pointer-events-none absolute z-10 hidden overflow-hidden rounded-[20px] border border-[rgba(106,27,154,0.18)] bg-white/70 opacity-0 shadow-[0_20px_45px_-24px_rgba(106,27,154,0.32)] xl:block"
+        className="pointer-events-none absolute z-10 hidden overflow-hidden   opacity-0  xl:block"
         style={{
-          right: "88px",
+          right: "80px",
           top: "50%",
           transform: "translateY(-50%) translateX(-40px)",
           willChange: "transform, opacity",
-          width: "154px",
-          height: "104px",
+          width: "120px",
+          height: "100px",
         }}
       >
         <Image
           src={image}
           alt={name}
           fill
-          className="object-cover"
-          sizes="154px"
+          className=""
+
         />
       </div>
 
@@ -213,7 +211,7 @@ function ServiceCard({
 
 export default function Services() {
   return (
-    <section className="w-full bg-gray-300/30 px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20">
+    <section className="w-full bg-site-bg-accent px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20">
       <div className="mx-auto w-full max-w-[var(--site-max-width)]">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center px-2 sm:px-4">
           <p
@@ -237,7 +235,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-[#252525]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-purple-800">
           {services.map((service) => (
             <ServiceCard key={service.name} {...service} />
           ))}

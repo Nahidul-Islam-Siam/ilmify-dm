@@ -1,6 +1,6 @@
-import SocialMediaAdsAccordionSection from "@/app/(common)/components/pages/Services/SocialMediaAdsAccordionSection";
-import SocialMediaAdsCampaignExpectationsSection from "@/app/(common)/components/pages/Services/SocialMediaAdsCampaignExpectationsSection";
-import SocialMediaAdsServicesShowcase from "@/app/(common)/components/pages/Services/SocialMediaAdsServicesShowcase";
+import SocialMediaAdsAccordionSection from "@/components/pages/Services/SocialMediaAdsAccordionSection";
+import SocialMediaAdsCampaignExpectationsSection from "@/components/pages/Services/SocialMediaAdsCampaignExpectationsSection";
+import SocialMediaAdsServicesShowcase from "@/components/pages/Services/SocialMediaAdsServicesShowcase";
 import {
   ArrowRight,
   Check,
@@ -299,23 +299,27 @@ export default function SocialMediaAdsPage() {
               <div className="flex justify-center">
                 <div className="w-full max-w-[390px] overflow-hidden rounded-xl bg-white shadow-md">
                   <div className="grid gap-[8px] bg-white p-[0px] sm:grid-cols-2">
-                    {socialMediaAdsUniqueStrengthSection.images.map((image, index) => (
-                      <div
-                        key={`${image.src}-${index}`}
-                        className={`relative overflow-hidden ${
-                          index < 2 ? "aspect-[0.92/1]" : "aspect-[1.9/1] sm:col-span-2"
-                        }`}
-                      >
-                        <Image
-                          src={image.src}
-                          alt={image.alt}
-                          fill
-                          className="object-cover"
-                          style={{ objectPosition: image.objectPosition }}
-                          sizes="(max-width: 1024px) 100vw, 390px"
-                        />
-                      </div>
-                    ))}
+                    {socialMediaAdsUniqueStrengthSection.images.map(
+                      (image, index) => (
+                        <div
+                          key={`${image.src}-${index}`}
+                          className={`relative overflow-hidden ${
+                            index < 2
+                              ? "aspect-[0.92/1]"
+                              : "aspect-[1.9/1] sm:col-span-2"
+                          }`}
+                        >
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            fill
+                            className="object-cover"
+                            style={{ objectPosition: image.objectPosition }}
+                            sizes="(max-width: 1024px) 100vw, 390px"
+                          />
+                        </div>
+                      ),
+                    )}
                   </div>
                 </div>
               </div>
@@ -325,9 +329,11 @@ export default function SocialMediaAdsPage() {
                   {socialMediaAdsUniqueStrengthSection.title}
                 </h2>
                 <div className="mt-4 max-w-[450px] space-y-4 text-[14px] font-normal leading-[1.62] text-[#5b5b5b] md:text-[14px] lg:text-[14px] xl:text-[15px]">
-                  {socialMediaAdsUniqueStrengthSection.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
+                  {socialMediaAdsUniqueStrengthSection.paragraphs.map(
+                    (paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ),
+                  )}
                 </div>
 
                 <div className="flex flex-wrap gap-3 pt-7">
@@ -365,9 +371,18 @@ export default function SocialMediaAdsPage() {
                 Compare To other Social Media Ads Service
               </h2>
               <div className="mt-3 flex items-center justify-center gap-[10px]">
-                <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
-                <span className="block h-[4px] w-[82px] rounded-full" style={{ backgroundColor: accent }} />
-                <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
+                <span
+                  className="h-[10px] w-[10px] rounded-full"
+                  style={{ backgroundColor: accent }}
+                />
+                <span
+                  className="block h-[4px] w-[82px] rounded-full"
+                  style={{ backgroundColor: accent }}
+                />
+                <span
+                  className="h-[10px] w-[10px] rounded-full"
+                  style={{ backgroundColor: accent }}
+                />
               </div>
             </div>
 
@@ -424,7 +439,10 @@ export default function SocialMediaAdsPage() {
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-x-0 top-[-82px] flex justify-center text-[138px] font-semibold uppercase leading-none tracking-[-0.08em] opacity-[0.22] sm:top-[-92px] sm:text-[176px] lg:top-[-102px] lg:text-[220px]"
-                style={{ WebkitTextStroke: `2px ${accent}`, color: "transparent" }}
+                style={{
+                  WebkitTextStroke: `2px ${accent}`,
+                  color: "transparent",
+                }}
               >
                 ILMIFY
               </div>
@@ -435,9 +453,18 @@ export default function SocialMediaAdsPage() {
                     Clients Feedback
                   </h2>
                   <div className="mt-3 flex items-center justify-center gap-[10px]">
-                    <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
-                    <span className="block h-[4px] w-[82px] rounded-full" style={{ backgroundColor: accent }} />
-                    <span className="h-[10px] w-[10px] rounded-full" style={{ backgroundColor: accent }} />
+                    <span
+                      className="h-[10px] w-[10px] rounded-full"
+                      style={{ backgroundColor: accent }}
+                    />
+                    <span
+                      className="block h-[4px] w-[82px] rounded-full"
+                      style={{ backgroundColor: accent }}
+                    />
+                    <span
+                      className="h-[10px] w-[10px] rounded-full"
+                      style={{ backgroundColor: accent }}
+                    />
                   </div>
                 </div>
 
@@ -446,11 +473,18 @@ export default function SocialMediaAdsPage() {
                     <p className="text-[1.7rem] font-semibold tracking-[-0.06em]">
                       Clutch
                     </p>
-                    <span className="hidden h-8 w-px sm:block" style={{ backgroundColor: `${accent}73` }} />
+                    <span
+                      className="hidden h-8 w-px sm:block"
+                      style={{ backgroundColor: `${accent}73` }}
+                    />
                     <div className="flex items-center gap-2">
                       <div className="flex items-center gap-1 text-[#ff4b3e]">
                         {Array.from({ length: 5 }).map((_, index) => (
-                          <Star key={index} size={11} className="fill-current" />
+                          <Star
+                            key={index}
+                            size={11}
+                            className="fill-current"
+                          />
                         ))}
                       </div>
                       <span className="text-[0.88rem] font-medium text-[#0b3b85]">
@@ -498,8 +532,15 @@ export default function SocialMediaAdsPage() {
                         ) : null}
 
                         <div className="flex flex-wrap items-center gap-3 border-b border-[#e7eef5] pb-4">
-                          {renderReviewBrand(item.companyMark, item.company, index)}
-                          <span className="hidden h-6 w-px sm:block" style={{ backgroundColor: `${accent}59` }} />
+                          {renderReviewBrand(
+                            item.companyMark,
+                            item.company,
+                            index,
+                          )}
+                          <span
+                            className="hidden h-6 w-px sm:block"
+                            style={{ backgroundColor: `${accent}59` }}
+                          />
                           <div className="flex items-center gap-1 text-[#ff4b3e]">
                             {Array.from({ length: 5 }).map((_, starIndex) => (
                               <Star
@@ -554,9 +595,9 @@ export default function SocialMediaAdsPage() {
                     Let&apos;s Plan Your Paid Social Growth.
                   </h2>
                   <p className="mt-4 max-w-[400px] text-[14px] leading-[1.75] text-[#44546f] sm:text-[15px]">
-                    Talk with ILMIFY about creative fatigue, audience
-                    structure, remarketing, and the fastest next steps for more
-                    efficient social media ad performance.
+                    Talk with ILMIFY about creative fatigue, audience structure,
+                    remarketing, and the fastest next steps for more efficient
+                    social media ad performance.
                   </p>
 
                   <div className="mt-6 flex flex-wrap gap-3">

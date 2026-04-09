@@ -1,5 +1,5 @@
-import InsightsHero from "../components/pages/insight/InsightHero";
-import LatestInsight from "../components/pages/insight/LatestInsight";
+import InsightsHero from "../../../components/pages/case-studies/InsightHero";
+import LatestInsight from "../../../components/pages/case-studies/LatestInsight";
 
 const Insights = () => {
   return (

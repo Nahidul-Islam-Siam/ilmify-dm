@@ -1,5 +1,6 @@
-import Link from "next/link";
+
 import { ArrowUpRight, BadgeCheck } from "lucide-react";
+import FlipButton from "@/components/button/FlipButton";
 
 const proofCards = [
   {
@@ -35,32 +36,23 @@ export default function AboutBanner() {
 
       <div className="mx-auto w-full max-w-[var(--site-max-width)] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1080px] text-center">
-          <h1 className="text-balance text-[2.7rem] font-bold uppercase leading-[0.95] tracking-[-0.05em] text-black sm:text-5xl md:text-6xl lg:text-7xl">
-            A Strategic UI UX
+          <h1 className="text-balance text-[2.7rem] font-bold uppercase leading-10 tracking-[-0.03em] text-black sm:text-5xl md:text-6xl lg:text-7xl">
+            A STRATEGIC DIGITAL
             <br />
-            Design Agency
+            MARKETING AGENCY
           </h1>
 
           <div className="mx-auto mt-8 flex max-w-[980px] items-start justify-center gap-4 sm:gap-6 lg:mt-10">
-            <div className="max-w-[760px]">
-              <p className="text-[18px] font-medium leading-7 text-black/72 sm:text-[19px] sm:leading-8">
-                We Are The Best Product Design Agency For Startups. We Excel In
-                UI UX Design, Branding, Web Development and committed to 100%
-                satisfaction with every project.
+            <div className="max-w-[850px]">
+              <p className="text-[18px] font-medium  text-black/72 sm:text-[19px] sm:leading-6">
+                We help brands grow faster through performance-driven digital
+                marketing. From social media management and paid advertising to
+                lead generation and campaign optimization, we create strategies
+                built to attract, convert, and scale.
               </p>
 
               <div className="mt-7 flex justify-center lg:mt-9">
-                <Link href="#contact" className="group [perspective:1000px]">
-                  <span className="relative block h-[54px] w-[270px] [transform-style:preserve-3d] transition-transform duration-500 group-hover:[transform:rotateX(90deg)] sm:h-[58px] sm:w-[300px]">
-                    <span className="absolute inset-0 flex items-center justify-center gap-3 rounded-full border border-purple-800 bg-purple-800 px-7 text-[15px] font-semibold text-white [backface-visibility:hidden] shadow-[0_14px_32px_-14px_rgba(123,31,162,0.42)]">
-                      Request a Proposal Today
-                      <ArrowUpRight size={18} strokeWidth={2.4} />
-                    </span>
-                    <span className="absolute inset-0 flex items-center justify-center rounded-full border border-purple-800 bg-white px-7 text-[15px] font-semibold text-purple-800 [backface-visibility:hidden] [transform:rotateX(-90deg)_translateZ(29px)] sm:px-8 sm:text-[16px]">
-                      Book a Demo
-                    </span>
-                  </span>
-                </Link>
+                <FlipButton label="Request a Growth Proposal" flipLabel="Book a Demo" href="/#contact" width="w-[340px]"/>
               </div>
             </div>
           </div>

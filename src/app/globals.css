@@ -362,6 +362,7 @@ input::-webkit-inner-spin-button {
     --site-shadow: 0 14px 36px -20px rgba(25, 45, 25, 0.22);
     --site-bg-start: #ffffff;
     --site-bg-mid: #f5fbef;
+    --site-bg-accent:#f5f0ff;
     --site-bg-end: #ffffff;
     --site-glow-a: rgba(82, 244, 71, 0.2);
     --site-glow-b: rgba(255, 235, 59, 0.14);
