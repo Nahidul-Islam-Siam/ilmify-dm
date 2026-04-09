@@ -140,17 +140,17 @@ export default function AboutPartnerSection() {
       </div>
 
       <div className="relative z-10 -mt-16 pb-16 sm:-mt-24 sm:pb-20 lg:pb-24">
-        <div className="mx-auto w-full max-w-[var(--site-max-width)] px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-[var(--site-max-width)] ">
           <div
             ref={panelRef}
-            className="relative overflow-hidden rounded-[32px] border border-site-border bg-site-panel p-6 shadow-[var(--site-shadow)] sm:p-8 lg:p-10 xl:p-12"
+            className="relative overflow-hidden rounded-[32px] border border-site-border bg-site-panel p-6  "
           >
             <div className="pointer-events-none absolute inset-0">
               <div className="absolute -left-20 top-[-90px] h-[260px] w-[260px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.18)_0%,rgba(123,31,162,0)_72%)] blur-2xl animate-about-float-a" />
               <div className="absolute right-[-80px] top-[26%] h-[220px] w-[220px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.14)_0%,rgba(82,244,71,0)_72%)] blur-2xl animate-about-float-b" />
             </div>
 
-            <div className="relative z-10 grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-start lg:gap-12 xl:grid-cols-[470px_minmax(0,1fr)] xl:gap-16">
+            <div className="relative z-10 grid gap-8 lg:grid-cols-[420px_minmax(0,1fr)] lg:items-start lg:gap-12 xl:grid-cols-[470px_minmax(0,1fr)] xl:gap-10 ">
               <div className="relative">
                 <div className="relative overflow-hidden rounded-[24px] border border-black/10 bg-white">
                   <Image
@@ -164,7 +164,7 @@ export default function AboutPartnerSection() {
                 </div>
 
                 <div className="absolute -left-5 -top-5 hidden rounded-full border border-purple-800/25 bg-white/85 px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-purple-800 shadow-[var(--site-shadow)] md:inline-flex">
-                  Strategy + Execution
+                  STRATEGY + GROWTH
                 </div>
               </div>
 
@@ -173,14 +173,10 @@ export default function AboutPartnerSection() {
                   About
                 </p>
                 <h2 className="about-partner-heading mt-4 text-[2.2rem] font-semibold leading-[0.95] tracking-[-0.05em] text-black">
-                  Who We Are as a Design Partner
+                 Who We Are as a Growth Partner
                 </h2>
                 <p className="about-partner-copy mt-5 text-[16px] leading-8 text-black/72 sm:text-[17px]">
-                  ZeeFrames is a specialized UI UX design agency focused on
-                  crafting digital products that look exceptional, feel
-                  intuitive, and perform in real business environments. We
-                  partner with teams to turn ambition into reliable product
-                  outcomes.
+                  We are a results-focused digital marketing agency helping brands grow through strategy, creativity, and performance-driven execution. From social media management and paid campaigns to lead generation and optimization, we partner with businesses to turn marketing efforts into measurable growth.
                 </p>
 
                 <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 md:grid-cols-2 xl:grid-cols-3">

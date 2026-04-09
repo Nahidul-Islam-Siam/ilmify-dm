@@ -40,7 +40,9 @@ export default function AboutTextRevealSection() {
         onUpdate: (self) => {
           const progress = self.progress;
 
-          const heading = leftColumn.querySelector(".mission-heading") as HTMLElement | null;
+          const heading = leftColumn.querySelector(
+            ".mission-heading",
+          ) as HTMLElement | null;
           if (heading) {
             if (progress < 0.25) {
               heading.style.color = "rgba(17,17,17,0.45)";
@@ -50,7 +52,9 @@ export default function AboutTextRevealSection() {
             }
           }
 
-          const texts = leftColumn.querySelectorAll(".mission-text") as NodeListOf<HTMLElement>;
+          const texts = leftColumn.querySelectorAll(
+            ".mission-text",
+          ) as NodeListOf<HTMLElement>;
           texts.forEach((text) => {
             const opacity = Math.min(progress * 1.4, 1);
             text.style.color = `rgba(17,17,17,${0.38 + opacity * 0.45})`;
@@ -134,7 +138,10 @@ export default function AboutTextRevealSection() {
   ];
 
   return (
-    <section ref={sectionRef} className="bg-transparent py-20 md:py-24 lg:py-28">
+    <section
+      ref={sectionRef}
+      className="bg-transparent py-20 md:py-24 lg:py-28"
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
           <div ref={leftColumnRef} className="space-y-4">
@@ -142,12 +149,16 @@ export default function AboutTextRevealSection() {
               Our Mission
             </h2>
             <p className="mission-text text-sm leading-relaxed text-black/62 sm:text-base">
-              ZeeFrames strives to be a leading UI UX design agency known for innovative
-              solutions that deliver exceptional user experiences and drive business growth.
+              Our mission is to help brands grow through strategic digital
+              marketing that delivers measurable results. We create data-backed
+              campaigns designed to increase visibility, generate qualified
+              leads, and turn audience attention into lasting business
+              growth.growth.
             </p>
             <p className="mission-text text-sm leading-relaxed text-black/62 sm:text-base">
-              We blend creativity and user-centered design to craft intuitive, standout
-              products and partner with clients to achieve lasting impact.
+              We combine creativity, performance analytics, and market insight
+              to build scalable marketing systems that help businesses compete
+              smarter and grow faster in the digital space.
             </p>
           </div>
 
@@ -162,8 +173,12 @@ export default function AboutTextRevealSection() {
                 </div>
                 <div>
                   <div className="flex items-baseline gap-0">
-                    <span className="text-2xl font-bold text-black sm:text-3xl">{stat.value}</span>
-                    <span className="text-2xl font-bold text-purple-800 sm:text-3xl">{stat.suffix}</span>
+                    <span className="text-2xl font-bold text-black sm:text-3xl">
+                      {stat.value}
+                    </span>
+                    <span className="text-2xl font-bold text-purple-800 sm:text-3xl">
+                      {stat.suffix}
+                    </span>
                   </div>
                   <p className="stat-label text-xs text-black/58 transition-colors duration-300 group-hover:text-black/82 sm:text-sm">
                     {stat.label}

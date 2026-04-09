@@ -10,27 +10,27 @@ gsap.registerPlugin(ScrollTrigger);
 const valuesData = [
   {
     number: "01",
-    title: "Crafted, Not Copied",
+    title: "Strategy Built for Your Brand",
     description:
-      "No two problems are the same. Every product deserves a tailored solution, shaped around business goals and user context.",
+      "No two businesses grow the same way. Every marketing strategy we create is tailored to your goals, audience, and growth stage for maximum impact.",
   },
   {
     number: "02",
-    title: "Seamless Collaboration",
+    title: "Collaborative Campaign Execution",
     description:
-      "We keep communication clear and proactive. Our project managers stay closely aligned with your team across milestones.",
+      "We keep communication proactive and transparent. Our team works closely with you to ensure every campaign stays aligned with your brand vision and business objectives.",
   },
   {
     number: "03",
-    title: "Flexible By Design",
+    title: " Agile and Performance-Driven",
     description:
-      "As priorities evolve, we adapt quickly without losing quality. We build room for iteration into every phase.",
+      "Markets change fast, and so do we. We continuously test, refine, and optimize campaigns to improve results without losing momentum.",
   },
   {
     number: "04",
-    title: "Transparent Pricing",
+    title: "Transparent Reporting Always",
     description:
-      "Clear scope, clear billing, no hidden fees. You always know what you are paying for and why.",
+      "Clear metrics, honest reporting, no hidden surprises. You always know how your campaigns are performing and where your investment is going.",
   },
 ];
 
@@ -81,7 +81,10 @@ export default function OurValueSectionAlt() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-transparent py-20 md:py-28 lg:py-32">
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-transparent py-20 md:py-28 lg:py-32"
+    >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[15%] top-[18%] h-[240px] w-[240px] rounded-full bg-purple-800/10 blur-3xl" />
         <div className="absolute right-[10%] bottom-[15%] h-[280px] w-[280px] rounded-full bg-site-accent/10 blur-3xl" />
@@ -98,11 +101,13 @@ export default function OurValueSectionAlt() {
           </div>
 
           <h2 className="value-fade mb-6 text-4xl font-bold tracking-tight text-black sm:text-5xl md:text-6xl">
-            OUR VALUE
+            OUR CORE VALUES
           </h2>
           <p className="value-fade mx-auto max-w-3xl text-base leading-relaxed text-black/68 sm:text-lg md:text-xl">
-            Together, we build trust-first partnerships with clear execution. We turn strategy into
-            practical outcomes and keep the process honest, collaborative, and efficient.
+            We build trust through transparency, strategy, and measurable
+            results. Every campaign we create is rooted in clear communication,
+            smart execution, and a commitment to helping brands grow with
+            confidence.
           </p>
         </div>
 

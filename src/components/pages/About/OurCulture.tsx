@@ -9,11 +9,36 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const CULTURE_IMAGES = [
-  { src: "/assets/our-culture/about-member-1.png", alt: "Team member 1", name: "Sarah Johnson", role: "Lead UX Designer" },
-  { src: "/assets/our-culture/about-member-2.png", alt: "Team member 2", name: "Michael Chen", role: "UI Developer" },
-  { src: "/assets/our-culture/about-member-3.png", alt: "Team member 3", name: "Emma Rodriguez", role: "Brand Strategist" },
-  { src: "/assets/our-culture/about-member-4.png", alt: "Team member 4", name: "David Kim", role: "No-Code Expert" },
-  { src: "/assets/our-culture/about-member-5.png", alt: "Team member 5", name: "Lisa Thompson", role: "Project Manager" },
+  {
+    src: "/assets/our-culture/about-member-1.png",
+    alt: "Team member 1",
+    name: "Sarah Johnson",
+    role: "Lead UX Designer",
+  },
+  {
+    src: "/assets/our-culture/about-member-2.png",
+    alt: "Team member 2",
+    name: "Michael Chen",
+    role: "UI Developer",
+  },
+  {
+    src: "/assets/our-culture/about-member-3.png",
+    alt: "Team member 3",
+    name: "Emma Rodriguez",
+    role: "Brand Strategist",
+  },
+  {
+    src: "/assets/our-culture/about-member-4.png",
+    alt: "Team member 4",
+    name: "David Kim",
+    role: "No-Code Expert",
+  },
+  {
+    src: "/assets/our-culture/about-member-5.png",
+    alt: "Team member 5",
+    name: "Lisa Thompson",
+    role: "Project Manager",
+  },
 ] as const;
 
 const AUTO_PLAY_INTERVAL_MS = 4000;
@@ -26,7 +51,9 @@ export default function OurCultureSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
-  const animationTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const animationTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
   const isAnimatingRef = useRef(false);
   const nextSlideRef = useRef<() => void>(() => {});
 
@@ -45,8 +72,12 @@ export default function OurCultureSection() {
     }, SLIDE_ANIMATION_MS);
   };
 
-  const nextSlide = () => runSlideTransition((prev) => (prev + 1) % CULTURE_IMAGES.length);
-  const prevSlide = () => runSlideTransition((prev) => (prev - 1 + CULTURE_IMAGES.length) % CULTURE_IMAGES.length);
+  const nextSlide = () =>
+    runSlideTransition((prev) => (prev + 1) % CULTURE_IMAGES.length);
+  const prevSlide = () =>
+    runSlideTransition(
+      (prev) => (prev - 1 + CULTURE_IMAGES.length) % CULTURE_IMAGES.length,
+    );
   const goToSlide = (index: number) => runSlideTransition(() => index);
   const toggleAutoPlay = () => setIsAutoPlaying((prev) => !prev);
 
@@ -60,7 +91,10 @@ export default function OurCultureSection() {
       }
       return;
     }
-    autoPlayRef.current = setInterval(() => nextSlideRef.current(), AUTO_PLAY_INTERVAL_MS);
+    autoPlayRef.current = setInterval(
+      () => nextSlideRef.current(),
+      AUTO_PLAY_INTERVAL_MS,
+    );
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
     };
@@ -69,7 +103,8 @@ export default function OurCultureSection() {
   useEffect(() => {
     return () => {
       if (autoPlayRef.current) clearInterval(autoPlayRef.current);
-      if (animationTimeoutRef.current) clearTimeout(animationTimeoutRef.current);
+      if (animationTimeoutRef.current)
+        clearTimeout(animationTimeoutRef.current);
     };
   }, []);
 
@@ -117,7 +152,10 @@ export default function OurCultureSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-transparent py-20 md:py-24 lg:py-28">
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden bg-transparent py-20 md:py-24 lg:py-28"
+    >
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-10 top-20 h-72 w-72 rounded-full bg-purple-800/10 blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-site-accent/8 blur-3xl animate-pulse delay-1000" />
@@ -134,18 +172,18 @@ export default function OurCultureSection() {
                 OUR CULTURE
               </h2>
               <h3 className="mt-4 text-2xl font-bold leading-[1.2] text-black sm:text-3xl md:text-4xl lg:text-4xl">
-                How Our Team Blends
+                How Our Team Combines 
                 <br />
-                UI UX, Branding, And
+             Strategy,   Creativity, and
                 <br />
-                No-Code
+                Performance
               </h3>
             </div>
 
             <div className="rounded-2xl border border-black/10 bg-white/85 p-6 shadow-[var(--site-shadow)]">
               <Quote className="mb-4 h-8 w-8 text-purple-800" />
               <p className="text-base leading-relaxed text-black/72 sm:text-lg">
-                We Believe In Clear Communication, Proactive Problem Solving, And Full Transparency.
+            We believe in clear communication, data-backed decisions, proactive problem-solving, and full transparency in every campaign we manage.
               </p>
             </div>
 
@@ -159,7 +197,7 @@ export default function OurCultureSection() {
                 <div className="text-xs text-black/55">Support</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-purple-800">50+</div>
+                <div className="text-2xl font-bold text-purple-800">20+</div>
                 <div className="text-xs text-black/55">Experts</div>
               </div>
             </div>
@@ -172,11 +210,22 @@ export default function OurCultureSection() {
                   <div
                     key={image.src}
                     className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                      index === currentIndex ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
+                      index === currentIndex
+                        ? "opacity-100 translate-x-0"
+                        : "opacity-0 translate-x-full"
                     }`}
-                    style={{ transform: `translateX(${(index - currentIndex) * 100}%)` }}
+                    style={{
+                      transform: `translateX(${(index - currentIndex) * 100}%)`,
+                    }}
                   >
-                    <Image src={image.src} alt={image.alt} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" priority={index === 0} />
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      priority={index === 0}
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                       <p className="text-xl font-semibold">{image.name}</p>
@@ -212,7 +261,9 @@ export default function OurCultureSection() {
                     key={image.src}
                     onClick={() => goToSlide(index)}
                     className={`transition-all duration-300 ${
-                      index === currentIndex ? "h-1.5 w-8 rounded-full bg-purple-800" : "h-1.5 w-1.5 rounded-full bg-black/30 hover:bg-black/55"
+                      index === currentIndex
+                        ? "h-1.5 w-8 rounded-full bg-purple-800"
+                        : "h-1.5 w-1.5 rounded-full bg-black/30 hover:bg-black/55"
                     }`}
                   />
                 ))}
@@ -225,10 +276,17 @@ export default function OurCultureSection() {
                   key={image.src}
                   onClick={() => goToSlide(index)}
                   className={`relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-lg transition-all duration-300 ${
-                    index === currentIndex ? "scale-105 ring-2 ring-purple-800" : "opacity-60 hover:opacity-100"
+                    index === currentIndex
+                      ? "scale-105 ring-2 ring-purple-800"
+                      : "opacity-60 hover:opacity-100"
                   }`}
                 >
-                  <Image src={image.src} alt={`Thumbnail ${index + 1}`} fill className="object-cover" />
+                  <Image
+                    src={image.src}
+                    alt={`Thumbnail ${index + 1}`}
+                    fill
+                    className="object-cover"
+                  />
                 </button>
               ))}
             </div>
