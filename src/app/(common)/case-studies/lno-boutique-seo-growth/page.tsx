@@ -14,24 +14,28 @@ const seoScreenshots = [
 
 export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
   return (
-    <main className="min-h-screen bg-white px-4 py-7 sm:px-6 lg:px-8 lg:py-9">
-      <div className="mx-auto w-full max-w-5xl">
+    <main className="min-h-screen bg-transparent px-4 py-6 text-[var(--site-text)] sm:px-6 lg:px-8 lg:py-8">
+      <div className="relative mx-auto w-full max-w-5xl">
+        <div className="pointer-events-none absolute left-[-120px] top-[20px] h-[240px] w-[240px] rounded-full bg-[radial-gradient(circle,rgba(156,140,255,0.14)_0%,rgba(156,140,255,0)_72%)] blur-3xl" />
+        <div className="pointer-events-none absolute right-[-90px] top-[220px] h-[240px] w-[240px] rounded-full bg-[radial-gradient(circle,rgba(209,183,255,0.12)_0%,rgba(209,183,255,0)_74%)] blur-3xl" />
+
+        <div className="relative">
         <Link
           href="/case-studies"
-          className="mb-6 inline-flex items-center gap-2 text-[13px] font-medium text-[#8678f2] transition hover:gap-3"
+          className="mb-5 inline-flex items-center gap-2 text-[13px] font-medium text-[#8678f2] transition hover:gap-3"
         >
           <ArrowLeft size={15} />
           Back to Case Studies
         </Link>
 
-        <header className="border-b border-[#eceef4] pb-7">
-          <div className="max-w-[930px]">
-            <span className="inline-flex rounded-full bg-[#f4f0ff] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8678f2]">
-              Local SEO
+        <header className="rounded-[26px] border border-white/70 bg-[#f4f0ff] px-5 py-6 shadow-[var(--site-shadow)] sm:px-7 sm:py-7 lg:px-9 lg:py-8">
+          <div className="max-w-[880px]">
+            <span className="inline-flex rounded-full bg-white/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#8678f2]">
+              SEO Case Study
             </span>
 
             <h1
-              className="mt-4 max-w-[920px] text-[1.9rem] font-semibold leading-[1.08] tracking-[-0.055em] sm:text-[2.3rem] lg:text-[2.75rem]"
+              className="mt-4 max-w-[840px] text-[1.72rem] font-semibold leading-[1.08] tracking-[-0.055em] sm:text-[2.1rem] lg:text-[2.45rem]"
               style={{ color: headingColor }}
             >
               LNO Boutique Grows Organic Clicks by 219% and Impressions by 351%
@@ -39,7 +43,7 @@ export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
             </h1>
 
             <p
-              className="mt-4 max-w-[760px] text-[0.97rem] leading-[1.85]"
+              className="mt-4 max-w-[700px] text-[0.95rem] leading-[1.8]"
               style={{ color: bodyColor }}
             >
               Through tailored SEO, website optimisation, Google Business
@@ -49,7 +53,7 @@ export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
               requests.
             </p>
 
-            <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[13px] text-[#7d869b]">
+            <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-[12.5px] text-[#7d869b]">
               <span>6 min read</span>
               <span className="h-1 w-1 rounded-full bg-[#ccd1de]" />
               <span>Feb 10, 2025</span>
@@ -58,7 +62,7 @@ export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
             </div>
           </div>
 
-          <div className="mt-6 grid gap-x-6 gap-y-3 border-y border-[#eceef4] py-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <HeaderFact label="Client" value="LNO Boutique" />
             <HeaderFact label="Service" value="Local SEO & GMB Optimisation" />
             <HeaderFact label="Timeline" value="Under 3 Months" />
@@ -68,7 +72,7 @@ export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
             />
           </div>
 
-          <div className="mt-5 overflow-hidden rounded-[8px] border border-[#eceef4] bg-[#fafbfe]">
+          <div className="mt-5 overflow-hidden rounded-[12px] border border-[#e7e2ff] bg-white">
             <div className="relative aspect-[16/9] w-full">
               <Image
                 src={seoScreenshots[0]}
@@ -82,7 +86,7 @@ export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
           </div>
         </header>
 
-        <article className="mx-auto mt-7 max-w-[860px] space-y-7">
+        <article className="mx-auto mt-7 max-w-[840px] space-y-6">
           <ArticleSection title="Project Details">
             <p className="text-[0.97rem] leading-7" style={{ color: bodyColor }}>
               LNO Boutique operated in a highly competitive local market with a
@@ -133,7 +137,7 @@ export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
               </ChallengeItem>
             </div>
 
-            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
               <ScreenshotCard
                 src={seoScreenshots[1]}
                 alt="LNO Boutique case study screenshot two"
@@ -184,7 +188,7 @@ export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
               engagement across the local channels that mattered most.
             </p>
 
-            <div className="mt-5 divide-y divide-[#eceff6] rounded-[12px] border border-[#e8ebf2] bg-white">
+            <div className="mt-4 divide-y divide-[#eceff6] rounded-[12px] border border-[#e8ebf2] bg-white">
               <ResultRow label="Organic Clicks" value="+219%" />
               <ResultRow label="Impressions" value="+351%" />
               <ResultRow label="GMB Clicks" value="+1,218.6%" />
@@ -193,7 +197,7 @@ export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
               <ResultRow label="Direction Requests" value="+349.5%" />
             </div>
 
-            <div className="mt-5 overflow-hidden rounded-[8px] border border-[#eceef4] bg-[#fafbfe]">
+            <div className="mt-4 overflow-hidden rounded-[8px] border border-[#eceef4] bg-[#fafbfe]">
               <div className="relative aspect-[16/10] w-full">
                 <Image
                   src={seoScreenshots[3]}
@@ -218,11 +222,8 @@ export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
           </ArticleSection>
         </article>
 
-        <section className="mx-auto mt-8 max-w-[860px] border-t border-[#eceef4] pt-6">
-          <h2
-            className="text-[1.1rem] font-semibold"
-            style={{ color: headingColor }}
-          >
+        <section className="mx-auto mt-7 max-w-[840px] rounded-[22px] border border-[#ece5ff] bg-[#faf6ff] px-6 py-6">
+          <h2 className="text-[1.08rem] font-semibold" style={{ color: headingColor }}>
             Want results like this for your business?
           </h2>
           <p className="mt-2 max-w-2xl text-[0.96rem] leading-7" style={{ color: bodyColor }}>
@@ -246,6 +247,7 @@ export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
             </Link>
           </div>
         </section>
+        </div>
       </div>
     </main>
   );
@@ -253,7 +255,7 @@ export default function LnoBoutiqueSeoGrowthCaseStudyPage() {
 
 function HeaderFact({ label, value }: { label: string; value: string }) {
   return (
-    <div>
+    <div className="rounded-[14px] border border-[#e8e0ff] bg-white/84 px-4 py-3 shadow-[0_14px_30px_-28px_rgba(11,59,133,0.18)]">
       <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#9aa1b4]">
         {label}
       </p>
@@ -272,11 +274,11 @@ function ArticleSection({
   children: React.ReactNode;
 }) {
   return (
-    <section className="border-t border-[#eceef4] pt-6 first:border-t-0 first:pt-0">
-      <h2 className="text-[1.18rem] font-semibold tracking-[-0.03em] text-[#0b3b85]">
+    <section className="border-t border-[#eceef4] pt-5 first:border-t-0 first:pt-0">
+      <h2 className="text-[1.12rem] font-semibold tracking-[-0.03em] text-[#0b3b85]">
         {title}
       </h2>
-      <div className="mt-3.5">{children}</div>
+      <div className="mt-3">{children}</div>
     </section>
   );
 }
@@ -298,7 +300,7 @@ function ProblemPoint({
       >
         {index}
       </span>
-      <p className="text-[0.97rem] leading-7 text-[#23324c]">{children}</p>
+      <p className="text-[0.95rem] leading-[1.8] text-[#23324c]">{children}</p>
     </li>
   );
 }
@@ -312,7 +314,7 @@ function ChallengeItem({
 }) {
   return (
     <div className="border-l pl-4" style={{ borderColor: `${accent}55` }}>
-      <p className="text-[0.97rem] leading-7 text-[#23324c]">{children}</p>
+      <p className="text-[0.95rem] leading-[1.8] text-[#23324c]">{children}</p>
     </div>
   );
 }
@@ -359,10 +361,10 @@ function ApproachStep({
           {index}
         </span>
         <div>
-          <h3 className="text-[1.05rem] font-semibold text-[#0b3b85]">
+          <h3 className="text-[1rem] font-semibold text-[#0b3b85]">
             {title}
           </h3>
-          <p className="mt-1.5 text-[0.97rem] leading-7 text-[#4f5f79]">
+          <p className="mt-1.5 text-[0.95rem] leading-[1.8] text-[#4f5f79]">
             {children}
           </p>
         </div>
