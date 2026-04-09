@@ -8,16 +8,25 @@ import OurTeamSection from "../components/pages/About/OurTeam";
 
 const page = () => {
   return (
-    <>
+    <div className="bg-white">
       <AboutBanner />
-      <AboutPartnerSection />
-      <AboutTextRevealSection />
-      <OurCultureSection />
-      <OurValueSectionAlt />
-      <OurTeamSection />
-    </>
+      <div className="bg-[#f7f8fb]">
+        <AboutPartnerSection />
+      </div>
+      <div className="bg-[#f3f5f8]">
+        <AboutTextRevealSection />
+      </div>
+      <div className="bg-[#f8fafc]">
+        <OurCultureSection />
+      </div>
+      <div className="bg-[#f5f4fa]">
+        <OurValueSectionAlt />
+      </div>
+      <div className="bg-[#f7faf7]">
+        <OurTeamSection />
+      </div>
+    </div>
   );
 };
 
 export default page;
-// asdfgasdf
