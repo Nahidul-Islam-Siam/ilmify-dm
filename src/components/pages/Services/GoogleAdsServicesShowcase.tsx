@@ -1,9 +1,9 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export type GoogleAdsShowcaseItem = {
   id: string;
@@ -30,9 +30,6 @@ export default function GoogleAdsServicesShowcase({
 }: GoogleAdsServicesShowcaseProps) {
   const itemIds = useMemo(() => items.map((item) => item.id), [items]);
   const [activeId, setActiveId] = useState(items[0]?.id ?? "");
-  const tabsRef = useRef<HTMLDivElement>(null);
-  const [canScrollLeft, setCanScrollLeft] = useState(false);
-  const [canScrollRight, setCanScrollRight] = useState(false);
 
   useEffect(() => {
     const syncFromHash = () => {
@@ -47,26 +44,6 @@ export default function GoogleAdsServicesShowcase({
 
     return () => window.removeEventListener("hashchange", syncFromHash);
   }, [itemIds]);
-
-  useEffect(() => {
-    const container = tabsRef.current;
-    if (!container) return;
-
-    const updateScrollState = () => {
-      const { scrollLeft, scrollWidth, clientWidth } = container;
-      setCanScrollLeft(scrollLeft > 4);
-      setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 4);
-    };
-
-    updateScrollState();
-    container.addEventListener("scroll", updateScrollState, { passive: true });
-    window.addEventListener("resize", updateScrollState);
-
-    return () => {
-      container.removeEventListener("scroll", updateScrollState);
-      window.removeEventListener("resize", updateScrollState);
-    };
-  }, [items.length]);
 
   const activeItem =
     items.find((item) => item.id === activeId) ?? items[0] ?? null;
@@ -83,13 +60,6 @@ export default function GoogleAdsServicesShowcase({
       behavior: "smooth",
       block: "nearest",
       inline: "center",
-    });
-  };
-
-  const scrollTabs = (direction: "left" | "right") => {
-    tabsRef.current?.scrollBy({
-      left: direction === "left" ? -260 : 260,
-      behavior: "smooth",
     });
   };
 
@@ -121,37 +91,9 @@ export default function GoogleAdsServicesShowcase({
           </div>
         </div>
 
-        <div className="relative mt-6">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-12 bg-gradient-to-r from-white via-white/92 to-transparent lg:block" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-12 bg-gradient-to-l from-white via-white/92 to-transparent lg:block" />
-
-          {canScrollLeft ? (
-            <button
-              type="button"
-              onClick={() => scrollTabs("left")}
-              className="absolute left-0 top-1/2 z-20 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-[#dfd8ff] bg-white/90 text-[#7c6df4] shadow-[0_14px_30px_-22px_rgba(11,59,133,0.28)] transition hover:bg-white lg:flex"
-              aria-label="Scroll services left"
-            >
-              <ChevronLeft size={16} />
-            </button>
-          ) : null}
-
-          {canScrollRight ? (
-            <button
-              type="button"
-              onClick={() => scrollTabs("right")}
-              className="absolute right-0 top-1/2 z-20 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-[#dfd8ff] bg-white/90 text-[#7c6df4] shadow-[0_14px_30px_-22px_rgba(11,59,133,0.28)] transition hover:bg-white lg:flex"
-              aria-label="Scroll services right"
-            >
-              <ChevronRight size={16} />
-            </button>
-          ) : null}
-
-          <div
-            ref={tabsRef}
-            className="google-ads-scroll-row overflow-x-auto pb-2 scroll-smooth"
-          >
-            <div className="flex w-max min-w-full justify-center gap-2 md:gap-3 lg:px-11">
+        <div className="mt-6 lg:mt-8 lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start lg:gap-8">
+          <div className="google-ads-scroll-row overflow-x-auto pb-2 scroll-smooth lg:hidden">
+            <div className="flex w-max min-w-full justify-center gap-2 md:gap-3">
               {items.map((item) => {
                 const isActive = item.id === activeId;
 
@@ -176,49 +118,78 @@ export default function GoogleAdsServicesShowcase({
               })}
             </div>
           </div>
-        </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_430px] lg:items-center lg:gap-7 xl:grid-cols-[1fr_455px]">
-          <div className="max-w-[600px]">
-            <h3 className="text-[1.75rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[2.15rem]">
-              {activeItem.title}
-            </h3>
-            <p className="mt-4 text-[14px] leading-[1.7] text-[#44546f] sm:text-[15px]">
-              {activeItem.description}
-            </p>
+          <div className="hidden lg:block">
+            <div className="space-y-2">
+              {items.map((item) => {
+                const isActive = item.id === activeId;
+
+                return (
+                  <button
+                    key={item.id}
+                    id={item.id}
+                    type="button"
+                    onClick={() => handleSelect(item.id)}
+                    className={cn(
+                      "flex w-full items-center justify-between rounded-[12px] border px-4 py-3 text-left text-[13px] font-medium transition-all",
+                      isActive
+                        ? "border-transparent text-white shadow-[0_18px_36px_-24px_rgba(0,0,0,0.35)]"
+                        : "border-[#ebe4ff] bg-[#fbf8ff] text-[#0b3b85] hover:bg-[#f3eeff]",
+                    )}
+                    style={isActive ? { background: accent } : undefined}
+                  >
+                    <span className="pr-3">{item.title}</span>
+                    <ArrowRight size={16} className="shrink-0" />
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[24px] bg-[#0e1a2b] shadow-[0_24px_44px_-24px_rgba(11,30,62,0.45)]">
-            <div className="relative aspect-[1.26/1]">
-              <Image
-                src={activeItem.imageSrc}
-                alt={activeItem.imageAlt ?? activeItem.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 540px"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,34,0.12)_0%,rgba(7,18,34,0.18)_38%,rgba(7,18,34,0.52)_100%)]" />
-
-              <div className="absolute inset-x-0 top-0 p-5 text-center text-white sm:p-6">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.08em]">
+          <div className="mt-6 lg:mt-0">
+            <div className="grid gap-6 lg:grid-cols-[1fr_430px] lg:items-center lg:gap-7 xl:grid-cols-[1fr_455px]">
+              <div className="max-w-[600px]">
+                <h3 className="text-[1.75rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[2.15rem]">
                   {activeItem.title}
+                </h3>
+                <p className="mt-4 text-[14px] leading-[1.7] text-[#44546f] sm:text-[15px]">
+                  {activeItem.description}
                 </p>
-                {activeItem.imageEyebrow ? (
-                  <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-white/75">
-                    {activeItem.imageEyebrow}
-                  </p>
-                ) : null}
               </div>
 
-              {activeItem.imageCaption ? (
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-                  <div className="rounded-[16px] border border-white/15 bg-black/20 px-4 py-3 backdrop-blur-sm">
-                    <p className="text-[11px] leading-5 text-white/92">
-                      {activeItem.imageCaption}
+              <div className="relative overflow-hidden rounded-[24px] bg-[#0e1a2b] shadow-[0_24px_44px_-24px_rgba(11,30,62,0.45)]">
+                <div className="relative aspect-[1.26/1]">
+                  <Image
+                    src={activeItem.imageSrc}
+                    alt={activeItem.imageAlt ?? activeItem.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 540px"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,34,0.12)_0%,rgba(7,18,34,0.18)_38%,rgba(7,18,34,0.52)_100%)]" />
+
+                  <div className="absolute inset-x-0 top-0 p-5 text-center text-white sm:p-6">
+                    <p className="text-[13px] font-semibold uppercase tracking-[0.08em]">
+                      {activeItem.title}
                     </p>
+                    {activeItem.imageEyebrow ? (
+                      <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-white/75">
+                        {activeItem.imageEyebrow}
+                      </p>
+                    ) : null}
                   </div>
+
+                  {activeItem.imageCaption ? (
+                    <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                      <div className="rounded-[16px] border border-white/15 bg-black/20 px-4 py-3 backdrop-blur-sm">
+                        <p className="text-[11px] leading-5 text-white/92">
+                          {activeItem.imageCaption}
+                        </p>
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
+              </div>
             </div>
           </div>
         </div>
