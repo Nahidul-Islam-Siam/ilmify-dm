@@ -19,114 +19,84 @@ export const socialMediaAdsServiceItems = [
     title: "Meta Ads",
     description:
       "Our Meta Ads service focuses on campaign structure, creative testing, audience layering, and stronger funnel alignment across Facebook and Instagram. We build around what the brand actually needs, whether that is lead generation, remarketing, offer validation, or scalable purchase growth.",
-    imageSrc: "/assets/hero/Meta.png",
-    imageEyebrow: "Scale across Facebook and Instagram",
+    imageSrc: "/assets/social-media-ads/meta-preview.png",
+    imageEyebrow: "Creative across Facebook and Instagram placements",
     imageCaption:
-      "Meta performs best when creative variety, audience testing, and conversion paths are managed together.",
+      "Meta performs best when creative variety, placement previews, and conversion paths are reviewed together.",
+    highlights: ["Creative testing", "Audience layering", "Offer clarity"],
   },
   {
     id: "tiktok-ads",
     title: "TikTok Ads",
     description:
       "TikTok Ads need fast testing, stronger hooks, and platform-native creative to compete in-feed. We shape the campaign around opening seconds, message rhythm, creator-style execution, and offer clarity so the traffic feels more intentional and less random.",
-    imageSrc: "/assets/idea/CampaignLaunch.png",
-    imageEyebrow: "Build native-feeling creative",
+    imageSrc: "/assets/social-media-ads/tiktok-preview.png",
+    imageEyebrow: "Build native-feeling short-form creative",
     imageCaption:
       "TikTok grows faster when hooks, short-form pacing, and offer positioning are tested consistently.",
+    highlights: [
+      "Hook testing",
+      "Creator-style execution",
+      "Video-first demand capture",
+    ],
   },
   {
-    id: "linkedin-ads",
-    title: "LinkedIn Ads",
+    id: "audience-scaling",
+    title: "Audience Scaling",
     description:
-      "LinkedIn Ads work best when the audience, message, and offer are built for business intent. We use them for B2B targeting, executive reach, form-based lead generation, and higher-value campaigns where quality matters more than volume alone.",
-    imageSrc: "/assets/idea/Strategy.jpg",
-    imageEyebrow: "Reach decision-makers with more intent",
+      "Audience scaling only works when prospecting, warm traffic, and returning users are segmented clearly. We keep the social account easier to scale by tightening overlap, reading audience quality, and reshaping the funnel before more spend gets added.",
+    imageSrc: "/assets/social-media-ads/meta-audience.png",
+    imageEyebrow: "See which audience groups are carrying the account",
     imageCaption:
-      "LinkedIn is stronger when targeting, offer framing, and lead capture are built around business relevance.",
+      "Audience breakdowns help us see where spend is productive, where fatigue is building, and where targeting needs to tighten.",
+    highlights: [
+      "Prospecting vs remarketing",
+      "Audience overlap checks",
+      "Lead-quality filters",
+    ],
   },
   {
-    id: "pinterest-ads",
-    title: "Pinterest Ads",
+    id: "performance-reporting",
+    title: "Performance Reporting",
     description:
-      "Pinterest Ads support discovery-driven growth where users are already collecting ideas and planning purchases. We use them to improve brand visibility, product inspiration, and evergreen click-through traffic with creative that fits the platform’s visual search behavior.",
-    imageSrc: "/assets/idea/Discovery.jpg",
-    imageEyebrow: "Capture discovery-driven demand",
+      "Paid social reporting should make decisions easier, not noisier. We surface what is happening inside the account clearly across spend, reach, cost per result, and the creative or audiences that are moving the account forward.",
+    imageSrc: "/assets/social-media-ads/meta-performance-overview.png",
+    imageEyebrow: "Keep reporting tied to practical decisions",
     imageCaption:
-      "Pinterest ads work better when visuals, search behavior, and shopping intent are planned together.",
+      "We keep visibility on spend, reach, and account movement so budget decisions do not happen in the dark.",
+    highlights: ["ROAS visibility", "Cost per result", "Creative-to-funnel view"],
   },
   {
     id: "retargeting-ads",
     title: "Retargeting Ads",
     description:
       "Retargeting brings warm audiences back with better message timing and clearer next steps. We build retargeting flows around visit depth, product interest, cart behavior, and previous engagement so follow-up ads feel relevant instead of repetitive.",
-    imageSrc: "/assets/idea/Optimization.png",
-    imageEyebrow: "Re-engage warm traffic with intent",
+    imageSrc: "/assets/social-media-ads/meta-roas.png",
+    imageEyebrow: "Re-engage warm traffic with stronger intent",
     imageCaption:
       "Retargeting performs better when audience windows, message sequencing, and offer timing reflect user behavior.",
+    highlights: [
+      "Window-based sequencing",
+      "Offer timing",
+      "Purchase-path support",
+    ],
   },
   {
     id: "creative-testing",
     title: "Creative Testing",
     description:
       "Creative usually decides whether paid social scales or stalls. We test angles, hooks, formats, offers, and visual direction continuously so the account keeps learning. That gives the campaigns fresher inputs and helps winning messages stay visible for longer.",
-    imageSrc: "/assets/idea/AssetsSetup.jpg",
+    imageSrc: "/assets/social-media-ads/tiktok-creative-report.png",
     imageEyebrow: "Find stronger angles faster",
     imageCaption:
       "Creative testing helps paid social improve when hooks, formats, and offers are reviewed with discipline.",
+    highlights: [
+      "Creative fatigue tracking",
+      "Hook iteration",
+      "Format and message rotation",
+    ],
   },
 ];
-
-export const socialMediaAdsGrowthSection = {
-  title: "388% Paid Social Revenue Growth",
-  paragraphs: [
-    "We helped a growth-focused brand increase paid social revenue by 388% through a coordinated social ads system built around creative iteration, funnel-specific campaigns, stronger remarketing, and clearer conversion reporting.",
-    "By improving audience segmentation, creative refresh cycles, landing page fit, and retargeting structure in one system, the campaigns reduced waste while increasing better-quality leads and more reliable purchase activity.",
-  ],
-  filters: [
-    "Platform: Paid Social",
-    "Date: Jan 10, 2023-Oct 31, 2023",
-    "Revenue",
-  ],
-  metrics: [
-    { label: "Purchases", value: "7.4K", tone: "blue" },
-    { label: "Revenue", value: "$198K", tone: "violet" },
-    { label: "Average CPA", value: "$14.8", tone: "neutral" },
-    { label: "ROAS", value: "5.9x", tone: "neutral" },
-  ],
-  clicksTrend: [
-    13, 14, 14, 16, 17, 19, 21, 23, 24, 26, 29, 31, 34, 37, 39, 43, 47, 51,
-    56, 61, 65, 71, 77, 83,
-  ],
-  impressionsTrend: [
-    11, 12, 13, 14, 16, 18, 19, 22, 24, 26, 29, 33, 36, 40, 44, 48, 53, 58,
-    63, 68, 73, 79, 85, 92,
-  ],
-};
-
-export const socialMediaAdsUniqueStrengthSection = {
-  title: "Our Unique Strength in Social Media Ads Services",
-  paragraphs: [
-    "In paid social, ILMIFY focuses on the parts that actually create momentum: creative quality, audience structure, funnel sequencing, and feedback loops from campaign data. We do not treat paid social like boosted posts with a budget behind them.",
-    "Our strength is the way we combine performance thinking with creative testing. That means better visibility into what is truly driving clicks, leads, and purchases, while keeping the campaigns easier to refine as the account grows.",
-  ],
-  images: [
-    {
-      src: "/assets/our-culture/about-member-2.png",
-      alt: "Paid social strategy session",
-      objectPosition: "center 35%",
-    },
-    {
-      src: "/assets/our-culture/about-member-5.png",
-      alt: "Creative review inside the office",
-      objectPosition: "center center",
-    },
-    {
-      src: "/assets/our-culture/about-member-1.png",
-      alt: "Team planning campaign execution",
-      objectPosition: "center center",
-    },
-  ],
-};
 
 export const socialMediaAdsExpectations = [
   {
@@ -188,6 +158,7 @@ export const socialMediaAdsTestimonials = [
     role: "Marketing Lead",
     company: "Studio Rove",
     companyMark: "SR",
+    result: "4.8x ROAS",
   },
   {
     quote:
@@ -196,6 +167,7 @@ export const socialMediaAdsTestimonials = [
     role: "Growth Executive",
     company: "Bloom Lane",
     companyMark: "BL",
+    result: "+174% Reach",
   },
   {
     quote:
@@ -204,6 +176,7 @@ export const socialMediaAdsTestimonials = [
     role: "Ecommerce Manager",
     company: "Harbor Wear",
     companyMark: "HW",
+    result: "-27% CPA",
   },
 ];
 
@@ -254,3 +227,4 @@ export const socialMediaAdsFaqs = [
       "Because we treat paid social as a creative-plus-performance system. We combine audience strategy, testing discipline, funnel thinking, and practical reporting so the campaigns are easier to trust and improve.",
   },
 ];
+

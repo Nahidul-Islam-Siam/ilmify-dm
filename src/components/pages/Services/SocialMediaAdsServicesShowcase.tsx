@@ -13,6 +13,7 @@ export type SocialMediaAdsShowcaseItem = {
   imageAlt?: string;
   imageEyebrow?: string;
   imageCaption?: string;
+  highlights?: string[];
 };
 
 type SocialMediaAdsServicesShowcaseProps = {
@@ -121,104 +122,144 @@ export default function SocialMediaAdsServicesShowcase({
           </div>
         </div>
 
-        <div className="relative mt-6">
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-12 bg-gradient-to-r from-white via-white/92 to-transparent lg:block" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-12 bg-gradient-to-l from-white via-white/92 to-transparent lg:block" />
+        <div className="mt-6 grid gap-6 lg:grid-cols-[220px_1fr] lg:items-start">
+          <div className="hidden flex-col gap-2 lg:flex">
+            {items.map((item) => {
+              const isActive = item.id === activeId;
 
-          {canScrollLeft ? (
-            <button
-              type="button"
-              onClick={() => scrollTabs("left")}
-              className="absolute left-0 top-1/2 z-20 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-[#dfd8ff] bg-white/90 text-[#7c6df4] shadow-[0_14px_30px_-22px_rgba(11,59,133,0.28)] transition hover:bg-white lg:flex"
-              aria-label="Scroll services left"
-            >
-              <ChevronLeft size={16} />
-            </button>
-          ) : null}
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => handleSelect(item.id)}
+                  className={cn(
+                    "flex w-full items-center justify-between gap-2 rounded-[10px] border px-3 py-2 text-left text-[13px] font-semibold transition-all",
+                    isActive
+                      ? "border-transparent text-white shadow-[0_18px_36px_-24px_rgba(0,0,0,0.35)]"
+                      : "border-transparent bg-[#fbf8ff] text-[#0b3b85] hover:bg-[#f3eeff]",
+                  )}
+                  style={isActive ? { background: accent } : undefined}
+                >
+                  <span>{item.title}</span>
+                  <ArrowRight size={16} />
+                </button>
+              );
+            })}
+          </div>
 
-          {canScrollRight ? (
-            <button
-              type="button"
-              onClick={() => scrollTabs("right")}
-              className="absolute right-0 top-1/2 z-20 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-[#dfd8ff] bg-white/90 text-[#7c6df4] shadow-[0_14px_30px_-22px_rgba(11,59,133,0.28)] transition hover:bg-white lg:flex"
-              aria-label="Scroll services right"
-            >
-              <ChevronRight size={16} />
-            </button>
-          ) : null}
+          <div>
+            <div className="relative lg:hidden">
+              <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-white via-white/92 to-transparent" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-white via-white/92 to-transparent" />
 
-          <div
-            ref={tabsRef}
-            className="social-media-ads-scroll-row overflow-x-auto pb-2 scroll-smooth"
-          >
-            <div className="flex w-max min-w-full justify-center gap-2 md:gap-3 lg:px-11">
-              {items.map((item) => {
-                const isActive = item.id === activeId;
+              {canScrollLeft ? (
+                <button
+                  type="button"
+                  onClick={() => scrollTabs("left")}
+                  className="absolute left-0 top-1/2 z-20 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-[#dfd8ff] bg-white/90 text-[#7c6df4] shadow-[0_14px_30px_-22px_rgba(11,59,133,0.28)] transition hover:bg-white"
+                  aria-label="Scroll services left"
+                >
+                  <ChevronLeft size={16} />
+                </button>
+              ) : null}
 
-                return (
-                  <button
-                    key={item.id}
-                    id={item.id}
-                    type="button"
-                    onClick={() => handleSelect(item.id)}
-                    className={cn(
-                      "scroll-mt-28 inline-flex items-center gap-2 rounded-[8px] border px-3 py-2 text-[12px] font-medium transition-all md:text-[13px]",
-                      isActive
-                        ? "border-transparent text-white shadow-[0_18px_36px_-24px_rgba(0,0,0,0.35)]"
-                        : "border-transparent bg-[#fbf8ff] text-[#0b3b85] hover:bg-[#f3eeff]",
-                    )}
-                    style={isActive ? { background: accent } : undefined}
-                  >
-                    <span>{item.title}</span>
-                    <ArrowRight size={16} />
-                  </button>
-                );
-              })}
+              {canScrollRight ? (
+                <button
+                  type="button"
+                  onClick={() => scrollTabs("right")}
+                  className="absolute right-0 top-1/2 z-20 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full border border-[#dfd8ff] bg-white/90 text-[#7c6df4] shadow-[0_14px_30px_-22px_rgba(11,59,133,0.28)] transition hover:bg-white"
+                  aria-label="Scroll services right"
+                >
+                  <ChevronRight size={16} />
+                </button>
+              ) : null}
+
+              <div
+                ref={tabsRef}
+                className="social-media-ads-scroll-row overflow-x-auto pb-2 scroll-smooth"
+              >
+                <div className="flex w-max min-w-full justify-center gap-2 md:gap-3 lg:px-11">
+                  {items.map((item) => {
+                    const isActive = item.id === activeId;
+
+                    return (
+                      <button
+                        key={item.id}
+                        id={item.id}
+                        type="button"
+                        onClick={() => handleSelect(item.id)}
+                        className={cn(
+                          "scroll-mt-28 inline-flex items-center gap-2 rounded-[8px] border px-3 py-2 text-[12px] font-medium transition-all md:text-[13px]",
+                          isActive
+                            ? "border-transparent text-white shadow-[0_18px_36px_-24px_rgba(0,0,0,0.35)]"
+                            : "border-transparent bg-[#fbf8ff] text-[#0b3b85] hover:bg-[#f3eeff]",
+                        )}
+                        style={isActive ? { background: accent } : undefined}
+                      >
+                        <span>{item.title}</span>
+                        <ArrowRight size={16} />
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <div className="mt-8 grid gap-6 lg:grid-cols-[1fr_430px] lg:items-center lg:gap-7 xl:grid-cols-[1fr_455px]">
-          <div className="max-w-[600px]">
-            <h3 className="text-[1.75rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[2.15rem]">
-              {activeItem.title}
-            </h3>
-            <p className="mt-4 text-[14px] leading-[1.7] text-[#44546f] sm:text-[15px]">
-              {activeItem.description}
-            </p>
-          </div>
-
-          <div className="relative overflow-hidden rounded-[24px] bg-[#0e1a2b] shadow-[0_24px_44px_-24px_rgba(11,30,62,0.45)]">
-            <div className="relative aspect-[1.26/1]">
-              <Image
-                src={activeItem.imageSrc}
-                alt={activeItem.imageAlt ?? activeItem.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 540px"
-              />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,34,0.12)_0%,rgba(7,18,34,0.18)_38%,rgba(7,18,34,0.52)_100%)]" />
-
-              <div className="absolute inset-x-0 top-0 p-5 text-center text-white sm:p-6">
-                <p className="text-[13px] font-semibold uppercase tracking-[0.08em]">
+            <div className="mt-6 grid gap-6 lg:mt-0 lg:grid-cols-[1fr_430px] lg:items-center lg:gap-7 xl:grid-cols-[1fr_455px]">
+              <div className="max-w-[600px]">
+                <h3 className="text-[1.75rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[2.15rem]">
                   {activeItem.title}
+                </h3>
+                <p className="mt-4 text-[14px] leading-[1.7] text-[#44546f] sm:text-[15px]">
+                  {activeItem.description}
                 </p>
-                {activeItem.imageEyebrow ? (
-                  <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-white/75">
-                    {activeItem.imageEyebrow}
-                  </p>
+                {activeItem.highlights ? (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {activeItem.highlights.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-[#e6ddff] bg-[#f5f1ff] px-3 py-1 text-[11px] font-semibold text-[#0b3b85]"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 ) : null}
               </div>
 
-              {activeItem.imageCaption ? (
-                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
-                  <div className="rounded-[16px] border border-white/15 bg-black/20 px-4 py-3 backdrop-blur-sm">
-                    <p className="text-[11px] leading-5 text-white/92">
-                      {activeItem.imageCaption}
+              <div className="relative overflow-hidden rounded-[24px] bg-[#0e1a2b] shadow-[0_24px_44px_-24px_rgba(11,30,62,0.45)]">
+                <div className="relative aspect-[1.26/1]">
+                  <Image
+                    src={activeItem.imageSrc}
+                    alt={activeItem.imageAlt ?? activeItem.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 540px"
+                  />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,18,34,0.12)_0%,rgba(7,18,34,0.18)_38%,rgba(7,18,34,0.52)_100%)]" />
+
+                  <div className="absolute inset-x-0 top-0 p-5 text-center text-white sm:p-6">
+                    <p className="text-[13px] font-semibold uppercase tracking-[0.08em]">
+                      {activeItem.title}
                     </p>
+                    {activeItem.imageEyebrow ? (
+                      <p className="mt-1 text-[9px] uppercase tracking-[0.18em] text-white/75">
+                        {activeItem.imageEyebrow}
+                      </p>
+                    ) : null}
                   </div>
+
+                  {activeItem.imageCaption ? (
+                    <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+                      <div className="rounded-[16px] border border-white/15 bg-black/20 px-4 py-3 backdrop-blur-sm">
+                        <p className="text-[11px] leading-5 text-white/92">
+                          {activeItem.imageCaption}
+                        </p>
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
-              ) : null}
+              </div>
             </div>
           </div>
         </div>

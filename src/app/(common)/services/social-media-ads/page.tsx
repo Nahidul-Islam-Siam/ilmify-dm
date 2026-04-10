@@ -16,11 +16,9 @@ import {
   socialMediaAdsComparisonPoints,
   socialMediaAdsExpectations,
   socialMediaAdsFaqs,
-  socialMediaAdsGrowthSection,
   socialMediaAdsMetrics,
   socialMediaAdsServiceItems,
   socialMediaAdsTestimonials,
-  socialMediaAdsUniqueStrengthSection,
 } from "./social-media-ads-page-data";
 
 export default function SocialMediaAdsPage() {
@@ -30,28 +28,6 @@ export default function SocialMediaAdsPage() {
     socialMediaAdsMetrics[2],
     socialMediaAdsMetrics[1],
   ];
-
-  const buildChartPath = (values: number[]) => {
-    const width = 520;
-    const height = 190;
-    const min = Math.min(...values);
-    const max = Math.max(...values);
-
-    return values
-      .map((value, index) => {
-        const x = (index / (values.length - 1)) * width;
-        const ratio = max === min ? 0.5 : (value - min) / (max - min);
-        const y = height - ratio * (height - 20) - 10;
-
-        return `${x},${y}`;
-      })
-      .join(" ");
-  };
-
-  const purchasesPath = buildChartPath(socialMediaAdsGrowthSection.clicksTrend);
-  const revenuePath = buildChartPath(
-    socialMediaAdsGrowthSection.impressionsTrend,
-  );
 
   const renderReviewBrand = (mark: string, company: string, index: number) => {
     const tones = [
@@ -132,42 +108,60 @@ export default function SocialMediaAdsPage() {
                   </div>
                 </div>
 
-                <div className="relative flex flex-wrap items-center justify-center gap-4 py-1 sm:min-h-[308px] lg:block">
-                  {heroMetrics.map((metric, index) => {
-                    const positions = [
-                      "sm:absolute sm:left-[98px] sm:top-[2px]",
-                      "sm:absolute sm:left-[66px] sm:top-[164px]",
-                      "sm:absolute sm:right-[10px] sm:top-[108px]",
-                    ];
-
-                    const circleStyles = [
-                      "bg-[#efeaff]",
-                      "bg-[#e6f2ff]",
-                      "bg-[#fff1f2]",
-                    ];
-
-                    const labelSizes = [
-                      "sm:max-w-[152px] sm:text-[11px] sm:leading-[1.45]",
-                      "sm:max-w-[118px] sm:text-[12px] sm:leading-[1.45]",
-                      "sm:max-w-[140px] sm:text-[12px] sm:leading-[1.45]",
-                    ];
-
-                    return (
-                      <article
-                        key={metric.label}
-                        className={`flex h-[126px] w-[126px] shrink-0 flex-col items-center justify-center rounded-full border-[6px] border-white px-3 text-center shadow-[0_16px_40px_-28px_rgba(11,59,133,0.35)] sm:h-[156px] sm:w-[156px] ${positions[index]} ${circleStyles[index]}`}
-                      >
-                        <p className="text-[1.85rem] font-semibold tracking-[-0.08em] text-[#0b3b85] sm:text-[2.1rem]">
-                          {metric.value}
-                        </p>
-                        <p
-                          className={`mt-1.5 max-w-[100px] text-[10px] leading-5 text-[#0b3b85] ${labelSizes[index]}`}
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                  <div className="rounded-[22px] border border-white/70 bg-white/80 p-3 shadow-[0_24px_54px_-36px_rgba(11,59,133,0.35)] backdrop-blur-sm">
+                    <div className="relative aspect-[1.62/1] overflow-hidden rounded-[16px]">
+                      <Image
+                        src="/assets/social-media-ads/tiktok-preview.png"
+                        alt="TikTok campaign preview"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 420px"
+                      />
+                    </div>
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {heroMetrics.map((metric) => (
+                        <span
+                          key={metric.label}
+                          className="rounded-full bg-[#f1edff] px-3 py-1 text-[11px] font-semibold text-[#0b3b85]"
                         >
-                          {metric.label}
-                        </p>
-                      </article>
-                    );
-                  })}
+                          {metric.value} {metric.label}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-2">
+                    <div className="rounded-[18px] border border-white/80 bg-white/75 p-2 shadow-[0_18px_36px_-30px_rgba(11,59,133,0.26)]">
+                      <div className="relative aspect-[1.6/1] overflow-hidden rounded-[12px]">
+                        <Image
+                          src="/assets/social-media-ads/meta-preview.png"
+                          alt="Meta placement preview"
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 220px"
+                        />
+                      </div>
+                      <p className="mt-2 text-[11px] font-medium text-[#0b3b85]">
+                        Meta placement preview
+                      </p>
+                    </div>
+
+                    <div className="rounded-[18px] border border-white/80 bg-white/75 p-2 shadow-[0_18px_36px_-30px_rgba(11,59,133,0.26)]">
+                      <div className="relative aspect-[1.6/1] overflow-hidden rounded-[12px]">
+                        <Image
+                          src="/assets/social-media-ads/meta-roas.png"
+                          alt="ROAS performance snapshot"
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 1024px) 100vw, 220px"
+                        />
+                      </div>
+                      <p className="mt-2 text-[11px] font-medium text-[#0b3b85]">
+                        ROAS performance snapshot
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -182,112 +176,79 @@ export default function SocialMediaAdsPage() {
         />
 
         <section className="px-4 pb-10 pt-2 sm:px-6 lg:px-8 lg:pb-12 lg:pt-2">
-          <div className="mx-auto grid w-full max-w-[var(--site-max-width)] gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(390px,510px)] lg:items-center xl:gap-12">
+          <div className="mx-auto grid w-full max-w-[var(--site-max-width)] gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(360px,520px)] lg:items-center xl:gap-12">
             <div className="max-w-[600px]">
               <h2 className="text-[1.85rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[2.4rem]">
-                {socialMediaAdsGrowthSection.title}
+                388% Paid Social Revenue Growth
               </h2>
-              <div className="mt-5 space-y-5 text-[14px] leading-[1.78] text-black/72 sm:text-[15px]">
-                {socialMediaAdsGrowthSection.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
+              <div className="mt-5 space-y-4 text-[14px] leading-[1.78] text-black/72 sm:text-[15px]">
+                <p>
+                  We helped a growth-focused brand increase paid social revenue
+                  by 388% through a coordinated system built around creative
+                  iteration, funnel-specific campaigns, stronger remarketing,
+                  and clearer conversion reporting.
+                </p>
+                <p>
+                  By improving audience segmentation, creative refresh cycles,
+                  landing page fit, and retargeting structure in one system, the
+                  campaigns reduced waste while increasing better-quality leads
+                  and more reliable purchase activity.
+                </p>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3 text-[12px] font-semibold text-[#0b3b85]">
+                {[
+                  "Reach +174%",
+                  "ROAS 5.9x",
+                  "CPA -28%",
+                  "Creative refresh: weekly",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-[#e4dfff] bg-[#f5f1ff] px-3 py-1.5"
+                  >
+                    {item}
+                  </span>
                 ))}
               </div>
             </div>
 
-            <div className="rounded-[24px] border border-[#e4ebfb] bg-white p-3.5 shadow-[0_28px_64px_-40px_rgba(36,91,223,0.32)] sm:p-4">
+            <div className="rounded-[24px] border border-[#e7e2ff] bg-white p-3 shadow-[0_28px_64px_-40px_rgba(36,91,223,0.28)] sm:p-4">
               <div className="flex items-center justify-between gap-4 text-[11px] font-semibold text-black/46">
-                <p>Performance on Paid Social</p>
-                <p className="uppercase tracking-[0.12em]">Export</p>
+                <p>Meta performance overview</p>
+                <p className="uppercase tracking-[0.12em]">March</p>
               </div>
 
-              <div className="mt-4 flex flex-wrap gap-2 text-[10px] font-medium text-black/56">
-                {socialMediaAdsGrowthSection.filters.map((filter) => (
-                  <span
-                    key={filter}
-                    className="rounded-full border border-[#e6e0ff] bg-[#fbf9ff] px-3 py-1.5"
-                  >
-                    {filter}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-5 grid gap-2 sm:grid-cols-4">
-                {socialMediaAdsGrowthSection.metrics.map((metric) => {
-                  const toneClasses =
-                    metric.tone === "blue"
-                      ? "bg-[#8ca8ff] text-white"
-                      : metric.tone === "violet"
-                        ? "bg-[#a796ff] text-white"
-                        : "border border-[#e7ebf6] bg-white text-black/72";
-
-                  return (
-                    <div
-                      key={metric.label}
-                      className={`rounded-[14px] px-3 py-3 ${toneClasses}`}
-                    >
-                      <p className="text-[10px] font-medium opacity-80">
-                        {metric.label}
-                      </p>
-                      <p className="mt-2 text-[1.65rem] font-semibold tracking-[-0.05em]">
-                        {metric.value}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="mt-4 overflow-hidden rounded-[18px] border border-[#edf1fa] bg-[#fbfcff] p-3 sm:p-3.5">
-                <div className="mb-4 grid grid-cols-6 gap-2 text-[9px] text-black/34">
-                  {Array.from({ length: 6 }).map((_, index) => (
-                    <span key={index} className="h-px w-full bg-[#edf1fa]" />
-                  ))}
+              <div className="mt-4 overflow-hidden rounded-[18px] border border-[#edf1fa] bg-[#fbfcff]">
+                <div className="relative aspect-[1.62/1]">
+                  <Image
+                    src="/assets/social-media-ads/meta-performance-overview.png"
+                    alt="Meta performance overview"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 520px"
+                  />
                 </div>
+              </div>
 
-                <div className="relative h-[190px]">
-                  <div className="pointer-events-none absolute inset-0">
-                    {Array.from({ length: 5 }).map((_, index) => (
-                      <span
-                        key={index}
-                        className="absolute left-0 right-0 border-t border-dashed border-[#edf1fa]"
-                        style={{ top: `${index * 25}%` }}
-                      />
-                    ))}
+              <div className="mt-3 grid gap-2 sm:grid-cols-3">
+                {[
+                  { label: "Spend", value: "$553" },
+                  { label: "Reach", value: "9,081" },
+                  { label: "CPM", value: "$5.88" },
+                ].map((metric) => (
+                  <div
+                    key={metric.label}
+                    className="rounded-[14px] border border-[#e7e2ff] bg-[#f7f4ff] px-3 py-3 text-center"
+                  >
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#8a78ff]">
+                      {metric.label}
+                    </p>
+                    <p className="mt-1 text-[1.1rem] font-semibold text-[#0b3b85]">
+                      {metric.value}
+                    </p>
                   </div>
-
-                  <svg
-                    viewBox="0 0 520 190"
-                    className="h-full w-full"
-                    preserveAspectRatio="none"
-                    aria-hidden="true"
-                  >
-                    <polyline
-                      fill="none"
-                      stroke="#a796ff"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      points={revenuePath}
-                    />
-                    <polyline
-                      fill="none"
-                      stroke="#8ca8ff"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      points={purchasesPath}
-                    />
-                  </svg>
-
-                  <div className="pointer-events-none absolute inset-x-3 bottom-3 h-[54px] rounded-[18px] bg-[linear-gradient(180deg,rgba(251,252,255,0)_0%,rgba(251,252,255,0.92)_55%,#fbfcff_100%)]" />
-                </div>
-
-                <div className="mt-3 flex items-center justify-between text-[10px] text-black/42">
-                  <span>1/10/23</span>
-                  <span>3/14/23</span>
-                  <span>5/20/23</span>
-                  <span>7/28/23</span>
-                  <span>10/31/23</span>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -295,48 +256,42 @@ export default function SocialMediaAdsPage() {
 
         <section className="px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
           <div className="mx-auto w-full max-w-[var(--site-max-width)] rounded-[24px] bg-[#faf6ff] px-6 py-8 md:px-10 lg:px-12 lg:py-9 xl:px-16">
-            <div className="grid items-center gap-7 md:gap-10 lg:grid-cols-[390px_minmax(0,1fr)] lg:gap-10 xl:gap-14">
-              <div className="flex justify-center">
-                <div className="w-full max-w-[390px] overflow-hidden rounded-xl bg-white shadow-md">
-                  <div className="grid gap-[8px] bg-white p-[0px] sm:grid-cols-2">
-                    {socialMediaAdsUniqueStrengthSection.images.map(
-                      (image, index) => (
-                        <div
-                          key={`${image.src}-${index}`}
-                          className={`relative overflow-hidden ${
-                            index < 2
-                              ? "aspect-[0.92/1]"
-                              : "aspect-[1.9/1] sm:col-span-2"
-                          }`}
-                        >
-                          <Image
-                            src={image.src}
-                            alt={image.alt}
-                            fill
-                            className="object-cover"
-                            style={{ objectPosition: image.objectPosition }}
-                            sizes="(max-width: 1024px) 100vw, 390px"
-                          />
-                        </div>
-                      ),
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              <div className="max-w-[470px]">
-                <h2 className="max-w-[460px] text-[24px] font-bold leading-[1.32] tracking-[-0.04em] text-[#0b3b85] md:text-[28px] lg:text-[30px] xl:text-[38px]">
-                  {socialMediaAdsUniqueStrengthSection.title}
+            <div className="grid items-center gap-7 md:gap-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-10 xl:gap-12">
+              <div className="max-w-[520px]">
+                <h2 className="text-[24px] font-semibold leading-[1.35] tracking-[-0.04em] text-[#0b3b85] md:text-[28px] lg:text-[32px]">
+                  How We Make Paid Social Work
                 </h2>
-                <div className="mt-4 max-w-[450px] space-y-4 text-[14px] font-normal leading-[1.62] text-[#5b5b5b] md:text-[14px] lg:text-[14px] xl:text-[15px]">
-                  {socialMediaAdsUniqueStrengthSection.paragraphs.map(
-                    (paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ),
-                  )}
+                <div className="mt-4 space-y-4 text-[14px] leading-[1.62] text-[#5b5b5b] md:text-[14px] lg:text-[15px]">
+                  <p>
+                    We treat paid social as a creative-plus-performance system.
+                    That means hooks, audience structure, placement quality,
+                    and conversion feedback loops are reviewed together, not in
+                    isolation.
+                  </p>
+                  <p>
+                    The result is cleaner creative testing, more reliable
+                    audience signals, and a scaling plan that does not burn
+                    budget too early.
+                  </p>
                 </div>
 
-                <div className="flex flex-wrap gap-3 pt-7">
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {[
+                    "Creative testing rhythm",
+                    "Audience + funnel alignment",
+                    "Placement-level reporting",
+                    "Retargeting sequencing",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="rounded-[14px] border border-[#e6ddff] bg-white px-4 py-3 text-[13px] font-semibold text-[#0b3b85]"
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap gap-3 pt-6">
                   <Link
                     href="/services"
                     className="inline-flex items-center justify-center rounded-[6px] border-[2px] px-4 py-2.5 text-[13px] font-medium transition hover:border-transparent hover:bg-[#9c8cff] hover:text-white md:text-[13px] lg:text-[15px]"
@@ -353,6 +308,23 @@ export default function SocialMediaAdsPage() {
                   </Link>
                 </div>
               </div>
+
+              <div className="grid gap-3">
+                <div className="overflow-hidden rounded-[20px] border border-white/70 bg-white shadow-[0_20px_40px_-30px_rgba(11,59,133,0.3)]">
+                  <div className="relative aspect-[1.28/1]">
+                    <Image
+                      src="/assets/social-media-ads/tiktok-creative-report.png"
+                      alt="Creative testing report"
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 420px"
+                    />
+                  </div>
+                </div>
+                <div className="rounded-[18px] border border-[#e6ddff] bg-white px-4 py-3 text-[13px] font-semibold text-[#0b3b85]">
+                  Weekly creative refresh cycles keep performance stable.
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -360,8 +332,8 @@ export default function SocialMediaAdsPage() {
         <SocialMediaAdsCampaignExpectationsSection
           title="What you Expect from Our Social Media Ads Campaign?"
           items={socialMediaAdsExpectations}
-          imageSrc="/assets/hero/Meta.png"
-          imageAlt="Social media ads campaign expectation"
+          imageSrc="/assets/social-media-ads/tiktok-performance-overview.png"
+          imageAlt="Paid social performance overview"
         />
 
         <section className="px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
@@ -550,6 +522,11 @@ export default function SocialMediaAdsPage() {
                               />
                             ))}
                           </div>
+                          {"result" in item ? (
+                            <span className="ml-auto rounded-full border border-[#e6ddff] bg-[#f6f2ff] px-2.5 py-1 text-[10px] font-semibold text-[#0b3b85]">
+                              {item.result}
+                            </span>
+                          ) : null}
                         </div>
 
                         <p className="mt-4 max-w-[250px] text-[0.88rem] font-semibold leading-[1.55] text-[#0b3b85]">
