@@ -182,54 +182,6 @@ export const seoProcessItems = [
   },
 ];
 
-export const seoGrowthSection = {
-  title: "516% Organic Traffic Growth",
-  paragraphs: [
-    "We helped a growth-focused brand increase organic traffic by 516% through a coordinated SEO campaign built around keyword research, content optimization, technical improvements, and off-page authority work.",
-    "By combining link building, article production, and onsite optimization in one system, the campaign improved search visibility across priority keywords while also supporting stronger engagement and conversion readiness.",
-  ],
-  filters: ["Search type: Web", "Date: Jan 10, 2022-Oct 31, 2022", "New"],
-  metrics: [
-    { label: "Total clicks", value: "13K", tone: "blue" },
-    { label: "Total impressions", value: "559K", tone: "violet" },
-    { label: "Average CTR", value: "2%", tone: "neutral" },
-    { label: "Average position", value: "40.4", tone: "neutral" },
-  ],
-  clicksTrend: [
-    14, 13, 12, 15, 14, 13, 18, 16, 19, 17, 21, 24, 23, 28, 27, 31, 35, 33,
-    39, 42, 40, 48, 52, 56,
-  ],
-  impressionsTrend: [
-    12, 11, 11, 13, 12, 13, 14, 15, 16, 18, 21, 23, 24, 27, 31, 35, 38, 42,
-    47, 52, 60, 54, 72, 66,
-  ],
-};
-
-export const seoUniqueStrengthSection = {
-  title: "Our Unique Strength in SEO Services",
-  paragraphs: [
-    "In the vast sea of SEO services, ILMIFY stands as an innovation and personalized strategy. Unlike one-size-fits-all solutions, we dive deep into your industry, audience, and goals directly to your needs. Our secret weapon?",
-    "A blend of cutting-edge technology and human creativity that uncovers untapped opportunities and navigates the complexities of search engine algorithms with unmatched precision. ILMIFY is not just about increasing visibility; we are about multiplying your impact.",
-  ],
-  images: [
-    {
-      src: "/assets/our-culture/about-member-4.png",
-      alt: "Team strategy planning session",
-      objectPosition: "center 38%",
-    },
-    {
-      src: "/assets/our-culture/about-member-5.png",
-      alt: "SEO specialist at a workstation",
-      objectPosition: "center center",
-    },
-    {
-      src: "/assets/our-culture/about-member-3.png",
-      alt: "Digital team collaboration workspace",
-      objectPosition: "center center",
-    },
-  ],
-};
-
 export const seoWhyItMattersItems = [
   "Keyword research that matches business intent",
   "Content that supports visibility and trust",

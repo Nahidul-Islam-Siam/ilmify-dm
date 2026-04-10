@@ -10,41 +10,24 @@ import {
   Star,
   X,
 } from "lucide-react";
+// import seoServiceRealImage from "@/assets/seo-services/IMG_2902.png";
+import seoLeader from "@/assets/seo-services/seo-leader.png";
 import Image from "next/image";
 import Link from "next/link";
+import seoTeam from "@/assets/seo-services/seo-team.png";
+import seoDiscussion from "@/assets/seo-services/seo-team-discussing.png";
 import {
   seoComparisonPoints,
   seoExpectations,
   seoFaqs,
-  seoGrowthSection,
   seoMetrics,
   seoProcessItems,
   seoTestimonials,
-  seoUniqueStrengthSection,
 } from "./seo-page-data";
 
 export default function SeoPage() {
   const accent = "#9c8cff";
   const heroMetrics = [seoMetrics[0], seoMetrics[2], seoMetrics[1]];
-  const buildChartPath = (values: number[]) => {
-    const width = 520;
-    const height = 190;
-    const min = Math.min(...values);
-    const max = Math.max(...values);
-
-    return values
-      .map((value, index) => {
-        const x = (index / (values.length - 1)) * width;
-        const ratio = max === min ? 0.5 : (value - min) / (max - min);
-        const y = height - ratio * (height - 20) - 10;
-
-        return `${x},${y}`;
-      })
-      .join(" ");
-  };
-
-  const clicksPath = buildChartPath(seoGrowthSection.clicksTrend);
-  const impressionsPath = buildChartPath(seoGrowthSection.impressionsTrend);
   const renderReviewBrand = (brand: string) => {
     if (brand === "Stanford") {
       return (
@@ -191,131 +174,79 @@ export default function SeoPage() {
           <div className="mx-auto grid w-full max-w-[var(--site-max-width)] gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(390px,510px)] lg:items-center xl:gap-12">
             <div className="max-w-[600px]">
               <h2 className="text-[1.85rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[2.4rem]">
-                {seoGrowthSection.title}
+                516% Organic Traffic Growth
               </h2>
               <div className="mt-5 space-y-5 text-[14px] leading-[1.78] text-black/72 sm:text-[15px]">
-                {seoGrowthSection.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+                <p>
+                  We helped a growth-focused brand increase organic traffic by
+                  516% through a coordinated SEO campaign built around keyword
+                  research, content optimization, technical improvements, and
+                  off-page authority work.
+                </p>
+                <p>
+                  By combining link building, article production, and onsite
+                  optimization in one system, the campaign improved search
+                  visibility across priority keywords while also supporting
+                  stronger engagement and conversion readiness.
+                </p>
               </div>
             </div>
 
-            <div className="rounded-[24px] border border-[#e4ebfb] bg-white p-3.5 shadow-[0_28px_64px_-40px_rgba(36,91,223,0.32)] sm:p-4">
-              <div className="flex items-center justify-between gap-4 text-[11px] font-semibold text-black/46">
-                <p>Performance on Search results</p>
-                <p className="uppercase tracking-[0.12em]">Export</p>
-              </div>
-
-              <div className="mt-4 flex flex-wrap gap-2 text-[10px] font-medium text-black/56">
-                {seoGrowthSection.filters.map((filter) => (
-                  <span
-                    key={filter}
-                    className="rounded-full border border-[#e6e0ff] bg-[#fbf9ff] px-3 py-1.5"
-                  >
-                    {filter}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-5 grid gap-2 sm:grid-cols-4">
-                {seoGrowthSection.metrics.map((metric) => {
-                  const toneClasses =
-                    metric.tone === "blue"
-                      ? "bg-[#8ca8ff] text-white"
-                      : metric.tone === "violet"
-                        ? "bg-[#a796ff] text-white"
-                        : "border border-[#e7ebf6] bg-white text-black/72";
-
-                  return (
-                    <div
-                      key={metric.label}
-                      className={`rounded-[14px] px-3 py-3 ${toneClasses}`}
-                    >
-                      <p className="text-[10px] font-medium opacity-80">
-                        {metric.label}
-                      </p>
-                      <p className="mt-2 text-[1.65rem] font-semibold tracking-[-0.05em]">
-                        {metric.value}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="mt-4 overflow-hidden rounded-[18px] border border-[#edf1fa] bg-[#fbfcff] p-3 sm:p-3.5">
-                <div className="mb-4 grid grid-cols-6 gap-2 text-[9px] text-black/34">
-                  {Array.from({ length: 6 }).map((_, index) => (
-                    <span key={index} className="h-px w-full bg-[#edf1fa]" />
-                  ))}
+            <div className="rounded-[24px] border border-[#ece6ff] bg-white p-4 shadow-[0_28px_64px_-40px_rgba(36,91,223,0.22)] sm:p-5">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#8d7cf8]">
+                    SEO Case Study Snapshot
+                  </p>
+                  <h3 className="mt-2 text-[1.05rem] font-semibold tracking-[-0.04em] text-[#0b3b85]">
+                    Real visibility proof from LNO Boutique
+                  </h3>
                 </div>
+                <span className="rounded-full border border-[#ebe4ff] bg-[#faf7ff] px-3 py-1 text-[10px] font-medium text-[#6f5ed8]">
+                  Mar 2026
+                </span>
+              </div>
 
-                <div className="relative h-[190px]">
-                  <div className="pointer-events-none absolute inset-0">
-                    {Array.from({ length: 5 }).map((_, index) => (
-                      <span
-                        key={index}
-                        className="absolute left-0 right-0 border-t border-dashed border-[#edf1fa]"
-                        style={{ top: `${index * 25}%` }}
-                      />
-                    ))}
-                  </div>
-
-                  <svg
-                    viewBox="0 0 520 190"
-                    className="h-full w-full"
-                    preserveAspectRatio="none"
-                    aria-hidden="true"
-                  >
-                    <defs>
-                      <linearGradient
-                        id="seo-chart-fill"
-                        x1="0"
-                        y1="0"
-                        x2="0"
-                        y2="1"
-                      >
-                        <stop
-                          offset="0%"
-                          stopColor="#a796ff"
-                          stopOpacity="0.22"
-                        />
-                        <stop
-                          offset="100%"
-                          stopColor="#a796ff"
-                          stopOpacity="0"
-                        />
-                      </linearGradient>
-                    </defs>
-
-                    <polyline
-                      fill="none"
-                      stroke="#a796ff"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      points={impressionsPath}
-                    />
-                    <polyline
-                      fill="none"
-                      stroke="#8ca8ff"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      points={clicksPath}
-                    />
-                  </svg>
-
-                  <div className="pointer-events-none absolute inset-x-3 bottom-3 h-[54px] rounded-[18px] bg-[linear-gradient(180deg,rgba(251,252,255,0)_0%,rgba(251,252,255,0.92)_55%,#fbfcff_100%)]" />
+              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                <div className="rounded-[16px] bg-[#eef3ff] px-3 py-3">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[#5977d8]">
+                    Profile views
+                  </p>
+                  <p className="mt-1 text-[1.5rem] font-semibold tracking-[-0.05em] text-[#0b3b85]">
+                    6,608
+                  </p>
+                  <p className="mt-1 text-[11px] text-[#406a32]">
+                    +522.2% vs previous period
+                  </p>
                 </div>
-
-                <div className="mt-3 flex items-center justify-between text-[10px] text-black/42">
-                  <span>1/10/22</span>
-                  <span>3/14/22</span>
-                  <span>5/20/22</span>
-                  <span>7/28/22</span>
-                  <span>10/31/22</span>
+                <div className="rounded-[16px] bg-[#f5f0ff] px-3 py-3">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[#8067d9]">
+                    Search appearances
+                  </p>
+                  <p className="mt-1 text-[1.5rem] font-semibold tracking-[-0.05em] text-[#0b3b85]">
+                    2,479
+                  </p>
+                  <p className="mt-1 text-[11px] text-[#406a32]">
+                    +791.7% vs previous period
+                  </p>
                 </div>
               </div>
+
+              <div className="mt-4 overflow-hidden rounded-[18px] border border-[#edf1fa] bg-[#fbfcff]">
+                <Image
+                  src="/assets/case_study/seo-4.png"
+                  alt="Real SEO case study screenshot showing business profile views and search appearances growth"
+                  width={1024}
+                  height={786}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+
+              <p className="mt-3 text-[11px] leading-[1.6] text-black/50 sm:text-[12px]">
+                Actual performance snapshot from the SEO case study, showing
+                how stronger visibility translated into measurable local search
+                discovery.
+              </p>
             </div>
           </div>
         </section>
@@ -326,37 +257,58 @@ export default function SeoPage() {
               <div className="flex justify-center">
                 <div className="w-full max-w-[390px] overflow-hidden rounded-xl bg-white shadow-md">
                   <div className="grid gap-[8px] bg-white p-[0px] sm:grid-cols-2">
-                    {seoUniqueStrengthSection.images.map((image, index) => (
-                      <div
-                        key={`${image.src}-${index}`}
-                        className={`relative overflow-hidden ${
-                          index < 2
-                            ? "aspect-[0.92/1]"
-                            : "aspect-[1.9/1] sm:col-span-2"
-                        }`}
-                      >
-                        <Image
-                          src={image.src}
-                          alt={image.alt}
-                          fill
-                          className="object-cover"
-                          style={{ objectPosition: image.objectPosition }}
-                          sizes="(max-width: 1024px) 100vw, 390px"
-                        />
-                      </div>
-                    ))}
+                    <div className="relative aspect-[0.92/1] overflow-hidden">
+                      <Image
+                        src={seoDiscussion}
+                        alt="Team strategy planning session"
+                        fill
+                        className="object-cover"
+                        style={{ objectPosition: "center 38%" }}
+                        sizes="(max-width: 1024px) 100vw, 390px"
+                      />
+                    </div>
+                    <div className="relative aspect-[0.92/1] overflow-hidden">
+                      <Image
+                        src={seoLeader}
+                        alt="SEO specialist at a workstation"
+                        fill
+                        className="object-cover"
+                        style={{ objectPosition: "center center" }}
+                        sizes="(max-width: 1024px) 100vw, 390px"
+                      />
+                    </div>
+                    <div className="relative aspect-[1.9/1] overflow-hidden sm:col-span-2">
+                      <Image
+               src={seoTeam}
+                        alt="Real SEO service workspace at ILMIFY"
+                        fill
+                        className="object-cover"
+                        style={{ objectPosition: "center center" }}
+                        sizes="(max-width: 1024px) 100vw, 390px"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
 
               <div className="max-w-[470px]">
                 <h2 className="max-w-[460px] text-[24px] font-bold leading-[1.32] tracking-[-0.04em] text-[#0b3b85] md:text-[28px] lg:text-[30px] xl:text-[38px]">
-                  {seoUniqueStrengthSection.title}
+                  Our Unique Strength in SEO Services
                 </h2>
                 <div className="mt-4 max-w-[450px] space-y-4 text-[14px] font-normal leading-[1.62] text-[#5b5b5b] md:text-[14px] lg:text-[14px] xl:text-[15px]">
-                  {seoUniqueStrengthSection.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
+                  <p>
+                    In the vast sea of SEO services, ILMIFY stands as an
+                    innovation and personalized strategy. Unlike one-size-fits-all
+                    solutions, we dive deep into your industry, audience, and
+                    goals directly to your needs. Our secret weapon?
+                  </p>
+                  <p>
+                    A blend of cutting-edge technology and human creativity that
+                    uncovers untapped opportunities and navigates the
+                    complexities of search engine algorithms with unmatched
+                    precision. ILMIFY is not just about increasing visibility;
+                    we are about multiplying your impact.
+                  </p>
                 </div>
 
                 <div className="flex flex-wrap gap-3 pt-7">
