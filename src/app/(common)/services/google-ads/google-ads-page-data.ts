@@ -76,37 +76,6 @@ export const googleAdsServiceItems = [
   },
 ];
 
-export const googleAdsGrowthSection = {
-  title: "412% Conversion Value Growth",
-  paragraphs: [
-    "We helped a performance-focused brand increase conversion value by 412% through a coordinated Google Ads system built around search intent, cleaner account structure, better creative testing, and stronger landing page alignment.",
-    "By improving campaign segmentation, feed quality, remarketing, and conversion tracking in one system, the account reduced wasted spend while generating stronger lead quality and more reliable revenue movement.",
-  ],
-  filters: ["Network: Google Ads", "Date: Jan 10, 2023-Oct 31, 2023", "Conversions"],
-  metrics: [
-    { label: "Total conversions", value: "9.8K", tone: "blue" },
-    { label: "Conv. value", value: "$284K", tone: "violet" },
-    { label: "Average CPC", value: "$0.92", tone: "neutral" },
-    { label: "Cost / conv.", value: "$18.6", tone: "neutral" },
-  ],
-  clicksTrend: [
-    16, 15, 18, 19, 18, 21, 22, 25, 28, 31, 34, 33, 37, 40, 44, 47, 50, 54,
-    59, 63, 68, 74, 79, 86,
-  ],
-  impressionsTrend: [
-    14, 13, 14, 16, 18, 19, 22, 24, 27, 29, 32, 35, 39, 43, 48, 52, 56, 61,
-    67, 70, 76, 81, 88, 94,
-  ],
-};
-
-export const googleAdsUniqueStrengthSection = {
-  title: "Our Unique Strength in Google Ads Services",
-  paragraphs: [
-    "In Google Ads, ILMIFY focuses on the parts that actually move performance: search intent, account structure, tracking quality, and landing page consistency. We do not treat campaigns like isolated ad groups; we treat them as part of a revenue system.",
-    "Our strength is the way we combine data review, audience thinking, ad copy direction, and practical optimization. That means better budget control, stronger visibility into waste, and more confidence about where the next round of spending should go.",
-  ],
-};
-
 export const googleAdsAuditFramework = [
   {
     step: "01",

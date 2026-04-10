@@ -10,17 +10,16 @@ import {
   Star,
   X,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import {
   googleAdsAuditFramework,
   googleAdsComparisonScorecard,
   googleAdsExpectations,
   googleAdsFaqs,
-  googleAdsGrowthSection,
   googleAdsMetrics,
   googleAdsServiceItems,
   googleAdsTestimonials,
-  googleAdsUniqueStrengthSection,
 } from "./google-ads-page-data";
 
 export default function GoogleAdsPage() {
@@ -40,26 +39,6 @@ export default function GoogleAdsPage() {
     { value: heroMetrics[1].value, label: heroMetrics[1].label, tone: "white" },
     { value: heroMetrics[2].value, label: heroMetrics[2].label, tone: "blue" },
   ];
-
-  const buildChartPath = (values: number[]) => {
-    const width = 520;
-    const height = 190;
-    const min = Math.min(...values);
-    const max = Math.max(...values);
-
-    return values
-      .map((value, index) => {
-        const x = (index / (values.length - 1)) * width;
-        const ratio = max === min ? 0.5 : (value - min) / (max - min);
-        const y = height - ratio * (height - 20) - 10;
-
-        return `${x},${y}`;
-      })
-      .join(" ");
-  };
-
-  const conversionsPath = buildChartPath(googleAdsGrowthSection.clicksTrend);
-  const valuePath = buildChartPath(googleAdsGrowthSection.impressionsTrend);
 
   const renderReviewBrand = (mark: string, company: string, index: number) => {
     const tones = [
@@ -232,110 +211,79 @@ export default function GoogleAdsPage() {
           <div className="mx-auto grid w-full max-w-[var(--site-max-width)] gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(390px,510px)] lg:items-center xl:gap-12">
             <div className="max-w-[600px]">
               <h2 className="text-[1.85rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[2.4rem]">
-                {googleAdsGrowthSection.title}
+                412% Conversion Value Growth
               </h2>
               <div className="mt-5 space-y-5 text-[14px] leading-[1.78] text-black/72 sm:text-[15px]">
-                {googleAdsGrowthSection.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+                <p>
+                  We helped a performance-focused brand increase conversion
+                  value by 412% through a coordinated Google Ads system built
+                  around search intent, cleaner account structure, better
+                  creative testing, and stronger landing page alignment.
+                </p>
+                <p>
+                  By improving campaign segmentation, feed quality,
+                  remarketing, and conversion tracking in one system, the
+                  account reduced wasted spend while generating stronger lead
+                  quality and more reliable revenue movement.
+                </p>
               </div>
             </div>
 
-            <div className="rounded-[24px] border border-[#e4ebfb] bg-white p-3.5 shadow-[0_28px_64px_-40px_rgba(36,91,223,0.32)] sm:p-4">
-              <div className="flex items-center justify-between gap-4 text-[11px] font-semibold text-black/46">
-                <p>Performance on Google Ads</p>
-                <p className="uppercase tracking-[0.12em]">Export</p>
-              </div>
-
-              <div className="mt-4 flex flex-wrap gap-2 text-[10px] font-medium text-black/56">
-                {googleAdsGrowthSection.filters.map((filter) => (
-                  <span
-                    key={filter}
-                    className="rounded-full border border-[#e6e0ff] bg-[#fbf9ff] px-3 py-1.5"
-                  >
-                    {filter}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-5 grid gap-2 sm:grid-cols-4">
-                {googleAdsGrowthSection.metrics.map((metric) => {
-                  const toneClasses =
-                    metric.tone === "blue"
-                      ? "bg-[#8ca8ff] text-white"
-                      : metric.tone === "violet"
-                        ? "bg-[#a796ff] text-white"
-                        : "border border-[#e7ebf6] bg-white text-black/72";
-
-                  return (
-                    <div
-                      key={metric.label}
-                      className={`rounded-[14px] px-3 py-3 ${toneClasses}`}
-                    >
-                      <p className="text-[10px] font-medium opacity-80">
-                        {metric.label}
-                      </p>
-                      <p className="mt-2 text-[1.65rem] font-semibold tracking-[-0.05em]">
-                        {metric.value}
-                      </p>
-                    </div>
-                  );
-                })}
-              </div>
-
-              <div className="mt-4 overflow-hidden rounded-[18px] border border-[#edf1fa] bg-[#fbfcff] p-3 sm:p-3.5">
-                <div className="mb-4 grid grid-cols-6 gap-2 text-[9px] text-black/34">
-                  {Array.from({ length: 6 }).map((_, index) => (
-                    <span key={index} className="h-px w-full bg-[#edf1fa]" />
-                  ))}
+            <div className="rounded-[24px] border border-[#ece6ff] bg-white p-4 shadow-[0_28px_64px_-40px_rgba(36,91,223,0.22)] sm:p-5">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#8d7cf8]">
+                    Google Ads Case Study Snapshot
+                  </p>
+                  <h3 className="mt-2 text-[1.05rem] font-semibold tracking-[-0.04em] text-[#0b3b85]">
+                    Real account performance from a lead-focused campaign
+                  </h3>
                 </div>
+                <span className="rounded-full border border-[#ebe4ff] bg-[#faf7ff] px-3 py-1 text-[10px] font-medium text-[#6f5ed8]">
+                  Apr 2026
+                </span>
+              </div>
 
-                <div className="relative h-[190px]">
-                  <div className="pointer-events-none absolute inset-0">
-                    {Array.from({ length: 5 }).map((_, index) => (
-                      <span
-                        key={index}
-                        className="absolute left-0 right-0 border-t border-dashed border-[#edf1fa]"
-                        style={{ top: `${index * 25}%` }}
-                      />
-                    ))}
-                  </div>
-
-                  <svg
-                    viewBox="0 0 520 190"
-                    className="h-full w-full"
-                    preserveAspectRatio="none"
-                    aria-hidden="true"
-                  >
-                    <polyline
-                      fill="none"
-                      stroke="#a796ff"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      points={valuePath}
-                    />
-                    <polyline
-                      fill="none"
-                      stroke="#8ca8ff"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      points={conversionsPath}
-                    />
-                  </svg>
-
-                  <div className="pointer-events-none absolute inset-x-3 bottom-3 h-[54px] rounded-[18px] bg-[linear-gradient(180deg,rgba(251,252,255,0)_0%,rgba(251,252,255,0.92)_55%,#fbfcff_100%)]" />
+              <div className="mt-4 grid gap-2 sm:grid-cols-2">
+                <div className="rounded-[16px] bg-[#eef3ff] px-3 py-3">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[#5977d8]">
+                    Clicks
+                  </p>
+                  <p className="mt-1 text-[1.5rem] font-semibold tracking-[-0.05em] text-[#0b3b85]">
+                    3.14K
+                  </p>
+                  <p className="mt-1 text-[11px] text-black/50">
+                    High-volume traffic with stronger intent control
+                  </p>
                 </div>
-
-                <div className="mt-3 flex items-center justify-between text-[10px] text-black/42">
-                  <span>1/10/23</span>
-                  <span>3/14/23</span>
-                  <span>5/20/23</span>
-                  <span>7/28/23</span>
-                  <span>10/31/23</span>
+                <div className="rounded-[16px] bg-[#f5f0ff] px-3 py-3">
+                  <p className="text-[10px] font-medium uppercase tracking-[0.1em] text-[#8067d9]">
+                    Conversions
+                  </p>
+                  <p className="mt-1 text-[1.5rem] font-semibold tracking-[-0.05em] text-[#0b3b85]">
+                    63.00
+                  </p>
+                  <p className="mt-1 text-[11px] text-black/50">
+                    Clear lead outcome from the optimized account setup
+                  </p>
                 </div>
               </div>
+
+              <div className="mt-4 overflow-hidden rounded-[18px] border border-[#edf1fa] bg-[#fbfcff]">
+                <Image
+                  src="/assets/case_study/google-ads-2.png"
+                  alt="Real Google Ads case study screenshot showing clicks, CTR, average CPC, and conversions"
+                  width={992}
+                  height={441}
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+
+              <p className="mt-3 text-[11px] leading-[1.6] text-black/50 sm:text-[12px]">
+                Actual Google Ads case-study snapshot showing stronger clicks,
+                healthier CTR, and 63 conversions after campaign cleanup and
+                optimization.
+              </p>
             </div>
           </div>
         </section>
@@ -391,14 +339,23 @@ export default function GoogleAdsPage() {
 
               <div className="max-w-[470px]">
                 <h2 className="max-w-[460px] text-[24px] font-bold leading-[1.32] tracking-[-0.04em] text-[#0b3b85] md:text-[28px] lg:text-[30px] xl:text-[38px]">
-                  {googleAdsUniqueStrengthSection.title}
+                  Our Unique Strength in Google Ads Services
                 </h2>
                 <div className="mt-4 max-w-[450px] space-y-4 text-[14px] font-normal leading-[1.62] text-[#5b5b5b] md:text-[14px] lg:text-[14px] xl:text-[15px]">
-                  {googleAdsUniqueStrengthSection.paragraphs.map(
-                    (paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ),
-                  )}
+                  <p>
+                    In Google Ads, ILMIFY focuses on the parts that actually
+                    move performance: search intent, account structure,
+                    tracking quality, and landing page consistency. We do not
+                    treat campaigns like isolated ad groups; we treat them as
+                    part of a revenue system.
+                  </p>
+                  <p>
+                    Our strength is the way we combine data review, audience
+                    thinking, ad copy direction, and practical optimization.
+                    That means better budget control, stronger visibility into
+                    waste, and more confidence about where the next round of
+                    spending should go.
+                  </p>
                 </div>
 
                 <div className="flex flex-wrap gap-3 pt-7">
@@ -711,34 +668,58 @@ export default function GoogleAdsPage() {
                       </h3>
 
                       <div className="mt-5 space-y-3.5">
-                        {[
-                          "Search terms, wasted spend, and campaign structure",
-                          "Tracking accuracy, conversion paths, and signal quality",
-                          "A clearer roadmap for more efficient ad growth",
-                        ].map((item) => (
-                          <div key={item} className="flex items-start gap-3">
-                            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#f1edff] text-[#8a78ff]">
-                              <Check size={12} strokeWidth={2.7} />
-                            </span>
-                            <p className="text-[13px] leading-[1.6] text-[#44546f]">
-                              {item}
-                            </p>
-                          </div>
-                        ))}
+                        <div className="flex items-start gap-3">
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#f1edff] text-[#8a78ff]">
+                            <Check size={12} strokeWidth={2.7} />
+                          </span>
+                          <p className="text-[13px] leading-[1.6] text-[#44546f]">
+                            Search terms, wasted spend, and campaign structure
+                          </p>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#f1edff] text-[#8a78ff]">
+                            <Check size={12} strokeWidth={2.7} />
+                          </span>
+                          <p className="text-[13px] leading-[1.6] text-[#44546f]">
+                            Tracking accuracy, conversion paths, and signal
+                            quality
+                          </p>
+                        </div>
+
+                        <div className="flex items-start gap-3">
+                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#f1edff] text-[#8a78ff]">
+                            <Check size={12} strokeWidth={2.7} />
+                          </span>
+                          <p className="text-[13px] leading-[1.6] text-[#44546f]">
+                            A clearer roadmap for more efficient ad growth
+                          </p>
+                        </div>
                       </div>
                     </div>
 
                     <div className="grid gap-3">
-                      <div className="rounded-[22px] border border-[#eadfff] bg-[#f8f4ff] p-4">
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#9c8cff]">
-                          Focus Area
-                        </p>
-                        <p className="mt-3 text-[1.25rem] font-semibold tracking-[-0.04em] text-[#0b3b85]">
-                          Search Terms
-                        </p>
-                        <p className="mt-2 text-[13px] leading-[1.6] text-[#44546f]">
-                          Match types, query waste, negatives, and how well
-                          search intent lines up with the offer.
+                      <div className="overflow-hidden rounded-[22px] border border-[#eadfff] bg-white shadow-[0_18px_36px_-28px_rgba(11,59,133,0.18)]">
+                        <div className="border-b border-[#f0eaff] bg-[#fbf8ff] px-4 py-3">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#9c8cff]">
+                            Real Account Snapshot
+                          </p>
+                        </div>
+                        <div className="p-2">
+                          <div className="overflow-hidden rounded-[16px] border border-[#edf1fa] bg-[#fbfcff]">
+                            <Image
+                              src="/assets/case_study/google-ads-2.png"
+                              alt="Real Google Ads screenshot showing clicks, CTR, average CPC, and conversions"
+                              width={992}
+                              height={441}
+                              className="h-auto w-full object-cover"
+                            />
+                          </div>
+                        </div>
+                        <p className="px-4 pb-4 text-[12px] leading-[1.55] text-[#44546f]">
+                          A real campaign view helps make the audit feel more
+                          credible and shows the kind of account signals we
+                          evaluate first.
                         </p>
                       </div>
 
