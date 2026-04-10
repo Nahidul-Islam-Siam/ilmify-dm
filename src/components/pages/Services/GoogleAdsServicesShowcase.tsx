@@ -91,8 +91,8 @@ export default function GoogleAdsServicesShowcase({
           </div>
         </div>
 
-        <div className="mt-6 lg:mt-8 lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:items-start lg:gap-8">
-          <div className="google-ads-scroll-row overflow-x-auto pb-2 scroll-smooth lg:hidden">
+        <div className="mt-6 md:mt-8 md:grid md:grid-cols-[220px_minmax(0,1fr)] md:items-start md:gap-8 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10">
+          <div className="google-ads-scroll-row overflow-x-auto pb-2 scroll-smooth md:hidden">
             <div className="flex w-max min-w-full justify-center gap-2 md:gap-3">
               {items.map((item) => {
                 const isActive = item.id === activeId;
@@ -119,7 +119,7 @@ export default function GoogleAdsServicesShowcase({
             </div>
           </div>
 
-          <div className="hidden lg:block">
+          <div className="hidden md:block">
             <div className="space-y-2">
               {items.map((item) => {
                 const isActive = item.id === activeId;
@@ -146,7 +146,7 @@ export default function GoogleAdsServicesShowcase({
             </div>
           </div>
 
-          <div className="mt-6 lg:mt-0">
+          <div className="mt-6 md:mt-0">
             <div className="grid gap-6 lg:grid-cols-[1fr_430px] lg:items-center lg:gap-7 xl:grid-cols-[1fr_455px]">
               <div className="max-w-[600px]">
                 <h3 className="text-[1.75rem] font-semibold tracking-[-0.06em] text-[#0b3b85] sm:text-[2.15rem]">
