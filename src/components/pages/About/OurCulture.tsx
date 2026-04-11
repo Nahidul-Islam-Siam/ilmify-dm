@@ -10,34 +10,22 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CULTURE_IMAGES = [
   {
-    src: "/assets/our-culture/about-member-1.png",
-    alt: "Team member 1",
-    name: "Sarah Johnson",
-    role: "Lead UX Designer",
+    src: "/assets/office-culture/social-team-meeting.jpeg",
+    alt: "ILMIFY team planning campaign strategy together",
+    name: "Collaborative Planning",
+    role: "Strategy and campaign alignment",
   },
   {
-    src: "/assets/our-culture/about-member-2.png",
-    alt: "Team member 2",
-    name: "Michael Chen",
-    role: "UI Developer",
+    src: "/assets/office-culture/social-team-discussion.jpeg",
+    alt: "ILMIFY team discussing creative and reporting decisions",
+    name: "Open Discussion",
+    role: "Creative review and performance feedback",
   },
   {
-    src: "/assets/our-culture/about-member-3.png",
-    alt: "Team member 3",
-    name: "Emma Rodriguez",
-    role: "Brand Strategist",
-  },
-  {
-    src: "/assets/our-culture/about-member-4.png",
-    alt: "Team member 4",
-    name: "David Kim",
-    role: "No-Code Expert",
-  },
-  {
-    src: "/assets/our-culture/about-member-5.png",
-    alt: "Team member 5",
-    name: "Lisa Thompson",
-    role: "Project Manager",
+    src: "/assets/office-culture/social-workstation.png",
+    alt: "Team member working at a workstation",
+    name: "Focused Execution",
+    role: "Daily optimization and implementation",
   },
 ] as const;
 
@@ -161,8 +149,8 @@ export default function OurCultureSection() {
         <div className="absolute bottom-20 right-10 h-96 w-96 rounded-full bg-site-accent/8 blur-3xl animate-pulse delay-1000" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <div className="relative z-10 mx-auto max-w-[var(--site-max-width)] px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(380px,520px)] lg:gap-12">
           <div ref={contentRef} className="space-y-8">
             <div>
               <div className="mb-4 inline-block">
@@ -171,10 +159,10 @@ export default function OurCultureSection() {
               <h2 className="text-[11px] font-bold uppercase tracking-[0.2em] text-purple-800 sm:text-xs">
                 OUR CULTURE
               </h2>
-              <h3 className="mt-4 text-2xl font-bold leading-[1.2] text-black sm:text-3xl md:text-4xl lg:text-4xl">
-                How Our Team Combines 
+              <h3 className="mt-4 text-2xl font-bold leading-[1.15] tracking-[-0.04em] text-black sm:text-3xl md:text-4xl lg:text-[3rem]">
+                How Our Team Combines
                 <br />
-             Strategy,   Creativity, and
+                Strategy, Creativity, and
                 <br />
                 Performance
               </h3>
@@ -183,7 +171,10 @@ export default function OurCultureSection() {
             <div className="rounded-2xl border border-black/10 bg-white/85 p-6 shadow-[var(--site-shadow)]">
               <Quote className="mb-4 h-8 w-8 text-purple-800" />
               <p className="text-base leading-relaxed text-black/72 sm:text-lg">
-            We believe in clear communication, data-backed decisions, proactive problem-solving, and full transparency in every campaign we manage.
+                We believe strong work comes from open collaboration,
+                practical thinking, and clear communication. Our culture is
+                built around helping each other solve problems faster and
+                making every campaign decision easier to understand.
               </p>
             </div>
 
@@ -194,11 +185,11 @@ export default function OurCultureSection() {
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-800">24/7</div>
-                <div className="text-xs text-black/55">Support</div>
+                <div className="text-xs text-black/55">Team Support</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-800">20+</div>
-                <div className="text-xs text-black/55">Experts</div>
+                <div className="text-xs text-black/55">Specialists</div>
               </div>
             </div>
           </div>
@@ -228,7 +219,9 @@ export default function OurCultureSection() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <p className="text-xl font-semibold">{image.name}</p>
+                      <p className="text-xl font-semibold tracking-[-0.03em]">
+                        {image.name}
+                      </p>
                       <p className="text-sm text-white/80">{image.role}</p>
                     </div>
                   </div>

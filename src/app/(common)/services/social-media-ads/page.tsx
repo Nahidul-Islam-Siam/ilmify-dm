@@ -256,31 +256,46 @@ export default function SocialMediaAdsPage() {
 
         <section className="px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
           <div className="mx-auto w-full max-w-[var(--site-max-width)] rounded-[24px] bg-[#faf6ff] px-6 py-8 md:px-10 lg:px-12 lg:py-9 xl:px-16">
-            <div className="grid items-center gap-7 md:gap-10 lg:grid-cols-[minmax(0,1fr)_420px] lg:gap-10 xl:gap-12">
-              <div className="max-w-[520px]">
-                <h2 className="text-[24px] font-semibold leading-[1.35] tracking-[-0.04em] text-[#0b3b85] md:text-[28px] lg:text-[32px]">
-                  How We Make Paid Social Work
+            <div className="grid items-center gap-7 md:gap-10 lg:grid-cols-[minmax(0,1fr)_460px] lg:gap-10 xl:gap-12">
+              <div className="max-w-[540px]">
+                <p
+                  className="text-[11px] font-semibold uppercase tracking-[0.18em]"
+                  style={{ color: accent }}
+                >
+                  Creative + Performance Workflow
+                </p>
+                <h2 className="mt-3 text-[24px] font-semibold leading-[1.28] tracking-[-0.04em] text-[#0b3b85] md:text-[28px] lg:text-[32px]">
+                  How Our Team Turns Creative Ideas Into Paid Social Results
                 </h2>
                 <div className="mt-4 space-y-4 text-[14px] leading-[1.62] text-[#5b5b5b] md:text-[14px] lg:text-[15px]">
                   <p>
-                    We treat paid social as a creative-plus-performance system.
-                    That means hooks, audience structure, placement quality,
-                    and conversion feedback loops are reviewed together, not in
-                    isolation.
+                    Paid social works best when creative, targeting, and
+                    reporting are shaped together. We plan campaigns around the
+                    offer, the audience stage, and the kind of content each
+                    platform responds to most naturally.
                   </p>
                   <p>
-                    The result is cleaner creative testing, more reliable
-                    audience signals, and a scaling plan that does not burn
-                    budget too early.
+                    That means the team is not only launching ads. We are
+                    reviewing hooks, checking audience quality, reading
+                    performance signals, and refining the campaign direction so
+                    the account grows with more control.
+                  </p>
+                </div>
+
+                <div className="mt-6 rounded-[18px] border border-[#e6ddff] bg-white px-5 py-4 shadow-[0_20px_36px_-30px_rgba(11,59,133,0.14)]">
+                  <p className="text-[13px] leading-[1.7] text-[#45536d]">
+                    “We keep creative testing, audience refinement, and weekly
+                    reporting connected, so paid social decisions are easier to
+                    trust and improve.”
                   </p>
                 </div>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   {[
-                    "Creative testing rhythm",
-                    "Audience + funnel alignment",
-                    "Placement-level reporting",
-                    "Retargeting sequencing",
+                    "Creative direction + testing",
+                    "Audience quality checks",
+                    "Platform-specific execution",
+                    "Weekly optimization rhythm",
                   ].map((item) => (
                     <div
                       key={item}
@@ -290,39 +305,50 @@ export default function SocialMediaAdsPage() {
                     </div>
                   ))}
                 </div>
-
-                <div className="flex flex-wrap gap-3 pt-6">
-                  <Link
-                    href="/services"
-                    className="inline-flex items-center justify-center rounded-[6px] border-[2px] px-4 py-2.5 text-[13px] font-medium transition hover:border-transparent hover:bg-[#9c8cff] hover:text-white md:text-[13px] lg:text-[15px]"
-                    style={{ borderColor: accent, color: accent }}
-                  >
-                    Show Price
-                  </Link>
-                  <Link
-                    href="#contact"
-                    className="inline-flex items-center justify-center rounded-[6px] border-[2px] px-4 py-2.5 text-[13px] font-medium text-white transition hover:border-transparent hover:opacity-95 md:text-[13px] lg:text-[15px]"
-                    style={{ borderColor: accent, backgroundColor: accent }}
-                  >
-                    Book a Free Consultation
-                  </Link>
-                </div>
               </div>
 
               <div className="grid gap-3">
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="overflow-hidden rounded-[20px] border border-white/70 bg-white shadow-[0_20px_40px_-30px_rgba(11,59,133,0.3)]">
+                    <div className="relative aspect-[0.95/1]">
+                      <Image
+                        src="/assets/office-culture/social-team-meeting.jpeg"
+                        alt="ILMIFY team discussing paid social campaign direction"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 220px"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="overflow-hidden rounded-[20px] border border-white/70 bg-white shadow-[0_20px_40px_-30px_rgba(11,59,133,0.3)]">
+                    <div className="relative aspect-[0.95/1]">
+                      <Image
+                        src="/assets/office-culture/social-workstation.png"
+                        alt="Team member reviewing campaign work at a workstation"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 220px"
+                      />
+                    </div>
+                  </div>
+                </div>
+
                 <div className="overflow-hidden rounded-[20px] border border-white/70 bg-white shadow-[0_20px_40px_-30px_rgba(11,59,133,0.3)]">
-                  <div className="relative aspect-[1.28/1]">
+                  <div className="relative aspect-[1.45/1]">
                     <Image
-                      src="/assets/social-media-ads/tiktok-creative-report.png"
-                      alt="Creative testing report"
+                      src="/assets/office-culture/social-team-discussion.jpeg"
+                      alt="ILMIFY team discussing campaign performance and next steps"
                       fill
                       className="object-cover"
-                      sizes="(max-width: 1024px) 100vw, 420px"
+                      sizes="(max-width: 1024px) 100vw, 460px"
                     />
                   </div>
                 </div>
+
                 <div className="rounded-[18px] border border-[#e6ddff] bg-white px-4 py-3 text-[13px] font-semibold text-[#0b3b85]">
-                  Weekly creative refresh cycles keep performance stable.
+                  Real collaboration helps us move faster on creative testing,
+                  audience refinement, and reporting decisions.
                 </div>
               </div>
             </div>
