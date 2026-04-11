@@ -1,13 +1,13 @@
 ﻿"use client";
 
-import { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
+import { caseStudies } from "@/app/data/caseStudies/caseStudies";
 import { useTransition } from "@/app/hooks/TransitionContext";
 import { TransitionType } from "@/app/types/TransitionTypes";
 import Button from "../../button/Button";
-import { caseStudies } from "@/app/data/caseStudies/caseStudies";
 
 export default function CaseStudies() {
   const headerRef = useRef<HTMLDivElement>(null);
@@ -36,7 +36,7 @@ export default function CaseStudies() {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
 
     cardRefs.current.forEach((card) => {
@@ -62,6 +62,7 @@ export default function CaseStudies() {
       `}</style>
 
       <div className="mx-auto w-full max-w-[var(--site-max-width)]">
+        <h3 className="text-red-500 text-4xl font-bold text-center">Banner </h3>
         <div
           ref={headerRef}
           className="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-center lg:justify-between"

@@ -1,5 +1,4 @@
 "use client";
-import { usePathname } from "next/navigation";
 import logo from "@/assets/logo/ilmify-Logo.svg";
 import {
   NavigationMenu,
@@ -12,6 +11,10 @@ import {
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import {
+  ArrowRight,
+  Brackets,
+  ChevronDown,
+  ChevronRight,
   Code2,
   FileSearch2,
   Gauge,
@@ -24,14 +27,11 @@ import {
   PenTool,
   Sparkles,
   X,
-  ChevronRight,
-  ChevronDown,
-  Brackets,
-  ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useMemo, useState, useRef } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Button from "../../button/Button";
 
 const navItems = [
@@ -455,12 +455,10 @@ export default function Navbar() {
       <div
         className={cn(
           "border-b border-transparent bg-transparent transition-all duration-300",
-          scrolled
-            ? "bg-white "
-            : "",
+          scrolled ? "bg-white " : "",
         )}
       >
-        <div className="mx-auto flex h-16 max-w-[var(--site-max-width)] items-center justify-between md:h-20">
+        <div className="mx-auto flex h-16 max-w-[var(--site-max-width)] items-center justify-between">
           <BrandMark />
 
           {/* Desktop Navigation */}
@@ -500,28 +498,30 @@ export default function Navbar() {
                     <div className="grid grid-cols-[340px_1fr_345px] gap-4 rounded-[22px] bg-white p-3">
                       <div className="rounded-[18px] bg-[#f0f0f2] p-2">
                         <div className="space-y-1.5">
-                      {(
-                        Object.keys(serviceStructure) as ServiceCategoryKey[]
-                      ).map((key) => {
-                        const category = serviceStructure[key];
-                        const isActive = activeCategory === key;
-                        return (
-                          <button
-                            key={key}
-                            type="button"
-                            onMouseEnter={() => setActiveCategory(key)}
-                            className={cn(
-                              "flex w-full items-center justify-between rounded-[14px] px-5 py-4 text-left text-[18px] font-medium transition-all duration-200",
-                              isActive
-                                ? "bg-white text-black shadow-sm"
-                                : "text-black/90 hover:bg-white/70",
-                            )}
-                          >
-                            <span>{category.label}</span>
-                            <ChevronRight size={18} />
-                          </button>
-                        );
-                      })}
+                          {(
+                            Object.keys(
+                              serviceStructure,
+                            ) as ServiceCategoryKey[]
+                          ).map((key) => {
+                            const category = serviceStructure[key];
+                            const isActive = activeCategory === key;
+                            return (
+                              <button
+                                key={key}
+                                type="button"
+                                onMouseEnter={() => setActiveCategory(key)}
+                                className={cn(
+                                  "flex w-full items-center justify-between rounded-[14px] px-5 py-4 text-left text-[18px] font-medium transition-all duration-200",
+                                  isActive
+                                    ? "bg-white text-black shadow-sm"
+                                    : "text-black/90 hover:bg-white/70",
+                                )}
+                              >
+                                <span>{category.label}</span>
+                                <ChevronRight size={18} />
+                              </button>
+                            );
+                          })}
                         </div>
                       </div>
 
@@ -556,7 +556,9 @@ export default function Navbar() {
 
                       <div
                         className="flex min-h-[390px] flex-col justify-between rounded-[20px] px-8 py-9"
-                        style={{ background: activeCategoryData.previewGradient }}
+                        style={{
+                          background: activeCategoryData.previewGradient,
+                        }}
                       >
                         <div>
                           <p className="text-[18px] font-bold tracking-[-0.03em] text-[#1770ff]">
@@ -573,9 +575,7 @@ export default function Navbar() {
                         >
                           Explore
                           <ArrowRight size={15} />
-                          <span className="hidden">
-                            →
-                          </span>
+                          <span className="hidden">→</span>
                         </Link>
                       </div>
                     </div>

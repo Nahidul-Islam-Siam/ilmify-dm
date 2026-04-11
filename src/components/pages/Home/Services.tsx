@@ -160,13 +160,7 @@ function ServiceCard({
           height: "100px",
         }}
       >
-        <Image
-          src={image}
-          alt={name}
-          fill
-          className=""
-
-        />
+        <Image src={image} alt={name} fill className="" />
       </div>
 
       <div
@@ -212,6 +206,7 @@ function ServiceCard({
 export default function Services() {
   return (
     <section className="w-full bg-site-bg-accent px-4 sm:px-6 lg:px-8 xl:px-10 py-12 sm:py-16 lg:py-20">
+      <h3 className="text-red-500 text-4xl font-bold text-center">Banner </h3>
       <div className="mx-auto w-full max-w-[var(--site-max-width)]">
         <div className="mb-8 sm:mb-12 lg:mb-16 text-center px-2 sm:px-4">
           <p
@@ -230,8 +225,8 @@ export default function Services() {
             className="text-[10px] sm:text-xs lg:text-sm text-gray-500"
             style={{ letterSpacing: "0.08em" }}
           >
-         We design and optimize every stage of your customer journey - from awareness to conversion and retention.
-
+            We design and optimize every stage of your customer journey - from
+            awareness to conversion and retention.
           </p>
         </div>
 

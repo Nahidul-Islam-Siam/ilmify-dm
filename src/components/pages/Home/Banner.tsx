@@ -23,6 +23,7 @@ export default function HomeShowcase() {
       id="home"
       className="overflow-x-hidden bg-transparent text-[var(--site-text)]"
     >
+      <h3 className="text-red-500 text-4xl font-bold text-center">Banner </h3>
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-20 -top-[-80px] h-[320px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.20)_50%,rgba(123,31,162,0)_70%)] blur-2xl hidden lg:block" />
         <div className="absolute right-0 top-[40%] h-[280px] w-[280px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.20)_50%,rgba(82,244,71,0)_74%)] blur-2xl hidden lg:block" />

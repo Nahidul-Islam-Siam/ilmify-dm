@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import Image from "next/image";
 import { useTransition } from "@/app/hooks/TransitionContext";
 import { TransitionType } from "@/app/types/TransitionTypes";
+import gsap from "gsap";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 const processSteps = [
   {
@@ -228,6 +228,7 @@ export default function Process() {
   return (
     <section className="bg-site-bg-accent px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:py-24">
       <div className="mx-auto w-full max-w-[var(--site-max-width)]">
+        <h3 className="text-red-500 text-4xl font-bold text-center">Banner </h3>
         {/* Header Section - Responsive */}
         <div
           ref={headerRef}

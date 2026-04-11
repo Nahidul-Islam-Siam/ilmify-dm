@@ -40,6 +40,7 @@ export default function AiAction() {
 
   return (
     <section className="bg-transparent py-10">
+      <h3 className="text-red-500 text-4xl font-bold text-center">Banner </h3>
       <div className="relative mx-auto w-full max-w-[var(--site-max-width)] overflow-hidden rounded-[30px]  bg-site-panel shadow-[var(--site-shadow)]">
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="relative grid min-h-[420px] grid-cols-1 lg:min-h-[560px] lg:grid-cols-[1.20fr_0.80fr]">
@@ -60,8 +61,7 @@ export default function AiAction() {
                 >
                   Growth Stories That
                   <br />
-                  <span className="text-purple-800"> Speak</span> for
-                  {" "}Themselves
+                  <span className="text-purple-800"> Speak</span> for Themselves
                 </h2>
 
                 <p
