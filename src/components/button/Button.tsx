@@ -13,7 +13,7 @@ const Button = ({ href, label,size="text-sm" }: ButtonProps) => {
     <div className="">
       <Link
         href={href}
-        className={`group flex w-full items-center justify-center gap-2 rounded-full bg-site-accent px-6 py-3.5 ${size} font-semibold text-white transition-all hover:bg-transparent hover:text-site-accent border border-transparent hover:border-site-accent`}
+        className={`group flex w-full items-center justify-center gap-2 rounded-full bg-amber-500 hover:bg-transparent px-6 py-3.5 ${size} font-semibold text-white transition-all hover:bg-transparent hover:text-black border border-transparent hover:border-black`}
       >
         <span>{label}</span>
         <ArrowRight

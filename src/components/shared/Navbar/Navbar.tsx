@@ -34,6 +34,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Button from "../../button/Button";
 
+
 const navItems = [
   { href: "/", label: "Home", match: ["/"] },
   { href: "/about", label: "About", match: ["/about"] },
@@ -45,6 +46,7 @@ const navItems = [
 const serviceStructure = {
   seo: {
     label: "SEO",
+    href: "/services/seo",
     icon: Megaphone,
     previewTitle: "VISER X",
     previewDescription:
@@ -54,6 +56,7 @@ const serviceStructure = {
     subcategories: [
       {
         name: "SEO Process",
+        href: "/services/seo",
         services: [
           {
             href: "/services/seo#seo-audit",
@@ -109,6 +112,7 @@ const serviceStructure = {
   },
   "google-ads": {
     label: "Google Ads",
+    href: "/services/google-ads",
     icon: Gauge,
     previewTitle: "PULSE PPC",
     previewDescription:
@@ -149,6 +153,7 @@ const serviceStructure = {
   },
   "social-media-ads": {
     label: "Social Media Advertisement",
+    href: "/services/social-media-ads",
     icon: LayoutDashboard,
     previewTitle: "SOCIAL AMP",
     previewDescription:
@@ -394,6 +399,7 @@ export default function Navbar() {
     useState<ServiceCategoryKey>("seo");
   const [hoveredService, setHoveredService] = useState<string | null>(null);
   const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isServicesRoute = pathname.startsWith("/services");
 
   const navLinks = useMemo(
     () =>
@@ -410,6 +416,22 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (pathname.startsWith("/services/google-ads")) {
+      setActiveCategory("google-ads");
+      return;
+    }
+
+    if (pathname.startsWith("/services/social-media-ads")) {
+      setActiveCategory("social-media-ads");
+      return;
+    }
+
+    if (pathname.startsWith("/services/seo")) {
+      setActiveCategory("seo");
+    }
+  }, [pathname]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -473,7 +495,7 @@ export default function Navbar() {
                         navigationMenuTriggerStyle(),
                         "relative h-10 rounded-none border-none bg-transparent px-5 text-[15px] font-medium text-black shadow-none hover:bg-transparent hover:text-site-accent focus:bg-transparent focus:text-site-accent",
                         item.active &&
-                          "text-site-accent after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-6 after:-translate-x-1/2 after:bg-site-accent",
+                          "text-amber-500 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-6 after:-translate-x-1/2 after:bg-amber-500",
                       )}
                     >
                       {item.label}
@@ -484,7 +506,11 @@ export default function Navbar() {
 
               <NavigationMenuItem>
                 <NavigationMenuTrigger
-                  className="h-10 rounded-none border-none px-5 text-[15px] font-medium text-black shadow-none focus:text-site-accent data-[state=open]:text-site-accent"
+                  className={cn(
+                    "relative h-10 rounded-none border-none px-5 text-[15px] font-medium text-black shadow-none focus:text-site-accent data-[state=open]:text-site-accent",
+                    isServicesRoute &&
+                      "text-amber-500 after:absolute after:bottom-0 after:left-1/2 after:h-[2px] after:w-6 after:-translate-x-1/2 after:bg-amber-500",
+                  )}
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -506,9 +532,9 @@ export default function Navbar() {
                             const category = serviceStructure[key];
                             const isActive = activeCategory === key;
                             return (
-                              <button
+                              <Link
                                 key={key}
-                                type="button"
+                                href={category.href}
                                 onMouseEnter={() => setActiveCategory(key)}
                                 className={cn(
                                   "flex w-full items-center justify-between rounded-[14px] px-5 py-4 text-left text-[18px] font-medium transition-all duration-200",
@@ -519,7 +545,7 @@ export default function Navbar() {
                               >
                                 <span>{category.label}</span>
                                 <ChevronRight size={18} />
-                              </button>
+                              </Link>
                             );
                           })}
                         </div>
@@ -594,7 +620,7 @@ export default function Navbar() {
                 Work with us
               </span>
             </Link> */}
-            <Button href="#contact" label="Work with us" />
+            <Button   href="#contact" label="Work with us" />
           </div>
 
           {/* Mobile Menu Button */}
