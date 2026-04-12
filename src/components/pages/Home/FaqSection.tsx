@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Button from "../../button/Button";
-import { Plus } from "lucide-react";
 import { useTransition } from "@/app/hooks/TransitionContext";
 import { TransitionType } from "@/app/types/TransitionTypes";
+import { Plus } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import Button from "../../button/Button";
 
 const faqItems = [
   {
@@ -66,6 +66,7 @@ export default function FaqSection() {
 
   return (
     <section className="bg-[#0b0b0b] px-4 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <h3 className="text-red-500 text-4xl font-bold text-center">Banner </h3>
       <div className="mx-auto w-full max-w-[var(--site-max-width)]">
         <div className="grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-14 xl:gap-20">
           <div ref={introRef} className="max-w-[470px]">

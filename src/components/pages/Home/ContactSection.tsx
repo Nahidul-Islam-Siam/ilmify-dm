@@ -1,8 +1,8 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { Check, Mail, MoveRight } from "lucide-react";
 import { useTransition } from "@/app/hooks/TransitionContext";
 import { TransitionType } from "@/app/types/TransitionTypes";
+import { Check, Mail, MoveRight } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const people = [
   {
@@ -57,6 +57,7 @@ export default function ContactSection() {
       id="contact"
       className="relative overflow-hidden bg-transparent px-4 py-16 text-[var(--site-text)] sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
+      <h3 className="text-red-500 text-4xl font-bold text-center">Banner </h3>
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -left-24 top-[-70px] h-[320px] w-[320px] rounded-full bg-[radial-gradient(circle,rgba(123,31,162,0.2)_0%,rgba(123,31,162,0)_70%)] blur-2xl animate-contact-float-a" />
         <div className="absolute right-[-70px] top-[18%] h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(82,244,71,0.16)_0%,rgba(82,244,71,0)_72%)] blur-2xl animate-contact-float-b" />
@@ -70,12 +71,12 @@ export default function ContactSection() {
             </p>
 
             <h2 className="mt-5 text-[2.45rem] font-semibold leading-10 tracking-[-0.06em] text-black">
-          Ready to Scale Your Growth?
-
+              Ready to Scale Your Growth?
             </h2>
 
             <p className="mt-3  max-w-[620px] text-[16px] leading-5 text-black/72 sm:text-[17px]">
-           From generating leads to increasing conversions, we build marketing systems that deliver real results - not just activity.
+              From generating leads to increasing conversions, we build
+              marketing systems that deliver real results - not just activity.
             </p>
 
             <div className="mt-8 flex flex-col gap-5 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center lg:gap-6">

@@ -1,4 +1,4 @@
-import ScrollToTopButton from "@/components/ui/ScrollToTopButton/ScrollToTopButton";
+// import ScrollToTopButton from "@/components/ui/ScrollToTopButton/ScrollToTopButton";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import type { ReactNode } from "react";
@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${inter.variable} antialiased bg-white`}
       >
         {children}
-        <ScrollToTopButton />
+        {/* <ScrollToTopButton /> */}
         <Toaster richColors position="top-right" />
       </body>
     </html>
